@@ -1,0 +1,41 @@
+---
+interface Props {
+	href: string;
+	title: string;
+	body: string;
+}
+
+const { href, title, body } = Astro.props;
+---
+
+<a href={href}>
+    <div class="project-card">
+        <div>
+            {title}
+        <div>
+        <p>
+            {body}
+        </p>
+        <span>
+            View Case Study
+        </span>
+    </div>
+</a>
+
+<style>
+
+.project-card {
+    border: 2px solid black;
+    margin-bottom: 10px;
+    background-color: lightgrey;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+</style>

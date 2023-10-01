@@ -1,40 +1,46 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Header from '../components/Header.astro';
+import ProjectCard from '../components/ProjectCard.astro';
 ---
 
 <Layout title="Welcome to joengyn portfolio.">
 	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
+		<Header />
+		<div class="intro">
+			<div>Hi, I'm Joe. Designer | Maker | Creative</div>
+			<span>I am a UX & Product Designer with a background in Mechanical Engineering and Product Development. I am passionate about emerging technologies and empowering people to achieve their goals.</span>
+		</div>
+		<ProjectCard
+			href="/grammaroke"
+			title="Grammaroke" 
+			body="Language learning web app. Study and sing along to your favorite songs."
+		/>
+		<ProjectCard
+			href="/cosplaycloset"
+			title="Cosplay Closet" 
+			body="Social platform for cosplayers to connect and share projects"
+		/>
+		<ProjectCard
+			href="/berkshiregrey"
+			title="Berkshire Grey" 
+			body="Case study for BG"
+		/>
+		<ProjectCard
+			href="/toast"
+			title="Toast" 
+			body="Case study for Toast"
+		/>
 	</main>
 </Layout>
 
 <style>
-	
+	main {
+		/* display: flex;
+		flex-direction: column; */
+	}
+
+	.intro {
+		margin: 40px 0px;
+	}
 </style>
