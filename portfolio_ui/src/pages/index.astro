@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import ensoCircle from "../images/enso-circle.svg";
+
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import ProjectCard from "../components/ProjectCard.astro";
@@ -6,15 +9,26 @@ import ProjectCard from "../components/ProjectCard.astro";
 
 <Layout title="Welcome to joengyn portfolio.">
   <Header />
-  <main>
-    <div class="text-wrapper">
-      <div>Hi, I'm Joe. Designer | Maker | Creative</div>
-      <p>
-        I am a UX & Product Designer with a background in Mechanical Engineering
-        and Product Development. I am passionate about emerging technologies and
-        empowering people to achieve their goals.
-      </p>
+  <main class="mx-6">
+    <div class="my-12 grid grid-cols-2">
+      <div class="self-center">
+        <div class="mb-4 text-3xl font-bold">Hi, I'm Joe</div>
+        <p class="max-w-44 text-lg">
+          A designer who enjoys bringing together people and technology.
+        </p>
+      </div>
+      <Image class="" src={ensoCircle} alt="enso circle" />
     </div>
+    <ProjectCard
+      href="/berkshiregrey"
+      title="Berkshire Grey"
+      body="Designing HMI's (Human Machine Interface) for AI-Enabled Enterprise Robotics"
+    />
+    <ProjectCard
+      href="/toast"
+      title="Toast"
+      body="Designing a new mobile QR code based restaurant service product."
+    />
     <ProjectCard
       href="/grammaroke"
       title="Grammaroke"
@@ -23,24 +37,7 @@ import ProjectCard from "../components/ProjectCard.astro";
     <ProjectCard
       href="/cosplaycloset"
       title="Cosplay Closet"
-      body="Social platform for cosplayers to connect and share projects"
+      body="Designing a social media platform for cosplayers to connect and share projects."
     />
-    <ProjectCard
-      href="/berkshiregrey"
-      title="Berkshire Grey"
-      body="Case study for BG"
-    />
-    <ProjectCard href="/toast" title="Toast" body="Case study for Toast" />
   </main>
 </Layout>
-
-<style>
-  main {
-    /* display: flex;
-		flex-direction: column; */
-  }
-
-  .intro {
-    margin: 40px 0px;
-  }
-</style>
