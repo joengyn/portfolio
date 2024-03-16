@@ -1,10 +1,8 @@
 ---
-import { Image } from "astro:assets";
-import ensoCircle from "../images/enso-circle.svg";
-
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import EnsoLottie from "../components/EnsoLottie.tsx";
 ---
 
 <Layout title="Welcome to joengyn portfolio.">
@@ -17,7 +15,7 @@ import ProjectCard from "../components/ProjectCard.astro";
           A designer who enjoys bringing together people and technology.
         </p>
       </div>
-      <Image class="" src={ensoCircle} alt="enso circle" />
+      <EnsoLottie client:only />
     </div>
     <ProjectCard
       href="/berkshiregrey"
