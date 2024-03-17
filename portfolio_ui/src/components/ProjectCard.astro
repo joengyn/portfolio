@@ -1,15 +1,15 @@
 ---
 import { Image } from "astro:assets";
-import bgCard1 from "../assets/bg-card-1.png";
-import bgCard2 from "../assets/bg-card-2.png";
 
 interface Props {
   href: string;
   title: string;
   body: string;
+  bgImage1: ImageMetadata;
+  bgImage2: ImageMetadata;
 }
 
-const { href, title, body } = Astro.props;
+const { href, title, body, bgImage1, bgImage2 } = Astro.props;
 ---
 
 <div class="mb-10">
@@ -20,12 +20,12 @@ const { href, title, body } = Astro.props;
       >
         <Image
           class="absolute inset-0 h-full w-full object-cover"
-          src={bgCard2}
+          src={bgImage2}
           alt="bg-card-2"
         />
         <Image
           class="animate-fade absolute inset-0 h-full w-full object-cover"
-          src={bgCard1}
+          src={bgImage1}
           alt="bg-card-1"
         />
       </div>

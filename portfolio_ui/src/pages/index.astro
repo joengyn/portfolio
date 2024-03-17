@@ -3,6 +3,10 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import EnsoLottie from "../components/EnsoLottie.tsx";
+
+// Case study card images
+import bgCard1 from "../assets/bg-card-1.png";
+import bgCard2 from "../assets/bg-card-2.png";
 ---
 
 <Layout title="Welcome to joengyn portfolio.">
@@ -21,8 +25,10 @@ import EnsoLottie from "../components/EnsoLottie.tsx";
       href="/berkshiregrey"
       title="Berkshire Grey"
       body="Designing HMI's (Human Machine Interface) for AI-Enabled Enterprise Robotics"
+      bgImage1={bgCard1}
+      bgImage2={bgCard2}
     />
-    <ProjectCard
+    <!-- <ProjectCard
       href="/toast"
       title="Toast"
       body="Designing a new mobile QR code based restaurant service product."
@@ -36,6 +42,6 @@ import EnsoLottie from "../components/EnsoLottie.tsx";
       href="/cosplaycloset"
       title="Cosplay Closet"
       body="Designing a social media platform for cosplayers to connect and share projects."
-    />
+    /> -->
   </main>
 </Layout>
