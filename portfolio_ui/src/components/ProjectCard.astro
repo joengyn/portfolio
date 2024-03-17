@@ -1,4 +1,8 @@
 ---
+import { Image } from "astro:assets";
+import bgCard1 from "../assets/bg-card-1.png";
+import bgCard2 from "../assets/bg-card-2.png";
+
 interface Props {
   href: string;
   title: string;
@@ -11,7 +15,20 @@ const { href, title, body } = Astro.props;
 <div class="mb-10">
   <a href={href}>
     <div class="border-2 border-black">
-      <div class="aspect-square border-b-2 border-black bg-white"></div>
+      <div
+        class="relative aspect-square overflow-hidden border-b-2 border-black bg-white"
+      >
+        <Image
+          class="absolute inset-0 h-full w-full object-cover"
+          src={bgCard2}
+          alt="bg-card-2"
+        />
+        <Image
+          class="animate-fade absolute inset-0 h-full w-full object-cover"
+          src={bgCard1}
+          alt="bg-card-1"
+        />
+      </div>
       <div class="grid p-4">
         <div class="mb-2 text-lg">
           {title}
