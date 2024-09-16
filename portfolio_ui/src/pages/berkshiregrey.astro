@@ -1,17 +1,81 @@
 ---
+import { Image } from "astro:assets";
+
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import ProjectBanner from "../components/ProjectBanner.astro";
+
+import bgLogo from "../assets/bg-logo.svg";
+import bgCard2 from "../assets/bg-card-2.png";
 ---
 
 <Layout title="berkshire grey case study">
   <Header />
   <main>
-    <div class="text-wrapper">
-      <h2>Overview</h2>
-      <p>
-        The following is an on-going case study of my design and development of
-        the web application, Grammaroke.
-      </p>
+    <div class="wrapper">
+      <div class="banner bg-gray">
+        <div class="relative flex items-center">
+          <div
+            class="absolute h-full w-full bg-gradient-to-r from-black to-transparent"
+          >
+          </div>
+          <span class="absolute left-8 text-[40px] text-white">
+            BERKSHIRE <br /> GREY
+          </span>
+          <Image src={bgCard2} alt="bg-card-2" class="w-full object-cover" />
+        </div>
+        <div class="grid gap-4 p-4 pb-6 pt-6">
+          <Image src={bgLogo} alt="bg-logo" class="h-8 w-auto" />
+          <div class="grid gap-2">
+            <h4 class="mt-2">Overview</h4>
+            <p>
+              Designing and developing Human Machine Interfaces (HMIs) for
+              AI-enabled enterprise robotics.
+            </p>
+          </div>
+          <div class="grid gap-2">
+            <h4>Role</h4>
+            <ul class="ml-4">
+              <li>
+                <p>
+                  <span class="text-xs">&bull;</span>&nbsp;Design Lead (Mobile
+                  robotics team)
+                </p>
+              </li>
+              <li>
+                <p>
+                  <span class="text-xs">&bull;</span>&nbsp;Design Technologist /
+                  Full Stack Developer (Picking robotics team)
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="grid gap-2">
+            <h4>Tools & Technology</h4>
+            <ul class="ml-4 grid grid-cols-2">
+              <li><p><span class="text-xs">&bull;</span>&nbsp;Adobe XD</p></li>
+              <li>
+                <p><span class="text-xs">&bull;</span>&nbsp;React (Frontend)</p>
+              </li>
+              <li><p><span class="text-xs">&bull;</span>&nbsp;Figma</p></li>
+              <li>
+                <p><span class="text-xs">&bull;</span>&nbsp;Python (Backend)</p>
+              </li>
+            </ul>
+          </div>
+          <div class="grid gap-2">
+            <h4>Year</h4>
+            <ul class="ml-4">
+              <li>
+                <p>
+                  <span class="text-xs">&bull;</span>&nbsp;October 2021 -
+                  January 2023
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <p>A language learning web app combining Grammar and Karaoke.</p>
       <p>
         This project was started as an opportunity to learn new design tools,
@@ -169,4 +233,15 @@ import Header from "../components/Header.astro";
   </main>
 </Layout>
 
-<style></style>
+<style>
+  .banner {
+    p {
+      font-size: 0.875rem;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    h4 {
+      font-size: 0.875rem;
+    }
+  }
+</style>

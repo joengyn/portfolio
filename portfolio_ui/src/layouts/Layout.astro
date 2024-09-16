@@ -41,7 +41,7 @@ const { title } = Astro.props;
   }
 
   html {
-    font-family: "Lato", system-ui, sans-serif;
+    font-family: "Lato", "Montserrat", system-ui, sans-serif;
   }
 
   p {
@@ -50,9 +50,9 @@ const { title } = Astro.props;
     line-height: 1.75;
   }
 
-  .text-wrapper {
+  .wrapper {
     // border: 2px solid gold;
-    padding: 0 1.25rem;
+    padding: 1.25rem;
     margin: 0 auto;
   }
 
@@ -65,7 +65,7 @@ const { title } = Astro.props;
   }
 
   @media (min-width: 900px) {
-    .text-wrapper {
+    .wrapper {
       max-width: 700px;
       padding: 0;
     }
