@@ -17,6 +17,9 @@ export default {
         fade: "fade 5s ease-in-out 1 forwards",
         moveUp: "moveUp 3s ease-in-out 1 forwards",
       },
+      colors: {
+        gray: "#d3d3d3",
+      },
     },
   },
   plugins: [],
