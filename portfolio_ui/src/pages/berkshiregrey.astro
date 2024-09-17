@@ -12,6 +12,23 @@ import ngUI2 from "../assets/bg-ng-ui-2.jpeg";
 import ngUI3 from "../assets/bg-ng-ui-3.jpeg";
 import ngUI4 from "../assets/bg-ng-ui-4.jpeg";
 import hmiImg from "../assets/bg-hmi-book.png";
+import sketch1 from "../assets/sketch-1.jpg";
+import sketch2 from "../assets/sketch-2.jpg";
+import sketch3 from "../assets/sketch-3.jpg";
+import sketch4 from "../assets/sketch-4.jpg";
+import sketch5 from "../assets/sketch-5.jpg";
+import sketch6 from "../assets/sketch-6.jpg";
+import sketch7 from "../assets/sketch-7.jpg";
+import sketch8 from "../assets/sketch-8.jpg";
+import sketch9 from "../assets/sketch-9.jpg";
+import sketch10 from "../assets/sketch-10.jpg";
+import sketch11 from "../assets/sketch-11.jpg";
+import sketch12 from "../assets/sketch-12.jpg";
+import sketch13 from "../assets/sketch-13.jpg";
+import sketch14 from "../assets/sketch-14.jpg";
+import sketch15 from "../assets/sketch-15.jpg";
+import sketch16 from "../assets/sketch-16.jpg";
+import sketch17 from "../assets/sketch-17.jpg";
 ---
 
 <Layout title="berkshire grey case study">
@@ -75,7 +92,7 @@ import hmiImg from "../assets/bg-hmi-book.png";
           </div>
         </div>
       </div>
-      <h2 class="mt-4">Background</h2>
+      <h2 class="mt-20">Background</h2>
       <Image
         src={userImg}
         alt="user-img"
@@ -93,7 +110,7 @@ import hmiImg from "../assets/bg-hmi-book.png";
         monitoring large fleets of AI-enabled robots for BGs Next Generation
         Mobile Robotic Platform, BG Flex.
       </p>
-      <div class="grid gap-10">
+      <div class="mb-2 grid gap-10">
         <Image class="shadow-2xl" src={ngUI3} alt="ng-ui-3" />
         <Image class="shadow-2xl" src={ngUI2} alt="ng-ui-2" />
         <Image class="shadow-2xl" src={ngUI1} alt="ng-ui-1" />
@@ -132,7 +149,7 @@ import hmiImg from "../assets/bg-hmi-book.png";
         This included designing for the various levels of interaction required
         by users.
       </p>
-      <ul class="ml-8 list-outside list-disc">
+      <ul class="mb-20 ml-8 list-outside list-disc">
         <li>
           <p>
             <span class="font-bold">Level 1 - Process Area Overview:</span> The main
@@ -162,6 +179,42 @@ import hmiImg from "../assets/bg-hmi-book.png";
           </p>
         </li>
       </ul>
+      <h2>Sketches</h2>
+      <div class="bg-darkGray p-6">
+        <div class="grid-rows mb-4 grid gap-4">
+          <Image src={sketch1} alt={"sketch-1"} />
+          <div class="grid grid-cols-2 items-center gap-4">
+            <Image src={sketch2} alt={"sketch-2"} />
+            <Image src={sketch3} alt={"sketch-3"} />
+          </div>
+          <Image src={sketch4} alt={"sketch-4"} />
+        </div>
+        <div class="grid-rows mb-4 grid gap-4">
+          <Image src={sketch5} alt={"sketch-5"} />
+          <div class="grid grid-cols-2 items-center gap-4">
+            <Image src={sketch6} alt={"sketch-6"} />
+            <Image src={sketch7} alt={"sketch-7"} />
+          </div>
+          <Image src={sketch8} alt={"sketch-8"} />
+        </div>
+        <div class="grid-rows mb-4 grid gap-4">
+          <Image src={sketch9} alt={"sketch-9"} />
+          <Image src={sketch10} alt={"sketch-10"} />
+          <div class="grid grid-cols-2 items-center gap-4">
+            <Image src={sketch11} alt={"sketch-11"} />
+            <Image src={sketch12} alt={"sketch-12"} />
+          </div>
+          <Image src={sketch13} alt={"sketch-13"} />
+        </div>
+        <div class="grid-rows mb-4 grid gap-4">
+          <div class="grid grid-cols-2 items-center gap-4">
+            <Image src={sketch14} alt={"sketch-14"} />
+            <Image src={sketch15} alt={"sketch-15"} />
+          </div>
+          <Image src={sketch16} alt={"sketch-16"} />
+          <Image src={sketch17} alt={"sketch-17"} />
+        </div>
+      </div>
     </div>
   </main>
 </Layout>
@@ -184,5 +237,6 @@ import hmiImg from "../assets/bg-hmi-book.png";
 
   .banner h4 {
     font-size: 0.875rem;
+    font-weight: bold;
   }
 </style>

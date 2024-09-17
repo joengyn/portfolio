@@ -19,6 +19,7 @@ export default {
       },
       colors: {
         gray: "#d3d3d3",
+        darkGray: "#313131",
       },
     },
   },
