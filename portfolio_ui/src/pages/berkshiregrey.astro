@@ -183,8 +183,15 @@ import sketch17 from "../assets/sketch-17.jpeg";
       <div class="bg-darkGray p-6">
         <div class="grid-rows relative mb-4 grid gap-4">
           <div
+            id="see-more-button-container"
             class="absolute h-full w-full bg-gradient-to-t from-darkGray to-transparent"
           >
+            <button
+              id="see-more-button"
+              type="button"
+              class="absolute bottom-1 left-1/2 flex -translate-x-1/2 justify-center rounded-md border border-white px-4 py-2 text-white"
+              >See more</button
+            >
           </div>
           <Image src={sketch1} alt={"sketch-1"} />
           <div class="grid grid-cols-2 items-center gap-4">
@@ -192,13 +199,8 @@ import sketch17 from "../assets/sketch-17.jpeg";
             <Image src={sketch3} alt={"sketch-3"} />
           </div>
           <Image src={sketch4} alt={"sketch-4"} />
-          <button
-            type="button"
-            class="absolute bottom-1 left-1/2 flex -translate-x-1/2 justify-center rounded-md border border-white px-4 py-2 text-white"
-            >See more</button
-          >
         </div>
-        <div class="grid-rows mb-4 hidden gap-4">
+        <div id="hidden-sketch" class="grid-rows mb-4 hidden gap-4">
           <Image src={sketch5} alt={"sketch-5"} />
           <div class="grid grid-cols-2 items-center gap-4">
             <Image src={sketch6} alt={"sketch-6"} />
@@ -206,7 +208,7 @@ import sketch17 from "../assets/sketch-17.jpeg";
           </div>
           <Image src={sketch8} alt={"sketch-8"} />
         </div>
-        <div class="grid-rows mb-4 hidden gap-4">
+        <!-- <div class="grid-rows mb-4 hidden gap-4">
           <Image src={sketch9} alt={"sketch-9"} />
           <Image src={sketch10} alt={"sketch-10"} />
           <div class="grid grid-cols-2 items-center gap-4">
@@ -222,11 +224,32 @@ import sketch17 from "../assets/sketch-17.jpeg";
           </div>
           <Image src={sketch16} alt={"sketch-16"} />
           <Image src={sketch17} alt={"sketch-17"} />
-        </div>
+        </div> -->
       </div>
     </div>
   </main>
 </Layout>
+
+<script>
+  const button = document.getElementById("see-more-button");
+  const buttonContainer = document.getElementById("see-more-button-container");
+
+  function seeMore() {
+    const hiddenSketch = document.getElementById("hidden-sketch");
+
+    if (hiddenSketch && hiddenSketch.classList.contains("hidden")) {
+      hiddenSketch.classList.remove("hidden");
+      hiddenSketch.classList.add("grid");
+      if (buttonContainer) {
+        buttonContainer.classList.add("hidden");
+      }
+    }
+  }
+
+  if (button) {
+    button.addEventListener("click", seeMore);
+  }
+</script>
 
 <style>
   h2 {
