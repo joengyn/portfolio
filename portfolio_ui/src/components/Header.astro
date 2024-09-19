@@ -1,5 +1,5 @@
 ---
-// Component Script (JavaScript)
+import resume from "../assets/resume.pdf";
 ---
 
 <header>
@@ -8,44 +8,10 @@
     <div class="flex justify-end gap-3">
       <a href="/">work</a>
       <a href="/about">about</a>
-      <a href="/resume">resume</a>
+      <a target="_blank" href={resume}>resume</a>
     </div>
   </div>
   <div class="mx-4 border-t-2 border-black"></div>
 </header>
 
-<style>
-  /* a {
-    text-decoration: none;
-  }
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px black;
-  }
-
-  .header-left {
-    display: flex;
-    gap: 10px;
-  }
-
-  .header-left a {
-    text-decoration: none;
-    color: inherit;
-    border: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .header-right {
-    display: flex;
-    gap: 10px;
-  }
-
-  .header-right a img {
-    width: 24px;
-    height: 24px;
-  } */
-</style>
+<style></style>
