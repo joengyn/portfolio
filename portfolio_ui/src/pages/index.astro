@@ -5,9 +5,11 @@ import ProjectCard from "../components/ProjectCard.astro";
 import EnsoLottie from "../components/EnsoLottie.tsx";
 
 // Case study card images
-import bgCard1 from "../assets/bg-card-1.png";
-import bgCard2 from "../assets/bg-card-2.png";
-import ngUI1 from "../assets/bg-ng-ui-1.jpeg";
+import bgCard1 from "../assets/berkshiregrey/bg-card-1.png";
+import bgCard2 from "../assets/berkshiregrey/bg-card-2.png";
+import ngUI1 from "../assets/berkshiregrey/bg-ng-ui-1.jpeg";
+
+import toastCard1 from "../assets/toast/toast-card-1.jpg";
 ---
 
 <Layout title="Welcome to joengyn portfolio.">
@@ -30,20 +32,29 @@ import ngUI1 from "../assets/bg-ng-ui-1.jpeg";
       bgImage2={bgCard2}
       uiImage={ngUI1}
     />
-    <!-- <ProjectCard
+    <ProjectCard
       href="/toast"
       title="Toast"
       body="Designing a new mobile QR code based restaurant service product."
+      bgImage1={toastCard1}
+      bgImage2={toastCard1}
+      uiImage={ngUI1}
     />
     <ProjectCard
       href="/grammaroke"
       title="Grammaroke"
       body="Language learning web app. Study and sing along to your favorite songs."
+      bgImage1={bgCard1}
+      bgImage2={bgCard2}
+      uiImage={ngUI1}
     />
     <ProjectCard
       href="/cosplaycloset"
       title="Cosplay Closet"
       body="Designing a social media platform for cosplayers to connect and share projects."
-    /> -->
+      bgImage1={bgCard1}
+      bgImage2={bgCard2}
+      uiImage={ngUI1}
+    />
   </main>
 </Layout>

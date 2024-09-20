@@ -7,7 +7,7 @@ interface Props {
   body: string;
   bgImage1: ImageMetadata;
   bgImage2: ImageMetadata;
-  uiImage: ImageMetadata;
+  uiImage?: ImageMetadata;
 }
 
 const { href, title, body, bgImage1, bgImage2, uiImage } = Astro.props;
