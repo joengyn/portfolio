@@ -1,21 +1,22 @@
 ---
+import { Image } from "astro:assets";
+
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+
+import profileImg from "../assets/profile-img.jpeg";
 ---
 
 <Layout title="about page">
   <Header />
   <main>
-    <div class="about-wrapper">
-      <h2>I love making things, and making things better.</h2>
-      <img src="" alt="profile photo" />
-      <h2>Hi, my name is Joe. 🙏🏻</h2>
-      <p>
-        I have always loved creating things, so I decided to study Mechanical
-        Engineering in order to better understand the physical world and allow
-        me more options in my endeavors.
+    <div class="wrapper">
+      <Image src={profileImg} alt="profile photo" class="mb-10" />
+      <h2>Hi, my name is Joe.</h2>
+      <p class="mb-10">
+        I am a designer who enjoys bringing together people and technology.
       </p>
-      <p>
+      <p class="mb-10">
         After graduating I worked in the product development field, building
         medical devices and user testing them. I loved the feeling of
         discovering user pain points and using that knowledge to further improve
@@ -23,7 +24,7 @@ import Header from "../components/Header.astro";
         delight in peoples' eyes when using the devices and knowing that what I
         was working on would have a real world impact.
       </p>
-      <p>
+      <p class="mb-10">
         I soon pivoted into User Experience Design as it is the perfect field
         where I can combine so many of my interests and skills and ultimately
         have a bigger impact on end users. Specifically, I am fascinated with
@@ -32,41 +33,14 @@ import Header from "../components/Header.astro";
         in our lives, I want to help ensure the experiences people have with it
         is as intuitive, ethical and empowering as possible.
       </p>
-      <p>
+      <p class="mb-10">
         I am extremely curious about most things and love to hear people talk
         about their passions and hobbies. I believe being curious is the first
         step in being creative so I am always on the search for where my next
         inspirational spark will come from.
       </p>
-      <div class="skills-table">
-        <div>
-          <div>Design Tools:</div>
-          <div>Figma · Adobe XD · Sketch · Photoshop</div>
-        </div>
-        <div>
-          <div>Design Knowledge:</div>
-          <div>Figma · Adobe XD · Sketch · Photoshop</div>
-        </div>
-        <div>
-          <div>Development Tools:</div>
-          <div>HTML5 · CSS3 · JavaScript · React · Sass · Github</div>
-        </div>
-        <div>
-          <div>User Research Methods:</div>
-          <div>
-            Usability Testing · Diary Studies · Surveys · A/B Testing · Card
-            Sorting · Moderated & Unmoderated · Remote Testing
-          </div>
-        </div>
-      </div>
     </div>
   </main>
 </Layout>
 
-<style>
-  .skills-table {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-</style>
+<style></style>
