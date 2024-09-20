@@ -5,34 +5,34 @@ interface Props {
   href: string;
   title: string;
   body: string;
-  bgImage1: ImageMetadata;
-  bgImage2: ImageMetadata;
-  uiImage?: ImageMetadata;
+  card1: ImageMetadata;
+  card2: ImageMetadata;
+  uiImage: ImageMetadata;
 }
 
-const { href, title, body, bgImage1, bgImage2, uiImage } = Astro.props;
+const { href, title, body, card1, card2, uiImage } = Astro.props;
 ---
 
 <div class="mb-10">
   <a href={href}>
     <div class="border-2 border-black">
       <div
-        class="relative aspect-square overflow-hidden border-b-2 border-black bg-white"
+        class="relative aspect-square overflow-hidden border-b-2 border-black"
       >
         <Image
           class="absolute top-full z-10 aspect-auto h-1/2 w-auto animate-moveUp rounded-sm drop-shadow-xl"
           src={uiImage}
-          alt="ng-ui-1"
+          alt="Image of UI"
         />
         <Image
           class="absolute inset-0 h-full w-full object-cover"
-          src={bgImage2}
-          alt="bg-card-2"
+          src={card2}
+          alt="Background image"
         />
         <Image
           class="absolute inset-0 h-full w-full animate-fade object-cover"
-          src={bgImage1}
-          alt="bg-card-1"
+          src={card1}
+          alt="Background image"
         />
       </div>
       <div class="grid p-4">

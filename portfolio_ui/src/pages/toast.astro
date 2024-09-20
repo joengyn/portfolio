@@ -1,0 +1,285 @@
+---
+import { Image } from "astro:assets";
+
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+
+import toastLogo from "../assets/toast/toast-logo.svg";
+import toastCard2 from "../assets/toast/toast-card-2.jpg";
+import toastUI from "../assets/toast/toast-ui.png";
+import toastUI2 from "../assets/toast/toast-ui-2.png";
+
+import userImg from "../assets/berkshiregrey/bg-user-img.png";
+import ngUI1 from "../assets/berkshiregrey/bg-ng-ui-1.jpeg";
+import ngUI2 from "../assets/berkshiregrey/bg-ng-ui-2.jpeg";
+import ngUI3 from "../assets/berkshiregrey/bg-ng-ui-3.jpeg";
+import ngUI4 from "../assets/berkshiregrey/bg-ng-ui-4.jpeg";
+import hmiImg from "../assets/berkshiregrey/bg-hmi-book.png";
+import sketch1 from "../assets/berkshiregrey/sketch-1.jpeg";
+import sketch2 from "../assets/berkshiregrey/sketch-2.jpeg";
+import sketch3 from "../assets/berkshiregrey/sketch-3.jpeg";
+import sketch4 from "../assets/berkshiregrey/sketch-4.jpeg";
+import sketch5 from "../assets/berkshiregrey/sketch-5.jpeg";
+import sketch6 from "../assets/berkshiregrey/sketch-6.jpeg";
+import sketch7 from "../assets/berkshiregrey/sketch-7.jpeg";
+import sketch8 from "../assets/berkshiregrey/sketch-8.jpeg";
+import sketch9 from "../assets/berkshiregrey/sketch-9.jpeg";
+import sketch10 from "../assets/berkshiregrey/sketch-10.jpeg";
+import sketch11 from "../assets/berkshiregrey/sketch-11.jpeg";
+import sketch12 from "../assets/berkshiregrey/sketch-12.jpeg";
+import sketch13 from "../assets/berkshiregrey/sketch-13.jpeg";
+import sketch14 from "../assets/berkshiregrey/sketch-14.jpeg";
+import sketch15 from "../assets/berkshiregrey/sketch-15.jpeg";
+import sketch16 from "../assets/berkshiregrey/sketch-16.jpeg";
+import sketch17 from "../assets/berkshiregrey/sketch-17.jpeg";
+---
+
+<Layout title="toast case study">
+  <Header />
+  <main>
+    <div class="wrapper">
+      <div class="banner bg-gray">
+        <div class="relative flex items-center">
+          <div
+            class="absolute h-full w-full bg-gradient-to-r from-black to-transparent"
+          >
+          </div>
+          <span class="absolute left-8 text-[40px] text-white"> TOAST</span>
+          <Image src={toastCard2} alt="bg-card-2" class="w-full object-cover" />
+        </div>
+        <div class="grid gap-4 p-4 pb-6 pt-6">
+          <Image src={toastLogo} alt="bg-logo" class="h-8 w-auto" />
+          <div class="grid gap-2">
+            <h4 class="mt-2">Overview</h4>
+            <p>
+              Designing and developing Human Machine Interfaces (HMIs) for
+              AI-enabled enterprise robotics.
+            </p>
+          </div>
+          <div class="grid gap-2">
+            <h4>Role</h4>
+            <ul class="ml-8 list-outside list-disc">
+              <li>
+                <p>Design Lead (Mobile robotics team)</p>
+              </li>
+              <li>
+                <p>
+                  Design Technologist / Full Stack Developer (Picking robotics
+                  team)
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="grid gap-2">
+            <h4>Tools & Technology</h4>
+            <ul class="ml-8 grid list-outside list-disc grid-cols-2">
+              <li><p>Adobe XD</p></li>
+              <li>
+                <p>React (Frontend)</p>
+              </li>
+              <li><p>Figma</p></li>
+              <li>
+                <p>Python (Backend)</p>
+              </li>
+            </ul>
+          </div>
+          <div class="grid gap-2">
+            <h4>Year</h4>
+            <ul class="ml-8 list-outside list-disc">
+              <li>
+                <p>October 2021 - January 2023</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <h2 class="mt-10">Background</h2>
+      <Image
+        src={toastUI}
+        alt="user-img"
+        class="mb-4 mt-4 w-full object-cover"
+      />
+      <p class="mb-20">
+        With customers expecting fast shipping, and free returns, the flow of
+        e-commerce is ever increasing. Robotic automation within warehouses has
+        become essential to meet these escalating expectations.
+      </p>
+      <h2>
+        <span class="underline">Mobile Robotics</span> - Designing the Next Gen HMI.
+      </h2>
+      <p class="mb-10">
+        Working on the Mobile Robotics team, I led the UX & UI design efforts to
+        create an intuitive and effective user experience for operating and
+        monitoring large fleets of AI-enabled robots for BGs Next Generation
+        Mobile Robotic Platform, BG Flex.
+      </p>
+      <div class="mb-2 grid gap-10">
+        <Image class="shadow-2xl" src={ngUI3} alt="ng-ui-3" />
+        <Image class="shadow-2xl" src={ngUI2} alt="ng-ui-2" />
+        <Image class="shadow-2xl" src={ngUI1} alt="ng-ui-1" />
+        <Image class="shadow-2xl" src={ngUI4} alt="ng-ui-4" />
+      </div>
+      <p class="mb-20 text-[12px]">
+        (Pictures from <a
+          class="underline"
+          href="https://ux-design-awards.com/winners/berkshire-grey-flex-next-gen-hmi"
+          >UX Design Awards</a
+        >)
+      </p>
+      <p class="mb-10">
+        My involvement with the Next Generation HMI included everything from
+        <span class="font-bold">conducting user research</span> and <span
+          class="font-bold">drafting product requirements</span
+        > to <span class="font-bold">creating interactive mockups</span> and even
+        <span class="font-bold">pushing code</span> changes.
+      </p>
+      <p class="mb-10">
+        Additionally I created and maintained the new <span class="font-bold"
+          >design system</span
+        > as well as all feature <span class="font-bold"
+          >workflow documentation</span
+        >.
+      </p>
+      <Image src={hmiImg} alt="hmi-book" class="mb-10 w-full object-cover" />
+      <p class="mb-10">
+        Due to the complex nature of the system, best practices from <a
+          class="font-medium underline"
+          href="https://www.kobo.com/us/en/ebook/the-high-performance-hmi-handbook"
+          >The High Performance HMI Handbook</a
+        > were followed.
+      </p>
+      <p class="mb-10">
+        This included designing for the various levels of interaction required
+        by users.
+      </p>
+      <ul class="mb-20 ml-8 list-outside list-disc">
+        <li>
+          <p>
+            <span class="font-bold">Level 1 - Process Area Overview:</span> The main
+            overview display focuses on important items while displaying alarms and
+            alerts in a cogent and easily determinable manner.
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="font-bold">Level 2 - Process Unit Control:</span> Sub-processes,
+            variables, and control manipulation for reactions.
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="font-bold">Level 3 - Process Unit Detail:</span> Further
+            detailed examination. Individual machine controls, specific alarm displays,
+            and information details.
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="font-bold"
+              >Level 4 - Process Unit Support and Diagnostic Display:</span
+            > Troubleshooting information, possibly P&ID, and anything else that
+            is not important for operation but necessary for maintenance and management.
+          </p>
+        </li>
+      </ul>
+      <h2>Sketches</h2>
+      <div class="mb-20 bg-darkGray p-6">
+        <div class="grid-rows relative mb-4 grid gap-4">
+          <div
+            id="see-more-button-container"
+            class="absolute h-full w-full bg-gradient-to-t from-darkGray to-transparent"
+          >
+            <button
+              id="see-more-button"
+              type="button"
+              class="absolute bottom-1 left-1/2 flex -translate-x-1/2 justify-center rounded-md border border-white px-4 py-2 text-white"
+              >See more</button
+            >
+          </div>
+          <Image src={sketch1} alt={"sketch-1"} />
+          <div class="grid grid-cols-2 items-center gap-4">
+            <Image src={sketch2} alt={"sketch-2"} />
+            <Image src={sketch3} alt={"sketch-3"} />
+          </div>
+          <Image src={sketch4} alt={"sketch-4"} />
+        </div>
+        <div id="hidden-sketch" class="grid-rows relative mb-4 hidden gap-4">
+          <div
+            id="see-more-button-container"
+            class="absolute h-full w-full bg-gradient-to-t from-darkGray to-transparent"
+          >
+            <button
+              id="see-more-button"
+              type="button"
+              class="absolute bottom-1 left-1/2 flex -translate-x-1/2 justify-center rounded-md border border-white px-4 py-2 text-white"
+              >See more</button
+            >
+          </div>
+          <Image src={sketch5} alt={"sketch-5"} />
+          <div class="grid grid-cols-2 items-center gap-4">
+            <Image src={sketch6} alt={"sketch-6"} />
+            <Image src={sketch7} alt={"sketch-7"} />
+          </div>
+          <Image src={sketch8} alt={"sketch-8"} />
+        </div>
+        <div class="grid-rows mb-4 hidden gap-4">
+          <Image src={sketch9} alt={"sketch-9"} />
+          <Image src={sketch10} alt={"sketch-10"} />
+          <div class="grid grid-cols-2 items-center gap-4">
+            <Image src={sketch11} alt={"sketch-11"} />
+            <Image src={sketch12} alt={"sketch-12"} />
+          </div>
+          <Image src={sketch13} alt={"sketch-13"} />
+        </div>
+        <div class="grid-rows mb-4 hidden gap-4">
+          <div class="grid grid-cols-2 items-center gap-4">
+            <Image src={sketch14} alt={"sketch-14"} />
+            <Image src={sketch15} alt={"sketch-15"} />
+          </div>
+          <Image src={sketch16} alt={"sketch-16"} />
+          <Image src={sketch17} alt={"sketch-17"} />
+        </div>
+      </div>
+      <h2>Additional Designs</h2>
+      <p class="mb-20">
+        In addition to the Next HMI, I also created designs for various other
+        workflows, such as a maintenance page, map editor as well as continous
+        updates to the current HMI.
+      </p>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  const button = document.getElementById("see-more-button");
+
+  function seeMore() {
+    const hiddenSketch = document.getElementById("hidden-sketch");
+    const buttonContainer = document.getElementById(
+      "see-more-button-container",
+    );
+
+    if (!hiddenSketch || !buttonContainer) return;
+
+    if (hiddenSketch.classList.contains("hidden")) {
+      hiddenSketch.classList.remove("hidden");
+      hiddenSketch.classList.add("grid");
+      buttonContainer.classList.add("hidden");
+    }
+  }
+
+  if (button) {
+    button.addEventListener("click", seeMore);
+  }
+</script>
+
+<style>
+  .banner p {
+    font-size: 0.875rem;
+  }
+
+  .banner h4 {
+    font-size: 0.875rem;
+    font-weight: bold;
+  }
+</style>
