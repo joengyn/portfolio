@@ -7,6 +7,8 @@ import Header from "../components/Header.astro";
 import bgLogo from "../assets/berkshiregrey/bg-logo.svg";
 import bgCard2 from "../assets/berkshiregrey/bg-card-2.png";
 import userImg from "../assets/berkshiregrey/bg-user-img.png";
+import flexbotImg from "../assets/berkshiregrey/bg-flexbot.jpg";
+import pickArmImg from "../assets/berkshiregrey/bg-pick.png";
 import ngUI1 from "../assets/berkshiregrey/bg-ng-ui-1.jpeg";
 import ngUI2 from "../assets/berkshiregrey/bg-ng-ui-2.jpeg";
 import ngUI3 from "../assets/berkshiregrey/bg-ng-ui-3.jpeg";
@@ -29,13 +31,14 @@ import sketch14 from "../assets/berkshiregrey/sketch-14.jpeg";
 import sketch15 from "../assets/berkshiregrey/sketch-15.jpeg";
 import sketch16 from "../assets/berkshiregrey/sketch-16.jpeg";
 import sketch17 from "../assets/berkshiregrey/sketch-17.jpeg";
+import vennDiagram from "../assets/berkshiregrey/venn-diagram.svg";
 ---
 
 <Layout title="berkshire grey case study">
   <Header />
   <main>
     <div class="wrapper">
-      <div class="banner bg-gray">
+      <div class="banner mb-10 bg-gray">
         <div class="relative flex items-center">
           <div
             class="absolute h-full w-full bg-gradient-to-r from-black to-transparent"
@@ -94,25 +97,42 @@ import sketch17 from "../assets/berkshiregrey/sketch-17.jpeg";
           </div>
         </div>
       </div>
-      <h2 class="mt-10">Background</h2>
-      <Image
-        src={userImg}
-        alt="user-img"
-        class="mb-4 mt-4 w-full object-cover"
-      />
+      <h2>Background</h2>
+      <Image src={userImg} alt="user-img" class="mb-5 w-full object-cover" />
+      <p class="mb-5">
+        With rising customer expectations for fast shipping and free returns,
+        the pace of e-commerce continues to accelerate. Robotic automation in
+        warehouses has become crucial to meet these growing demands.
+      </p>
       <p class="mb-20">
-        With customers expecting fast shipping, and free returns, the flow of
-        e-commerce is ever increasing. Robotic automation within warehouses has
-        become essential to meet these escalating expectations.
+        During my time at BG, I contributed to both the <span class="font-bold"
+          >Mobile</span
+        > and <span class="font-bold">Picking</span> robotic teams, each focused
+        on developing unique platforms and solutions.
       </p>
       <h2>
-        <span class="underline">Mobile Robotics</span> - Designing the Next Gen HMI.
+        <span class="bg-darkGray p-1 text-white">Mobile Robotics</span>
       </h2>
+      <Image
+        src={flexbotImg}
+        alt="flexbot-img"
+        class="mb-5 w-full object-cover"
+      />
+      <p class="mb-20 bg-gray p-4 text-[14px]">
+        Mobile Robotics leverage AI, machine learning, and sensors to manage
+        fleets of autonomous robots that enhance warehouse operations, including
+        order picking and inventory management.
+      </p>
+      <h2>Designing the Next Gen HMI.</h2>
       <p class="mb-10">
-        Working on the Mobile Robotics team, I led the UX & UI design efforts to
-        create an intuitive and effective user experience for operating and
-        monitoring large fleets of AI-enabled robots for BGs Next Generation
-        Mobile Robotic Platform, BG Flex.
+        As part of the Mobile Robotics team, I led the UX and UI design efforts
+        to create an intuitive, efficient user experience for operating and
+        monitoring large fleets of AI-enabled robots on Berkshire Grey’s Next
+        Generation Mobile Robotic Platform, <a
+          class="font-medium underline"
+          href="https://www.berkshiregrey.com/resources/press-release/berkshire-grey-announces-its-next-generation-mobile-robotic-platform-bg-flex/"
+          >BG Flex</a
+        >
       </p>
       <div class="mb-2 grid gap-10">
         <Image class="shadow-2xl" src={ngUI3} alt="ng-ui-3" />
@@ -122,7 +142,8 @@ import sketch17 from "../assets/berkshiregrey/sketch-17.jpeg";
       </div>
       <p class="mb-20 text-[12px]">
         (Pictures from <a
-          class="underline"
+          target="_blank"
+          class="font-medium underline"
           href="https://ux-design-awards.com/winners/berkshire-grey-flex-next-gen-hmi"
           >UX Design Awards</a
         >)
@@ -141,9 +162,15 @@ import sketch17 from "../assets/berkshiregrey/sketch-17.jpeg";
           >workflow documentation</span
         >.
       </p>
+      <p class="mb-20">
+        In addition to designing the BG Flex HMI, I developed user interfaces
+        for key workflows, including a maintenance page and map editor, while
+        continuously improving the existing HMI through iterative updates.
+      </p>
       <Image src={hmiImg} alt="hmi-book" class="mb-10 w-full object-cover" />
       <p class="mb-10">
         Due to the complex nature of the system, best practices from <a
+          target="_blank"
           class="font-medium underline"
           href="https://www.kobo.com/us/en/ebook/the-high-performance-hmi-handbook"
           >The High Performance HMI Handbook</a
@@ -241,46 +268,71 @@ import sketch17 from "../assets/berkshiregrey/sketch-17.jpeg";
           <Image src={sketch17} alt={"sketch-17"} />
         </div>
       </div>
-      <h2>Additional Designs</h2>
-      <p class="mb-20">
-        In addition to the Next HMI, I also created designs for various other
-        workflows, such as a maintenance page, map editor as well as continous
-        updates to the current HMI.
+      <h2>
+        <span class="bg-darkGray p-1 text-white">Picking Robotics</span>
+      </h2>
+      <Image
+        src={pickArmImg}
+        alt="flexbot-img"
+        class="mb-5 w-full object-cover"
+      />
+      <p class="mb-20 bg-gray p-4 text-[14px]">
+        Picking Robotics include picking arms, put walls, and package sortation
+        platforms. Together, these technologies automate costly processes for
+        fulfilling customer orders and stocking shelves, significantly reducing
+        cost and time.
+      </p>
+      <h2>Design Technologist</h2>
+      <p class="mb-10">
+        As part of the Picking Robotics team, I worked as a Design Technologist,
+        bridging both design and development tasks.
+      </p>
+      <Image
+        src={vennDiagram}
+        alt="venn-diagram"
+        class="mb-10 ml-auto mr-auto w-80 object-cover"
+      />
+      <p class="mb-10">
+        My responsibilities included designing new screens to support
+        customer-requested workflows, as well as fixing bugs and implementing
+        updates across various HMIs for BG's diverse customer base, each with
+        unique requirements. I worked full stack, using React and Python to
+        ensure seamless functionality and an optimal user experience.
       </p>
     </div>
   </main>
-</Layout>
 
-<script>
-  const button = document.getElementById("see-more-button");
+  <script>
+    const button = document.getElementById("see-more-button");
 
-  function seeMore() {
-    const hiddenSketch = document.getElementById("hidden-sketch");
-    const buttonContainer = document.getElementById(
-      "see-more-button-container",
-    );
+    function seeMore() {
+      const hiddenSketch = document.getElementById("hidden-sketch");
+      const buttonContainer = document.getElementById(
+        "see-more-button-container",
+      );
 
-    if (!hiddenSketch || !buttonContainer) return;
+      if (!hiddenSketch || !buttonContainer) return;
 
-    if (hiddenSketch.classList.contains("hidden")) {
-      hiddenSketch.classList.remove("hidden");
-      hiddenSketch.classList.add("grid");
-      buttonContainer.classList.add("hidden");
+      if (hiddenSketch.classList.contains("hidden")) {
+        hiddenSketch.classList.remove("hidden");
+        hiddenSketch.classList.add("grid");
+        buttonContainer.classList.add("hidden");
+      }
     }
-  }
 
-  if (button) {
-    button.addEventListener("click", seeMore);
-  }
-</script>
+    if (button) {
+      button.addEventListener("click", seeMore);
+    }
+  </script>
 
-<style>
-  .banner p {
-    font-size: 0.875rem;
-  }
+  <style>
+    .banner p {
+      font-size: 0.875rem;
+    }
 
-  .banner h4 {
-    font-size: 0.875rem;
-    font-weight: bold;
-  }
-</style>
+    .banner h4 {
+      font-size: 0.875rem;
+      font-weight: bold;
+    }
+  </style>
+</Layout>
