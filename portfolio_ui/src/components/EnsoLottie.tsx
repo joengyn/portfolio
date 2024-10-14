@@ -1,6 +1,6 @@
 import React from "react";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
-import enso from "../assets/enso.json";
+import ensoCircle from "../assets/enso-circle.json";
 
 function EnsoLottie() {
   return (
@@ -8,7 +8,7 @@ function EnsoLottie() {
       autoplay
       loop={false}
       keepLastFrame={true}
-      src={enso}
+      src={ensoCircle}
       style={{ height: "100%", width: "100%" }}
     >
       <Controls
