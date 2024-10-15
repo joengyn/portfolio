@@ -1,7 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import EnsoLottie from "../components/EnsoLottie.tsx";
 
@@ -16,7 +14,6 @@ import toastUI from "../assets/toast/toast-ui.png";
 ---
 
 <Layout title="Welcome to joengyn portfolio.">
-  <Header />
   <main class="mx-5">
     <div class="my-12 grid grid-cols-2">
       <div class="flex h-48 flex-col justify-center">
@@ -60,5 +57,4 @@ import toastUI from "../assets/toast/toast-ui.png";
       uiImage={ngUI1}
     /> -->
   </main>
-  <Footer />
 </Layout>

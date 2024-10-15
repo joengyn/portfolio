@@ -2,13 +2,11 @@
 import { Image } from "astro:assets";
 
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
 
 import profileImg from "../assets/profile-img.jpeg";
 ---
 
 <Layout title="about page">
-  <Header />
   <main>
     <div class="wrapper">
       <Image src={profileImg} alt="profile photo" class="mb-10" />
