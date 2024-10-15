@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+import ensoCircle from "../assets/circle.png";
+import mailIcon from "../assets/mail.png";
+import githubIcon from "../assets/github.png";
+import linkedinIcon from "../assets/linkedin.png";
+import resume from "../assets/resume.pdf";
+---
+
+<footer>
+  <div class="mx-4 border-t-2 border-black"></div>
+  <div class="m-4 flex flex-col items-center gap-4">
+    <!-- <div class="flex items-center justify-center gap-3">
+      <Image class="h-10 w-10" src={mailIcon} alt="Email Icon Logo" />
+      <h4>joe.ngyn7@gmail.com</h4>
+    </div> -->
+    <Image class="h-32 w-32" src={ensoCircle} alt="Enso Circle Logo" />
+    <div class="flex justify-end gap-3">
+      <a href="/">work</a>
+      <a href="/about">about</a>
+      <a target="_blank" href={resume}>resume</a>
+    </div>
+    <div class="flex justify-end gap-3">
+      <Image class="h-10 w-10" src={mailIcon} alt="Email Icon Logo" />
+      <Image class="h-10 w-10" src={linkedinIcon} alt="LinkedIn Icon Logo" />
+      <Image class="h-10 w-10" src={githubIcon} alt="Github Logo" />
+    </div>
+    <div class="flex flex-col items-center">
+      <p>Designed and Developed by Joe Nguyen</p>
+      <p>© 2024 | All Rights Reserved</p>
+    </div>
+  </div>
+</footer>
