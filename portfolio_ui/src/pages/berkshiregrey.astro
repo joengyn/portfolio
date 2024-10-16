@@ -30,7 +30,13 @@ import sketch14 from "../assets/berkshiregrey/sketch-14.jpeg";
 import sketch15 from "../assets/berkshiregrey/sketch-15.jpeg";
 import sketch16 from "../assets/berkshiregrey/sketch-16.jpeg";
 import sketch17 from "../assets/berkshiregrey/sketch-17.jpeg";
+import sketchPick1 from "../assets/berkshiregrey/sketch-pick-1.jpg";
+import sketchPick2 from "../assets/berkshiregrey/sketch-pick-2.jpg";
 import vennDiagram from "../assets/berkshiregrey/venn-diagram.svg";
+import xdIcon from "../assets/berkshiregrey/xd.png";
+import figmaIcon from "../assets/berkshiregrey/figma.png";
+import reactIcon from "../assets/berkshiregrey/react.png";
+import pythonIcon from "../assets/berkshiregrey/python.png";
 ---
 
 <Layout title="berkshire grey case study">
@@ -218,7 +224,7 @@ import vennDiagram from "../assets/berkshiregrey/venn-diagram.svg";
             <button
               id="see-more-button"
               type="button"
-              class="absolute bottom-1 left-1/2 flex -translate-x-1/2 justify-center rounded-md border border-white px-4 py-2 text-white"
+              class="absolute bottom-1 left-1/2 flex -translate-x-1/2 justify-center rounded-sm border border-white px-4 py-2 text-white"
               >See more</button
             >
           </div>
@@ -280,21 +286,48 @@ import vennDiagram from "../assets/berkshiregrey/venn-diagram.svg";
         class="mb-10 ml-auto mr-auto w-80 object-cover"
       />
       <p class="mb-10">
+        I worked as a full-stack developer, using React and Python within a
+        broader ROS (Robot Operating System) framework to ensure seamless
+        functionality and deliver an optimal user experience.
+      </p>
+      <div class="mb-10 ml-auto mr-auto grid w-1/2 grid-cols-2 gap-4">
+        <Image src={xdIcon} alt="xd-icon" />
+        <Image src={reactIcon} alt="react-icon" />
+        <Image src={figmaIcon} alt="figma-icon" />
+        <Image src={pythonIcon} alt="python-icon" />
+      </div>
+      <p class="mb-10">
         My responsibilities included designing new screens to support
         customer-requested workflows, as well as fixing bugs and implementing
         updates across various HMIs for BG's diverse customer base, each with
         unique requirements.
       </p>
-      <p class="mb-10">
-        I worked as a full-stack developer, using React and Python within a
-        broader ROS (Robot Operating System) framework to ensure seamless
-        functionality and deliver an optimal user experience.
-      </p>
+      <h2>Sketches</h2>
+      <div class="mb-20 bg-darkGray p-6">
+        <div class="grid-rows relative grid gap-4">
+          <Image src={sketchPick1} alt={"sketch-pick"} />
+          <Image src={sketchPick2} alt={"sketch-pick"} />
+        </div>
+      </div>
+      <div class="mb-10 flex justify-between">
+        <button
+          id="back-to-top-button"
+          class="mb-4 min-w-12 rounded-sm border-2 border-black pb-2 pl-4 pr-4 pt-2 shadow-[3px_3px_0px_1px_black]"
+          >back to top</button
+        >
+        <a href="/toast"
+          ><button
+            class="mb-4 min-w-12 rounded-sm border-2 border-black pb-2 pl-4 pr-4 pt-2 shadow-[3px_3px_0px_1px_black]"
+            >next case study</button
+          ></a
+        >
+      </div>
     </div>
   </main>
 
   <script>
-    const button = document.getElementById("see-more-button");
+    const seeMoreButton = document.getElementById("see-more-button");
+    const backToTopButton = document.getElementById("back-to-top-button");
 
     function seeMore() {
       const hiddenSketch = document.getElementById("hidden-sketch");
@@ -311,8 +344,16 @@ import vennDiagram from "../assets/berkshiregrey/venn-diagram.svg";
       }
     }
 
-    if (button) {
-      button.addEventListener("click", seeMore);
+    if (seeMoreButton) {
+      seeMoreButton.addEventListener("click", seeMore);
+    }
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    if (backToTopButton) {
+      backToTopButton.addEventListener("click", scrollToTop);
     }
   </script>
 
