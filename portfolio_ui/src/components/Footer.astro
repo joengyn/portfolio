@@ -15,18 +15,18 @@ const optimizedBackground = await getImage({
 ---
 
 <footer
-  class="bg-250% bg-center bg-no-repeat text-white text-opacity-80"
+  class="bg-250% bg-center bg-no-repeat text-white text-opacity-90"
   style={`background-image: url(${optimizedBackground.src});`}
 >
-  <div class="flex flex-col items-center gap-3 p-4">
+  <div class="flex flex-col items-center gap-6 p-4">
     <Image
-      class="mb-4 mt-8 h-32 w-32 opacity-80"
+      class="mt-4 h-32 w-32 opacity-100"
       src={whiteCircle}
       alt="Enso Circle Logo"
     />
     <a href="mailto:joe.ngyn7@gmail.com"
       ><button
-        class="mb-4 min-w-12 rounded-sm border-2 border-black bg-darkGray pb-2 pl-4 pr-4 pt-2 uppercase tracking-widest text-white shadow-[3px_3px_0px_1px_black]"
+        class="min-w-12 rounded-sm border-2 border-black bg-darkGray pb-2 pl-4 pr-4 pt-2 uppercase tracking-widest text-white shadow-[3px_3px_0px_1px_black]"
         >Contact</button
       ></a
     >
@@ -35,7 +35,7 @@ const optimizedBackground = await getImage({
       <a href="/about">about</a>
       <a target="_blank" href={resume}>resume</a>
     </div>
-    <div class="flex justify-end gap-3 opacity-40">
+    <div class="flex justify-end gap-3 opacity-80">
       <a target="_blank" href="https://www.linkedin.com/in/joengyn/">
         <Image
           class="h-10 w-10 brightness-100 invert filter"
