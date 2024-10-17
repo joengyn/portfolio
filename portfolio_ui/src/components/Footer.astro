@@ -1,17 +1,27 @@
 ---
 import { Image } from "astro:assets";
-import ensoCircle from "../assets/circle.png";
+import { getImage } from "astro:assets";
+import circle from "../assets/circle.png";
+import whiteCircle from "../assets/circle-white.png";
 import githubIcon from "../assets/github.png";
 import linkedinIcon from "../assets/linkedin.png";
 import resume from "../assets/resume.pdf";
+import wave from "../assets/wave.jpeg";
+
+const optimizedBackground = await getImage({
+  src: wave,
+  format: "webp",
+});
 ---
 
-<footer>
-  <div class="mx-4 border-t-2 border-black"></div>
-  <div class="m-4 flex flex-col items-center gap-3">
+<footer
+  class="bg-250% bg-center bg-no-repeat text-white text-opacity-80"
+  style={`background-image: url(${optimizedBackground.src});`}
+>
+  <div class="flex flex-col items-center gap-3 p-4">
     <Image
-      class="mb-4 mt-4 h-32 w-32"
-      src={ensoCircle}
+      class="mb-4 mt-8 h-32 w-32 opacity-80"
+      src={whiteCircle}
       alt="Enso Circle Logo"
     />
     <a href="mailto:joe.ngyn7@gmail.com"
@@ -25,12 +35,20 @@ import resume from "../assets/resume.pdf";
       <a href="/about">about</a>
       <a target="_blank" href={resume}>resume</a>
     </div>
-    <div class="flex justify-end gap-3">
+    <div class="flex justify-end gap-3 opacity-40">
       <a target="_blank" href="https://www.linkedin.com/in/joengyn/">
-        <Image class="h-10 w-10" src={linkedinIcon} alt="LinkedIn Icon Logo" />
+        <Image
+          class="h-10 w-10 brightness-100 invert filter"
+          src={linkedinIcon}
+          alt="LinkedIn Icon Logo"
+        />
       </a>
       <a target="_blank" href="https://github.com/joengyn/">
-        <Image class="h-10 w-10" src={githubIcon} alt="Github Logo" /></a
+        <Image
+          class="h-10 w-10 invert filter"
+          src={githubIcon}
+          alt="Github Logo"
+        /></a
       >
     </div>
     <div class="flex flex-col items-center">
