@@ -8,7 +8,7 @@ function EnsoLottie() {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setShowAnimation(true);
-    }, 3000);
+    }, 0);
 
     return () => clearTimeout(timeoutId);
   }, []);

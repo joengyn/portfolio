@@ -15,15 +15,13 @@ const optimizedBackground = await getImage({
 ---
 
 <footer
-  class="bg-250% bg-center bg-no-repeat text-white text-opacity-90"
+  class="bg-cover bg-center bg-no-repeat text-white text-opacity-90"
   style={`background-image: url(${optimizedBackground.src});`}
 >
-  <div class="flex flex-col items-center gap-6 p-4">
-    <Image
-      class="mt-4 h-32 w-32 opacity-100"
-      src={whiteCircle}
-      alt="Enso Circle Logo"
-    />
+  <div
+    class="flex flex-col items-center gap-6 px-4 py-10 lg:flex-row lg:justify-between lg:px-20 lg:py-5"
+  >
+    <Image class="h-32 w-32" src={whiteCircle} alt="Enso Circle Logo" />
     <a href="mailto:joe.ngyn7@gmail.com"
       ><button
         class="min-w-12 rounded-sm border-2 border-black bg-darkGray pb-2 pl-4 pr-4 pt-2 uppercase tracking-widest text-white shadow-[3px_3px_0px_1px_black]"
@@ -51,9 +49,9 @@ const optimizedBackground = await getImage({
         /></a
       >
     </div>
-    <div class="flex flex-col items-center">
-      <p>Designed and Developed by Joe Nguyen</p>
-      <p>© 2024 | All Rights Reserved</p>
+    <div class="flex flex-col items-center text-center">
+      <span>Designed and Developed by Joe Nguyen</span>
+      <span>© 2024 | All Rights Reserved</span>
     </div>
   </div>
 </footer>

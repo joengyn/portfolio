@@ -31,11 +31,11 @@ import Loading from "../components/Loading.astro";
     </title>
   </head>
   <body class="animate-overflowHidden relative">
-    <div
-      class="animate-fadeOut absolute -top-4 z-10 h-screen w-full bg-darkGray"
+    <!-- <div
+      class="animate-fadeOut absolute -top-4 z-10 h-screen w-screen bg-darkGray"
     >
       <Loading />
-    </div>
+    </div> -->
     <Header />
     <slot />
     <Footer />
@@ -83,7 +83,7 @@ import Loading from "../components/Loading.astro";
     margin: 0 auto;
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 640px) {
     p {
       font-size: 1.125rem;
       font-weight: var(--regular);
@@ -93,7 +93,7 @@ import Loading from "../components/Loading.astro";
 
   @media (min-width: 900px) {
     .wrapper {
-      max-width: 700px;
+      // max-width: 800px;
       // padding: 0;
     }
   }

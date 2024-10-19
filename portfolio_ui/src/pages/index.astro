@@ -14,47 +14,51 @@ import toastUI from "../assets/toast/toast-ui.png";
 ---
 
 <Layout title="Welcome to joengyn portfolio.">
-  <main class="mx-5">
-    <div class="my-12 grid grid-cols-2">
-      <div class="flex h-48 flex-col justify-center">
-        <div class="mb-4 text-3xl font-bold">Hi, I'm Joe</div>
-        <p class="max-w-44 text-lg">
+  <main class="mx-5 my-10 grid gap-10">
+    <div class="flex sm:flex-col sm:items-center sm:text-center">
+      <div class="flex w-1/2 flex-col justify-center sm:mb-20 sm:w-full">
+        <div class="mb-5 text-3xl font-bold">Hi, I'm Joe</div>
+        <p class="text-lg">
           A designer who enjoys bringing together people and technology.
         </p>
       </div>
-      <EnsoLottie client:only />
+      <div class="w-1/2 max-w-[300px] sm:order-first">
+        <EnsoLottie client:only />
+      </div>
     </div>
-    <ProjectCard
-      href="/berkshiregrey"
-      title="Berkshire Grey"
-      body="Designing HMI's (Human Machine Interface) for AI-Enabled Enterprise Robotics"
-      card1={bgCard1}
-      card2={bgCard2}
-      uiImage={ngUI1}
-    />
-    <ProjectCard
-      href="/toast"
-      title="Toast"
-      body="Designing a mobile QR-based pay-at-the-table service for restaurants"
-      card1={toastCard2}
-      card2={toastCard2}
-      uiImage={toastUI}
-    />
-    <!-- <ProjectCard
-      href="/grammaroke"
-      title="Grammaroke"
-      body="Language learning web app. Study and sing along to your favorite songs."
-      card1={bgCard1}
-      card2={bgCard2}
-      uiImage={ngUI1}
-    />
-    <ProjectCard
-      href="/cosplaycloset"
-      title="Cosplay Closet"
-      body="Designing a social media platform for cosplayers to connect and share projects."
-      card1={bgCard1}
-      card2={bgCard2}
-      uiImage={ngUI1}
-    /> -->
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      <ProjectCard
+        href="/berkshiregrey"
+        title="Berkshire Grey"
+        body="Designing HMI's (Human Machine Interface) for AI-Enabled Enterprise Robotics"
+        card1={bgCard1}
+        card2={bgCard2}
+        uiImage={ngUI1}
+      />
+      <ProjectCard
+        href="/toast"
+        title="Toast"
+        body="Designing a mobile QR-based pay-at-the-table service for restaurants"
+        card1={toastCard2}
+        card2={toastCard2}
+        uiImage={toastUI}
+      />
+      <ProjectCard
+        href="/grammaroke"
+        title="Grammaroke"
+        body="Language learning web app. Study and sing along to your favorite songs."
+        card1={bgCard1}
+        card2={bgCard2}
+        uiImage={ngUI1}
+      />
+      <ProjectCard
+        href="/cosplaycloset"
+        title="Cosplay Closet"
+        body="Designing a social media platform for cosplayers to connect and share projects."
+        card1={bgCard1}
+        card2={bgCard2}
+        uiImage={ngUI1}
+      />
+    </div>
   </main>
 </Layout>
