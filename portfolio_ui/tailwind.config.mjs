@@ -9,8 +9,8 @@ export default {
           "100%": { opacity: "0" },
         },
         fadeOut: {
-          "0%": { opacity: 1 },
-          "100%": { opacity: 0 },
+          "0%": { opacity: 1, display: "block" },
+          "100%": { opacity: 0, display: "none" },
         },
         moveUp: {
           "0%": { transform: "translateY(0)" },
@@ -23,7 +23,7 @@ export default {
       },
       animation: {
         fade: "fade 5s ease-in-out 1 forwards 3s",
-        fadeOut: "fadeOut 5s 2s forwards",
+        fadeOut: "fadeOut 5s 2s 1 forwards",
         moveUp: "moveUp 3s ease-in-out 1 forwards",
         overflowHidden: "overflowHidden 5s forwards",
       },
