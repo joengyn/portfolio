@@ -16,11 +16,16 @@ export default {
           "0%": { transform: "translateY(0)" },
           "100%": { transform: "translateY(-100%)" },
         },
+        overflowHidden: {
+          "0%": { overflow: "hidden" },
+          "100%": { overflow: "auto" },
+        },
       },
       animation: {
         fade: "fade 5s ease-in-out 1 forwards 3s",
         fadeOut: "fadeOut 5s 2s forwards",
         moveUp: "moveUp 3s ease-in-out 1 forwards",
+        overflowHidden: "overflowHidden 5s forwards",
       },
       colors: {
         gray: "#d3d3d3",
