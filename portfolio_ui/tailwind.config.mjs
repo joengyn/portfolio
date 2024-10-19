@@ -8,6 +8,10 @@ export default {
           "0%": { opacity: "1" },
           "100%": { opacity: "0" },
         },
+        fadeOut: {
+          "0%": { opacity: 1 },
+          "100%": { opacity: 0 },
+        },
         moveUp: {
           "0%": { transform: "translateY(0)" },
           "100%": { transform: "translateY(-100%)" },
@@ -15,6 +19,7 @@ export default {
       },
       animation: {
         fade: "fade 5s ease-in-out 1 forwards",
+        fadeOut: "fadeOut 5s 2s forwards",
         moveUp: "moveUp 3s ease-in-out 1 forwards",
       },
       colors: {
