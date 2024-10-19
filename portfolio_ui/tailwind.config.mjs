@@ -18,7 +18,7 @@ export default {
         },
       },
       animation: {
-        fade: "fade 5s ease-in-out 1 forwards",
+        fade: "fade 5s ease-in-out 1 forwards 3s",
         fadeOut: "fadeOut 5s 2s forwards",
         moveUp: "moveUp 3s ease-in-out 1 forwards",
       },
