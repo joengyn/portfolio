@@ -21,37 +21,48 @@ const optimizedBackground = await getImage({
   <div
     class="flex flex-col items-center gap-6 px-4 py-10 lg:flex-row lg:justify-between lg:px-20 lg:py-5"
   >
-    <Image class="h-32 w-32" src={whiteCircle} alt="Enso Circle Logo" />
-    <a href="mailto:joe.ngyn7@gmail.com"
-      ><button
-        class="min-w-12 rounded-sm border-2 border-black bg-darkGray pb-2 pl-4 pr-4 pt-2 uppercase tracking-widest text-white shadow-[3px_3px_0px_1px_black]"
-        >Contact</button
-      ></a
-    >
-    <div class="flex justify-end gap-3">
-      <a href="/">work</a>
-      <a href="/about">about</a>
-      <a target="_blank" href={resume}>resume</a>
-    </div>
-    <div class="flex justify-end gap-3 opacity-80">
-      <a target="_blank" href="https://www.linkedin.com/in/joengyn/">
-        <Image
-          class="h-10 w-10 brightness-100 invert filter"
-          src={linkedinIcon}
-          alt="LinkedIn Icon Logo"
-        />
-      </a>
-      <a target="_blank" href="https://github.com/joengyn/">
-        <Image
-          class="h-10 w-10 invert filter"
-          src={githubIcon}
-          alt="Github Logo"
-        /></a
+    <Image
+      class="h-32 w-32 lg:order-1"
+      src={whiteCircle}
+      alt="Enso Circle Logo"
+    />
+
+    <div class="flex flex-col items-center gap-6">
+      <a href="mailto:joe.ngyn7@gmail.com"
+        ><button
+          class="min-w-12 rounded-sm border-2 border-black bg-darkGray pb-2 pl-4 pr-4 pt-2 uppercase tracking-widest text-white shadow-[3px_3px_0px_1px_black] lg:w-32"
+          >Contact</button
+        ></a
       >
+      <div class="flex justify-end gap-3 opacity-80">
+        <a target="_blank" href="https://www.linkedin.com/in/joengyn/">
+          <Image
+            class="h-10 w-10 brightness-100 invert filter"
+            src={linkedinIcon}
+            alt="LinkedIn Icon Logo"
+          />
+        </a>
+        <a target="_blank" href="https://github.com/joengyn/">
+          <Image
+            class="h-10 w-10 invert filter"
+            src={githubIcon}
+            alt="Github Logo"
+          /></a
+        >
+      </div>
     </div>
-    <div class="flex flex-col items-center text-center">
-      <span>Designed and Developed by Joe Nguyen</span>
-      <span>© 2024 | All Rights Reserved</span>
+
+    <div class="flex flex-col items-center gap-6">
+      <div class="flex justify-end gap-3">
+        <a href="/">work</a>
+        <a href="/about">about</a>
+        <a target="_blank" href={resume}>resume</a>
+      </div>
+
+      <div class="flex flex-col items-center text-center lg:justify-end">
+        <span>Designed and Developed by Joe Nguyen</span>
+        <span>© 2024 | All Rights Reserved</span>
+      </div>
     </div>
   </div>
 </footer>
