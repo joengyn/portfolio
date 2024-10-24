@@ -59,9 +59,9 @@ import arrowIcon from "../assets/arrow.png";
           class="max-h-[500px] w-full object-cover"
         />
       </div>
-      <div class="grid gap-4 p-4 pb-6 pt-6 md:flex md:justify-between">
+      <div class="grid gap-4 p-4 pb-6 pt-6 md:flex md:justify-between md:px-8">
         <Image src={bgLogo} alt="bg-logo" class="mb-2 h-8 w-auto" />
-        <div class="flex flex-col gap-2 md:max-w-[300px]">
+        <div class="flex flex-col gap-2 md:max-w-[250px]">
           <h4 class="">Overview</h4>
           <p>
             Designing and developing Human Machine Interfaces (HMIs) for
@@ -108,7 +108,7 @@ import arrowIcon from "../assets/arrow.png";
         </div>
       </div>
     </div>
-    <div class="wrapper">
+    <div class="wrapper m-5 mx-auto">
       <h2>Background</h2>
       <Image src={userImg} alt="user-img" class="mb-5 w-full object-cover" />
       <p class="mb-5">
@@ -179,7 +179,11 @@ import arrowIcon from "../assets/arrow.png";
         for key workflows, including a maintenance page and map editor, while
         continuously improving the existing HMI through iterative updates.
       </p>
-      <Image src={hmiImg} alt="hmi-book" class="mb-10 w-full object-cover" />
+      <Image
+        src={hmiImg}
+        alt="hmi-book"
+        class="mx-auto mb-10 w-full max-w-[400px] object-cover"
+      />
       <p class="mb-10">
         Due to the complex nature of the system, best practices from <a
           target="_blank"
@@ -223,52 +227,54 @@ import arrowIcon from "../assets/arrow.png";
         </li>
       </ul>
       <h2>Sketches</h2>
-      <div class="mb-20 bg-darkGray p-6">
-        <div class="grid-rows relative mb-4 grid gap-4">
-          <div
-            id="see-more-button-container"
-            class="absolute h-full w-full bg-gradient-to-t from-darkGray to-transparent"
+    </div>
+    <div class="mb-20 bg-darkGray p-6 md:flex md:gap-4">
+      <div class="relative flex flex-col gap-4">
+        <div
+          id="see-more-button-container"
+          class="absolute h-full w-full bg-gradient-to-t from-darkGray to-transparent md:hidden"
+        >
+          <button
+            id="see-more-button"
+            type="button"
+            class="absolute bottom-1 left-1/2 flex -translate-x-1/2 justify-center rounded-sm border border-white px-4 py-2 text-white"
+            >See more</button
           >
-            <button
-              id="see-more-button"
-              type="button"
-              class="absolute bottom-1 left-1/2 flex -translate-x-1/2 justify-center rounded-sm border border-white px-4 py-2 text-white"
-              >See more</button
-            >
-          </div>
-          <Image src={sketch1} alt={"sketch-1"} />
-          <div class="grid grid-cols-2 items-center gap-4">
-            <Image src={sketch2} alt={"sketch-2"} />
-            <Image src={sketch3} alt={"sketch-3"} />
-          </div>
-          <Image src={sketch4} alt={"sketch-4"} />
         </div>
-        <div id="hidden-sketch" class="grid-rows relative mb-4 hidden gap-4">
-          <Image src={sketch5} alt={"sketch-5"} />
-          <div class="grid grid-cols-2 items-center gap-4">
-            <Image src={sketch6} alt={"sketch-6"} />
-            <Image src={sketch7} alt={"sketch-7"} />
-          </div>
-          <Image src={sketch8} alt={"sketch-8"} />
+        <Image src={sketch1} alt={"sketch-1"} />
+        <div class="grid grid-cols-2 items-center gap-4">
+          <Image src={sketch2} alt={"sketch-2"} class="h-full" />
+          <Image src={sketch3} alt={"sketch-3"} class="h-full" />
         </div>
-        <div class="grid-rows mb-4 hidden gap-4">
-          <Image src={sketch9} alt={"sketch-9"} />
-          <Image src={sketch10} alt={"sketch-10"} />
-          <div class="grid grid-cols-2 items-center gap-4">
-            <Image src={sketch11} alt={"sketch-11"} />
-            <Image src={sketch12} alt={"sketch-12"} />
-          </div>
-          <Image src={sketch13} alt={"sketch-13"} />
-        </div>
-        <div class="grid-rows mb-4 hidden gap-4">
-          <div class="grid grid-cols-2 items-center gap-4">
-            <Image src={sketch14} alt={"sketch-14"} />
-            <Image src={sketch15} alt={"sketch-15"} />
-          </div>
-          <Image src={sketch16} alt={"sketch-16"} />
-          <Image src={sketch17} alt={"sketch-17"} />
-        </div>
+        <Image src={sketch4} alt={"sketch-4"} />
       </div>
+      <div id="hidden-sketch" class="relative hidden gap-4 md:flex md:flex-col">
+        <Image src={sketch5} alt={"sketch-5"} />
+        <div class="grid grid-cols-2 items-center gap-4">
+          <Image src={sketch6} alt={"sketch-6"} class="h-full" />
+          <Image src={sketch7} alt={"sketch-7"} class="h-full" />
+        </div>
+        <Image src={sketch8} alt={"sketch-8"} />
+      </div>
+      <div class="grid-rows hidden gap-4 md:flex md:flex-col">
+        <Image src={sketch9} alt={"sketch-9"} />
+        <Image src={sketch10} alt={"sketch-10"} />
+        <div class="grid grid-cols-2 items-center gap-4">
+          <Image src={sketch11} alt={"sketch-11"} class="h-full" />
+          <Image src={sketch12} alt={"sketch-12"} class="h-full" />
+        </div>
+        <!-- <Image src={sketch13} alt={"sketch-13"} /> -->
+      </div>
+      <div class="grid-rows hidden gap-4 md:flex md:flex-col">
+        <div class="grid grid-cols-2 items-center gap-4">
+          <Image src={sketch14} alt={"sketch-14"} class="h-full" />
+          <Image src={sketch15} alt={"sketch-15"} class="h-full" />
+        </div>
+        <Image src={sketch16} alt={"sketch-16"} />
+        <Image src={sketch17} alt={"sketch-17"} />
+      </div>
+    </div>
+    <div class="wrapper m-5 mx-auto">
       <h2>
         <span class="bg-darkGray p-1 text-white">Picking Robotics</span>
       </h2>
@@ -298,7 +304,7 @@ import arrowIcon from "../assets/arrow.png";
         broader ROS (Robot Operating System) framework to ensure seamless
         functionality and deliver an optimal user experience.
       </p>
-      <div class="mb-10 ml-auto mr-auto grid w-1/2 grid-cols-2 gap-4">
+      <div class="mx-auto mb-10 grid w-1/2 grid-cols-2 gap-4 md:w-1/4">
         <Image src={xdIcon} alt="xd-icon" />
         <Image src={reactIcon} alt="react-icon" />
         <Image src={figmaIcon} alt="figma-icon" />
@@ -313,7 +319,7 @@ import arrowIcon from "../assets/arrow.png";
       <h2>Sketches</h2>
       <div class="mb-10 bg-darkGray p-6">
         <div class="grid-rows relative grid gap-4">
-          <Image src={sketchPick1} alt={"sketch-pick"} />
+          <Image src={sketchPick1} alt={"sketch-pick"} class="max-w-[400px]" />
           <Image src={sketchPick2} alt={"sketch-pick"} />
         </div>
       </div>
@@ -354,47 +360,47 @@ import arrowIcon from "../assets/arrow.png";
       </div>
     </div>
   </main>
-
-  <script>
-    const seeMoreButton = document.getElementById("see-more-button");
-    const backToTopButton = document.getElementById("back-to-top-button");
-
-    function seeMore() {
-      const hiddenSketch = document.getElementById("hidden-sketch");
-      const buttonContainer = document.getElementById(
-        "see-more-button-container",
-      );
-
-      if (!hiddenSketch || !buttonContainer) return;
-
-      if (hiddenSketch.classList.contains("hidden")) {
-        hiddenSketch.classList.remove("hidden");
-        hiddenSketch.classList.add("grid");
-        buttonContainer.classList.add("hidden");
-      }
-    }
-
-    if (seeMoreButton) {
-      seeMoreButton.addEventListener("click", seeMore);
-    }
-
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-
-    if (backToTopButton) {
-      backToTopButton.addEventListener("click", scrollToTop);
-    }
-  </script>
-
-  <style>
-    .banner p {
-      font-size: 0.875rem;
-    }
-
-    .banner h4 {
-      font-size: 0.875rem;
-      font-weight: bold;
-    }
-  </style>
 </Layout>
+
+<script>
+  const seeMoreButton = document.getElementById("see-more-button");
+  const backToTopButton = document.getElementById("back-to-top-button");
+
+  function seeMore() {
+    const hiddenSketch = document.getElementById("hidden-sketch");
+    const buttonContainer = document.getElementById(
+      "see-more-button-container",
+    );
+
+    if (!hiddenSketch || !buttonContainer) return;
+
+    if (hiddenSketch.classList.contains("hidden")) {
+      hiddenSketch.classList.remove("hidden");
+      hiddenSketch.classList.add("grid");
+      buttonContainer.classList.add("hidden");
+    }
+  }
+
+  if (seeMoreButton) {
+    seeMoreButton.addEventListener("click", seeMore);
+  }
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  if (backToTopButton) {
+    backToTopButton.addEventListener("click", scrollToTop);
+  }
+</script>
+
+<style>
+  .banner p {
+    font-size: 0.875rem;
+  }
+
+  .banner h4 {
+    font-size: 0.875rem;
+    font-weight: bold;
+  }
+</style>
