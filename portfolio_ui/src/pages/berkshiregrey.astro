@@ -146,10 +146,35 @@ import arrowIcon from "../assets/arrow.png";
           >BG Flex</a
         >
       </p>
+      <div
+        id="modal"
+        class="fixed left-0 top-0 flex h-full w-full items-center justify-center overflow-y-hidden bg-black bg-opacity-50 backdrop-blur-sm backdrop-filter"
+      >
+        <div
+          class="slider-wrapper relative mx-auto max-w-screen-lg overflow-hidden p-4"
+        >
+          <div
+            class="slider no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain scroll-smooth"
+          >
+            <Image class="snap-start shadow-2xl" src={ngUI1} alt="ng-ui-1" />
+            <Image class="snap-start shadow-2xl" src={ngUI2} alt="ng-ui-2" />
+            <Image class="snap-start shadow-2xl" src={ngUI3} alt="ng-ui-3" />
+            <Image class="snap-start shadow-2xl" src={ngUI4} alt="ng-ui-4" />
+          </div>
+          <div>
+            <button id="close-modal-button">close</button>
+          </div>
+        </div>
+      </div>
       <div class="mb-2 grid gap-10">
-        <Image class="shadow-2xl" src={ngUI3} alt="ng-ui-3" />
+        <Image
+          class="shadow-2xl"
+          src={ngUI1}
+          alt="ng-ui-1"
+          id="open-modal-button"
+        />
         <Image class="shadow-2xl" src={ngUI2} alt="ng-ui-2" />
-        <Image class="shadow-2xl" src={ngUI1} alt="ng-ui-1" />
+        <Image class="shadow-2xl" src={ngUI3} alt="ng-ui-3" />
         <Image class="shadow-2xl" src={ngUI4} alt="ng-ui-4" />
       </div>
       <p class="mb-20 text-[12px]">
@@ -365,6 +390,8 @@ import arrowIcon from "../assets/arrow.png";
 <script>
   const seeMoreButton = document.getElementById("see-more-button");
   const backToTopButton = document.getElementById("back-to-top-button");
+  const closeModalButton = document.getElementById("close-modal-button");
+  const openModalButton = document.getElementById("open-modal-button");
 
   function seeMore() {
     const hiddenSketch = document.getElementById("hidden-sketch");
@@ -391,6 +418,28 @@ import arrowIcon from "../assets/arrow.png";
 
   if (backToTopButton) {
     backToTopButton.addEventListener("click", scrollToTop);
+  }
+
+  function openModal() {
+    const modal = document.getElementById("modal");
+    if (modal) {
+      modal.classList.remove("hidden");
+    }
+  }
+
+  if (openModalButton) {
+    openModalButton.addEventListener("click", openModal);
+  }
+
+  function closeModal() {
+    const modal = document.getElementById("modal");
+    if (modal) {
+      modal.classList.add("hidden");
+    }
+  }
+
+  if (closeModalButton) {
+    closeModalButton.addEventListener("click", closeModal);
   }
 </script>
 
