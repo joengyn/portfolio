@@ -5,14 +5,14 @@ import Layout from "../layouts/Layout.astro";
 
 import bgLogo from "../assets/berkshiregrey/bg-logo.svg";
 import bgCard2 from "../assets/berkshiregrey/bg-card-2.png";
-import userImg from "../assets/berkshiregrey/bg-user-img.png";
-import flexbotImg from "../assets/berkshiregrey/bg-flexbot.jpg";
-import pickArmImg from "../assets/berkshiregrey/bg-pick.png";
+
+// HMI Images
 import ngUI1 from "../assets/berkshiregrey/bg-ng-ui-1.jpeg";
 import ngUI2 from "../assets/berkshiregrey/bg-ng-ui-2.jpeg";
 import ngUI3 from "../assets/berkshiregrey/bg-ng-ui-3.jpeg";
 import ngUI4 from "../assets/berkshiregrey/bg-ng-ui-4.jpeg";
 import hmiImg from "../assets/berkshiregrey/bg-hmi-book.png";
+// Sketches
 import sketch1 from "../assets/berkshiregrey/sketch-1.jpeg";
 import sketch2 from "../assets/berkshiregrey/sketch-2.jpeg";
 import sketch3 from "../assets/berkshiregrey/sketch-3.jpeg";
@@ -25,13 +25,16 @@ import sketch9 from "../assets/berkshiregrey/sketch-9.jpeg";
 import sketch10 from "../assets/berkshiregrey/sketch-10.jpeg";
 import sketch11 from "../assets/berkshiregrey/sketch-11.jpeg";
 import sketch12 from "../assets/berkshiregrey/sketch-12.jpeg";
-import sketch13 from "../assets/berkshiregrey/sketch-13.jpeg";
 import sketch14 from "../assets/berkshiregrey/sketch-14.jpeg";
 import sketch15 from "../assets/berkshiregrey/sketch-15.jpeg";
 import sketch16 from "../assets/berkshiregrey/sketch-16.jpeg";
 import sketch17 from "../assets/berkshiregrey/sketch-17.jpeg";
 import sketchPick1 from "../assets/berkshiregrey/sketch-pick-1.jpeg";
 import sketchPick2 from "../assets/berkshiregrey/sketch-pick-2.jpeg";
+// Assets
+import userImg from "../assets/berkshiregrey/bg-user-img.png";
+import flexbotImg from "../assets/berkshiregrey/bg-flexbot.jpg";
+import pickArmImg from "../assets/berkshiregrey/bg-pick.png";
 import vennDiagram from "../assets/berkshiregrey/venn-diagram.svg";
 import xdIcon from "../assets/berkshiregrey/xd.png";
 import figmaIcon from "../assets/berkshiregrey/figma.png";
@@ -42,7 +45,58 @@ import arrowIcon from "../assets/arrow.png";
 
 <Layout title="berkshire grey case study">
   <main>
-    <div class="banner m-5 bg-gray">
+    <!-- Image Modal -->
+    <div
+      id="modal"
+      class="fixed left-0 top-0 flex hidden h-full w-full items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm backdrop-filter"
+    >
+      <div
+        class="slider-wrapper relative mx-auto max-w-screen-xl overflow-hidden p-4"
+      >
+        <div class="flex flex-row justify-between">
+          <div class="flex flex-row items-center gap-4">
+            <button
+              id="modal-back-button"
+              class="-rotate-90 text-2xl text-white">⇧</button
+            >
+            <div class="text-xl text-white" id="image-count">1/4</div>
+            <button id="modal-next-button" class="rotate-90 text-2xl text-white"
+              >⇧</button
+            >
+          </div>
+          <button id="close-modal-button" class="mb-2 text-4xl text-white"
+            >×</button
+          >
+        </div>
+        <div
+          id="slider"
+          class="scrollbar flex snap-x snap-mandatory gap-10 overflow-x-auto overscroll-x-contain"
+        >
+          <Image
+            class="modal-image snap-start shadow-2xl"
+            src={ngUI1}
+            alt="ng-ui-1"
+          />
+          <Image
+            class="modal-image snap-start shadow-2xl"
+            src={ngUI2}
+            alt="ng-ui-2"
+          />
+          <Image
+            class="modal-image snap-start shadow-2xl"
+            src={ngUI3}
+            alt="ng-ui-3"
+          />
+          <Image
+            class="modal-image snap-start shadow-2xl"
+            src={ngUI4}
+            alt="ng-ui-4"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- Banner Section  -->
+    <div class="m-5 bg-gray">
       <div class="relative flex items-center">
         <div
           class="absolute h-full w-full bg-gradient-to-r from-black to-transparent"
@@ -109,6 +163,7 @@ import arrowIcon from "../assets/arrow.png";
       </div>
     </div>
     <div class="wrapper m-5 mx-auto">
+      <!-- Background Section -->
       <h2>Background</h2>
       <Image src={userImg} alt="user-img" class="mb-5 w-full object-cover" />
       <p class="mb-5">
@@ -122,6 +177,7 @@ import arrowIcon from "../assets/arrow.png";
         > and <span class="font-bold">Picking</span> robotic teams, each focused
         on developing unique platforms and solutions.
       </p>
+      <!-- Mobile Robotics -->
       <h2>
         <span class="bg-darkGray p-1 text-white">Mobile Robotics</span>
       </h2>
@@ -146,36 +202,36 @@ import arrowIcon from "../assets/arrow.png";
           >BG Flex</a
         >
       </p>
-      <div
-        id="modal"
-        class="fixed left-0 top-0 flex h-full w-full items-center justify-center overflow-y-hidden bg-black bg-opacity-50 backdrop-blur-sm backdrop-filter"
-      >
-        <div
-          class="slider-wrapper relative mx-auto max-w-screen-lg overflow-hidden p-4"
-        >
-          <div
-            class="slider no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain scroll-smooth"
-          >
-            <Image class="snap-start shadow-2xl" src={ngUI1} alt="ng-ui-1" />
-            <Image class="snap-start shadow-2xl" src={ngUI2} alt="ng-ui-2" />
-            <Image class="snap-start shadow-2xl" src={ngUI3} alt="ng-ui-3" />
-            <Image class="snap-start shadow-2xl" src={ngUI4} alt="ng-ui-4" />
-          </div>
-          <div>
-            <button id="close-modal-button">close</button>
-          </div>
-        </div>
-      </div>
+      <!-- HMI Images -->
       <div class="mb-2 grid gap-10">
         <Image
           class="shadow-2xl"
           src={ngUI1}
           alt="ng-ui-1"
-          id="open-modal-button"
+          class="open-modal-button"
+          data-index="0"
         />
-        <Image class="shadow-2xl" src={ngUI2} alt="ng-ui-2" />
-        <Image class="shadow-2xl" src={ngUI3} alt="ng-ui-3" />
-        <Image class="shadow-2xl" src={ngUI4} alt="ng-ui-4" />
+        <Image
+          class="shadow-2xl"
+          src={ngUI2}
+          alt="ng-ui-2"
+          class="open-modal-button"
+          data-index="1"
+        />
+        <Image
+          class="shadow-2xl"
+          src={ngUI3}
+          alt="ng-ui-3"
+          class="open-modal-button"
+          data-index="2"
+        />
+        <Image
+          class="shadow-2xl"
+          src={ngUI4}
+          alt="ng-ui-4"
+          class="open-modal-button"
+          data-index="3"
+        />
       </div>
       <p class="mb-20 text-[12px]">
         (Pictures from <a
@@ -251,6 +307,7 @@ import arrowIcon from "../assets/arrow.png";
           </p>
         </li>
       </ul>
+      <!-- Sketches -->
       <h2>Sketches</h2>
     </div>
     <div class="mb-20 bg-darkGray p-6 md:flex md:gap-4">
@@ -288,7 +345,6 @@ import arrowIcon from "../assets/arrow.png";
           <Image src={sketch11} alt={"sketch-11"} class="h-full" />
           <Image src={sketch12} alt={"sketch-12"} class="h-full" />
         </div>
-        <!-- <Image src={sketch13} alt={"sketch-13"} /> -->
       </div>
       <div class="grid-rows hidden gap-4 md:flex md:flex-col">
         <div class="grid grid-cols-2 items-center gap-4">
@@ -388,10 +444,8 @@ import arrowIcon from "../assets/arrow.png";
 </Layout>
 
 <script>
+  // See more button
   const seeMoreButton = document.getElementById("see-more-button");
-  const backToTopButton = document.getElementById("back-to-top-button");
-  const closeModalButton = document.getElementById("close-modal-button");
-  const openModalButton = document.getElementById("open-modal-button");
 
   function seeMore() {
     const hiddenSketch = document.getElementById("hidden-sketch");
@@ -412,6 +466,9 @@ import arrowIcon from "../assets/arrow.png";
     seeMoreButton.addEventListener("click", seeMore);
   }
 
+  // Back to top button
+  const backToTopButton = document.getElementById("back-to-top-button");
+
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
@@ -420,16 +477,36 @@ import arrowIcon from "../assets/arrow.png";
     backToTopButton.addEventListener("click", scrollToTop);
   }
 
-  function openModal() {
+  // Open modal
+  const imageElements = document.querySelectorAll(".open-modal-button");
+
+  function openModal(event: Event) {
     const modal = document.getElementById("modal");
-    if (modal) {
-      modal.classList.remove("hidden");
-    }
+    if (!modal) return;
+
+    const slider = modal.querySelector("#slider");
+    if (!slider) return;
+
+    // Show the modal
+    modal.classList.remove("hidden");
+
+    // Get the clicked image index
+    const target = event.target as HTMLElement;
+    const index = Number(target.dataset.index);
+
+    const image = slider.querySelector("img") as HTMLImageElement;
+    const imageWidth = image ? image.clientWidth + 40 : 0; // Adjust 40 for gap
+
+    // Scroll to the specific image in the slider
+    slider.scrollLeft = index * imageWidth;
   }
 
-  if (openModalButton) {
-    openModalButton.addEventListener("click", openModal);
-  }
+  imageElements.forEach((imageElement) =>
+    imageElement.addEventListener("click", openModal),
+  );
+
+  // Close modal
+  const closeModalButton = document.getElementById("close-modal-button");
 
   function closeModal() {
     const modal = document.getElementById("modal");
@@ -438,9 +515,77 @@ import arrowIcon from "../assets/arrow.png";
     }
   }
 
+  const modalBackground = document.getElementById("modal");
+  if (modalBackground) {
+    modalBackground.addEventListener("click", closeModal);
+  }
+
   if (closeModalButton) {
     closeModalButton.addEventListener("click", closeModal);
   }
+
+  // Modal navigation
+  const modalImages = document.querySelectorAll(".modal-image");
+  const totalImages = modalImages.length;
+  const modal = document.getElementById("modal");
+  const slider = modal ? (modal.querySelector("#slider") as HTMLElement) : null;
+  const imageCount = document.getElementById("image-count");
+  const modalNextButton = document.getElementById("modal-next-button");
+  const modalBackButton = document.getElementById("modal-back-button");
+
+  let currentIndex = 0;
+
+  // Function to calculate and set the current image index based on scroll position
+  function updateIndexOnScroll() {
+    if (!slider || modalImages.length === 0) return;
+
+    const imageWidth = modalImages[0].clientWidth + 40; // Adjust for gap
+    currentIndex = Math.round(slider.scrollLeft / imageWidth);
+    updateImageCount();
+  }
+
+  function updateImageCount() {
+    if (imageCount) {
+      imageCount.textContent = `${currentIndex + 1}/${totalImages}`;
+    }
+
+    // Conditionally style the back and next buttons
+    if (modalBackButton) {
+      modalBackButton.classList.toggle("opacity-50", currentIndex === 0);
+    }
+    if (modalNextButton) {
+      modalNextButton.classList.toggle(
+        "opacity-50",
+        currentIndex === totalImages - 1,
+      );
+    }
+  }
+
+  function goToNextImage() {
+    if (currentIndex < totalImages - 1 && slider) {
+      currentIndex++;
+      slider.scrollLeft = currentIndex * (modalImages[0].clientWidth + 40); // Adjust for gap
+      updateImageCount();
+    }
+  }
+
+  function goToPreviousImage() {
+    if (currentIndex > 0 && slider) {
+      currentIndex--;
+      slider.scrollLeft = currentIndex * (modalImages[0].clientWidth + 40); // Adjust for gap
+      updateImageCount();
+    }
+  }
+
+  // Event listeners for next and back buttons
+  modalNextButton?.addEventListener("click", goToNextImage);
+  modalBackButton?.addEventListener("click", goToPreviousImage);
+
+  // Scroll event listener to update index on manual scroll
+  slider?.addEventListener("scroll", updateIndexOnScroll);
+
+  // Initial display update
+  updateImageCount();
 </script>
 
 <style>
