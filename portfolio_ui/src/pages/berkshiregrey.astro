@@ -578,11 +578,23 @@ import arrowIcon from "../assets/arrow.png";
   }
 
   // Event listeners for next and back buttons
-  modalNextButton?.addEventListener("click", goToNextImage);
-  modalBackButton?.addEventListener("click", goToPreviousImage);
+  if (modalNextButton) {
+    modalNextButton.addEventListener("click", (event) => {
+      event.stopPropagation(); // Prevent closing the modal
+      goToNextImage();
+    });
+  }
+  if (modalBackButton) {
+    modalBackButton.addEventListener("click", (event) => {
+      event.stopPropagation(); // Prevent closing the modal
+      goToPreviousImage();
+    });
+  }
 
   // Scroll event listener to update index on manual scroll
-  slider?.addEventListener("scroll", updateIndexOnScroll);
+  if (slider) {
+    slider.addEventListener("scroll", updateIndexOnScroll);
+  }
 
   // Initial display update
   updateImageCount();
