@@ -1,0 +1,41 @@
+---
+// Button.astro
+import arrowIcon from "../assets/arrow.png";
+
+interface Props {
+  type: "button";
+  icon?: "arrow";
+  text: string;
+  className?: string;
+  iconClassName?: string;
+}
+
+const {
+  type = "button",
+  text,
+  icon,
+  className = "",
+  iconClassName = "",
+} = Astro.props;
+
+// Map the icon types to their corresponding image sources using the `src` property
+const iconMap: Record<string, string> = {
+  arrow: arrowIcon.src,
+};
+---
+
+<button
+  type={type}
+  class={`flex min-w-12 items-center gap-2 rounded-sm border-2 border-black px-4 py-2 shadow-[3px_3px_0px_1px_black] transition-colors duration-300 ease-in-out hover:bg-darkGray hover:text-white group ${className}`}
+>
+  {
+    icon && iconMap[icon] && (
+      <img
+        class={`w-4 transition duration-300 ease-in-out group-hover:invert group-hover:filter ${iconClassName}`}
+        src={iconMap[icon]}
+        alt={`${icon} icon`}
+      />
+    )
+  }
+  {text}
+</button>

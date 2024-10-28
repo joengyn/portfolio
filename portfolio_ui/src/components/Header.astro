@@ -1,14 +1,22 @@
 ---
 import resume from "../assets/resume.pdf";
+import Button from "./Button.astro";
 ---
 
 <header>
-  <div class="m-4 flex flex-row justify-between tracking-wider">
+  <div class="m-4 flex flex-row items-center justify-between tracking-wider">
     <a href="/">JOE.NGYN</a>
-    <div class="flex justify-end gap-3">
+    <div class="flex items-center justify-end gap-3">
       <a href="/">work</a>
       <a href="/about">about</a>
       <a target="_blank" href={resume}>resume</a>
+      <a href="mailto:joe.ngyn7@gmail.com" class="hidden md:block">
+        <Button
+          text="Contact"
+          type="button"
+          className="text-[12px] font-bold uppercase tracking-widest"
+        />
+      </a>
     </div>
   </div>
   <div class="mx-4 border-t-2 border-black"></div>

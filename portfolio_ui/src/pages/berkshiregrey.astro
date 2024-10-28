@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 
 import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
 
 import bgLogo from "../assets/berkshiregrey/bg-logo.svg";
 import bgCard2 from "../assets/berkshiregrey/bg-card-2.png";
@@ -96,7 +97,7 @@ import arrowIcon from "../assets/arrow.png";
       </div>
     </div>
     <!-- Banner Section  -->
-    <div class="m-5 bg-gray">
+    <div class="banner m-5 bg-gray">
       <div class="relative flex items-center">
         <div
           class="absolute h-full w-full bg-gradient-to-r from-black to-transparent"
@@ -113,10 +114,10 @@ import arrowIcon from "../assets/arrow.png";
           class="max-h-[500px] w-full object-cover"
         />
       </div>
-      <div class="grid gap-4 p-4 pb-6 pt-6 md:flex md:justify-between md:px-8">
+      <div class="grid gap-4 p-4 py-6 md:flex md:justify-between md:px-8">
         <Image src={bgLogo} alt="bg-logo" class="mb-2 h-8 w-auto" />
         <div class="flex flex-col gap-2 md:max-w-[250px]">
-          <h4 class="">Overview</h4>
+          <h4>Overview</h4>
           <p>
             Designing and developing Human Machine Interfaces (HMIs) for
             AI-enabled enterprise robotics, streamlining complex robotic systems
@@ -419,7 +420,14 @@ import arrowIcon from "../assets/arrow.png";
         development workflows.
       </p>
       <div class="mb-10 flex justify-between">
-        <button
+        <Button
+          text="back to top"
+          type="button"
+          icon="arrow"
+          className="back-to-top-button"
+          iconClassName="-rotate-90"
+        />
+        <!-- <button
           id="back-to-top-button"
           class="mb-4 flex min-w-12 items-center gap-2 rounded-sm border-2 border-black pb-2 pl-4 pr-4 pt-2 shadow-[3px_3px_0px_1px_black]"
           ><Image
@@ -427,17 +435,10 @@ import arrowIcon from "../assets/arrow.png";
             src={arrowIcon}
             alt="up arrow icon"
           />back to top</button
-        >
-        <a href="/toast"
-          ><button
-            class="flex min-w-12 items-center gap-2 rounded-sm border-2 border-black pb-2 pl-4 pr-4 pt-2 shadow-[3px_3px_0px_1px_black]"
-            >next case study<Image
-              class="w-4"
-              src={arrowIcon}
-              alt="up arrow icon"
-            /></button
-          ></a
-        >
+        > -->
+        <a href="/toast">
+          <Button text="next case study" type="button" icon="arrow" />
+        </a>
       </div>
     </div>
   </main>
@@ -467,7 +468,7 @@ import arrowIcon from "../assets/arrow.png";
   }
 
   // Back to top button
-  const backToTopButton = document.getElementById("back-to-top-button");
+  const backToTopButton = document.querySelector(".back-to-top-button");
 
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -602,11 +603,11 @@ import arrowIcon from "../assets/arrow.png";
 
 <style>
   .banner p {
-    font-size: 0.875rem;
+    font-size: 16px;
   }
 
   .banner h4 {
-    font-size: 0.875rem;
+    font-size: 16px;
     font-weight: bold;
   }
 </style>

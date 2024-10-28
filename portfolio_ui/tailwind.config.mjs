@@ -28,6 +28,7 @@ export default {
         overflowHidden: "overflowHidden 5s forwards",
       },
       colors: {
+        lightGray: "#f3f3f3",
         gray: "#d3d3d3",
         darkGray: "#313131",
       },

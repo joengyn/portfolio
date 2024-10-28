@@ -1,6 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import { getImage } from "astro:assets";
+
+import Button from "./Button.astro";
+
 import circle from "../assets/circle.png";
 import whiteCircle from "../assets/circle-white.png";
 import githubIcon from "../assets/github.png";
@@ -28,13 +31,17 @@ const optimizedBackground = await getImage({
     />
 
     <div class="flex flex-col items-center gap-6">
-      <a href="mailto:joe.ngyn7@gmail.com"
-        ><button
-          class="min-w-12 rounded-sm border-2 border-black bg-darkGray pb-2 pl-4 pr-4 pt-2 uppercase tracking-widest text-white shadow-[3px_3px_0px_1px_black] lg:w-32"
-          >Contact</button
-        ></a
-      >
-      <div class="flex justify-end gap-3 opacity-80">
+      <a href="mailto:joe.ngyn7@gmail.com">
+        <Button
+          text="Contact"
+          type="button"
+          className="hover:bg-lightGray bg-darkGray font-bold uppercase tracking-widest hover:text-darkGray"
+        />
+      </a>
+      <div class="flex
+          justify-end
+          gap-3
+          opacity-80">
         <a target="_blank" href="https://www.linkedin.com/in/joengyn/">
           <Image
             class="h-10 w-10 brightness-100 invert filter"
