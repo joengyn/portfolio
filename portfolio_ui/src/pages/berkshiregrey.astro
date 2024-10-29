@@ -1,9 +1,12 @@
 ---
 import { Image } from "astro:assets";
 
+// Components
 import Layout from "../layouts/Layout.astro";
+import Banner from "../components/Banner.astro";
 import Button from "../components/Button.astro";
 
+// Banner Assets
 import bgLogo from "../assets/berkshiregrey/bg-logo.svg";
 import bgCard2 from "../assets/berkshiregrey/bg-card-2.png";
 
@@ -13,6 +16,7 @@ import ngUI2 from "../assets/berkshiregrey/bg-ng-ui-2.jpeg";
 import ngUI3 from "../assets/berkshiregrey/bg-ng-ui-3.jpeg";
 import ngUI4 from "../assets/berkshiregrey/bg-ng-ui-4.jpeg";
 import hmiImg from "../assets/berkshiregrey/bg-hmi-book.png";
+
 // Sketches
 import sketch1 from "../assets/berkshiregrey/sketch-1.jpeg";
 import sketch2 from "../assets/berkshiregrey/sketch-2.jpeg";
@@ -32,6 +36,7 @@ import sketch16 from "../assets/berkshiregrey/sketch-16.jpeg";
 import sketch17 from "../assets/berkshiregrey/sketch-17.jpeg";
 import sketchPick1 from "../assets/berkshiregrey/sketch-pick-1.jpeg";
 import sketchPick2 from "../assets/berkshiregrey/sketch-pick-2.jpeg";
+
 // Assets
 import userImg from "../assets/berkshiregrey/bg-user-img.png";
 import flexbotImg from "../assets/berkshiregrey/bg-flexbot.jpg";
@@ -41,7 +46,6 @@ import xdIcon from "../assets/berkshiregrey/xd.png";
 import figmaIcon from "../assets/berkshiregrey/figma.png";
 import reactIcon from "../assets/berkshiregrey/react.png";
 import pythonIcon from "../assets/berkshiregrey/python.png";
-import arrowIcon from "../assets/arrow.png";
 ---
 
 <Layout title="berkshire grey case study">
@@ -96,73 +100,20 @@ import arrowIcon from "../assets/arrow.png";
         </div>
       </div>
     </div>
-    <!-- Banner Section  -->
-    <div class="banner m-5 bg-gray">
-      <div class="relative flex items-center">
-        <div
-          class="absolute h-full w-full bg-gradient-to-r from-black to-transparent"
-        >
-        </div>
-        <span
-          class="absolute left-8 text-[40px] text-white md:text-[60px] lg:text-[80px]"
-        >
-          BERKSHIRE <br /> GREY
-        </span>
-        <Image
-          src={bgCard2}
-          alt="bg-card-2"
-          class="max-h-[500px] w-full object-cover"
-        />
-      </div>
-      <div class="grid gap-4 p-4 py-6 md:flex md:justify-between md:px-8">
-        <Image src={bgLogo} alt="bg-logo" class="mb-2 h-8 w-auto" />
-        <div class="flex flex-col gap-2 md:max-w-[250px]">
-          <h4>Overview</h4>
-          <p>
-            Designing and developing Human Machine Interfaces (HMIs) for
-            AI-enabled enterprise robotics, streamlining complex robotic systems
-            and making them more intuitive and accessible for operators.
-          </p>
-        </div>
-        <div class="flex flex-col gap-2 md:max-w-[300px]">
-          <h4>Role</h4>
-          <ul class="ml-8 list-outside list-disc">
-            <li>
-              <p>Design Lead (Mobile robotics team)</p>
-            </li>
-            <li>
-              <p>
-                Design Technologist / Full Stack Developer (Picking robotics
-                team)
-              </p>
-            </li>
-          </ul>
-        </div>
-        <div class="flex flex-col gap-2">
-          <h4>Tools & Technology</h4>
-          <ul
-            class="ml-8 grid list-outside list-disc grid-cols-2 md:grid-cols-1"
-          >
-            <li><p>Adobe XD</p></li>
-            <li><p>Figma</p></li>
-            <li>
-              <p>React (Frontend)</p>
-            </li>
-            <li>
-              <p>Python (Backend)</p>
-            </li>
-          </ul>
-        </div>
-        <div class="flex flex-col gap-2">
-          <h4>Year</h4>
-          <ul class="ml-8 list-outside list-disc">
-            <li>
-              <p>October 2021 - January 2023</p>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <Banner
+      title="Berkshire Grey"
+      backgroundImg={bgCard2}
+      backgroundImgAlt="Image of mobile robots carrying items"
+      logo={bgLogo}
+      logoAlt="../assets/berkshiregrey/bg-logo.svg"
+      overview="Designing and developing Human Machine Interfaces (HMIs) for AI-enabled enterprise robotics, streamlining complex robotic systems and making them more intuitive and accessible for operators."
+      roles={[
+        "Design Lead (Mobile robotics team)",
+        "Design Technologist / Full Stack Developer (Picking robotics team)",
+      ]}
+      tools={["Adobe XD", "Figma", "React (Frontend)", "Python (Backend)"]}
+      year="October 2021 - January 2023"
+    />
     <div class="wrapper m-5 mx-auto">
       <!-- Background Section -->
       <h2>Background</h2>
@@ -601,13 +552,4 @@ import arrowIcon from "../assets/arrow.png";
   updateImageCount();
 </script>
 
-<style>
-  .banner p {
-    font-size: 16px;
-  }
-
-  .banner h4 {
-    font-size: 16px;
-    font-weight: bold;
-  }
-</style>
+<style></style>
