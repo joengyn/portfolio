@@ -260,7 +260,7 @@ import pythonIcon from "../assets/berkshiregrey/python.png";
         </li>
       </ul>
       <!-- Sketches -->
-      <h2>Sketches</h2>
+      <!-- <h2>Sketches</h2>
     </div>
     <div class="mb-20 bg-darkGray p-6 md:flex md:gap-4">
       <div class="relative flex flex-col gap-4">
@@ -306,8 +306,7 @@ import pythonIcon from "../assets/berkshiregrey/python.png";
         <Image src={sketch16} alt={"sketch-16"} />
         <Image src={sketch17} alt={"sketch-17"} />
       </div>
-    </div>
-    <div class="wrapper m-5 mx-auto">
+    </div> -->
       <h2>
         <span class="bg-darkGray p-1 text-white">Picking Robotics</span>
       </h2>
@@ -349,13 +348,13 @@ import pythonIcon from "../assets/berkshiregrey/python.png";
         updates across various HMIs for BG's diverse customer base, each with
         unique requirements.
       </p>
-      <h2>Sketches</h2>
+      <!-- <h2>Sketches</h2>
       <div class="mb-10 bg-darkGray p-6">
         <div class="grid-rows relative grid gap-4">
           <Image src={sketchPick1} alt={"sketch-pick"} />
           <Image src={sketchPick2} alt={"sketch-pick"} />
         </div>
-      </div>
+      </div> -->
       <h2>Conclusion</h2>
       <p class="mb-10">
         I gained significant experience during my time at Berkshire Grey. As the
@@ -393,163 +392,165 @@ import pythonIcon from "../assets/berkshiregrey/python.png";
       </div>
     </div>
   </main>
-</Layout>
 
-<script>
-  // See more button
-  const seeMoreButton = document.getElementById("see-more-button");
+  <script>
+    // See more button
+    const seeMoreButton = document.getElementById("see-more-button");
 
-  function seeMore() {
-    const hiddenSketch = document.getElementById("hidden-sketch");
-    const buttonContainer = document.getElementById(
-      "see-more-button-container",
+    function seeMore() {
+      const hiddenSketch = document.getElementById("hidden-sketch");
+      const buttonContainer = document.getElementById(
+        "see-more-button-container",
+      );
+
+      if (!hiddenSketch || !buttonContainer) return;
+
+      if (hiddenSketch.classList.contains("hidden")) {
+        hiddenSketch.classList.remove("hidden");
+        hiddenSketch.classList.add("grid");
+        buttonContainer.classList.add("hidden");
+      }
+    }
+
+    if (seeMoreButton) {
+      seeMoreButton.addEventListener("click", seeMore);
+    }
+
+    // Back to top button
+    const backToTopButton = document.querySelector(".back-to-top-button");
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    if (backToTopButton) {
+      backToTopButton.addEventListener("click", scrollToTop);
+    }
+
+    // Open modal
+    const imageElements = document.querySelectorAll(".open-modal-button");
+
+    function openModal(event: Event) {
+      const modal = document.getElementById("modal");
+      if (!modal) return;
+
+      const slider = modal.querySelector("#slider");
+      if (!slider) return;
+
+      // Show the modal
+      modal.classList.remove("hidden");
+
+      // Get the clicked image index
+      const target = event.target as HTMLElement;
+      const index = Number(target.dataset.index);
+
+      const image = slider.querySelector("img") as HTMLImageElement;
+      const imageWidth = image ? image.clientWidth + 40 : 0; // Adjust 40 for gap
+
+      // Scroll to the specific image in the slider
+      slider.scrollLeft = index * imageWidth;
+    }
+
+    imageElements.forEach((imageElement) =>
+      imageElement.addEventListener("click", openModal),
     );
 
-    if (!hiddenSketch || !buttonContainer) return;
+    // Close modal
+    const closeModalButton = document.getElementById("close-modal-button");
 
-    if (hiddenSketch.classList.contains("hidden")) {
-      hiddenSketch.classList.remove("hidden");
-      hiddenSketch.classList.add("grid");
-      buttonContainer.classList.add("hidden");
+    function closeModal() {
+      const modal = document.getElementById("modal");
+      if (modal) {
+        modal.classList.add("hidden");
+      }
     }
-  }
 
-  if (seeMoreButton) {
-    seeMoreButton.addEventListener("click", seeMore);
-  }
+    const modalBackground = document.getElementById("modal");
+    if (modalBackground) {
+      modalBackground.addEventListener("click", closeModal);
+    }
 
-  // Back to top button
-  const backToTopButton = document.querySelector(".back-to-top-button");
+    if (closeModalButton) {
+      closeModalButton.addEventListener("click", closeModal);
+    }
 
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-
-  if (backToTopButton) {
-    backToTopButton.addEventListener("click", scrollToTop);
-  }
-
-  // Open modal
-  const imageElements = document.querySelectorAll(".open-modal-button");
-
-  function openModal(event: Event) {
+    // Modal navigation
+    const modalImages = document.querySelectorAll(".modal-image");
+    const totalImages = modalImages.length;
     const modal = document.getElementById("modal");
-    if (!modal) return;
+    const slider = modal
+      ? (modal.querySelector("#slider") as HTMLElement)
+      : null;
+    const imageCount = document.getElementById("image-count");
+    const modalNextButton = document.getElementById("modal-next-button");
+    const modalBackButton = document.getElementById("modal-back-button");
 
-    const slider = modal.querySelector("#slider");
-    if (!slider) return;
+    let currentIndex = 0;
 
-    // Show the modal
-    modal.classList.remove("hidden");
+    // Function to calculate and set the current image index based on scroll position
+    function updateIndexOnScroll() {
+      if (!slider || modalImages.length === 0) return;
 
-    // Get the clicked image index
-    const target = event.target as HTMLElement;
-    const index = Number(target.dataset.index);
-
-    const image = slider.querySelector("img") as HTMLImageElement;
-    const imageWidth = image ? image.clientWidth + 40 : 0; // Adjust 40 for gap
-
-    // Scroll to the specific image in the slider
-    slider.scrollLeft = index * imageWidth;
-  }
-
-  imageElements.forEach((imageElement) =>
-    imageElement.addEventListener("click", openModal),
-  );
-
-  // Close modal
-  const closeModalButton = document.getElementById("close-modal-button");
-
-  function closeModal() {
-    const modal = document.getElementById("modal");
-    if (modal) {
-      modal.classList.add("hidden");
-    }
-  }
-
-  const modalBackground = document.getElementById("modal");
-  if (modalBackground) {
-    modalBackground.addEventListener("click", closeModal);
-  }
-
-  if (closeModalButton) {
-    closeModalButton.addEventListener("click", closeModal);
-  }
-
-  // Modal navigation
-  const modalImages = document.querySelectorAll(".modal-image");
-  const totalImages = modalImages.length;
-  const modal = document.getElementById("modal");
-  const slider = modal ? (modal.querySelector("#slider") as HTMLElement) : null;
-  const imageCount = document.getElementById("image-count");
-  const modalNextButton = document.getElementById("modal-next-button");
-  const modalBackButton = document.getElementById("modal-back-button");
-
-  let currentIndex = 0;
-
-  // Function to calculate and set the current image index based on scroll position
-  function updateIndexOnScroll() {
-    if (!slider || modalImages.length === 0) return;
-
-    const imageWidth = modalImages[0].clientWidth + 40; // Adjust for gap
-    currentIndex = Math.round(slider.scrollLeft / imageWidth);
-    updateImageCount();
-  }
-
-  function updateImageCount() {
-    if (imageCount) {
-      imageCount.textContent = `${currentIndex + 1}/${totalImages}`;
+      const imageWidth = modalImages[0].clientWidth + 40; // Adjust for gap
+      currentIndex = Math.round(slider.scrollLeft / imageWidth);
+      updateImageCount();
     }
 
-    // Conditionally style the back and next buttons
-    if (modalBackButton) {
-      modalBackButton.classList.toggle("opacity-50", currentIndex === 0);
+    function updateImageCount() {
+      if (imageCount) {
+        imageCount.textContent = `${currentIndex + 1}/${totalImages}`;
+      }
+
+      // Conditionally style the back and next buttons
+      if (modalBackButton) {
+        modalBackButton.classList.toggle("opacity-50", currentIndex === 0);
+      }
+      if (modalNextButton) {
+        modalNextButton.classList.toggle(
+          "opacity-50",
+          currentIndex === totalImages - 1,
+        );
+      }
     }
+
+    function goToNextImage() {
+      if (currentIndex < totalImages - 1 && slider) {
+        currentIndex++;
+        slider.scrollLeft = currentIndex * (modalImages[0].clientWidth + 40); // Adjust for gap
+        updateImageCount();
+      }
+    }
+
+    function goToPreviousImage() {
+      if (currentIndex > 0 && slider) {
+        currentIndex--;
+        slider.scrollLeft = currentIndex * (modalImages[0].clientWidth + 40); // Adjust for gap
+        updateImageCount();
+      }
+    }
+
+    // Event listeners for next and back buttons
     if (modalNextButton) {
-      modalNextButton.classList.toggle(
-        "opacity-50",
-        currentIndex === totalImages - 1,
-      );
+      modalNextButton.addEventListener("click", (event) => {
+        event.stopPropagation(); // Prevent closing the modal
+        goToNextImage();
+      });
     }
-  }
-
-  function goToNextImage() {
-    if (currentIndex < totalImages - 1 && slider) {
-      currentIndex++;
-      slider.scrollLeft = currentIndex * (modalImages[0].clientWidth + 40); // Adjust for gap
-      updateImageCount();
+    if (modalBackButton) {
+      modalBackButton.addEventListener("click", (event) => {
+        event.stopPropagation(); // Prevent closing the modal
+        goToPreviousImage();
+      });
     }
-  }
 
-  function goToPreviousImage() {
-    if (currentIndex > 0 && slider) {
-      currentIndex--;
-      slider.scrollLeft = currentIndex * (modalImages[0].clientWidth + 40); // Adjust for gap
-      updateImageCount();
+    // Scroll event listener to update index on manual scroll
+    if (slider) {
+      slider.addEventListener("scroll", updateIndexOnScroll);
     }
-  }
 
-  // Event listeners for next and back buttons
-  if (modalNextButton) {
-    modalNextButton.addEventListener("click", (event) => {
-      event.stopPropagation(); // Prevent closing the modal
-      goToNextImage();
-    });
-  }
-  if (modalBackButton) {
-    modalBackButton.addEventListener("click", (event) => {
-      event.stopPropagation(); // Prevent closing the modal
-      goToPreviousImage();
-    });
-  }
+    // Initial display update
+    updateImageCount();
+  </script>
 
-  // Scroll event listener to update index on manual scroll
-  if (slider) {
-    slider.addEventListener("scroll", updateIndexOnScroll);
-  }
-
-  // Initial display update
-  updateImageCount();
-</script>
-
-<style></style>
+  <style></style>
+</Layout>

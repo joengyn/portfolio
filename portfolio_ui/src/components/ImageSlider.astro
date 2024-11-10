@@ -1,0 +1,125 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  images: ImageMetadata[];
+}
+
+const { images } = Astro.props;
+---
+
+<div
+  id="modal"
+  class="fixed left-0 top-0 flex hidden h-full w-full items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm backdrop-filter"
+>
+  <div
+    class="slider-wrapper relative mx-auto max-w-screen-xl overflow-hidden p-4"
+  >
+    <div class="flex flex-row justify-between">
+      <div class="flex flex-row items-center gap-4">
+        <button id="modal-back-button" class="-rotate-90 text-2xl text-white"
+          >⇧</button
+        >
+        <div class="text-xl text-white" id="image-count">1/4</div>
+        <button id="modal-next-button" class="rotate-90 text-2xl text-white"
+          >⇧</button
+        >
+      </div>
+      <button id="close-modal-button" class="mb-2 text-4xl text-white">×</button
+      >
+    </div>
+    <div
+      id="slider"
+      class="scrollbar flex snap-x snap-mandatory gap-10 overflow-x-auto overscroll-x-contain"
+    >
+      {
+        images.map((image, index) => (
+          <Image
+            key={image.src}
+            class="modal-image snap-start shadow-2xl"
+            src={image.src}
+            alt={`Image ${index + 1}`}
+          />
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<script>
+  // Modal navigation
+  const modalImages = document.querySelectorAll(".modal-image");
+  const totalImages = modalImages.length;
+  const modal = document.getElementById("modal");
+  const slider = modal ? (modal.querySelector("#slider") as HTMLElement) : null;
+  const imageCount = document.getElementById("image-count");
+  const modalNextButton = document.getElementById("modal-next-button");
+  const modalBackButton = document.getElementById("modal-back-button");
+
+  let currentIndex = 0;
+
+  // Function to calculate and set the current image index based on scroll position
+  function updateIndexOnScroll() {
+    if (!slider || modalImages.length === 0) return;
+
+    const imageWidth = modalImages[0].clientWidth + 40; // Adjust for gap
+    currentIndex = Math.round(slider.scrollLeft / imageWidth);
+    updateImageCount();
+  }
+
+  function updateImageCount() {
+    if (imageCount) {
+      imageCount.textContent = `${currentIndex + 1}/${totalImages}`;
+    }
+
+    // Conditionally style the back and next buttons
+    if (modalBackButton) {
+      modalBackButton.classList.toggle("opacity-50", currentIndex === 0);
+    }
+    if (modalNextButton) {
+      modalNextButton.classList.toggle(
+        "opacity-50",
+        currentIndex === totalImages - 1,
+      );
+    }
+  }
+
+  function goToNextImage() {
+    if (currentIndex < totalImages - 1 && slider) {
+      currentIndex++;
+      slider.scrollLeft = currentIndex * (modalImages[0].clientWidth + 40); // Adjust for gap
+      updateImageCount();
+    }
+  }
+
+  function goToPreviousImage() {
+    if (currentIndex > 0 && slider) {
+      currentIndex--;
+      slider.scrollLeft = currentIndex * (modalImages[0].clientWidth + 40); // Adjust for gap
+      updateImageCount();
+    }
+  }
+
+  // Event listeners for next and back buttons
+  if (modalNextButton) {
+    modalNextButton.addEventListener("click", (event) => {
+      event.stopPropagation(); // Prevent closing the modal
+      goToNextImage();
+    });
+  }
+  if (modalBackButton) {
+    modalBackButton.addEventListener("click", (event) => {
+      event.stopPropagation(); // Prevent closing the modal
+      goToPreviousImage();
+    });
+  }
+
+  // Scroll event listener to update index on manual scroll
+  if (slider) {
+    slider.addEventListener("scroll", updateIndexOnScroll);
+  }
+
+  // Initial display update
+  updateImageCount();
+</script>
