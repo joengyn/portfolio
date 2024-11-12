@@ -36,9 +36,8 @@ const { images } = Astro.props;
       {
         images.map((image, index) => (
           <Image
-            key={image.src}
             class="modal-image snap-start shadow-2xl"
-            src={image.src}
+            src={image}
             alt={`Image ${index + 1}`}
           />
         ))
@@ -68,6 +67,7 @@ const { images } = Astro.props;
     updateImageCount();
   }
 
+  // Function to update the image count
   function updateImageCount() {
     if (imageCount) {
       imageCount.textContent = `${currentIndex + 1}/${totalImages}`;
@@ -85,6 +85,7 @@ const { images } = Astro.props;
     }
   }
 
+  // Function to navigate to the next image
   function goToNextImage() {
     if (currentIndex < totalImages - 1 && slider) {
       currentIndex++;
@@ -93,6 +94,7 @@ const { images } = Astro.props;
     }
   }
 
+  // Function to navigate to the previous image
   function goToPreviousImage() {
     if (currentIndex > 0 && slider) {
       currentIndex--;
@@ -115,6 +117,20 @@ const { images } = Astro.props;
     });
   }
 
+  // Add event listener for arrow keys and escape key
+  document.addEventListener("keydown", (event) => {
+    if (modal?.classList.contains("hidden")) return; // Only listen if modal is open
+    if (event.key === "ArrowRight") {
+      goToNextImage();
+    }
+    if (event.key === "ArrowLeft") {
+      goToPreviousImage();
+    }
+    if (event.key === "Escape") {
+      closeModal();
+    }
+  });
+
   // Scroll event listener to update index on manual scroll
   if (slider) {
     slider.addEventListener("scroll", updateIndexOnScroll);
@@ -122,4 +138,51 @@ const { images } = Astro.props;
 
   // Initial display update
   updateImageCount();
+
+  // Open modal
+  const imageElements = document.querySelectorAll(".open-modal-button");
+
+  function openModal(event: Event) {
+    const modal = document.getElementById("modal");
+    if (!modal) return;
+
+    const slider = modal.querySelector("#slider");
+    if (!slider) return;
+
+    // Show the modal
+    modal.classList.remove("hidden");
+
+    // Get the clicked image index
+    const target = event.target as HTMLElement;
+    const index = Number(target.dataset.index);
+
+    const image = slider.querySelector("img") as HTMLImageElement;
+    const imageWidth = image ? image.clientWidth + 40 : 0; // Adjust 40 for gap
+
+    // Scroll to the specific image in the slider
+    slider.scrollLeft = index * imageWidth;
+  }
+
+  imageElements.forEach((imageElement) =>
+    imageElement.addEventListener("click", openModal),
+  );
+
+  // Close modal
+  const closeModalButton = document.getElementById("close-modal-button");
+
+  function closeModal() {
+    const modal = document.getElementById("modal");
+    if (modal) {
+      modal.classList.add("hidden");
+    }
+  }
+
+  const modalBackground = document.getElementById("modal");
+  if (modalBackground) {
+    modalBackground.addEventListener("click", closeModal);
+  }
+
+  if (closeModalButton) {
+    closeModalButton.addEventListener("click", closeModal);
+  }
 </script>

@@ -1,46 +1,29 @@
 ---
+// Imports
 import { Image } from "astro:assets";
 
 // Components
 import Layout from "../layouts/Layout.astro";
 import Banner from "../components/Banner.astro";
 import Button from "../components/Button.astro";
+import ImageSlider from "../components/ImageSlider.astro";
 
 // Banner Assets
 import bgLogo from "../assets/berkshiregrey/bg-logo.svg";
 import bgCard2 from "../assets/berkshiregrey/bg-card-2.png";
 
-// HMI Images
+// Images
 import ngUI1 from "../assets/berkshiregrey/bg-ng-ui-1.jpeg";
 import ngUI2 from "../assets/berkshiregrey/bg-ng-ui-2.jpeg";
 import ngUI3 from "../assets/berkshiregrey/bg-ng-ui-3.jpeg";
 import ngUI4 from "../assets/berkshiregrey/bg-ng-ui-4.jpeg";
+const images = [ngUI1, ngUI2, ngUI3, ngUI4];
 import hmiImg from "../assets/berkshiregrey/bg-hmi-book.png";
-
-// Sketches
-import sketch1 from "../assets/berkshiregrey/sketch-1.jpeg";
-import sketch2 from "../assets/berkshiregrey/sketch-2.jpeg";
-import sketch3 from "../assets/berkshiregrey/sketch-3.jpeg";
-import sketch4 from "../assets/berkshiregrey/sketch-4.jpeg";
-import sketch5 from "../assets/berkshiregrey/sketch-5.jpeg";
-import sketch6 from "../assets/berkshiregrey/sketch-6.jpeg";
-import sketch7 from "../assets/berkshiregrey/sketch-7.jpeg";
-import sketch8 from "../assets/berkshiregrey/sketch-8.jpeg";
-import sketch9 from "../assets/berkshiregrey/sketch-9.jpeg";
-import sketch10 from "../assets/berkshiregrey/sketch-10.jpeg";
-import sketch11 from "../assets/berkshiregrey/sketch-11.jpeg";
-import sketch12 from "../assets/berkshiregrey/sketch-12.jpeg";
-import sketch14 from "../assets/berkshiregrey/sketch-14.jpeg";
-import sketch15 from "../assets/berkshiregrey/sketch-15.jpeg";
-import sketch16 from "../assets/berkshiregrey/sketch-16.jpeg";
-import sketch17 from "../assets/berkshiregrey/sketch-17.jpeg";
-import sketchPick1 from "../assets/berkshiregrey/sketch-pick-1.jpeg";
-import sketchPick2 from "../assets/berkshiregrey/sketch-pick-2.jpeg";
-
-// Assets
 import userImg from "../assets/berkshiregrey/bg-user-img.png";
 import flexbotImg from "../assets/berkshiregrey/bg-flexbot.jpg";
 import pickArmImg from "../assets/berkshiregrey/bg-pick.png";
+
+// Icons
 import vennDiagram from "../assets/berkshiregrey/venn-diagram.svg";
 import xdIcon from "../assets/berkshiregrey/xd.png";
 import figmaIcon from "../assets/berkshiregrey/figma.png";
@@ -49,57 +32,10 @@ import pythonIcon from "../assets/berkshiregrey/python.png";
 ---
 
 <Layout title="berkshire grey case study">
-  <main>
-    <!-- Image Modal -->
-    <div
-      id="modal"
-      class="fixed left-0 top-0 flex hidden h-full w-full items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm backdrop-filter"
-    >
-      <div
-        class="slider-wrapper relative mx-auto max-w-screen-xl overflow-hidden p-4"
-      >
-        <div class="flex flex-row justify-between">
-          <div class="flex flex-row items-center gap-4">
-            <button
-              id="modal-back-button"
-              class="-rotate-90 text-2xl text-white">⇧</button
-            >
-            <div class="text-xl text-white" id="image-count">1/4</div>
-            <button id="modal-next-button" class="rotate-90 text-2xl text-white"
-              >⇧</button
-            >
-          </div>
-          <button id="close-modal-button" class="mb-2 text-4xl text-white"
-            >×</button
-          >
-        </div>
-        <div
-          id="slider"
-          class="scrollbar flex snap-x snap-mandatory gap-10 overflow-x-auto overscroll-x-contain"
-        >
-          <Image
-            class="modal-image snap-start shadow-2xl"
-            src={ngUI1}
-            alt="ng-ui-1"
-          />
-          <Image
-            class="modal-image snap-start shadow-2xl"
-            src={ngUI2}
-            alt="ng-ui-2"
-          />
-          <Image
-            class="modal-image snap-start shadow-2xl"
-            src={ngUI3}
-            alt="ng-ui-3"
-          />
-          <Image
-            class="modal-image snap-start shadow-2xl"
-            src={ngUI4}
-            alt="ng-ui-4"
-          />
-        </div>
-      </div>
-    </div>
+  <main class="mt-[100px]">
+    <!-- Image Slider -->
+    <ImageSlider images={images} />
+    <!-- Banner -->
     <Banner
       title="Berkshire Grey"
       backgroundImg={bgCard2}
@@ -118,7 +54,7 @@ import pythonIcon from "../assets/berkshiregrey/python.png";
       <!-- Background Section -->
       <h2>Background</h2>
       <Image src={userImg} alt="user-img" class="mb-5 w-full object-cover" />
-      <p class="mb-5">
+      <p>
         With rising customer expectations for fast shipping and free returns,
         the pace of e-commerce continues to accelerate. Robotic automation in
         warehouses has become crucial to meet these growing demands.
@@ -144,7 +80,7 @@ import pythonIcon from "../assets/berkshiregrey/python.png";
         order picking and inventory management.
       </p>
       <h2>Designing the Next Gen HMI.</h2>
-      <p class="mb-10">
+      <p>
         As part of the Mobile Robotics team, I led the UX and UI design efforts
         to create an intuitive, efficient user experience for operating and
         monitoring large fleets of AI-enabled robots on Berkshire Grey’s Next
@@ -157,31 +93,27 @@ import pythonIcon from "../assets/berkshiregrey/python.png";
       <!-- HMI Images -->
       <div class="mb-2 grid gap-10">
         <Image
-          class="shadow-2xl"
+          class="open-modal-button cursor-pointer shadow-2xl"
           src={ngUI1}
           alt="ng-ui-1"
-          class="open-modal-button"
           data-index="0"
         />
         <Image
-          class="shadow-2xl"
+          class="open-modal-button cursor-pointer shadow-2xl"
           src={ngUI2}
           alt="ng-ui-2"
-          class="open-modal-button"
           data-index="1"
         />
         <Image
-          class="shadow-2xl"
+          class="open-modal-button cursor-pointer shadow-2xl"
           src={ngUI3}
           alt="ng-ui-3"
-          class="open-modal-button"
           data-index="2"
         />
         <Image
-          class="shadow-2xl"
+          class="open-modal-button cursor-pointer shadow-2xl"
           src={ngUI4}
           alt="ng-ui-4"
-          class="open-modal-button"
           data-index="3"
         />
       </div>
@@ -193,14 +125,14 @@ import pythonIcon from "../assets/berkshiregrey/python.png";
           >UX Design Awards</a
         >)
       </p>
-      <p class="mb-10">
+      <p>
         My involvement with the Next Generation HMI included everything from
         <span class="font-bold">conducting user research</span> and <span
           class="font-bold">drafting product requirements</span
         > to <span class="font-bold">creating interactive mockups</span> and even
         <span class="font-bold">pushing code</span> changes.
       </p>
-      <p class="mb-10">
+      <p>
         Additionally I created and maintained the new <span class="font-bold"
           >design system</span
         > as well as all feature <span class="font-bold"
@@ -212,12 +144,13 @@ import pythonIcon from "../assets/berkshiregrey/python.png";
         for key workflows, including a maintenance page and map editor, while
         continuously improving the existing HMI through iterative updates.
       </p>
+      <!-- HMI Book -->
       <Image
         src={hmiImg}
         alt="hmi-book"
         class="mx-auto mb-10 w-full max-w-[400px] object-cover"
       />
-      <p class="mb-10">
+      <p>
         Due to the complex nature of the system, best practices from <a
           target="_blank"
           class="font-medium underline"
@@ -225,7 +158,7 @@ import pythonIcon from "../assets/berkshiregrey/python.png";
           >The High Performance HMI Handbook</a
         > were followed.
       </p>
-      <p class="mb-10">
+      <p>
         This included designing for the various levels of interaction required
         by users.
       </p>
@@ -259,54 +192,7 @@ import pythonIcon from "../assets/berkshiregrey/python.png";
           </p>
         </li>
       </ul>
-      <!-- Sketches -->
-      <!-- <h2>Sketches</h2>
-    </div>
-    <div class="mb-20 bg-darkGray p-6 md:flex md:gap-4">
-      <div class="relative flex flex-col gap-4">
-        <div
-          id="see-more-button-container"
-          class="absolute h-full w-full bg-gradient-to-t from-darkGray to-transparent md:hidden"
-        >
-          <button
-            id="see-more-button"
-            type="button"
-            class="absolute bottom-1 left-1/2 flex -translate-x-1/2 justify-center rounded-sm border border-white px-4 py-2 text-white"
-            >See more</button
-          >
-        </div>
-        <Image src={sketch1} alt={"sketch-1"} />
-        <div class="grid grid-cols-2 items-center gap-4">
-          <Image src={sketch2} alt={"sketch-2"} class="h-full" />
-          <Image src={sketch3} alt={"sketch-3"} class="h-full" />
-        </div>
-        <Image src={sketch4} alt={"sketch-4"} />
-      </div>
-      <div id="hidden-sketch" class="relative hidden gap-4 md:flex md:flex-col">
-        <Image src={sketch5} alt={"sketch-5"} />
-        <div class="grid grid-cols-2 items-center gap-4">
-          <Image src={sketch6} alt={"sketch-6"} class="h-full" />
-          <Image src={sketch7} alt={"sketch-7"} class="h-full" />
-        </div>
-        <Image src={sketch8} alt={"sketch-8"} />
-      </div>
-      <div class="grid-rows hidden gap-4 md:flex md:flex-col">
-        <Image src={sketch9} alt={"sketch-9"} />
-        <Image src={sketch10} alt={"sketch-10"} />
-        <div class="grid grid-cols-2 items-center gap-4">
-          <Image src={sketch11} alt={"sketch-11"} class="h-full" />
-          <Image src={sketch12} alt={"sketch-12"} class="h-full" />
-        </div>
-      </div>
-      <div class="grid-rows hidden gap-4 md:flex md:flex-col">
-        <div class="grid grid-cols-2 items-center gap-4">
-          <Image src={sketch14} alt={"sketch-14"} class="h-full" />
-          <Image src={sketch15} alt={"sketch-15"} class="h-full" />
-        </div>
-        <Image src={sketch16} alt={"sketch-16"} />
-        <Image src={sketch17} alt={"sketch-17"} />
-      </div>
-    </div> -->
+      <!-- Picking Robotics -->
       <h2>
         <span class="bg-darkGray p-1 text-white">Picking Robotics</span>
       </h2>
@@ -321,42 +207,39 @@ import pythonIcon from "../assets/berkshiregrey/python.png";
         fulfilling customer orders and stocking shelves, significantly reducing
         cost and time.
       </p>
+      <!-- Design Technologist -->
       <h2>Design Technologist</h2>
-      <p class="mb-10">
+      <p>
         As part of the Picking Robotics team, I worked as a Design Technologist,
         bridging both design and development tasks.
       </p>
+      <!-- Venn Diagram -->
       <Image
         src={vennDiagram}
         alt="venn-diagram"
         class="mb-10 ml-auto mr-auto w-80 object-cover"
       />
-      <p class="mb-10">
+      <p>
         I worked as a full-stack developer, using React and Python within a
         broader ROS (Robot Operating System) framework to ensure seamless
         functionality and deliver an optimal user experience.
       </p>
+      <!-- Tools & Technology Icons-->
       <div class="mx-auto mb-10 grid w-1/2 grid-cols-2 gap-4 md:w-1/4">
         <Image src={xdIcon} alt="xd-icon" />
         <Image src={reactIcon} alt="react-icon" />
         <Image src={figmaIcon} alt="figma-icon" />
         <Image src={pythonIcon} alt="python-icon" />
       </div>
-      <p class="mb-10">
+      <p>
         My responsibilities included designing new screens to support
         customer-requested workflows, as well as fixing bugs and implementing
         updates across various HMIs for BG's diverse customer base, each with
         unique requirements.
       </p>
-      <!-- <h2>Sketches</h2>
-      <div class="mb-10 bg-darkGray p-6">
-        <div class="grid-rows relative grid gap-4">
-          <Image src={sketchPick1} alt={"sketch-pick"} />
-          <Image src={sketchPick2} alt={"sketch-pick"} />
-        </div>
-      </div> -->
+      <!-- Conclusion -->
       <h2>Conclusion</h2>
-      <p class="mb-10">
+      <p>
         I gained significant experience during my time at Berkshire Grey. As the
         sole designer on the Mobile team, I was allowed to tackle a diverse
         range of tasks giving me valuable hands-on experience with each step of
@@ -369,6 +252,7 @@ import pythonIcon from "../assets/berkshiregrey/python.png";
         experience greatly enhanced my understanding of both design and
         development workflows.
       </p>
+      <!-- Buttons -->
       <div class="mb-10 flex justify-between">
         <Button
           text="back to top"
@@ -377,15 +261,6 @@ import pythonIcon from "../assets/berkshiregrey/python.png";
           className="back-to-top-button"
           iconClassName="-rotate-90"
         />
-        <!-- <button
-          id="back-to-top-button"
-          class="mb-4 flex min-w-12 items-center gap-2 rounded-sm border-2 border-black pb-2 pl-4 pr-4 pt-2 shadow-[3px_3px_0px_1px_black]"
-          ><Image
-            class="w-4 -rotate-90"
-            src={arrowIcon}
-            alt="up arrow icon"
-          />back to top</button
-        > -->
         <a href="/toast">
           <Button text="next case study" type="button" icon="arrow" />
         </a>
@@ -394,28 +269,6 @@ import pythonIcon from "../assets/berkshiregrey/python.png";
   </main>
 
   <script>
-    // See more button
-    const seeMoreButton = document.getElementById("see-more-button");
-
-    function seeMore() {
-      const hiddenSketch = document.getElementById("hidden-sketch");
-      const buttonContainer = document.getElementById(
-        "see-more-button-container",
-      );
-
-      if (!hiddenSketch || !buttonContainer) return;
-
-      if (hiddenSketch.classList.contains("hidden")) {
-        hiddenSketch.classList.remove("hidden");
-        hiddenSketch.classList.add("grid");
-        buttonContainer.classList.add("hidden");
-      }
-    }
-
-    if (seeMoreButton) {
-      seeMoreButton.addEventListener("click", seeMore);
-    }
-
     // Back to top button
     const backToTopButton = document.querySelector(".back-to-top-button");
 
@@ -426,130 +279,6 @@ import pythonIcon from "../assets/berkshiregrey/python.png";
     if (backToTopButton) {
       backToTopButton.addEventListener("click", scrollToTop);
     }
-
-    // Open modal
-    const imageElements = document.querySelectorAll(".open-modal-button");
-
-    function openModal(event: Event) {
-      const modal = document.getElementById("modal");
-      if (!modal) return;
-
-      const slider = modal.querySelector("#slider");
-      if (!slider) return;
-
-      // Show the modal
-      modal.classList.remove("hidden");
-
-      // Get the clicked image index
-      const target = event.target as HTMLElement;
-      const index = Number(target.dataset.index);
-
-      const image = slider.querySelector("img") as HTMLImageElement;
-      const imageWidth = image ? image.clientWidth + 40 : 0; // Adjust 40 for gap
-
-      // Scroll to the specific image in the slider
-      slider.scrollLeft = index * imageWidth;
-    }
-
-    imageElements.forEach((imageElement) =>
-      imageElement.addEventListener("click", openModal),
-    );
-
-    // Close modal
-    const closeModalButton = document.getElementById("close-modal-button");
-
-    function closeModal() {
-      const modal = document.getElementById("modal");
-      if (modal) {
-        modal.classList.add("hidden");
-      }
-    }
-
-    const modalBackground = document.getElementById("modal");
-    if (modalBackground) {
-      modalBackground.addEventListener("click", closeModal);
-    }
-
-    if (closeModalButton) {
-      closeModalButton.addEventListener("click", closeModal);
-    }
-
-    // Modal navigation
-    const modalImages = document.querySelectorAll(".modal-image");
-    const totalImages = modalImages.length;
-    const modal = document.getElementById("modal");
-    const slider = modal
-      ? (modal.querySelector("#slider") as HTMLElement)
-      : null;
-    const imageCount = document.getElementById("image-count");
-    const modalNextButton = document.getElementById("modal-next-button");
-    const modalBackButton = document.getElementById("modal-back-button");
-
-    let currentIndex = 0;
-
-    // Function to calculate and set the current image index based on scroll position
-    function updateIndexOnScroll() {
-      if (!slider || modalImages.length === 0) return;
-
-      const imageWidth = modalImages[0].clientWidth + 40; // Adjust for gap
-      currentIndex = Math.round(slider.scrollLeft / imageWidth);
-      updateImageCount();
-    }
-
-    function updateImageCount() {
-      if (imageCount) {
-        imageCount.textContent = `${currentIndex + 1}/${totalImages}`;
-      }
-
-      // Conditionally style the back and next buttons
-      if (modalBackButton) {
-        modalBackButton.classList.toggle("opacity-50", currentIndex === 0);
-      }
-      if (modalNextButton) {
-        modalNextButton.classList.toggle(
-          "opacity-50",
-          currentIndex === totalImages - 1,
-        );
-      }
-    }
-
-    function goToNextImage() {
-      if (currentIndex < totalImages - 1 && slider) {
-        currentIndex++;
-        slider.scrollLeft = currentIndex * (modalImages[0].clientWidth + 40); // Adjust for gap
-        updateImageCount();
-      }
-    }
-
-    function goToPreviousImage() {
-      if (currentIndex > 0 && slider) {
-        currentIndex--;
-        slider.scrollLeft = currentIndex * (modalImages[0].clientWidth + 40); // Adjust for gap
-        updateImageCount();
-      }
-    }
-
-    // Event listeners for next and back buttons
-    if (modalNextButton) {
-      modalNextButton.addEventListener("click", (event) => {
-        event.stopPropagation(); // Prevent closing the modal
-        goToNextImage();
-      });
-    }
-    if (modalBackButton) {
-      modalBackButton.addEventListener("click", (event) => {
-        event.stopPropagation(); // Prevent closing the modal
-        goToPreviousImage();
-      });
-    }
-
-    // Scroll event listener to update index on manual scroll
-    if (slider) {
-      slider.addEventListener("scroll", updateIndexOnScroll);
-    }
-
-    // Initial display update
-    updateImageCount();
   </script>
 
   <style></style>

@@ -7,7 +7,6 @@ const { title } = Astro.props;
 
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import Loading from "../components/Loading.astro";
 ---
 
 <!doctype html>
@@ -31,11 +30,6 @@ import Loading from "../components/Loading.astro";
     </title>
   </head>
   <body class="bg-lightGray">
-    <!-- <div
-      class="animate-fadeOut absolute -top-4 z-10 h-screen w-screen bg-darkGray"
-    >
-      <Loading />
-    </div> -->
     <Header />
     <slot />
     <Footer />
@@ -68,6 +62,7 @@ import Loading from "../components/Loading.astro";
     font-size: 1rem;
     font-weight: var(--light);
     line-height: 1.75;
+    margin-bottom: 2.5rem;
   }
 
   h2 {
