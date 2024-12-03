@@ -1,0 +1,85 @@
+---
+import Button from "./Button.astro";
+import resume from "../assets/resume.pdf";
+---
+
+<div
+  class="mobile-menu fixed right-0 top-0 z-50 flex hidden h-screen w-1/2 flex-col gap-10 bg-darkGray p-4 pt-10 text-right text-white md:hidden"
+>
+  <!-- Close Button -->
+  <div class="cursor-pointer self-end" id="close-menu">
+    <div class="relative h-6 w-6">
+      <!-- Diagonal Line 1 -->
+      <span class="absolute inset-0 h-0.5 w-full rotate-45 bg-white"></span>
+      <!-- Diagonal Line 2 -->
+      <span class="absolute inset-0 h-0.5 w-full -rotate-45 bg-white"></span>
+    </div>
+  </div>
+  <!-- Menu Links -->
+  <a class="mr-5 text-xl font-bold tracking-widest" href="/">work</a>
+  <a class="mr-5 text-xl font-bold tracking-widest" href="/about">about</a>
+  <a
+    class="mr-5 text-xl font-bold tracking-widest"
+    target="_blank"
+    href={resume}>resume</a
+  >
+  <a class="mr-5 self-end" href="mailto:joe.ngyn7@gmail.com">
+    <Button
+      text="Contact"
+      type="button"
+      className="bg-lightGray text-[12px] font-bold uppercase tracking-widest text-black"
+    />
+  </a>
+</div>
+
+<style></style>
+
+<script>
+  // Close Mobile Menu
+  const closeMenu = document.getElementById("close-menu");
+  const menu = document.querySelector(".mobile-menu");
+  const menuLinks = document.querySelectorAll(".mobile-menu a");
+
+  // Close on X Click
+  if (closeMenu) {
+    closeMenu.addEventListener("click", () => {
+      const menu = document.querySelector(".mobile-menu");
+      if (menu) {
+        menu.classList.add("hidden");
+      }
+    });
+  }
+
+  // Close on Link Click
+  if (menuLinks) {
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        const menu = document.querySelector(".mobile-menu");
+        if (menu) {
+          menu.classList.add("hidden");
+        }
+      });
+    });
+  }
+
+  // Close on Outside Click
+  if (menu) {
+    document.addEventListener("click", (event) => {
+      const target = event.target;
+
+      const menuButton = document.querySelector(".menu-button");
+      if (!menuButton) {
+        console.warn("Menu button not found");
+        return; // Exit if the menu button is not found
+      }
+
+      if (
+        target instanceof Element &&
+        !menu.contains(target) &&
+        !menuButton.contains(target)
+      ) {
+        menu.classList.add("hidden");
+      }
+    });
+  }
+</script>

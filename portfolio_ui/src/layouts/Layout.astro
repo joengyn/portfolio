@@ -7,6 +7,7 @@ const { title } = Astro.props;
 
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import MobileMenu from "../components/MobileMenu.astro";
 ---
 
 <!doctype html>
@@ -30,6 +31,7 @@ import Footer from "../components/Footer.astro";
     </title>
   </head>
   <body class="bg-lightGray">
+    <MobileMenu />
     <Header />
     <slot />
     <Footer />
@@ -96,3 +98,5 @@ import Footer from "../components/Footer.astro";
     scrollbar-width: none; /* Firefox */
   }
 </style>
+
+<script></script>

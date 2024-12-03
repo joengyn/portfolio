@@ -18,18 +18,22 @@ import cosplayCard from "../assets/cosplay/cosplay.jpg";
 ---
 
 <Layout title="Welcome to joengyn portfolio.">
+  <!-- Intro Section -->
   <main class="mx-5 mb-10 mt-[100px] grid gap-10">
     <div class="flex sm:flex-col sm:items-center sm:text-center">
+      <!-- Text -->
       <div class="flex w-1/2 flex-col justify-center sm:mb-20 sm:w-full">
         <div class="mb-5 text-3xl font-bold">Hi, I'm Joe</div>
-        <p class="text-lg">
+        <p class="mb-0 text-lg">
           A designer who enjoys bringing together people and technology.
         </p>
       </div>
-      <div class="w-1/2 max-w-[300px] sm:order-first">
+      <!-- Lottie -->
+      <div class="my-auto w-1/2 max-w-[300px] sm:order-first">
         <EnsoLottie client:only />
       </div>
     </div>
+    <!-- Case Studies Section -->
     <div class="mx-auto mb-10 grid max-w-screen-md gap-10 sm:grid-cols-2">
       <ProjectCard
         href="/berkshiregrey"
