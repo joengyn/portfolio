@@ -1,0 +1,175 @@
+---
+// Imports
+import { Image } from "astro:assets";
+
+// Components
+import Layout from "../layouts/Layout.astro";
+import Banner from "../components/Banner.astro";
+import Button from "../components/Button.astro";
+import ImageSlider from "../components/ImageSlider.astro";
+
+// Banner Assets
+import pshLogo from "../assets/pinksofahour/psh-logo.png";
+import pshBG from "../assets/pinksofahour/psh-home.png";
+
+// Images
+import aboutPage from "../assets/pinksofahour/psh-about.png";
+import missionPage from "../assets/pinksofahour/psh-mission.png";
+import teamPage from "../assets/pinksofahour/psh-team.png";
+import storyPage from "../assets/pinksofahour/psh-story.png";
+import wixPage from "../assets/pinksofahour/psh-wix.png";
+import blogPage from "../assets/pinksofahour/psh-blog.png";
+import shopPage from "../assets/pinksofahour/psh-shop.png";
+import sponsorshipPage from "../assets/pinksofahour/psh-sponsorship.png";
+import blogPostPage from "../assets/pinksofahour/psh-blogpost.png";
+import jamPage from "../assets/pinksofahour/psh-jam.png";
+import giveawayPage from "../assets/pinksofahour/psh-giveaway.png";
+import couchedPage from "../assets/pinksofahour/couched-home.png";
+---
+
+<Layout title="pink sofa hour case study">
+  <main class="mt-[100px]">
+    <!-- Banner -->
+    <Banner
+      title="Pink Sofa Hour"
+      backgroundImg={pshBG}
+      backgroundImgAlt="Homepage of the Pink Sofa Hour website"
+      logo={pshLogo}
+      logoAlt="../assets/berkshiregrey/bg-logo.svg"
+      overview="Web designer for The Pink Sofa Hour, a colorado based live-streamed YouTube interview show focused on the local music community."
+      roles={["Web Designer"]}
+      tools={["Wix Studio"]}
+      year="October 2024 - December 2024"
+    />
+    <div class="wrapper m-5 mx-auto">
+      <!-- Overview Section -->
+      <h2>Overview</h2>
+      <Image src={pshBG} alt="user-img" class="mb-5 w-full object-cover" />
+      <p>
+        I designed the website for The Pink Sofa Hour, a colorado based
+        live-streamed YouTube interview show focused on the local music
+        community.
+      </p>
+      <!-- Images -->
+      <div class="mb-2 grid gap-10">
+        <Image
+          class="shadow-2xl"
+          src={aboutPage}
+          alt="Pink Sofa Hour about page"
+          data-index="0"
+        />
+        <Image
+          class="shadow-2xl"
+          src={missionPage}
+          alt="Pink Sofa Hour mission page"
+          data-index="1"
+        />
+        <Image
+          class="shadow-2xl"
+          src={storyPage}
+          alt="Pink Sofa Hour story page"
+          data-index="2"
+        />
+      </div>
+
+      <h2>Designing with Wix Studio</h2>
+      <p>
+        The site was built using Wix Studio and made use of the many features
+        offered by the platform. Such features included the blog, used to
+        display a variety of music related reviews, the shop for selling merch,
+        and the email marketing tools for collecting submissions for giveaways
+        and events.
+      </p>
+      <div class="mb-2 grid gap-10">
+        <Image
+          class="shadow-2xl"
+          src={wixPage}
+          alt="Wix Studio view of Pink Sofa Hour"
+          data-index="0"
+        />
+        <Image
+          class="shadow-2xl"
+          src={blogPage}
+          alt="Pink Sofa Hour blog page"
+          data-index="0"
+        />
+        <Image
+          class="shadow-2xl"
+          src={shopPage}
+          alt="Pink Sofa Hour shop page"
+          data-index="0"
+        />
+        <Image
+          class="shadow-2xl"
+          src={sponsorshipPage}
+          alt="Pink Sofa Hour sponsorship page"
+          data-index="0"
+        />
+      </div>
+      <p>Using Wix Studio allowed for a simple responsive design</p>
+      <!-- Conclusion -->
+      <h2>Conclusion</h2>
+      <p>
+        I gained significant experience during my time at Berkshire Grey. As the
+        sole designer on the Mobile team, I was allowed to tackle a diverse
+        range of tasks giving me valuable hands-on experience with each step of
+        the design process.
+      </p>
+      <p class="mb-20">
+        When I transitioned to the Picking Robotics team, I had the chance to
+        further broaden my skillset by diving deeper into development, expanding
+        my role beyond design into coding and technical implementation. This
+        experience greatly enhanced my understanding of both design and
+        development workflows.
+      </p>
+      <div class="flex w-full justify-between gap-10">
+        <Image
+          class="flex-1shadow-2xl"
+          src={blogPostPage}
+          alt="Pink Sofa Hour blog post page"
+          data-index="0"
+        />
+        <Image
+          class="flex-1 shadow-2xl"
+          src={jamPage}
+          alt="Pink Sofa Hour jam event page"
+          data-index="0"
+        />
+      </div>
+      <Image
+        class="mb-20 shadow-2xl"
+        src={couchedPage}
+        alt="Couched Media homepage"
+        data-index="0"
+      />
+      <!-- Buttons -->
+      <div class="mb-10 flex justify-between">
+        <Button
+          text="back to top"
+          type="button"
+          icon="arrow"
+          className="back-to-top-button"
+          iconClassName="-rotate-90"
+        />
+        <a href="/toast">
+          <Button text="next case study" type="button" icon="arrow" />
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Back to top button
+    const backToTopButton = document.querySelector(".back-to-top-button");
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    if (backToTopButton) {
+      backToTopButton.addEventListener("click", scrollToTop);
+    }
+  </script>
+
+  <style></style>
+</Layout>
