@@ -110,8 +110,7 @@ import MobileMenu from "../components/MobileMenu.astro";
           (entries) => {
             entries.forEach((entry) => {
               if (!entry.isIntersecting) {
-                // If the Lottie container is out of view, remove hidden class and fade in the logo
-                logo.classList.remove("hidden");
+                // If the Lottie container is out of view, fade in the logo
                 logo.classList.add("opacity-100");
               } else {
                 // If the Lottie container is visible, hide the logo
