@@ -4,26 +4,35 @@ import resume from "../assets/resume.pdf";
 ---
 
 <div
-  class="mobile-menu fixed right-0 top-0 z-50 flex hidden h-screen w-1/2 flex-col gap-10 bg-darkGray p-4 pt-10 text-right text-white md:hidden"
+  class="mobile-menu fixed right-0 top-0 z-50 flex h-screen w-1/2 translate-x-full flex-col gap-10 bg-darkGray p-4 pt-10 text-right text-white transition-transform duration-1000 md:hidden"
 >
   <!-- Close Button -->
   <div class="cursor-pointer self-end" id="close-menu">
     <div class="relative h-6 w-6">
       <!-- Diagonal Line 1 -->
-      <span class="absolute inset-0 h-0.5 w-full rotate-45 bg-white"></span>
+      <span class="absolute inset-0 h-1 w-full rotate-45 bg-white"></span>
       <!-- Diagonal Line 2 -->
-      <span class="absolute inset-0 h-0.5 w-full -rotate-45 bg-white"></span>
+      <span class="absolute inset-0 h-1 w-full -rotate-45 bg-white"></span>
     </div>
   </div>
   <!-- Menu Links -->
-  <a class="mr-5 text-xl font-bold tracking-widest" href="/">work</a>
-  <a class="mr-5 text-xl font-bold tracking-widest" href="/about">about</a>
   <a
-    class="mr-5 text-xl font-bold tracking-widest"
+    class="menu-link mr-5 translate-x-full text-xl font-bold tracking-widest transition-transform delay-100 duration-1000"
+    href="/">work</a
+  >
+  <a
+    class="menu-link mr-5 translate-x-full text-xl font-bold tracking-widest transition-transform delay-300 duration-1000"
+    href="/about">about</a
+  >
+  <a
+    class="menu-link mr-5 translate-x-full text-xl font-bold tracking-widest transition-transform delay-500 duration-1000"
     target="_blank"
     href={resume}>resume</a
   >
-  <a class="mr-5 self-end" href="mailto:joe.ngyn7@gmail.com">
+  <a
+    class="menu-contact mr-5 translate-y-5 self-end opacity-0 transition-all delay-700 duration-1000"
+    href="mailto:joe.ngyn7@gmail.com"
+  >
     <Button
       text="Contact"
       type="button"
@@ -35,17 +44,28 @@ import resume from "../assets/resume.pdf";
 <style></style>
 
 <script>
-  // Close Mobile Menu
   const closeMenu = document.getElementById("close-menu");
   const menu = document.querySelector(".mobile-menu");
-  const menuLinks = document.querySelectorAll(".mobile-menu a");
+  const menuLinks = document.querySelectorAll(".menu-link");
+  const menuButton = document.querySelector(".menu-button");
+  const menuContact = document.querySelector(".menu-contact");
 
   // Close on X Click
   if (closeMenu) {
     closeMenu.addEventListener("click", () => {
-      const menu = document.querySelector(".mobile-menu");
       if (menu) {
-        menu.classList.add("hidden");
+        menu.classList.add("translate-x-full");
+      }
+      if (menuLinks) {
+        menuLinks.forEach((link) => {
+          link.classList.add("translate-x-full");
+        });
+      }
+      if (menuContact) {
+        menuContact.classList.remove("opacity-100");
+        menuContact.classList.remove("translate-y-0");
+        menuContact.classList.add("opacity-0");
+        menuContact.classList.add("translate-y-5");
       }
     });
   }
@@ -54,9 +74,8 @@ import resume from "../assets/resume.pdf";
   if (menuLinks) {
     menuLinks.forEach((link) => {
       link.addEventListener("click", () => {
-        const menu = document.querySelector(".mobile-menu");
         if (menu) {
-          menu.classList.add("hidden");
+          menu.classList.add("translate-x-full");
         }
       });
     });
@@ -66,8 +85,6 @@ import resume from "../assets/resume.pdf";
   if (menu) {
     document.addEventListener("click", (event) => {
       const target = event.target;
-
-      const menuButton = document.querySelector(".menu-button");
       if (!menuButton) {
         console.warn("Menu button not found");
         return; // Exit if the menu button is not found
@@ -78,7 +95,18 @@ import resume from "../assets/resume.pdf";
         !menu.contains(target) &&
         !menuButton.contains(target)
       ) {
-        menu.classList.add("hidden");
+        menu.classList.add("translate-x-full");
+        if (menuLinks) {
+          menuLinks.forEach((link) => {
+            link.classList.add("translate-x-full");
+          });
+        }
+        if (menuContact) {
+          menuContact.classList.remove("opacity-100");
+          menuContact.classList.remove("translate-y-0");
+          menuContact.classList.add("opacity-0");
+          menuContact.classList.add("translate-y-5");
+        }
       }
     });
   }

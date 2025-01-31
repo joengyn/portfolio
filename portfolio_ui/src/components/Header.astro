@@ -51,8 +51,27 @@ import resume from "../assets/resume.pdf";
   if (menuButton) {
     menuButton.addEventListener("click", () => {
       const mobileMenu = document.querySelector(".mobile-menu");
+      const menuLink = document.querySelectorAll(".menu-link");
+      const menuContact = document.querySelector(".menu-contact");
+
+      // Animations for Mobile Menu
       if (mobileMenu) {
-        mobileMenu.classList.remove("hidden");
+        mobileMenu.classList.remove("translate-x-full");
+        mobileMenu.classList.add("translate-x-0");
+      }
+      // Animations for Menu Links
+      if (menuLink) {
+        menuLink.forEach((link) => {
+          link.classList.remove("translate-x-full");
+          link.classList.add("translate-x-0");
+        });
+      }
+      // Animations for Menu Contact
+      if (menuContact) {
+        menuContact.classList.remove("translate-y-5");
+        menuContact.classList.add("translate-y-0");
+        menuContact.classList.remove("opacity-0");
+        menuContact.classList.add("opacity-100");
       }
     });
   }
