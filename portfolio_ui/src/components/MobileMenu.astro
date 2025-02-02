@@ -4,7 +4,7 @@ import resume from "../assets/resume.pdf";
 ---
 
 <div
-  class="mobile-menu fixed right-0 top-0 z-50 flex hidden h-screen w-1/2 translate-x-full flex-col gap-10 bg-darkGray p-4 pt-10 text-right text-white transition-transform duration-1000 md:hidden"
+  class="mobile-menu fixed right-0 top-0 z-50 flex h-screen w-1/2 translate-x-full flex-col gap-10 bg-darkGray p-4 pt-10 text-right text-white transition-transform duration-1000 md:hidden"
 >
   <!-- Close Button -->
   <div class="cursor-pointer self-end" id="close-menu">
@@ -49,13 +49,6 @@ import resume from "../assets/resume.pdf";
   const menuLinks = document.querySelectorAll(".menu-link");
   const menuButton = document.querySelector(".menu-button");
   const menuContact = document.querySelector(".menu-contact");
-
-  // Prevent mobile menu from flashing on screen on initial load
-  document.addEventListener("DOMContentLoaded", () => {
-    if (menu) {
-      menu.classList.remove("hidden");
-    }
-  });
 
   // Close on X Click
   if (closeMenu) {
