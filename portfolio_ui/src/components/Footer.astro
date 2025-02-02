@@ -35,21 +35,26 @@ const optimizedBackground = await getImage({
         <Button
           text="Contact"
           type="button"
-          className="bg-darkGray font-bold uppercase tracking-widest hover:text-darkGray"
+          className="bg-darkGray text-[12px] font-bold uppercase tracking-widest hover:bg-white hover:!text-darkGray"
         />
       </a>
-      <div class="flex
-          justify-end
-          gap-3
-          opacity-80">
-        <a target="_blank" href="https://www.linkedin.com/in/joengyn/">
+      <div class="flex justify-end gap-3 opacity-100">
+        <a
+          class="transition-transform hover:scale-105"
+          target="_blank"
+          href="https://www.linkedin.com/in/joengyn/"
+        >
           <Image
             class="h-10 w-10 brightness-100 invert filter"
             src={linkedinIcon}
             alt="LinkedIn Icon Logo"
           />
         </a>
-        <a target="_blank" href="https://github.com/joengyn/">
+        <a
+          class="transition-transform hover:scale-105"
+          target="_blank"
+          href="https://github.com/joengyn/"
+        >
           <Image
             class="h-10 w-10 invert filter"
             src={githubIcon}
@@ -61,14 +66,33 @@ const optimizedBackground = await getImage({
 
     <div class="flex flex-col items-center gap-6">
       <div class="flex justify-end gap-3">
-        <a href="/">work</a>
-        <a href="/about">about</a>
-        <a target="_blank" href={resume}>resume</a>
+        <a
+          class="relative inline-block
+            before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right
+            before:scale-x-0 before:bg-white before:transition-transform before:duration-300 before:content-['']
+            hover:before:origin-left hover:before:scale-x-100"
+          href="/">work</a
+        >
+        <a
+          class="relative inline-block
+            before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right
+            before:scale-x-0 before:bg-white before:transition-transform before:duration-300 before:content-['']
+            hover:before:origin-left hover:before:scale-x-100"
+          href="/about">about</a
+        >
+        <a
+          class="relative inline-block
+            before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right
+            before:scale-x-0 before:bg-white before:transition-transform before:duration-300 before:content-['']
+            hover:before:origin-left hover:before:scale-x-100"
+          target="_blank"
+          href={resume}>resume</a
+        >
       </div>
 
       <div class="flex flex-col items-center text-center lg:justify-end">
         <span>Designed and Developed by Joe Nguyen</span>
-        <span>© 2024 | All Rights Reserved</span>
+        <span>© 2025 | All Rights Reserved</span>
       </div>
     </div>
   </div>

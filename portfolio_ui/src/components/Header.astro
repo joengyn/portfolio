@@ -9,7 +9,14 @@ import resume from "../assets/resume.pdf";
   <div class="flex flex-row items-center justify-between p-4 tracking-wider">
     <!-- Name -->
     <a class="md:hidden" href="/">JOE.<br />NGYN</a>
-    <a class="hidden md:block" href="/">JOE.NGYN</a>
+    <a
+      class="relative -mx-1 hidden px-1 text-darkGray
+        transition-[color,box-shadow] duration-700 ease-in-out
+        before:absolute before:inset-0 before:z-[-1] before:h-full before:w-0
+        before:bg-darkGray before:transition-all before:duration-300 before:ease-in-out
+        hover:text-white hover:before:w-full md:block"
+      href="/">JOE.NGYN</a
+    >
     <!-- Mobile Menu Button -->
     <div class="menu-button space-y-1 md:hidden">
       <div class="h-1 w-6 bg-black"></div>
@@ -18,9 +25,28 @@ import resume from "../assets/resume.pdf";
     </div>
     <!-- Menu Links -->
     <div class="hidden items-center justify-end gap-3 md:flex">
-      <a href="/">work</a>
-      <a href="/about">about</a>
-      <a target="_blank" href={resume}>resume</a>
+      <a
+        class="relative inline-block
+        before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right
+        before:scale-x-0 before:bg-darkGray before:transition-transform before:duration-300 before:content-['']
+        hover:before:origin-left hover:before:scale-x-100"
+        href="/">work</a
+      >
+      <a
+        class="relative inline-block
+        before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right
+        before:scale-x-0 before:bg-darkGray before:transition-transform before:duration-300 before:content-['']
+        hover:before:origin-left hover:before:scale-x-100"
+        href="/about">about</a
+      >
+      <a
+        class="relative inline-block
+        before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right
+        before:scale-x-0 before:bg-darkGray before:transition-transform before:duration-300 before:content-['']
+        hover:before:origin-left hover:before:scale-x-100"
+        target="_blank"
+        href={resume}>resume</a
+      >
       <a href="mailto:joe.ngyn7@gmail.com" class="hidden md:block">
         <Button
           text="Contact"
