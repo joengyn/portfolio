@@ -60,7 +60,7 @@ import resume from "../assets/resume.pdf";
       <Image
         src={logo}
         alt="logo"
-        class="h-10 w-10 opacity-0 transition-opacity duration-1000 ease-in-out"
+        class="hidden h-10 w-10 opacity-0 transition-opacity duration-1000 ease-in-out"
         id="logoHeader"
       />
     </div>
@@ -101,4 +101,12 @@ import resume from "../assets/resume.pdf";
       }
     });
   }
+
+  // Prevent header logo from flashing on screen on initial load
+  document.addEventListener("DOMContentLoaded", () => {
+    const logoHeader = document.getElementById("logoHeader");
+    if (logoHeader) {
+      logoHeader.classList.remove("hidden");
+    }
+  });
 </script>
