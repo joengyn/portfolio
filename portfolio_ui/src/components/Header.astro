@@ -60,7 +60,7 @@ import resume from "../assets/resume.pdf";
       <Image
         src={logo}
         alt="logo"
-        class="h-10 w-10 opacity-0 transition-opacity duration-1000 ease-in-out"
+        class="h-10 w-10 opacity-0"
         id="logoHeader"
       />
     </div>
@@ -83,7 +83,11 @@ import resume from "../assets/resume.pdf";
       // Animations for Mobile Menu
       if (mobileMenu) {
         mobileMenu.classList.remove("translate-x-full");
-        mobileMenu.classList.add("translate-x-0");
+        mobileMenu.classList.add(
+          "translate-x-0",
+          "transition-transform",
+          "duration-1000",
+        );
       }
       // Animations for Menu Links
       if (menuLink) {

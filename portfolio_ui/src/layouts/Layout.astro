@@ -112,7 +112,12 @@ import MobileMenu from "../components/MobileMenu.astro";
             entries.forEach((entry) => {
               if (!entry.isIntersecting) {
                 // If the Lottie container is out of view, fade in the logo
-                logo.classList.add("opacity-100");
+                logo.classList.add(
+                  "opacity-100",
+                  "transition-opacity",
+                  "duration-1000",
+                  "ease-in-out",
+                );
               } else {
                 // If the Lottie container is visible, hide the logo
                 logo.classList.remove("opacity-100");
