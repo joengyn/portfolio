@@ -1,4 +1,10 @@
 ---
+interface Props {
+  isIndex?: boolean;
+}
+
+const { isIndex } = Astro.props;
+
 import { Image } from "astro:assets";
 import Button from "./Button.astro";
 import logo from "../assets/circle.png";
@@ -60,7 +66,7 @@ import resume from "../assets/resume.pdf";
       <Image
         src={logo}
         alt="logo"
-        class="h-10 w-10 opacity-0"
+        class={`h-10 w-10 ${isIndex ? "opacity-0" : "opacity-100"}`}
         id="logoHeader"
       />
     </div>
