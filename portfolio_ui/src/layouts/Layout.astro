@@ -2,9 +2,10 @@
 interface Props {
   title: string;
   isIndex?: boolean;
+  isAbout?: boolean;
 }
 
-const { title, isIndex } = Astro.props;
+const { title, isIndex, isAbout } = Astro.props;
 
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -33,7 +34,7 @@ import MobileMenu from "../components/MobileMenu.astro";
   </head>
   <body class="bg-lightGray">
     <MobileMenu />
-    <Header isIndex={isIndex} />
+    <Header isIndex={isIndex} isAbout={isAbout} />
     <slot />
     <Footer />
   </body>

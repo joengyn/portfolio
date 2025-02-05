@@ -1,9 +1,10 @@
 ---
 interface Props {
   isIndex?: boolean;
+  isAbout?: boolean;
 }
 
-const { isIndex } = Astro.props;
+const { isIndex, isAbout } = Astro.props;
 
 import { Image } from "astro:assets";
 import Button from "./Button.astro";
@@ -11,7 +12,11 @@ import logo from "../assets/circle.png";
 import resume from "../assets/resume.pdf";
 ---
 
-<header class="fixed top-0 z-40 w-full bg-lightGray">
+<header
+  id="header"
+  data-page-type={isIndex || isAbout ? "no-scroll" : "scroll"}
+  class="fixed top-0 z-40 w-full bg-lightGray transition-transform duration-500 ease-in-out"
+>
   <div class="flex flex-row items-center justify-between p-4 tracking-wider">
     <!-- Name -->
     <a class="md:hidden" href="/">JOE.<br />NGYN</a>
@@ -111,4 +116,44 @@ import resume from "../assets/resume.pdf";
       }
     });
   }
+
+  // Header Scroll Animation for non index/about pages
+  document.addEventListener("DOMContentLoaded", () => {
+    const header = document.getElementById("header");
+    if (!header) return;
+
+    const pageType = header.dataset.pageType;
+
+    if (pageType === "no-scroll") {
+      return;
+    }
+
+    console.log("Scroll function active on this page.");
+
+    let lastScrollTop = 0;
+
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+      if (scrollTop > lastScrollTop) {
+        // Scroll down
+        header.style.transform = "translateY(-100%)";
+        header.classList.add(
+          "transition-transform",
+          "duration-500",
+          "ease-in-out",
+        );
+      } else {
+        // Scroll up
+        header.style.transform = "translateY(0)";
+        header.classList.add(
+          "transition-transform",
+          "duration-500",
+          "ease-in-out",
+        );
+      }
+
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Prevent negative scrolling
+    });
+  });
 </script>
