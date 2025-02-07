@@ -6,14 +6,20 @@ interface Props {
   title: string;
   body: string;
   bgImg: ImageMetadata;
+  className?: string;
 }
 
-const { href, title, body, bgImg } = Astro.props;
+const { href, title, body, bgImg, className } = Astro.props;
 ---
 
-<div class="transition-transform hover:scale-105">
+<div
+  data-project-card
+  class={`translate-y-10 opacity-0 transition-all duration-1000 ease-in-out ${className || ""}`}
+>
   <a href={href}>
-    <div class="h-full border-2 border-black shadow-[5px_5px_2px_1px_darkGray]">
+    <div
+      class="h-full border-2 border-black shadow-[5px_5px_2px_1px_darkGray] duration-200 hover:scale-105"
+    >
       <div
         class="relative aspect-square overflow-hidden border-b-2 border-black"
       >

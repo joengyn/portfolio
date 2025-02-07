@@ -38,24 +38,28 @@ import cosplayCard from "../assets/cosplay/cosplay.jpg";
         title="Berkshire Grey"
         body="Designing HMI's (Human Machine Interface) for AI-Enabled Enterprise Robotics"
         bgImg={berkshireBg}
+        className="delay-0"
       />
       <ProjectCard
         href="/pinksofahour"
         title="Pink Sofa Hour"
         body="Web design for a local music studio, cultivating community by connecting artists and audiences."
         bgImg={pshHome}
+        className="sm:delay-0 md:delay-500"
       />
       <ProjectCard
         href="/toast"
         title="Toast"
         body="Designing a mobile QR-based pay-at-the-table service for restaurants."
         bgImg={toastBg}
+        className="sm:delay-0 md:delay-1000"
       />
       <ProjectCard
         href="/grammaroke"
         title="Grammaroke"
         body="Designing a language learning web app. Study and sing along to your favorite songs."
         bgImg={grammarokeCard}
+        className="sm:delay-0 md:delay-[1.5s]"
       />
       <!-- <ProjectCard
         href="/cosplay"
@@ -66,3 +70,23 @@ import cosplayCard from "../assets/cosplay/cosplay.jpg";
     </div>
   </main>
 </Layout>
+
+<script>
+  // Animation for project cards
+  document.addEventListener("DOMContentLoaded", () => {
+    const projects = document.querySelectorAll("[data-project-card]");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove("opacity-0", "translate-y-10");
+          entry.target.classList.add("opacity-100", "translate-y-0");
+        }
+      });
+    });
+
+    projects.forEach((project) => {
+      observer.observe(project);
+    });
+  });
+</script>
