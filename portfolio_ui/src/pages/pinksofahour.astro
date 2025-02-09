@@ -13,6 +13,7 @@ import pshLogo from "../assets/pinksofahour/psh-logo.png";
 import pshBG from "../assets/pinksofahour/psh-home.png";
 
 // Images
+import pshInterview from "../assets/pinksofahour/psh-interview.jpg";
 import aboutPage from "../assets/pinksofahour/psh-about.png";
 import missionPage from "../assets/pinksofahour/psh-mission.png";
 import teamPage from "../assets/pinksofahour/psh-team.png";
@@ -35,46 +36,64 @@ import couchedPage from "../assets/pinksofahour/couched-home.png";
       bgImg={pshBG}
       bgImgAlt="Homepage of the Pink Sofa Hour website"
       logo={pshLogo}
-      logoAlt="../assets/berkshiregrey/bg-logo.svg"
-      overview="Web designer for The Pink Sofa Hour, a colorado based live-streamed YouTube interview show focused on the local music community."
+      logoAlt="Pink Sofa Hour logo"
+      overview="Web designer for The Pink Sofa Hour, a Colorado based live-streamed YouTube interview show focused on the local music community."
       roles={["Web Designer"]}
       tools={["Wix Studio"]}
       year="October 2024 - December 2024"
     />
-    <div class="wrapper m-5 mx-auto">
+    <div class="wrapper">
       <!-- Overview Section -->
       <h2>Background</h2>
+      <Image
+        src={pshInterview}
+        alt="Pink Sofa Hour interview show"
+        class="mb-2 w-full object-cover"
+      />
+      <figcaption class="mb-10 text-center text-sm">
+        The Pink Sofa Hour interview show
+      </figcaption>
       <p>
-        Music streaming giants, such as spotify and apple music have made
-        listening to your favorite artists easy, but it took away the connection
-        between
+        In today’s music landscape, discovery is effortless, but real connection
+        is scarce. Streaming services like Spotify offer unlimited access to
+        music, yet their algorithm-driven approach often prioritizes convenience
+        over community, making it easy to listen but hard to engage.
       </p>
-      <Image src={pshBG} alt="user-img" class="mb-5 w-full object-cover" />
       <p>
-        I designed the website for The Pink Sofa Hour, a Colorado based
-        live-streamed YouTube interview show focused on the local music
-        community.
+        The Pink Sofa Hour was created to bridge that gap—bringing Colorado’s
+        most talented musicians to the forefront through curated shows,
+        live-streamed interviews, and community events, all designed to foster a
+        deeper connection between artists and audiences.
+      </p>
+      <Image src={pshBG} alt="user-img" class="mb-2 w-full object-cover" />
+      <figcaption class="mb-10 text-center text-sm">Home page</figcaption>
+      <p>
+        I designed the website for The Pink Sofa Hour, crafting a digital home
+        that reflects its mission of connecting Colorado’s music community.
       </p>
       <!-- Images -->
-      <div class="mb-2 grid gap-10">
+      <div class="mb-2 grid">
         <Image
-          class="shadow-2xl"
+          class="mb-2 shadow-2xl"
           src={aboutPage}
           alt="Pink Sofa Hour about page"
           data-index="0"
         />
+        <figcaption class="mb-10 text-center text-sm">About page</figcaption>
         <Image
-          class="shadow-2xl"
+          class="mb-2 shadow-2xl"
           src={missionPage}
           alt="Pink Sofa Hour mission page"
           data-index="1"
         />
+        <figcaption class="mb-10 text-center text-sm">Mission page</figcaption>
         <Image
-          class="shadow-2xl"
+          class="mb-2 shadow-2xl"
           src={storyPage}
           alt="Pink Sofa Hour story page"
           data-index="2"
         />
+        <figcaption class="mb-10 text-center text-sm">Story page</figcaption>
       </div>
 
       <h2>Designing with Wix Studio</h2>
@@ -85,33 +104,40 @@ import couchedPage from "../assets/pinksofahour/couched-home.png";
         and the email marketing tools for collecting submissions for giveaways
         and events.
       </p>
-      <div class="mb-2 grid gap-10">
+      <div class="mb-2 grid">
         <Image
-          class="shadow-2xl"
+          class="mb-2 shadow-2xl"
           src={wixPage}
-          alt="Wix Studio view of Pink Sofa Hour"
+          alt="Wix Studio interface of Pink Sofa Hour"
           data-index="0"
         />
+        <figcaption class="mb-10 text-center text-sm">
+          Wix Studio interface
+        </figcaption>
         <Image
-          class="shadow-2xl"
+          class="mb-2 shadow-2xl"
           src={blogPage}
           alt="Pink Sofa Hour blog page"
           data-index="0"
         />
+        <figcaption class="mb-10 text-center text-sm">Blog page</figcaption>
         <Image
-          class="shadow-2xl"
+          class="mb-2 shadow-2xl"
           src={shopPage}
           alt="Pink Sofa Hour shop page"
           data-index="0"
         />
+        <figcaption class="mb-10 text-center text-sm">Shop page</figcaption>
         <Image
-          class="shadow-2xl"
+          class="mb-2 shadow-2xl"
           src={sponsorshipPage}
           alt="Pink Sofa Hour sponsorship page"
           data-index="0"
         />
+        <figcaption class="mb-10 text-center text-sm">
+          Sponsorship page
+        </figcaption>
       </div>
-      <p>Using Wix Studio allowed for a simple responsive design</p>
       <!-- Conclusion -->
       <h2>Conclusion</h2>
       <p>
@@ -120,27 +146,6 @@ import couchedPage from "../assets/pinksofahour/couched-home.png";
         range of tasks giving me valuable hands-on experience with each step of
         the design process.
       </p>
-      <p class="mb-20">
-        When I transitioned to the Picking Robotics team, I had the chance to
-        further broaden my skillset by diving deeper into development, expanding
-        my role beyond design into coding and technical implementation. This
-        experience greatly enhanced my understanding of both design and
-        development workflows.
-      </p>
-      <!-- <div class="flex w-full justify-between gap-10">
-        <Image
-          class="flex-1shadow-2xl"
-          src={blogPostPage}
-          alt="Pink Sofa Hour blog post page"
-          data-index="0"
-        />
-        <Image
-          class="flex-1 shadow-2xl"
-          src={jamPage}
-          alt="Pink Sofa Hour jam event page"
-          data-index="0"
-        />
-      </div> -->
       <Image
         class="mb-20 shadow-2xl"
         src={couchedPage}
