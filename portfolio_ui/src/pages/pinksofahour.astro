@@ -26,10 +26,23 @@ import blogPostPage from "../assets/pinksofahour/psh-blogpost.png";
 import jamPage from "../assets/pinksofahour/psh-jam.png";
 import giveawayPage from "../assets/pinksofahour/psh-giveaway.png";
 import couchedPage from "../assets/pinksofahour/couched-home.png";
+const images = [
+  pshBG,
+  aboutPage,
+  missionPage,
+  storyPage,
+  wixPage,
+  blogPage,
+  shopPage,
+  sponsorshipPage,
+  couchedPage,
+];
 ---
 
 <Layout title="Joe Nguyen | Pink Sofa Hour Case Study">
   <main class="mt-[100px]">
+    <!-- Image Slider -->
+    <ImageSlider images={images} />
     <!-- Banner -->
     <Banner
       title="Pink Sofa Hour"
@@ -59,41 +72,46 @@ import couchedPage from "../assets/pinksofahour/couched-home.png";
         music, yet their algorithm-driven approach often prioritizes convenience
         over community, making it easy to listen but hard to engage.
       </p>
-      <p>
+      <p class="mb-20">
         The Pink Sofa Hour was created to bridge that gap—bringing Colorado’s
         most talented musicians to the forefront through curated shows,
         live-streamed interviews, and community events, all designed to foster a
         deeper connection between artists and audiences.
       </p>
-      <Image src={pshBG} alt="user-img" class="mb-2 w-full object-cover" />
+      <Image
+        class="open-modal-button mb-2 w-full cursor-pointer object-cover"
+        src={pshBG}
+        alt="Pink Sofa Hour home page"
+        data-index="0"
+      />
       <figcaption class="mb-10 text-center text-sm">Home page</figcaption>
-      <p>
+      <p class="mb-20">
         I designed the website for The Pink Sofa Hour, crafting a digital home
         that reflects its mission of connecting Colorado’s music community.
       </p>
       <!-- Images -->
       <div class="mb-2 grid">
         <Image
-          class="mb-2 shadow-2xl"
+          class="mb-2"
           src={aboutPage}
           alt="Pink Sofa Hour about page"
-          data-index="0"
+          data-index="1"
         />
         <figcaption class="mb-10 text-center text-sm">About page</figcaption>
         <Image
-          class="mb-2 shadow-2xl"
+          class="mb-2"
           src={missionPage}
           alt="Pink Sofa Hour mission page"
-          data-index="1"
+          data-index="2"
         />
         <figcaption class="mb-10 text-center text-sm">Mission page</figcaption>
         <Image
-          class="mb-2 shadow-2xl"
+          class="mb-2"
           src={storyPage}
           alt="Pink Sofa Hour story page"
-          data-index="2"
+          data-index="3"
         />
-        <figcaption class="mb-10 text-center text-sm">Story page</figcaption>
+        <figcaption class="mb-20 text-center text-sm">Story page</figcaption>
       </div>
 
       <h2>Designing with Wix Studio</h2>
@@ -106,35 +124,35 @@ import couchedPage from "../assets/pinksofahour/couched-home.png";
       </p>
       <div class="mb-2 grid">
         <Image
-          class="mb-2 shadow-2xl"
+          class="mb-2"
           src={wixPage}
           alt="Wix Studio interface of Pink Sofa Hour"
-          data-index="0"
+          data-index="4"
         />
         <figcaption class="mb-10 text-center text-sm">
           Wix Studio interface
         </figcaption>
         <Image
-          class="mb-2 shadow-2xl"
+          class="mb-2"
           src={blogPage}
           alt="Pink Sofa Hour blog page"
-          data-index="0"
+          data-index="5"
         />
         <figcaption class="mb-10 text-center text-sm">Blog page</figcaption>
         <Image
-          class="mb-2 shadow-2xl"
+          class="mb-2"
           src={shopPage}
           alt="Pink Sofa Hour shop page"
-          data-index="0"
+          data-index="6"
         />
         <figcaption class="mb-10 text-center text-sm">Shop page</figcaption>
         <Image
-          class="mb-2 shadow-2xl"
+          class="mb-2"
           src={sponsorshipPage}
           alt="Pink Sofa Hour sponsorship page"
-          data-index="0"
+          data-index="7"
         />
-        <figcaption class="mb-10 text-center text-sm">
+        <figcaption class="mb-20 text-center text-sm">
           Sponsorship page
         </figcaption>
       </div>
@@ -147,11 +165,14 @@ import couchedPage from "../assets/pinksofahour/couched-home.png";
         the design process.
       </p>
       <Image
-        class="mb-20 shadow-2xl"
+        class="mb-2"
         src={couchedPage}
         alt="Couched Media homepage"
-        data-index="0"
+        data-index="8"
       />
+      <figcaption class="mb-10 text-center text-sm">
+        Preview of the Couched Media website
+      </figcaption>
       <!-- Buttons -->
       <div class="mb-10 flex justify-between">
         <Button

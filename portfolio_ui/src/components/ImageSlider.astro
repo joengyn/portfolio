@@ -16,7 +16,9 @@ const { images } = Astro.props;
   <div
     class="slider-wrapper relative mx-auto max-w-screen-xl overflow-hidden p-4"
   >
+    <!-- Header Section Controls -->
     <div class="flex flex-row justify-between">
+      <!-- Left & Right Arrows -->
       <div class="flex flex-row items-center gap-4">
         <button id="modal-back-button" class="-rotate-90 text-2xl text-white"
           >⇧</button
@@ -26,9 +28,11 @@ const { images } = Astro.props;
           >⇧</button
         >
       </div>
+      <!-- X Close Button -->
       <button id="close-modal-button" class="mb-2 text-4xl text-white">×</button
       >
     </div>
+    <!-- Slider Images -->
     <div
       id="slider"
       class="scrollbar flex snap-x snap-mandatory gap-10 overflow-x-auto overscroll-x-contain"
