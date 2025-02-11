@@ -13,6 +13,11 @@ import pshLogo from "../assets/pinksofahour/psh-logo.png";
 import pshBG from "../assets/pinksofahour/psh-home.png";
 
 // Images
+import pshColor from "../assets/pinksofahour/psh-brand-color.jpg";
+import pshTypo from "../assets/pinksofahour/psh-brand-typo.jpg";
+import pshCopy from "../assets/pinksofahour/psh-brand-copy.jpg";
+import pshExample from "../assets/pinksofahour/psh-brand-example.png";
+import oldDesign from "../assets/pinksofahour/psh-old.png";
 import pshInterview from "../assets/pinksofahour/psh-interview.jpg";
 import aboutPage from "../assets/pinksofahour/psh-about.png";
 import missionPage from "../assets/pinksofahour/psh-mission.png";
@@ -42,7 +47,7 @@ const images = [
 <Layout title="Joe Nguyen | Pink Sofa Hour Case Study">
   <main class="mt-[100px]">
     <!-- Image Slider -->
-    <ImageSlider images={images} />
+    <!-- <ImageSlider images={images} /> -->
     <!-- Banner -->
     <Banner
       title="Pink Sofa Hour"
@@ -78,6 +83,21 @@ const images = [
         live-streamed interviews, and community events, all designed to foster a
         deeper connection between artists and audiences.
       </p>
+      <h2>Welcome to the Pink Sofa Hour</h2>
+      <p>
+        I redesigned the website for <a
+          href="https://pinksofahour.com"
+          style="color: #d023a5; text-decoration: underline;"
+          ><em>The Pink Sofa Hour</em></a
+        >, a Colorado based live-streamed YouTube interview show focused on the
+        local music community.
+      </p>
+      <p class="mb-20">
+        The new site better showcases the brands bold and funky style, as well
+        as adds more functionality for cultivating connections between artists
+        and audiences, a core value of the show.
+      </p>
+      <!-- Images -->
       <Image
         class="open-modal-button mb-2 w-full cursor-pointer object-cover"
         src={pshBG}
@@ -85,11 +105,6 @@ const images = [
         data-index="0"
       />
       <figcaption class="mb-10 text-center text-sm">Home page</figcaption>
-      <p class="mb-20">
-        I designed the website for The Pink Sofa Hour, crafting a digital home
-        that reflects its mission of connecting Colorado’s music community.
-      </p>
-      <!-- Images -->
       <div class="mb-2 grid">
         <Image
           class="mb-2"
@@ -113,7 +128,59 @@ const images = [
         />
         <figcaption class="mb-20 text-center text-sm">Story page</figcaption>
       </div>
-
+      <h2>Previous Web Design</h2>
+      <Image
+        class="mb-2"
+        src={oldDesign}
+        alt="Previous Pink Sofa Hour home"
+        data-index=""
+      />
+      <figcaption class="mb-10 text-center text-sm">
+        Previous website home page
+      </figcaption>
+      <p>
+        The previous site had limited content and a layout that didn’t make
+        effective use of space. It also underutilized colors and typography,
+        missing the chance to fully capture the brand’s playful style.
+      </p>
+      <p class="mb-20">
+        Working with branding specialist <a
+          href="https://bixalot.com"
+          style="color: #d023a5; text-decoration: underline;"
+          ><em>Bixalot</em></a
+        >, proper style guides were created to ensure the new site aligned with
+        the Pink Sofa Hour's identity across social media and other platforms.
+      </p>
+      <h2>New Brand Guidelines</h2>
+      <div class="mb-2 grid grid-cols-2">
+        <Image
+          class="mb-2"
+          src={pshColor}
+          alt="Brand Guidelines: Color"
+          data-index=""
+        />
+        <Image
+          class="mb-2"
+          src={pshTypo}
+          alt="Brand Guidelines: Typography"
+          data-index=""
+        />
+        <Image
+          class="mb-2"
+          src={pshCopy}
+          alt="Brand Guidelines: Color"
+          data-index=""
+        />
+        <Image
+          class="mb-2"
+          src={pshExample}
+          alt="Brand Guidelines: Typography"
+          data-index=""
+        />
+      </div>
+      <figcaption class="mb-20 text-center text-sm">
+        Brand Guidelines for Color, Typography, and Copy
+      </figcaption>
       <h2>Designing with Wix Studio</h2>
       <p>
         The site was built using Wix Studio and made use of the many features
