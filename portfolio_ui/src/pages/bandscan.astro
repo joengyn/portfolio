@@ -1,0 +1,123 @@
+---
+// Imports
+import { Image } from "astro:assets";
+
+// Components
+import Layout from "../layouts/Layout.astro";
+import Banner from "../components/Banner.astro";
+import Button from "../components/Button.astro";
+
+// Banner Assets
+import bandscanBlackLogo from "../assets/bandscan/bandscan-logo-black.png";
+import bandscanWhiteLogo from "../assets/bandscan/bandscan-logo-white.png";
+import bandscanCard from "../assets/bandscan/bandscan-card.png";
+import whiteboard from "../assets/bandscan/whiteboard.png";
+import sketch1 from "../assets/bandscan/sketch-1.png";
+import sketch2 from "../assets/bandscan/sketch-2.png";
+import sketch3 from "../assets/bandscan/sketch-3.png";
+import sketch4 from "../assets/bandscan/sketch-4.png";
+import exploreWireframe from "../assets/bandscan/wireframe-explore.png";
+import likesWirefrane from "../assets/bandscan/wireframe-likes.png";
+import eventsWireframe from "../assets/bandscan/wireframe-events.png";
+import loginWireframe from "../assets/bandscan/wireframe-login.png";
+import onboardingWireframe from "../assets/bandscan/wireframe-onboarding.png";
+// Images
+---
+
+<Layout title="Joe Nguyen | Bandscan Case Study">
+  <main class="mt-[100px]">
+    <!-- Banner -->
+    <Banner
+      title="Bandscan"
+      bgImg={bandscanCard}
+      bgImgAlt="Bandscan card"
+      logo={bandscanBlackLogo}
+      logoAlt="Bandscan logo"
+      overview="Designer and developer of a mobile app for discovering new local music."
+      roles={["UX/UI Designer", "Frontend Developer"]}
+      tools={["Figma", "SolidJS"]}
+      year="November 2024 - February 2025"
+    />
+    <div class="wrapper">
+      <!-- Overview Section -->
+      <h2>Background</h2>
+      <Image src={bandscanCard} alt="Bandscan card" class="mb-2" />
+      <figcaption class="mb-10 text-center text-sm">Bandscan card</figcaption>
+      <p>
+        It's hard to discover local music without sifting through endless social
+        media posts, event listings, or unreliable word-of-mouth. Fans often
+        miss out on great live music because they don't know what's happening
+        nearby. Exisiting platforms focus on big-name acts, leaving smaller,
+        local shows underrepresented.
+      </p>
+      <p class="mb-20">
+        Bandscan provides a centralized, easy-to-use platform to discover local
+        artists and upcoming events.
+      </p>
+      <h2>Early Concepts and Sketches</h2>
+      <Image src={whiteboard} alt="Whiteboard sketch" class="mb-2" />
+      <figcaption class="mb-10 text-center text-sm">
+        Whiteboard concepts
+      </figcaption>
+      <div class="mb-2 grid grid-cols-4 gap-2">
+        <Image src={sketch1} alt="Sketch 1" class="border border-black" />
+        <Image src={sketch2} alt="Sketch 2" class="border border-black" />
+        <Image src={sketch3} alt="Sketch 3" class="border border-black" />
+        <Image src={sketch4} alt="Sketch 4" class="border border-black" />
+      </div>
+      <figcaption class="mb-10 text-center text-sm">
+        Early UI concepts
+      </figcaption>
+      <p>
+        This is what the starting point was. The state when I joined the team.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio,
+        mollitia? Eligendi, quis totam? Aperiam, id quam. Explicabo pariatur,
+        tempore fuga dolore earum eveniet vel voluptatum doloremque expedita!
+        Deserunt, atque dolorem?
+      </p>
+      <h2>Wireframes</h2>
+      <div class="mb-2 grid grid-cols-4 gap-2">
+        <Image src={loginWireframe} alt="" class="border border-black" />
+        <Image src={onboardingWireframe} alt="" class="border border-black" />
+        <Image src={likesWirefrane} alt="" class="border border-black" />
+        <Image src={eventsWireframe} alt="" class="border border-black" />
+      </div>
+      <figcaption class="mb-10 text-center text-sm">Wireframes</figcaption>
+      <p>
+        At this point, the user workflows were mostly mapped out and the app
+        started to take shape. Lorem, ipsum dolor sit amet consectetur
+        adipisicing elit. Odio, mollitia? Eligendi, quis totam? Aperiam, id
+        quam. Explicabo pariatur, tempore fuga dolore earum eveniet vel
+        voluptatum doloremque expedita! Deserunt, atque dolorem?
+      </p>
+      <!-- Buttons -->
+      <div class="mb-10 flex justify-between">
+        <Button
+          text="back to top"
+          type="button"
+          icon="arrow"
+          className="back-to-top-button"
+          iconClassName="-rotate-90"
+        />
+        <a href="/pinksofahour">
+          <Button text="next case study" type="button" icon="arrow" />
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Back to top button
+    const backToTopButton = document.querySelector(".back-to-top-button");
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    if (backToTopButton) {
+      backToTopButton.addEventListener("click", scrollToTop);
+    }
+  </script>
+
+  <style></style>
+</Layout>

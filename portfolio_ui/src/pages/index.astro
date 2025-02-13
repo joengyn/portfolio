@@ -9,6 +9,7 @@ import toastBg from "../assets/toast/toast-background.jpg";
 import pshHome from "../assets/pinksofahour/psh-home.png";
 import grammarokeCard from "../assets/grammaroke/grammaroke.png";
 import cosplayCard from "../assets/cosplay/cosplay.jpg";
+import bandscanCard from "../assets/bandscan/bandscan-card.png";
 ---
 
 <Layout title="Joe Nguyen | Designer & Engineer" isIndex={true}>
@@ -41,26 +42,33 @@ import cosplayCard from "../assets/cosplay/cosplay.jpg";
         className="delay-0"
       />
       <ProjectCard
+        href="/bandscan"
+        title="Bandscan"
+        body="Design and development of a mobile app for discovering new local music."
+        bgImg={bandscanCard}
+        className="sm:delay-0 md:delay-500"
+      />
+      <ProjectCard
         href="/pinksofahour"
         title="Pink Sofa Hour"
         body="Web design for a local music studio, cultivating community by connecting artists and audiences."
         bgImg={pshHome}
-        className="sm:delay-0 md:delay-500"
+        className="sm:delay-0 md:delay-1000"
       />
       <ProjectCard
         href="/toast"
         title="Toast"
         body="Designing a mobile QR-based pay-at-the-table service for restaurants."
         bgImg={toastBg}
-        className="sm:delay-0 md:delay-1000"
+        className="sm:delay-0 md:delay-[1.5s]"
       />
-      <ProjectCard
+      <!-- <ProjectCard
         href="/grammaroke"
         title="Grammaroke"
         body="Designing a language learning web app. Study and sing along to your favorite songs."
         bgImg={grammarokeCard}
         className="sm:delay-0 md:delay-[1.5s]"
-      />
+      /> -->
       <!-- <ProjectCard
         href="/cosplay"
         title="Cosplay Closet"
