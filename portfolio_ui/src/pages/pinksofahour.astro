@@ -37,6 +37,11 @@ const images = [
   aboutPage,
   missionPage,
   storyPage,
+  oldDesign,
+  pshColor,
+  pshTypo,
+  pshCopy,
+  pshExample,
   wixPage,
   blogPage,
   shopPage,
@@ -48,7 +53,7 @@ const images = [
 <Layout title="Joe Nguyen | Pink Sofa Hour Case Study">
   <main class="mt-[100px]">
     <!-- Image Slider -->
-    <!-- <ImageSlider images={images} /> -->
+    <ImageSlider images={images} />
     <!-- Banner -->
     <Banner
       title="Pink Sofa Hour"
@@ -108,21 +113,21 @@ const images = [
       <figcaption class="mb-10 text-center text-sm">Home page</figcaption>
       <div class="mb-2 grid">
         <Image
-          class="mb-2"
+          class="open-modal-button mb-2 cursor-pointer"
           src={aboutPage}
           alt="Pink Sofa Hour about page"
           data-index="1"
         />
         <figcaption class="mb-10 text-center text-sm">About page</figcaption>
         <Image
-          class="mb-2"
+          class="open-modal-button mb-2 cursor-pointer"
           src={missionPage}
           alt="Pink Sofa Hour mission page"
           data-index="2"
         />
         <figcaption class="mb-10 text-center text-sm">Mission page</figcaption>
         <Image
-          class="mb-2"
+          class="open-modal-button mb-2 cursor-pointer"
           src={storyPage}
           alt="Pink Sofa Hour story page"
           data-index="3"
@@ -131,10 +136,10 @@ const images = [
       </div>
       <h2>Previous Web Design</h2>
       <Image
-        class="mb-2"
+        class="open-modal-button mb-2 cursor-pointer"
         src={oldDesign}
         alt="Previous Pink Sofa Hour home"
-        data-index=""
+        data-index="4"
       />
       <figcaption class="mb-10 text-center text-sm">
         Previous website home page
@@ -155,28 +160,28 @@ const images = [
       <h2>New Brand Guidelines</h2>
       <div class="mb-2 grid grid-cols-2">
         <Image
-          class="mb-2"
+          class="open-modal-button mb-2 cursor-pointer"
           src={pshColor}
           alt="Brand Guidelines: Color"
-          data-index=""
+          data-index="5"
         />
         <Image
-          class="mb-2"
+          class="open-modal-button mb-2 cursor-pointer"
           src={pshTypo}
           alt="Brand Guidelines: Typography"
-          data-index=""
+          data-index="6"
         />
         <Image
-          class="mb-2"
+          class="open-modal-button mb-2 cursor-pointer"
           src={pshCopy}
           alt="Brand Guidelines: Color"
-          data-index=""
+          data-index="7"
         />
         <Image
-          class="mb-2"
+          class="open-modal-button mb-2 cursor-pointer"
           src={pshExample}
           alt="Brand Guidelines: Typography"
-          data-index=""
+          data-index="8"
         />
       </div>
       <figcaption class="mb-20 text-center text-sm">
@@ -191,35 +196,35 @@ const images = [
       </p>
       <div class="mb-2 grid">
         <Image
-          class="mb-2"
+          class="open-modal-button mb-2 cursor-pointer"
           src={wixPage}
           alt="Wix Studio interface of Pink Sofa Hour"
-          data-index="4"
+          data-index="9"
         />
         <figcaption class="mb-10 text-center text-sm">
           Wix Studio interface
         </figcaption>
         <Image
-          class="mb-2"
+          class="open-modal-button mb-2 cursor-pointer"
           src={blogPage}
           alt="Pink Sofa Hour blog page"
-          data-index="5"
+          data-index="10"
         />
         <figcaption class="mb-10 text-center text-sm">Blog page</figcaption>
         <Image
-          class="mb-2"
+          class="open-modal-button mb-2 cursor-pointer"
           src={shopItem}
           alt="Pink Sofa Hour shop item page"
-          data-index="6"
+          data-index="11"
         />
         <figcaption class="mb-10 text-center text-sm">
           Shop item page
         </figcaption>
         <Image
-          class="mb-2"
+          class="open-modal-button mb-2 cursor-pointer"
           src={sponsorshipPage}
           alt="Pink Sofa Hour sponsorship page"
-          data-index="7"
+          data-index="12"
         />
         <figcaption class="mb-20 text-center text-sm">
           Sponsorship page
@@ -245,10 +250,10 @@ const images = [
         broader creative community.
       </p>
       <Image
-        class="mb-2"
+        class="open-modal-button mb-2 cursor-pointer"
         src={couchedPage}
         alt="Couched Media homepage"
-        data-index="8"
+        data-index="13"
       />
       <figcaption class="mb-10 text-center text-sm">
         Preview of the Couched Media website
