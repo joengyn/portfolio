@@ -14,10 +14,10 @@ const { images } = Astro.props;
   class="fixed left-0 top-0 flex hidden h-full w-full bg-black bg-opacity-50 backdrop-blur-sm backdrop-filter"
 >
   <div
-    class="slider-wrapper m-auto flex max-w-screen-xl flex-col p-4 sm:h-1/2 md:h-[90%]"
+    class="slider-wrapper m-auto flex w-full max-w-screen-xl flex-col p-4 sm:h-1/2 md:h-[90%]"
   >
     <!-- Header Section Controls -->
-    <div class="flex flex-row justify-between">
+    <div class="flex w-full flex-row justify-between">
       <!-- Left & Right Arrows -->
       <div class="flex flex-row items-center gap-4">
         <button id="modal-back-button" class="-rotate-90 text-2xl text-white"
@@ -35,7 +35,7 @@ const { images } = Astro.props;
     <!-- Slider Images -->
     <div
       id="slider"
-      class="scrollbar flex h-full snap-x snap-mandatory items-start gap-10 overflow-x-auto overscroll-x-contain"
+      class="scrollbar flex h-full w-full snap-x snap-mandatory items-start gap-10 overflow-x-auto overscroll-x-contain"
     >
       {
         images.map((image, index) => (
