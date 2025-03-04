@@ -8,19 +8,25 @@ import Banner from "../components/Banner.astro";
 import Button from "../components/Button.astro";
 
 // Banner Assets
+import bandscanLogo from "../assets/bandscan/bandscan-logo-orange.png";
 import bandscanBlackLogo from "../assets/bandscan/bandscan-logo-black.png";
 import bandscanWhiteLogo from "../assets/bandscan/bandscan-logo-white.png";
 import bandscanCard from "../assets/bandscan/bandscan-card.png";
+
+// Images
 import whiteboard from "../assets/bandscan/whiteboard.png";
+// Sketches
 import sketch1 from "../assets/bandscan/sketch-1.png";
 import sketch2 from "../assets/bandscan/sketch-2.png";
 import sketch3 from "../assets/bandscan/sketch-3.png";
 import sketch4 from "../assets/bandscan/sketch-4.png";
+// Wireframes
 import exploreWireframe from "../assets/bandscan/wireframe-explore.png";
 import likesWirefrane from "../assets/bandscan/wireframe-likes.png";
 import eventsWireframe from "../assets/bandscan/wireframe-events.png";
 import loginWireframe from "../assets/bandscan/wireframe-login.png";
 import onboardingWireframe from "../assets/bandscan/wireframe-onboarding.png";
+// V1 Designs
 import loginV1 from "../assets/bandscan/login-v1.png";
 import onboardV1 from "../assets/bandscan/onboard-v1.png";
 import locationV1 from "../assets/bandscan/location-v1.png";
@@ -30,7 +36,35 @@ import exploreEventsV1 from "../assets/bandscan/explore-events-v1.png";
 import likesV1 from "../assets/bandscan/likes-v1.png";
 import eventsV1 from "../assets/bandscan/events-v1.png";
 import accountV1 from "../assets/bandscan/account-v1.png";
-// Images
+import artistOnboardV1 from "../assets/bandscan/artist-onboarding-v1.png";
+import artistNameV1 from "../assets/bandscan/artist-name-v1.png";
+import artistBioV1 from "../assets/bandscan/artist-bio-v1.png";
+import artistImgV1 from "../assets/bandscan/artist-image-v1.png";
+import artistSongV1 from "../assets/bandscan/artist-song-v1.png";
+import artistGenreV1 from "../assets/bandscan/artist-genre-v1.png";
+import artistContactV1 from "../assets/bandscan/artist-contact-v1.png";
+import artistLinksV1 from "../assets/bandscan/artist-links-v1.png";
+import artistSocialsV1 from "../assets/bandscan/artist-socials-v1.png";
+import artistEventsV1 from "../assets/bandscan/artist-events-v1.png";
+import artistEventDetailsV1 from "../assets/bandscan/artist-event-details-v1.png";
+import artistOnboardEndV1 from "../assets/bandscan/artist-onboarding-end-v1.png";
+// Mockups
+import exploreMockup from "../assets/bandscan/explore-mockup.png";
+import exploreBioMockup from "../assets/bandscan/explore-bio-mockup.png";
+import exploreEventsMockup from "../assets/bandscan/explore-events-mockup.png";
+import exploreSocialsMockup from "../assets/bandscan/explore-socials-mockup.png";
+import artistOnboardMockup from "../assets/bandscan/artist-onboarding-mockup.png";
+import artistNameMockup from "../assets/bandscan/artist-name-mockup.png";
+import artistBioMockup from "../assets/bandscan/artist-bio-mockup.png";
+import artistLocationMockup from "../assets/bandscan/artist-location-mockup.png";
+import artistImgMockup from "../assets/bandscan/artist-image-mockup.png";
+import artistSongMockup from "../assets/bandscan/artist-song-mockup.png";
+import artistGenreMockup from "../assets/bandscan/artist-genre-mockup.png";
+import artistStreamsMockup from "../assets/bandscan/artist-streams-mockup.png";
+import artistSocialsMockup from "../assets/bandscan/artist-socials-mockup.png";
+import artistEventsMockup from "../assets/bandscan/artist-events-mockup.png";
+import artistEventDetailsMockup from "../assets/bandscan/artist-event-details-mockup.png";
+import artistOnboardEndMockup from "../assets/bandscan/artist-onboarding-end-mockup.png";
 ---
 
 <Layout title="Joe Nguyen | Bandscan Case Study">
@@ -40,12 +74,12 @@ import accountV1 from "../assets/bandscan/account-v1.png";
       title="Bandscan"
       bgImg={bandscanCard}
       bgImgAlt="Bandscan card"
-      logo={bandscanBlackLogo}
+      logo={bandscanLogo}
       logoAlt="Bandscan logo"
       overview="Designer and developer of a mobile app for discovering new local music."
       roles={["UX/UI Designer", "Frontend Developer"]}
       tools={["Figma", "SolidJS"]}
-      year="Nov 2024 - Feb 2025"
+      duration="4 months (Nov '24 - Feb '25)"
     />
     <div class="wrapper">
       <!-- Overview Section -->
@@ -69,10 +103,10 @@ import accountV1 from "../assets/bandscan/account-v1.png";
         Whiteboard concepts
       </figcaption>
       <div class="mb-2 grid grid-cols-4 gap-2">
-        <Image src={sketch1} alt="Sketch 1" class="border border-black" />
-        <Image src={sketch2} alt="Sketch 2" class="border border-black" />
-        <Image src={sketch3} alt="Sketch 3" class="border border-black" />
-        <Image src={sketch4} alt="Sketch 4" class="border border-black" />
+        <Image src={sketch1} alt="Sketch 1" />
+        <Image src={sketch2} alt="Sketch 2" />
+        <Image src={sketch3} alt="Sketch 3" />
+        <Image src={sketch4} alt="Sketch 4" />
       </div>
       <figcaption class="mb-10 text-center text-sm">
         Early UI concepts
@@ -86,10 +120,10 @@ import accountV1 from "../assets/bandscan/account-v1.png";
       </p>
       <h2>Wireframes</h2>
       <div class="mb-2 grid grid-cols-4 gap-2">
-        <Image src={loginWireframe} alt="" class="border border-black" />
-        <Image src={onboardingWireframe} alt="" class="border border-black" />
-        <Image src={likesWirefrane} alt="" class="border border-black" />
-        <Image src={eventsWireframe} alt="" class="border border-black" />
+        <Image src={loginWireframe} alt="" />
+        <Image src={onboardingWireframe} alt="" />
+        <Image src={likesWirefrane} alt="" />
+        <Image src={exploreWireframe} alt="" />
       </div>
       <figcaption class="mb-10 text-center text-sm">Wireframes</figcaption>
       <p>
@@ -101,12 +135,15 @@ import accountV1 from "../assets/bandscan/account-v1.png";
       </p>
       <h2>V1 Designs</h2>
       <div class="mb-2 grid grid-cols-3 gap-5">
-        <Image src={loginV1} alt="" class="border border-black" />
-        <Image src={onboardV1} alt="" class="border border-black" />
-        <Image src={locationV1} alt="" class="border border-black" />
-        <Image src={likesV1} alt="" class="border border-black" />
-        <Image src={eventsV1} alt="" class="border border-black" />
-        <Image src={accountV1} alt="" class="border border-black" />
+        <Image src={loginV1} alt="" />
+        <Image src={onboardV1} alt="" />
+        <Image src={locationV1} alt="" />
+        <Image src={likesV1} alt="" />
+        <Image src={eventsV1} alt="" />
+        <Image src={accountV1} alt="" />
+        <Image src={exploreV1} alt="" />
+        <Image src={exploreBioV1} alt="" />
+        <Image src={exploreEventsV1} alt="" />
       </div>
       <figcaption class="mb-10 text-center text-sm">V1 Designs</figcaption>
       <p>
@@ -117,11 +154,12 @@ import accountV1 from "../assets/bandscan/account-v1.png";
         tempore fuga dolore earum eveniet vel voluptatum doloremque expedita!
         Deserunt, atque dolorem?
       </p>
-      <h2>Workflows</h2>
-      <div class="mb-2 grid grid-cols-3 gap-5">
-        <Image src={exploreV1} alt="" class="border border-black" />
-        <Image src={exploreBioV1} alt="" class="border border-black" />
-        <Image src={exploreEventsV1} alt="" class="border border-black" />
+      <h2>Explore Artists Workflow</h2>
+      <div class="mb-2 grid grid-cols-4 gap-5">
+        <Image src={exploreMockup} alt="" />
+        <Image src={exploreBioMockup} alt="" />
+        <Image src={exploreEventsMockup} alt="" />
+        <Image src={exploreSocialsMockup} alt="" />
       </div>
       <figcaption class="mb-10 text-center text-sm">Explore Page</figcaption>
       <p>
@@ -132,6 +170,38 @@ import accountV1 from "../assets/bandscan/account-v1.png";
         dolorum, voluptatibus ex quidem. Nostrum earum voluptate, praesentium
         iste veniam modi ea labore!
       </p>
+      <h2>Artist Onboarding Workflow</h2>
+      <div class="mb-2 grid grid-cols-4 gap-2">
+        <Image src={artistOnboardMockup} alt="" />
+        <Image src={artistNameMockup} alt="" />
+        <Image src={artistGenreMockup} alt="" />
+        <Image src={artistLocationMockup} alt="" />
+        <Image src={artistBioMockup} alt="" />
+        <Image src={artistImgMockup} alt="" />
+        <Image src={artistSongMockup} alt="" />
+        <Image src={artistStreamsMockup} alt="" />
+        <Image src={artistSocialsMockup} alt="" />
+        <Image src={artistEventsMockup} alt="" />
+        <Image src={artistEventDetailsMockup} alt="" />
+        <Image src={artistOnboardEndMockup} alt="" />
+      </div>
+      <figcaption class="mb-10 text-center text-sm">
+        Create Artist Profile
+      </figcaption>
+      <p>
+        Artist create profile workflow. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Possimus maxime iusto laborum dolore natus neque
+        cumque nesciunt, dolorum, voluptatibus ex quidem. Nostrum earum
+        voluptate, praesentium iste veniam modi ea labore!
+      </p>
+      <!-- <div class="all-items-center flex justify-center">
+        <iframe
+          style="border: 1px solid rgba(0, 0, 0, 0.1);"
+          width="100%"
+          height="800px"
+          src="https://embed.figma.com/proto/928Nk44nfHEOfRkFl9oHTJ/psh-band-app?page-id=330%3A1251&node-id=330-1256&p=f&viewport=-305%2C493%2C0.28&scaling=scale-down&content-scaling=fixed&starting-point-node-id=330%3A1256&show-proto-sidebar=1&embed-host=share"
+          allowfullscreen></iframe>
+      </div> -->
       <!-- Buttons -->
       <div class="mb-10 flex justify-between">
         <Button

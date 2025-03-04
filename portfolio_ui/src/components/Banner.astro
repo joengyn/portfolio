@@ -11,11 +11,20 @@ interface Props {
   overview: string;
   roles: string[];
   tools: string[];
-  year: string;
+  duration: string;
 }
 
-const { title, bgImg, bgImgAlt, logo, logoAlt, overview, roles, tools, year } =
-  Astro.props;
+const {
+  title,
+  bgImg,
+  bgImgAlt,
+  logo,
+  logoAlt,
+  overview,
+  roles,
+  tools,
+  duration,
+} = Astro.props;
 ---
 
 <div class="banner m-4 bg-gray">
@@ -39,7 +48,7 @@ const { title, bgImg, bgImgAlt, logo, logoAlt, overview, roles, tools, year } =
   </div>
   <div class="grid gap-4 p-4 py-6 md:flex md:justify-between md:px-8">
     <!-- Logo -->
-    <Image src={logo} alt={logoAlt} class="mb-2 h-8 w-auto" />
+    <Image src={logo} alt={logoAlt} class="mb-2 h-10 w-auto" />
     <!-- Overview -->
     <div class="flex flex-col gap-2 md:max-w-[250px]">
       <h4>Overview</h4>
@@ -50,7 +59,7 @@ const { title, bgImg, bgImgAlt, logo, logoAlt, overview, roles, tools, year } =
     <!-- Roles -->
     <div class="flex flex-col gap-2 md:max-w-[300px]">
       <h4>Role</h4>
-      <ul class="ml-8 list-outside list-disc">
+      <ul class="ml-4 list-outside list-disc">
         {
           roles.map((roles) => (
             <Fragment key={roles}>
@@ -64,8 +73,8 @@ const { title, bgImg, bgImgAlt, logo, logoAlt, overview, roles, tools, year } =
     </div>
     <!-- Tools & Technology -->
     <div class="flex flex-col gap-2">
-      <h4>Tools & Technology</h4>
-      <ul class="ml-8 grid list-outside list-disc grid-cols-2 md:grid-cols-1">
+      <h4>Tools</h4>
+      <ul class="ml-4 grid list-outside list-disc grid-cols-2 md:grid-cols-1">
         {
           tools.map((tools) => (
             <Fragment key={tools}>
@@ -77,12 +86,12 @@ const { title, bgImg, bgImgAlt, logo, logoAlt, overview, roles, tools, year } =
         }
       </ul>
     </div>
-    <!-- Year -->
+    <!-- Duration -->
     <div class="flex flex-col gap-2">
-      <h4>Year</h4>
-      <ul class="ml-8 list-outside list-disc">
+      <h4>Duration</h4>
+      <ul class="ml-4 list-outside list-disc">
         <li>
-          <p>{year}</p>
+          <p>{duration}</p>
         </li>
       </ul>
     </div>
