@@ -74,7 +74,7 @@ import designSystem from "../assets/bandscan/design-system.png";
     <Banner
       title="Bandscan"
       bgImg={bandscanCard}
-      bgImgAlt="Bandscan card"
+      bgImgAlt="Bandscan background image"
       logo={bandscanLogo}
       logoAlt="Bandscan logo"
       overview="Designer and developer of a mobile app for discovering new local music."
@@ -85,7 +85,7 @@ import designSystem from "../assets/bandscan/design-system.png";
     <div class="wrapper">
       <!-- Overview Section -->
       <h2>Background</h2>
-      <Image src={bandscanCard} alt="Bandscan card" class="mb-2" />
+      <Image src={bandscanCard} alt="Bandscan card image" class="mb-2" />
       <figcaption class="mb-10 text-center text-sm">Bandscan card</figcaption>
       <p>
         Discovering local music shouldn’t feel like a scavenger hunt. Social
@@ -120,15 +120,19 @@ import designSystem from "../assets/bandscan/design-system.png";
         role, helping to bring the app to life using SolidJS.
       </p>
       <h2>Early Concepts and Sketches</h2>
-      <Image src={whiteboard} alt="Whiteboard sketch" class="mb-2" />
+      <Image
+        src={whiteboard}
+        alt="Whiteboard sketch showing initial app concepts and user flows"
+        class="mb-2"
+      />
       <figcaption class="mb-10 text-center text-sm">
         Whiteboard concepts
       </figcaption>
       <div class="mb-2 grid grid-cols-4 gap-2">
-        <Image src={sketch1} alt="Sketch 1" />
-        <Image src={sketch2} alt="Sketch 2" />
-        <Image src={sketch3} alt="Sketch 3" />
-        <Image src={sketch4} alt="Sketch 4" />
+        <Image src={sketch1} alt="Early UI concept designs" />
+        <Image src={sketch2} alt="Early UI concept designs" />
+        <Image src={sketch3} alt="Early UI concept designs" />
+        <Image src={sketch4} alt="Early UI concept designs" />
       </div>
       <figcaption class="mb-10 text-center text-sm">
         Early UI concepts
@@ -146,10 +150,13 @@ import designSystem from "../assets/bandscan/design-system.png";
       </ul>
       <h2>Wireframes</h2>
       <div class="mb-2 grid grid-cols-4 gap-2">
-        <Image src={loginWireframe} alt="" />
-        <Image src={onboardingWireframe} alt="" />
-        <Image src={likesWirefrane} alt="" />
-        <Image src={exploreWireframe} alt="" />
+        <Image src={loginWireframe} alt="Login page early wireframe" />
+        <Image
+          src={onboardingWireframe}
+          alt="User onboarding page early wireframe"
+        />
+        <Image src={likesWirefrane} alt="User profile page early wireframe" />
+        <Image src={exploreWireframe} alt="Explore page early wireframe" />
       </div>
       <figcaption class="mb-10 text-center text-sm">
         Early Wireframes
@@ -165,21 +172,28 @@ import designSystem from "../assets/bandscan/design-system.png";
         likes and event RSVPs.
       </p>
       <div class="mb-2 grid grid-cols-3 gap-5">
-        <Image src={loginV1} alt="" />
-        <Image src={onboardV1} alt="" />
-        <Image src={locationV1} alt="" />
-        <Image src={likesV1} alt="" />
-        <Image src={eventsV1} alt="" />
-        <Image src={accountV1} alt="" />
-        <Image src={exploreV1} alt="" />
-        <Image src={exploreBioV1} alt="" />
-        <Image src={exploreEventsV1} alt="" />
+        <Image src={loginV1} alt="Login page wireframe" />
+        <Image src={onboardV1} alt="User onboarding page wireframe" />
+        <Image src={locationV1} alt="Location selection page wireframe" />
+        <Image src={likesV1} alt="Liked artists page wireframe" />
+        <Image src={eventsV1} alt="Events page page wireframe" />
+        <Image src={accountV1} alt="User account settings page wireframe" />
+        <Image src={exploreV1} alt="Explore page wireframe" />
+        <Image src={exploreBioV1} alt="Explore page wireframe, about section" />
+        <Image
+          src={exploreEventsV1}
+          alt="Explore page wireframe, events section"
+        />
       </div>
       <figcaption class="mb-20 text-center text-sm">
         Refined Wireframes
       </figcaption>
       <h2>Visuals & Design System</h2>
-      <Image src={designSystem} alt="" class="mb-2" />
+      <Image
+        src={designSystem}
+        alt="Design system file showing colors, icons and components"
+        class="mb-2"
+      />
       <figcaption class="mb-10 text-center text-sm">Design System</figcaption>
       <p>
         For the app’s visual design, we aimed for subtlety. The design should
@@ -198,10 +212,19 @@ import designSystem from "../assets/bandscan/design-system.png";
       </p>
       <h2>Explore Artists Workflow</h2>
       <div class="mb-2 grid grid-cols-4 gap-5">
-        <Image src={exploreMockup} alt="" />
-        <Image src={exploreBioMockup} alt="" />
-        <Image src={exploreEventsMockup} alt="" />
-        <Image src={exploreSocialsMockup} alt="" />
+        <Image src={exploreMockup} alt="Explore page mockup" />
+        <Image
+          src={exploreBioMockup}
+          alt="Explore page mockup, about section"
+        />
+        <Image
+          src={exploreEventsMockup}
+          alt="Explore page mockup, events section"
+        />
+        <Image
+          src={exploreSocialsMockup}
+          alt="Explore page mockup, social links section"
+        />
       </div>
       <figcaption class="mb-10 text-center text-sm">Explore Page</figcaption>
       <p>
@@ -219,18 +242,48 @@ import designSystem from "../assets/bandscan/design-system.png";
       </p>
       <h2>Artist Onboarding Workflow</h2>
       <div class="mb-2 grid grid-cols-4 gap-2">
-        <Image src={artistOnboardMockup} alt="" />
-        <Image src={artistNameMockup} alt="" />
-        <Image src={artistGenreMockup} alt="" />
-        <Image src={artistLocationMockup} alt="" />
-        <Image src={artistBioMockup} alt="" />
-        <Image src={artistImgMockup} alt="" />
-        <Image src={artistSongMockup} alt="" />
-        <Image src={artistStreamsMockup} alt="" />
-        <Image src={artistSocialsMockup} alt="" />
-        <Image src={artistEventsMockup} alt="" />
-        <Image src={artistEventDetailsMockup} alt="" />
-        <Image src={artistOnboardEndMockup} alt="" />
+        <Image
+          src={artistOnboardMockup}
+          alt="Artist onboarding welcome screen mockup"
+        />
+        <Image src={artistNameMockup} alt="Artist name input screen mockup" />
+        <Image
+          src={artistGenreMockup}
+          alt="Artist genre selection screen mockup"
+        />
+        <Image
+          src={artistLocationMockup}
+          alt="Artist location input screen mockup"
+        />
+        <Image
+          src={artistBioMockup}
+          alt="Artist biography input screen mockup"
+        />
+        <Image
+          src={artistImgMockup}
+          alt="Artist profile image upload screen mockup"
+        />
+        <Image src={artistSongMockup} alt="Artist song upload screen mockup" />
+        <Image
+          src={artistStreamsMockup}
+          alt="Artist streaming platforms link screen mockup"
+        />
+        <Image
+          src={artistSocialsMockup}
+          alt="Artist social media links input screen mockup"
+        />
+        <Image
+          src={artistEventsMockup}
+          alt="Artist events management screen mockup"
+        />
+        <Image
+          src={artistEventDetailsMockup}
+          alt="Artist event details input screen mockup"
+        />
+        <Image
+          src={artistOnboardEndMockup}
+          alt="Artist onboarding completion screen mockup"
+        />
       </div>
       <figcaption class="mb-10 text-center text-sm">
         Create Artist Profile
