@@ -6,6 +6,10 @@ const { image } = Astro.props;
 ---
 
 <div class="relative">
-  <Image src={iphone} alt="iPhone mockup" class="absolute z-10" />
-  <img src={image.src} alt="Login gif" class="p-[10px]" />
+  <Image src={iphone} alt="iPhone mockup" class="absolute z-10 opacity-70" />
+  <img
+    src={image.src}
+    alt="Login gif"
+    class="top-2 mx-auto w-[90%] rounded-md pt-1 md:pt-2"
+  />
 </div>
