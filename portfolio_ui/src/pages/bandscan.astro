@@ -6,6 +6,7 @@ import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Banner from "../components/Banner.astro";
 import Button from "../components/Button.astro";
+import PhoneMockup from "../components/PhoneMockup.astro";
 
 // Banner Assets
 import bandscanLogo from "../assets/bandscan/bandscan-logo-orange.png";
@@ -66,6 +67,11 @@ import artistEventsMockup from "../assets/bandscan/artist-events-mockup.png";
 import artistEventDetailsMockup from "../assets/bandscan/artist-event-details-mockup.png";
 import artistOnboardEndMockup from "../assets/bandscan/artist-onboarding-end-mockup.png";
 import designSystem from "../assets/bandscan/design-system.png";
+// Gifs
+import loginGif from "../assets/bandscan/login.gif";
+import onboardingGif from "../assets/bandscan/artist-onboard.gif";
+import exploreGif from "../assets/bandscan/explore.gif";
+import pageSwipeGif from "../assets/bandscan/page-swiping.gif";
 ---
 
 <Layout title="Joe Nguyen | Bandscan Case Study">
@@ -98,6 +104,16 @@ import designSystem from "../assets/bandscan/design-system.png";
         platform to discover local artists and upcoming events, so you never
         miss a beat.
       </p>
+      <!-- Gifs -->
+      <div class="mb-2 grid grid-cols-4 gap-2">
+        <PhoneMockup image={loginGif} />
+        <PhoneMockup image={pageSwipeGif} />
+        <PhoneMockup image={exploreGif} />
+        <PhoneMockup image={onboardingGif} />
+      </div>
+      <figcaption class="mb-20 text-center text-sm">
+        Gifs showing various screens and flows
+      </figcaption>
       <h2>Project Timeline and Responsibilities</h2>
       <p>
         The project had a tight deadline (~4 months), with the goal of having a

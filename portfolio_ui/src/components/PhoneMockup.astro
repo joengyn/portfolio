@@ -1,0 +1,11 @@
+---
+import { Image } from "astro:assets";
+import iphone from "../assets/iphone.png";
+
+const { image } = Astro.props;
+---
+
+<div class="relative">
+  <Image src={iphone} alt="iPhone mockup" class="absolute z-10" />
+  <img src={image.src} alt="Login gif" class="p-[10px]" />
+</div>
