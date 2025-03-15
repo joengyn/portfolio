@@ -15,6 +15,7 @@ import bandscanWhiteLogo from "../assets/bandscan/bandscan-logo-white.png";
 import bandscanCard from "../assets/bandscan/bandscan-card.png";
 
 // Images
+import solidJS from "../assets/bandscan/solidjs.png";
 import whiteboard from "../assets/bandscan/whiteboard.png";
 // Sketches
 import sketch1 from "../assets/bandscan/sketch-1.png";
@@ -89,7 +90,7 @@ import pageSwipeGif from "../assets/bandscan/page-swiping.gif";
       duration="4 months (Nov '24 - Feb '25)"
     />
     <div class="wrapper">
-      <!-- Overview Section -->
+      <!-- Background Section -->
       <h2>Background</h2>
       <Image src={bandscanCard} alt="Bandscan card image" class="mb-2" />
       <figcaption class="mb-10 text-center text-sm">Bandscan card</figcaption>
@@ -114,6 +115,7 @@ import pageSwipeGif from "../assets/bandscan/page-swiping.gif";
       <figcaption class="mb-20 text-center text-sm">
         Gifs showing various screens and flows
       </figcaption>
+      <!-- Timeline and Responsibilities Section -->
       <h2>Timeline and Responsibilities</h2>
       <p>
         The project had a tight deadline (~4 months), with the goal of having a
@@ -135,6 +137,7 @@ import pageSwipeGif from "../assets/bandscan/page-swiping.gif";
         As the design solidified, I transitioned into a frontend engineering
         role, helping to bring the app to life using SolidJS.
       </p>
+      <!-- Early Concepts and Sketches Section -->
       <h2>Early Concepts and Sketches</h2>
       <Image
         src={whiteboard}
@@ -184,6 +187,7 @@ import pageSwipeGif from "../assets/bandscan/page-swiping.gif";
           </p>
         </li>
       </ul>
+      <!-- Wireframes Section -->
       <h2>Wireframes</h2>
       <div class="mb-2 grid grid-cols-2 gap-4 md:grid-cols-4">
         <Image
@@ -215,10 +219,10 @@ import pageSwipeGif from "../assets/bandscan/page-swiping.gif";
         visualize the app’s structure and user flows.
       </p>
       <p>
-        From there, the app’s core pages were finalized — <b
+        From there, the app’s core pages were established — <b
           >Explore, Likes, Events, Account</b
         > — along with key interactions such as swiping on the Explore page and managing
-        likes and event RSVPs.
+        likes and upcoming events.
       </p>
       <div class="mb-2 grid grid-cols-3 gap-4">
         <Image
@@ -270,6 +274,7 @@ import pageSwipeGif from "../assets/bandscan/page-swiping.gif";
       <figcaption class="mb-20 text-center text-sm">
         Refined Wireframes
       </figcaption>
+      <!-- Visuals & Design System Section -->
       <h2>Visuals & Design System</h2>
       <Image
         src={designSystem}
@@ -282,16 +287,12 @@ import pageSwipeGif from "../assets/bandscan/page-swiping.gif";
         support the artists’ content without competing for attention, allowing
         the experience to feel natural and immersive.
       </p>
-      <p>
-        In addition to dating apps, we took inspiration from music player apps,
-        aiming to evoke the experience of ‘shuffling through a playlist of local
-        artists.’
-      </p>
       <p class="mb-20">
         Since this was an MVP, we prioritized a simple, understated design to
         streamline development. A more refined and fully realized design was
         planned for future iterations.
       </p>
+      <!-- Explore Artists Workflow Section -->
       <h2>Explore Artists Workflow</h2>
       <div class="mb-2 grid grid-cols-2 gap-4 md:grid-cols-4">
         <Image src={exploreMockup} alt="Explore page mockup" />
@@ -313,19 +314,21 @@ import pageSwipeGif from "../assets/bandscan/page-swiping.gif";
       </figcaption>
       <p>
         The <b>Explore</b> page serves as the core feature of the app, where users
-        can discover profiles of artists in their desired search radius . Each profile
-        offers a quick listen to a song via an embedded player, provides details
-        about the artist, displays any upcoming events, and links to the artist’s
-        social media profiles.
+        can discover local artists in their chosen search radius. Each artist's profile
+        features an embedded song player for quick listening, details about the artist,
+        any upcoming events, and links to their social media.
       </p>
       <p class="mb-20">
-        Users can easily add an artist to their <b>Likes</b> page by clicking the
-        heart icon. Once an artist is liked, any upcoming events will be appear on
-        the <b>Events</b> page. To explore more artists, users can navigate to the
-        next profile by clicking the arrow.
+        Users can like an artist by clicking the heart icon, adding them to the <b
+          >Likes</b
+        > page. Once liked, any upcoming events featuring that artist will appear
+        on the
+        <b>Events</b> page. To discover more artists, users can navigate to the next
+        profile by clicking the arrow.
       </p>
+      <!-- Artist Onboarding Workflow Section -->
       <h2>Artist Onboarding Workflow</h2>
-      <div class="mb-2 grid grid-cols-2 gap-2 md:grid-cols-4">
+      <div class="mb-2 grid grid-cols-2 gap-4 md:grid-cols-4">
         <Image
           src={artistOnboardMockup}
           alt="Artist onboarding welcome screen mockup"
@@ -378,12 +381,27 @@ import pageSwipeGif from "../assets/bandscan/page-swiping.gif";
         intuitive, guiding artists through the steps of setting up their
         profile, uploading music, and linking their social media.
       </p>
-      <p>
+      <p class="mb-20">
         Beyond connecting with fans on the Explore page, artists could also use
         the app as a digital <b>Electronic Press Kit (EPK)</b> to share with venues
         and promoters. An EPK is a curated collection of promotional materials that
         helps musicians pitch their work to industry professionals, bloggers, and
         media outlets, providing a structured overview of their music and brand.
+      </p>
+      <!-- Development Section -->
+      <h2>Development</h2>
+      <p>
+        Throughout the design process, I worked closely with the lead developer
+        to ensure the designs were technically feasible within our constraints.
+        By the time I began frontend development, the app was functional but
+        unpolished, with raw JSON data and unstyled components.
+      </p>
+      <Image src={solidJS} alt="SolidJS logo" class="mx-auto mb-2 w-60" />
+      <figcaption class="mb-10 text-center text-sm">SolidJS Logo</figcaption>
+      <p class="mb-20">
+        Using the <b>SolidJS</b> library and SCSS Modules, I focused on styling the
+        interface, creating reusable components, and setting up page navigation to
+        improve usability and visual consistency.
       </p>
       <!-- Buttons -->
       <div class="mb-10 flex justify-between">
