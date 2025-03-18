@@ -35,6 +35,9 @@ export default {
       backgroundImage: {
         wave: "url('src/assets/black-wave.jpeg')",
       },
+      screens: {
+        'custom-md': '425px',
+      },
     },
   },
   plugins: [],
