@@ -36,6 +36,10 @@ import likesV1 from "../assets/bandscan/likes-v1.png";
 import eventsV1 from "../assets/bandscan/events-v1.png";
 import accountV1 from "../assets/bandscan/account-v1.png";
 // Mockups
+import loginMockup from "../assets/bandscan/login-mockup.png";
+import likesMockup from "../assets/bandscan/likes-mockup.png";
+import eventsMockup from "../assets/bandscan/events-mockup.png";
+import accountMockup from "../assets/bandscan/account-mockup.png";
 import exploreMockup from "../assets/bandscan/explore-mockup.png";
 import exploreBioMockup from "../assets/bandscan/explore-bio-mockup.png";
 import exploreEventsMockup from "../assets/bandscan/explore-events-mockup.png";
@@ -91,7 +95,7 @@ import pageSwipeMp4 from "../assets/bandscan/page-swiping.mp4";
       </p>
       <p class="mb-10">
         Bandscan aims to change that, by providing a centralized, easy-to-use
-        platform to discover local artists and upcoming events, so you never
+        platform to discover local artists and live music events, so you never
         miss a beat.
       </p>
       <!-- MP4s -->
@@ -119,24 +123,19 @@ import pageSwipeMp4 from "../assets/bandscan/page-swiping.mp4";
       <!-- Timeline and Responsibilities Section -->
       <h2>Timeline and Responsibilities</h2>
       <p>
-        The project had a tight deadline (~4 months), with the goal of having a
-        working MVP demo ready to showcase in the latest season of Amazon
-        Prime's reality show
-        <a
-          href="https://www.primevideo.com/detail/The-Blox/0IJBJZ2SMKGB6180ZAXN39CFW1"
-          style="text-decoration: underline; font-weight: 600;"
-          ><em>The Blox.</em></a
-        >
+        The project had a tight four-month deadline and a small team—consisting
+        of a PM, a Lead Developer, and myself as a Designer/Engineer. While the
+        small team allowed us to collaborate closely and move quickly, it also
+        meant there was a lot of work to go around.
       </p>
       <p>
-        When I joined the team as the UX/UI designer, initial user research had
-        been conducted and early concepts and sketches were in place. I refined
-        these ideas into a functional, user-friendly experience, creating a
-        Figma design that served as a prototype for development.
+        I initially joined as the UX/UI designer, refining early research and
+        sketches into a functional, user-friendly experience and creating a
+        Figma prototype that guided development.
       </p>
       <p class="mb-20">
         As the design solidified, I transitioned into a frontend engineering
-        role, helping to bring the app to life using SolidJS.
+        role, helping to bring the app to life.
       </p>
       <!-- Early Concepts and Sketches Section -->
       <h2>Early Concepts and Sketches</h2>
@@ -174,9 +173,9 @@ import pageSwipeMp4 from "../assets/bandscan/page-swiping.mp4";
         Early UI concepts
       </figcaption>
       <p class="mb-10">
-        The core feature of the app’s design took inspiration from dating apps,
-        allowing users to ‘swipe’ through local artists in their area. The goal
-        was to serve two main user groups:
+        The core feature of the app’s design was inspired by dating apps,
+        incorporating a ‘swipe’ functionality that let users browse local artist
+        profiles. The goal was to serve two main groups:
       </p>
       <ul class="mb-20">
         <li>
@@ -184,7 +183,8 @@ import pageSwipeMp4 from "../assets/bandscan/page-swiping.mp4";
         </li>
         <li>
           <p>
-            <b>2.)</b> Artists wanting to create profiles and promote themselves
+            <b>2.)</b> Artists looking to showcase their work, grow their audience,
+            and sell more tickets
           </p>
         </li>
       </ul>
@@ -293,11 +293,18 @@ import pageSwipeMp4 from "../assets/bandscan/page-swiping.mp4";
         support the artists’ content without competing for attention, allowing
         the experience to feel natural and immersive.
       </p>
-      <p class="mb-20">
+      <p>
         As this was an MVP, we prioritized a simple, understated design to
         streamline development. A more refined and fully realized design was
         planned for future iterations.
       </p>
+      <div class="custom-md:grid-cols-4 mb-2 grid grid-cols-2 gap-2">
+        <Image src={loginMockup} alt="Login page mockup" />
+        <Image src={likesMockup} alt="Likes page mockup" />
+        <Image src={eventsMockup} alt="Events page mockup" />
+        <Image src={accountMockup} alt="Acccount page mockup" />
+      </div>
+      <figcaption class="mb-20 text-center text-sm">Page Mockups</figcaption>
       <!-- Explore Artists Workflow Section -->
       <h2>Explore Artists Workflow</h2>
       <div class="custom-md:grid-cols-4 mb-2 grid grid-cols-2 gap-2">
@@ -320,9 +327,10 @@ import pageSwipeMp4 from "../assets/bandscan/page-swiping.mp4";
       </figcaption>
       <p>
         The <b>Explore</b> page serves as the core feature of the app, where users
-        can discover local artists in their chosen search radius. Each artist's profile
-        features an embedded song player for quick listening, details about the artist,
-        any upcoming events, and links to their social media.
+        can discover local artists in their chosen search radius by swiping through
+        their profiles. Each artist's profile features an embedded song player for
+        quick listening, details about the artist, any upcoming events, and links
+        to their social media.
       </p>
       <p class="mb-20">
         Users can like an artist by clicking the heart icon, which adds the
@@ -441,10 +449,7 @@ import pageSwipeMp4 from "../assets/bandscan/page-swiping.mp4";
         as both a designer and developer. It was my first project as an
         independent contractor, where I took an idea from a whiteboard concept
         to a fully functional coded product. The fast-paced timeline and small
-        team—consisting of a PM, a Lead Developer, and myself as the
-        Designer/Engineer—made for an intense but invaluable experience. I’m
-        proud of what we accomplished and look forward to seeing the app
-        continue to grow and evolve.
+        team made for an intense but valuable experience.
       </p>
       <!-- Buttons -->
       <div class="mb-10 flex justify-between">
