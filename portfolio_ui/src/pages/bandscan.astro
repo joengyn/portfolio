@@ -6,7 +6,6 @@ import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Banner from "../components/Banner.astro";
 import Button from "../components/Button.astro";
-import PhoneMockup from "../components/PhoneMockup.astro";
 
 // Banner Assets
 import bandscanLogo from "../assets/bandscan/bandscan-logo-orange.png";
@@ -57,11 +56,11 @@ import designSystem from "../assets/bandscan/design-system.png";
 // Redesign
 import redesign from "../assets/bandscan/bandscan-redesign.png";
 import redesign2 from "../assets/bandscan/bandscan-redesign-2.png";
-// Gifs
-import loginGif from "../assets/bandscan/login.gif";
-import onboardingGif from "../assets/bandscan/artist-onboard.gif";
-import exploreGif from "../assets/bandscan/explore.gif";
-import pageSwipeGif from "../assets/bandscan/page-swiping.gif";
+// MP4s
+import loginMp4 from "../assets/bandscan/login.mp4";
+import onboardingMp4 from "../assets/bandscan/artist-onboard.mp4";
+import exploreMp4 from "../assets/bandscan/explore.mp4";
+import pageSwipeMp4 from "../assets/bandscan/page-swiping.mp4";
 ---
 
 <Layout title="Joe Nguyen | Bandscan Case Study">
@@ -95,15 +94,27 @@ import pageSwipeGif from "../assets/bandscan/page-swiping.gif";
         platform to discover local artists and upcoming events, so you never
         miss a beat.
       </p>
-      <!-- Gifs -->
+      <!-- MP4s -->
       <div class="custom-md:grid-cols-4 mb-3 grid grid-cols-2 gap-2">
-        <PhoneMockup image={loginGif} />
-        <PhoneMockup image={pageSwipeGif} />
-        <PhoneMockup image={exploreGif} />
-        <PhoneMockup image={onboardingGif} />
+        <video autoplay loop muted playsinline>
+          <source src={loginMp4} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <video autoplay loop muted playsinline>
+          <source src={pageSwipeMp4} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <video autoplay loop muted playsinline>
+          <source src={exploreMp4} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <video autoplay loop muted playsinline>
+          <source src={onboardingMp4} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
       <figcaption class="mb-20 text-center text-sm">
-        Gifs showing various screens and flows
+        Videos showing various screens and flows
       </figcaption>
       <!-- Timeline and Responsibilities Section -->
       <h2>Timeline and Responsibilities</h2>
