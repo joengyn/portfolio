@@ -8,13 +8,25 @@ import Banner from "../components/Banner.astro";
 import Button from "../components/Button.astro";
 
 import toastLogo from "../assets/toast/toast-logo.svg";
-import toastCard2 from "../assets/toast/toast-card-2.jpg";
+import toastBg from "../assets/toast/toast-background.jpg";
 import toastUI from "../assets/toast/toast-ui.png";
 import toastUI2 from "../assets/toast/toast-ui-2.png";
 ---
 
 <Layout title="toast case study">
   <main class="mt-[100px]">
+    <!-- Banner -->
+    <Banner
+      title="Toast"
+      bgImg={toastBg}
+      bgImgAlt="Toast background image"
+      logo={toastLogo}
+      logoAlt="Toast logo"
+      overview="Design of a mobile QR-based pay-at-the-table service for restaurants"
+      roles={["UX/UI Designer & Researcher"]}
+      tools={["Figma"]}
+      duration="3 months (Jun '21 - Aug '21)"
+    />
     <div class="wrapper">
       <h2>Overview</h2>
       <p>

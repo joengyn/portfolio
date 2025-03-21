@@ -40,15 +40,13 @@ const {
       {title}
     </span>
     <!-- Banner Image -->
-    <Image
-      class="max-h-[500px] w-full object-cover"
-      src={bgImg}
-      alt={bgImgAlt}
-    />
+    <Image class="max-h-[500px] w-full bg-black" src={bgImg} alt={bgImgAlt} />
   </div>
-  <div class="grid gap-4 p-4 py-6 md:flex md:justify-between md:px-8">
-    <!-- Logo -->
-    <Image src={logo} alt={logoAlt} class="mb-2 h-10 w-auto" />
+  <!-- Logo -->
+  <div class="p-6 pb-0 md:px-8">
+    <Image src={logo} alt={logoAlt} class="h-10 w-auto" />
+  </div>
+  <div class="grid gap-4 p-6 md:flex md:justify-between md:px-8">
     <!-- Overview -->
     <div class="flex flex-col gap-2 md:max-w-[250px]">
       <h4>Overview</h4>
@@ -101,12 +99,12 @@ const {
 <style>
   .banner p {
     font-size: 16px;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .banner h4 {
     font-size: 16px;
     font-weight: bold;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
   }
 </style>
