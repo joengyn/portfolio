@@ -28,168 +28,149 @@ import toastUI2 from "../assets/toast/toast-ui-2.png";
       duration="3 months (Jun '21 - Aug '21)"
     />
     <div class="wrapper">
-      <h2>Overview</h2>
-      <p>
-        The following is an on-going case study of my design and development of
-        the web application, Grammaroke.
-      </p>
-      <p>A language learning web app combining Grammar and Karaoke.</p>
-      <p>
-        This project was started as an opportunity to learn new design tools,
-        coding languages, production technologies and launch my first website!
-        With this project, I learned how to see things through the eyes of a
-        developer and now have a better understanding of things to consider
-        while designing
-      </p>
-      <p>Design Tools: Figma · Photoshop</p>
-      <p>Languages: Javascript (ES6) · HTML5 · SCSS · SQL</p>
-      <p>
-        Tech: React · Node · PostgreSQL · pgAdmin · Docker · NGINX · Vultr ·
-        Postman
-      </p>
+      <!-- Background -->
       <h2>Background</h2>
       <p>
-        One of my favorite methods of studying Japanese is to translate songs
-        that I really enjoy listening to. Learning songs is an intimate way to
-        experience a language and being able to sing along is a great feeling.
+        In the summer of 2021, I joined Toast’s “Order & Pay” team during a time
+        when the world was still navigating the impacts of the COVID-19
+        pandemic. Quarantine restrictions were starting to lift, but
+        human-to-human interactions—such as waitstaff serving customers—were
+        still seen as risky. In response to this challenge, Toast's "Order &
+        Pay" app provided a solution that allowed diners to place and pay for
+        their orders via a QR code, minimizing face-to-face contact while still
+        providing a restaurant experience.
       </p>
       <p>
-        To do this, I use Google Docs. Here I could save my songs online, easily
-        add new ones, and make my study notes using the comments feature. This
-        was great at first but I quickly ran into some issues.
-      </p>
-      <h2>My Pain Points</h2>
-      <ul>
-        <li>
-          Too many comments made the file slow to load and stutter during use.
-        </li>
-        <li>
-          Comments were off to the side making it difficult to correlate them
-          with their associated text.
-        </li>
-        <li>
-          Current line of lyrics was hard to focus on due to size and uniformity
-          of the text. Some kanji characters were also hard to distinguish due
-          to size.
-        </li>
-        <li>Page scroll had to be manually adjusted to keep with the song.</li>
-        <li>
-          Songs added later were slow to load when using the 'Table of Contents'
-          since they were lower in the document.
-        </li>
-      </ul>
-      <h2>Inspo</h2>
-      <p>
-        Inspiration was taken from the following sources; note taking, writing
-        and annotation applications, grammar lessons and lyric music videos.
+        The product faced mixed reactions from users. Some embraced the
+        convenience and felt that it represented the future of dining
+        technology, especially in the context of a pandemic. Others, however,
+        felt that this stripped away the personal, human element that many
+        people cherish when dining out. The tension between technology and
+        tradition created a complex landscape for the app to navigate.
       </p>
       <p>
-        Google Docs made it easy to paste in large bodies of text and quickly
-        make annotated notes through highlighting and commenting.
+        My role on the team was multifaceted, involving design, research, and
+        user experience improvements. The challenge was not only to refine the
+        app but also to address the evolving needs of customers and restaurants
+        as the product adapted to a rapidly changing world.
+      </p>
+      <h2>My Role</h2>
+      <p>
+        As a designer on the “Order & Pay” team, my responsibilities were
+        divided into two main areas: improving the app's design and conducting
+        extensive user research.
       </p>
       <p>
-        The minimalistic UI of iA Writer allows users to stay focused on the
-        current section of content by blurring our adjacent text. This aligns
-        with lyric music videos in which text is centered on the screen.
+        Mapping the Current State: My first major task was to map out the
+        current state of the app. The app had been developed quickly, in
+        response to an urgent need, and there was no unified “source of truth”
+        for its design or functionality. This led to inconsistencies across the
+        product. I worked to catalog the app’s features and design, uncovering
+        several small issues with consistency—such as mismatched text and
+        components—and addressing them to improve the app’s overall coherence.
       </p>
       <p>
-        Misa from Japanese Ammo makes great use of colors to coordinate words
-        with their definition and associated grammar points.
-      </p>
-      <h2>Prototype Videos</h2>
-      <p>
-        These videos demonstrate the main annotation functionality of the
-        application.
-      </p>
-      <p>
-        The first video shows the interactions between existing notes, and the
-        process for adding new ones. The second video shows the scrolling
-        animation. Next lines are brought into focus while secondary lines fade
-        into the background.
-      </p>
-      <h2>Color & Components</h2>
-      <p>
-        The aim was a casual, notebook styled theme. Gray background colors,
-        with bright highlights. Since the application was going to be built
-        using React, a "components based" mindset was adopted early on.
-      </p>
-      <h3>Homepage</h3>
-      <p>
-        The homepage gives an overview of the site's main features, an example
-        of the lyrics view and a video demo. Following responsive design best
-        practices allows the site to accommodate for screen sizes ranging from
-        mobile to desktop.
+        Research & User Studies: I also focused heavily on conducting user
+        research to understand the nuances of this new market. The product was
+        still evolving, so there were many unknowns. My tasks included: Setting
+        up user research studies Recruiting participants Conducting interviews
+        both online and in-person Performing ad-hoc research in real-world
+        environments (such as observing customers in restaurants) Analyzing and
+        presenting data to inform product decisions
       </p>
       <p>
-        In addition to changing from a single column to a double column layout
-        at the larger screen sizes, the header menu options expand from a
-        hamburger button to labeled icons.
+        Through these efforts, I gathered valuable insights about customer
+        behaviors and preferences, helping to shape future iterations of the
+        app.
       </p>
-      <h3>My Songs</h3>
+      <h2>Key Challenges</h2>
       <p>
-        Search your library for songs. Add new ones, or edit current ones. The
-        page offers both a column view and list view as options for the display.
-        One allows for a more visual album art based view, while the other, a
-        more text based, song title and artist focused view.
-      </p>
-      <h3>(Scrapped) Extra designs</h3>
-      <p>Various other layouts and designs were also considered.</p>
-      <p>
-        The far left shows song cards with an adaptive color theme based on the
-        colors of the album art. While there are libraries that allowed for this
-        functionality, the coding challenge would likely be too difficult for my
-        current level. I was also worried about potential usability issues
-        around text legibility with certain color combinations.
+        Balancing Technology and Human Interaction: Many users were resistant to
+        the idea of using technology to replace personal interactions at
+        restaurants. The challenge was not just making the app functional but
+        ensuring that it supported the dining experience without alienating
+        customers who valued personal service.
       </p>
       <p>
-        The gray background cards on the right give the page a more uniform look
-        while also ensuring proper text legibility. However, at larger screen
-        sizes, this design had poor use of space and was iterated on further,
-        eventually leading to the list design shown above.
-      </p>
-      <h3>Editor View</h3>
-      <p>Highlight text to add custom annotation notes/translations.</p>
-      <p>Hover over notes to display, or click to pin.</p>
-      <p>Toggle on / off the Furigana readings above the associated Kanji.</p>
-      <h3>Learnings</h3>
-      <p>
-        The goal of this project was to better understand the development work
-        required in making a fully functional web app based on a design mockup
-        and where difficulties may arise.
+        Adapting to Rapid Change: The product was in a fast-moving and
+        competitive space, requiring constant iteration and adaptation to
+        changing customer expectations and market trends. This made it difficult
+        to set long-term strategies but also created an exciting, high-stakes
+        environment.
       </p>
       <p>
-        1.) Features such as the scrolling animation were very simple to create
-        using the prototyping tools in Figma but would be much more difficult in
-        actual development. The combination of the size, color and position all
-        changing has led to development challenges that I am currently working
-        through.
+        Design Consistency: With the product being built rapidly and evolving
+        quickly, maintaining design consistency was a key challenge. Ensuring
+        that small elements like text styles and button components were aligned
+        was crucial for creating a polished, user-friendly experience.
+      </p>
+      <h2>Learnings</h2>
+      <p>
+        Working on Toast’s “Order & Pay” app during such a critical and dynamic
+        time provided several valuable lessons:
       </p>
       <p>
-        2.) The underlining feature which was also relatively simple to create
-        and prototype, will be very difficult to implement. As a "stepping
-        stone" towards development, I have decided to first take on the
-        challenge of changing the color of the selected text to a certain color.
-        While this design isn't as desired, it is a compromise for the time
-        being.
+        Impact of Real-World Observations: Conducting in-person research and
+        observing how people interacted with the app and other restaurant
+        technology gave me a deeper understanding of human behavior. Seeing
+        firsthand how customers responded to technology in the restaurant
+        environment reinforced how embedded food service is within cultural
+        norms.
       </p>
       <p>
-        3.) For song cards with long titles, I had originally designed the text
-        to fade out. Current CSS text-overflow properties only allow for
-        clipping or an ellipsis, while fade is an experimental property. The
-        ellipsis effect clashes with the dots i designed for editing song
-        details but will stay until I learn how to code a text fade effect using
-        CSS.
+        Navigating the Tension Between Tradition and Innovation: The biggest
+        takeaway was learning how to balance technological advancement with the
+        preservation of essential human experiences. While some customers
+        embraced the convenience of mobile ordering, others wanted to maintain
+        personal connections with waitstaff. Finding ways to merge both was key
+        to ensuring broader adoption.
       </p>
       <p>
-        As a result of this project, there are now many new considerations I am
-        making in my designs in regards to "ease of developing". It has been
-        real fun to see things from the other side and I am excited to continue
-        this journey.
+        The Speed of the Food-Tech Industry: The restaurant self-service market
+        was rapidly growing, which made it a highly competitive and fast-paced
+        field. This environment taught me how to work under pressure, prioritize
+        quickly, and adapt to frequent changes in customer needs.
       </p>
+      <h2>Conclusion</h2>
+      <p>
+        My time at Toast was a unique opportunity to work on a product that had
+        a tangible impact on people's everyday lives. The “Order & Pay” app was
+        at the intersection of technology and tradition, aiming to redefine the
+        dining experience. As Toast carved out its place in the competitive
+        mobile restaurant space, I gained invaluable insights into design, user
+        behavior, and the challenges of innovating in a fast-evolving market.
+        The experience reinforced the importance of understanding user needs in
+        both the digital and real-world context and helped me grow as a designer
+        in the process.
+      </p>
+      <!-- Buttons -->
+      <div class="mb-10 flex justify-between">
+        <Button
+          text="back to top"
+          type="button"
+          icon="arrow"
+          className="back-to-top-button"
+          iconClassName="-rotate-90"
+        />
+        <a href="/berkshiregrey">
+          <Button text="next case study" type="button" icon="arrow" />
+        </a>
+      </div>
     </div>
   </main>
+
+  <script>
+    // Back to top button
+    const backToTopButton = document.querySelector(".back-to-top-button");
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    if (backToTopButton) {
+      backToTopButton.addEventListener("click", scrollToTop);
+    }
+  </script>
+
+  <style></style>
 </Layout>
-
-<script></script>
-
-<style></style>
