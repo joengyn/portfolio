@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
-import ensoCircle from "../assets/general/enso-circle.json";
+import ensoCircle from "../assets/lotties/enso-circle.json";
 
 function EnsoLottie() {
   const [showAnimation, setShowAnimation] = useState(false);
