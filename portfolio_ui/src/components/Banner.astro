@@ -29,6 +29,7 @@ const {
 
 <div class="banner m-4 bg-gray">
   <div class="relative flex items-center">
+    <!-- Gradient -->
     <div
       class="absolute h-full w-full bg-gradient-to-r from-black to-transparent"
     >
@@ -40,14 +41,18 @@ const {
       {title}
     </span>
     <!-- Banner Image -->
-    <Image class="max-h-[500px] w-full bg-black" src={bgImg} alt={bgImgAlt} />
+    <Image
+      class="h-[300px] w-full object-cover md:h-[500px]"
+      src={bgImg}
+      alt={bgImgAlt}
+    />
   </div>
   <!-- Logo -->
   <div class="p-6 pb-0 md:px-8">
     <Image src={logo} alt={logoAlt} class="h-10 w-auto" />
   </div>
+  <!-- Overview -->
   <div class="grid gap-4 p-6 md:flex md:justify-between md:px-8">
-    <!-- Overview -->
     <div class="flex flex-col gap-2 md:max-w-[250px]">
       <h4>Overview</h4>
       <p>

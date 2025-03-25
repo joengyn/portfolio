@@ -10,7 +10,7 @@ import ImageSlider from "../components/ImageSlider.astro";
 
 // Banner Assets
 import pshLogo from "../assets/pinksofahour/psh-logo.png";
-import pshBG from "../assets/pinksofahour/psh-home.png";
+import pshBg from "../assets/pinksofahour/studio.jpg";
 
 // Images
 import pshColor from "../assets/pinksofahour/psh-brand-color.jpg";
@@ -18,7 +18,8 @@ import pshTypo from "../assets/pinksofahour/psh-brand-typo.jpg";
 import pshCopy from "../assets/pinksofahour/psh-brand-copy.jpg";
 import pshExample from "../assets/pinksofahour/psh-brand-example.png";
 import oldDesign from "../assets/pinksofahour/psh-old.png";
-import pshInterview from "../assets/pinksofahour/psh-interview.jpg";
+import pshInterview from "../assets/pinksofahour/psh-interview.png";
+import homePage from "../assets/pinksofahour/psh-home.png";
 import aboutPage from "../assets/pinksofahour/psh-about.png";
 import missionPage from "../assets/pinksofahour/psh-mission.png";
 import teamPage from "../assets/pinksofahour/psh-team.png";
@@ -34,7 +35,7 @@ import giveawayPage from "../assets/pinksofahour/psh-giveaway.png";
 import pshTraffic from "../assets/pinksofahour/psh-traffic.png";
 import couchedPage from "../assets/pinksofahour/couched-home.png";
 const images = [
-  pshBG,
+  homePage,
   aboutPage,
   missionPage,
   storyPage,
@@ -59,7 +60,7 @@ const images = [
     <!-- Banner -->
     <Banner
       title="Pink Sofa Hour"
-      bgImg={pshBG}
+      bgImg={pshBg}
       bgImgAlt="Homepage of the Pink Sofa Hour website"
       logo={pshLogo}
       logoAlt="Pink Sofa Hour logo"
@@ -108,7 +109,7 @@ const images = [
       <!-- Images -->
       <Image
         class="open-modal-button mb-2 w-full cursor-pointer object-cover"
-        src={pshBG}
+        src={homePage}
         alt="Pink Sofa Hour home page"
         data-index="0"
       />
