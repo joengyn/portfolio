@@ -4,28 +4,13 @@ export default {
   theme: {
     extend: {
       keyframes: {
-        fade: {
-          "0%": { opacity: "1" },
-          "100%": { opacity: "0" },
-        },
-        fadeOut: {
-          "0%": { opacity: 1, display: "block" },
-          "100%": { opacity: 0, display: "none" },
-        },
-        moveUp: {
-          "0%": { transform: "translateY(0)" },
-          "100%": { transform: "translateY(-100%)" },
-        },
-        overflowHidden: {
-          "0%": { overflow: "hidden" },
-          "100%": { overflow: "auto" },
+        fadeIn: {
+          "0%": { opacity: "0", display: "none" },
+          "100%": { opacity: "1", display: "block" },
         },
       },
       animation: {
-        fade: "fade 5s ease-in-out 1 forwards 3s",
-        fadeOut: "fadeOut 5s 2s 1 forwards",
-        moveUp: "moveUp 3s ease-in-out 1 forwards",
-        overflowHidden: "overflowHidden 5s forwards",
+        fadeIn: "fadeIn 3s ease-in-out 1 forwards 2s",
       },
       colors: {
         lightGray: "#f3f3f3",

@@ -6,10 +6,11 @@ interface Props {
   title: string;
   body: string;
   bgImg: ImageMetadata;
+  uiImg: ImageMetadata;
   className?: string;
 }
 
-const { href, title, body, bgImg, className } = Astro.props;
+const { href, title, body, bgImg, uiImg, className } = Astro.props;
 ---
 
 <div
@@ -23,6 +24,11 @@ const { href, title, body, bgImg, className } = Astro.props;
       <div
         class="relative aspect-square overflow-hidden border-b-2 border-black"
       >
+        <Image
+          class="animate-fadeIn absolute bottom-1 right-1 z-10 aspect-auto h-2/5 w-auto opacity-0"
+          src={uiImg}
+          alt="ng-ui-1"
+        />
         <Image
           class="absolute inset-0 h-full w-full object-cover"
           src={bgImg}
