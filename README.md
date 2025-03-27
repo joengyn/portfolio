@@ -1,5 +1,5 @@
 # portfolio
 
-Portfolio of Joe Nguyen.
+Portfolio of Joe Nguyen
 
-https:joengyn.com
+[joengyn.com](https://joengyn.com/)
