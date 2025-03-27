@@ -3,62 +3,68 @@
 import { Image } from "astro:assets";
 
 // Components
-import Layout from "../layouts/Layout.astro";
 import Banner from "../components/Banner.astro";
 import Button from "../components/Button.astro";
+import Layout from "../layouts/Layout.astro";
 
 // Banner Assets
-import bandscanLogo from "../assets/bandscan/bandscan-logo-orange.png";
-import bandscanCard from "../assets/bandscan/bandscan-card.png";
+import bandscanLogo from "../assets/bandscan/bandscan-logo-orange.webp";
+import foxTheaterCard from "../assets/bandscan/fox-theater.webp";
 
 // Images
-import solidJS from "../assets/bandscan/solidjs.png";
-import whiteboard from "../assets/bandscan/whiteboard.png";
-import foxTheaterCard from "../assets/bandscan/fox-theater.jpg";
+import bandscanCard from "../assets/bandscan/bandscan-card.webp";
+import whiteboard from "../assets/bandscan/whiteboard.webp";
+import solidJS from "../assets/bandscan/solidjs.webp";
+
 // Sketches
-import sketch1 from "../assets/bandscan/sketch-1.png";
-import sketch2 from "../assets/bandscan/sketch-2.png";
-import sketch3 from "../assets/bandscan/sketch-3.png";
-import sketch4 from "../assets/bandscan/sketch-4.png";
+import sketch1 from "../assets/bandscan/sketch-1.webp";
+import sketch2 from "../assets/bandscan/sketch-2.webp";
+import sketch3 from "../assets/bandscan/sketch-3.webp";
+import sketch4 from "../assets/bandscan/sketch-4.webp";
+
 // Wireframes
-import exploreWireframe from "../assets/bandscan/wireframe-explore.png";
-import likesWireframe from "../assets/bandscan/wireframe-likes.png";
-import loginWireframe from "../assets/bandscan/wireframe-login.png";
-import onboardingWireframe from "../assets/bandscan/wireframe-onboarding.png";
+import exploreWireframe from "../assets/bandscan/wireframe-explore.webp";
+import likesWireframe from "../assets/bandscan/wireframe-likes.webp";
+import loginWireframe from "../assets/bandscan/wireframe-login.webp";
+import onboardingWireframe from "../assets/bandscan/wireframe-onboarding.webp";
+
 // V1 Designs
-import loginV1 from "../assets/bandscan/login-v1.png";
-import onboardV1 from "../assets/bandscan/onboard-v1.png";
-import exploreV1 from "../assets/bandscan/explore-v1.png";
-import exploreBioV1 from "../assets/bandscan/explore-bio-v1.png";
-import exploreEventsV1 from "../assets/bandscan/explore-events-v1.png";
-import likesV1 from "../assets/bandscan/likes-v1.png";
-import eventsV1 from "../assets/bandscan/events-v1.png";
-import accountV1 from "../assets/bandscan/account-v1.png";
+import loginV1 from "../assets/bandscan/login-v1.webp";
+import onboardV1 from "../assets/bandscan/onboard-v1.webp";
+import exploreV1 from "../assets/bandscan/explore-v1.webp";
+import exploreBioV1 from "../assets/bandscan/explore-bio-v1.webp";
+import exploreEventsV1 from "../assets/bandscan/explore-events-v1.webp";
+import likesV1 from "../assets/bandscan/likes-v1.webp";
+import eventsV1 from "../assets/bandscan/events-v1.webp";
+import accountV1 from "../assets/bandscan/account-v1.webp";
+
 // Mockups
-import loginMockup from "../assets/bandscan/login-mockup.png";
-import likesMockup from "../assets/bandscan/likes-mockup.png";
-import eventsMockup from "../assets/bandscan/events-mockup.png";
-import accountMockup from "../assets/bandscan/account-mockup.png";
-import exploreMockup from "../assets/bandscan/explore-mockup.png";
-import exploreBioMockup from "../assets/bandscan/explore-bio-mockup.png";
-import exploreEventsMockup from "../assets/bandscan/explore-events-mockup.png";
-import exploreSocialsMockup from "../assets/bandscan/explore-socials-mockup.png";
-import artistOnboardMockup from "../assets/bandscan/artist-onboarding-mockup.png";
-import artistNameMockup from "../assets/bandscan/artist-name-mockup.png";
-import artistBioMockup from "../assets/bandscan/artist-bio-mockup.png";
-import artistLocationMockup from "../assets/bandscan/artist-location-mockup.png";
-import artistImgMockup from "../assets/bandscan/artist-image-mockup.png";
-import artistSongMockup from "../assets/bandscan/artist-song-mockup.png";
-import artistGenreMockup from "../assets/bandscan/artist-genre-mockup.png";
-import artistStreamsMockup from "../assets/bandscan/artist-streams-mockup.png";
-import artistSocialsMockup from "../assets/bandscan/artist-socials-mockup.png";
-import artistEventsMockup from "../assets/bandscan/artist-events-mockup.png";
-import artistEventDetailsMockup from "../assets/bandscan/artist-event-details-mockup.png";
-import artistOnboardEndMockup from "../assets/bandscan/artist-onboarding-end-mockup.png";
-import designSystem from "../assets/bandscan/design-system.png";
+import loginMockup from "../assets/bandscan/login-mockup.webp";
+import likesMockup from "../assets/bandscan/likes-mockup.webp";
+import eventsMockup from "../assets/bandscan/events-mockup.webp";
+import accountMockup from "../assets/bandscan/account-mockup.webp";
+import exploreMockup from "../assets/bandscan/explore-mockup.webp";
+import exploreBioMockup from "../assets/bandscan/explore-bio-mockup.webp";
+import exploreEventsMockup from "../assets/bandscan/explore-events-mockup.webp";
+import exploreSocialsMockup from "../assets/bandscan/explore-socials-mockup.webp";
+import artistOnboardMockup from "../assets/bandscan/artist-onboarding-mockup.webp";
+import artistNameMockup from "../assets/bandscan/artist-name-mockup.webp";
+import artistBioMockup from "../assets/bandscan/artist-bio-mockup.webp";
+import artistLocationMockup from "../assets/bandscan/artist-location-mockup.webp";
+import artistImgMockup from "../assets/bandscan/artist-image-mockup.webp";
+import artistSongMockup from "../assets/bandscan/artist-song-mockup.webp";
+import artistGenreMockup from "../assets/bandscan/artist-genre-mockup.webp";
+import artistStreamsMockup from "../assets/bandscan/artist-streams-mockup.webp";
+import artistSocialsMockup from "../assets/bandscan/artist-socials-mockup.webp";
+import artistEventsMockup from "../assets/bandscan/artist-events-mockup.webp";
+import artistEventDetailsMockup from "../assets/bandscan/artist-event-details-mockup.webp";
+import artistOnboardEndMockup from "../assets/bandscan/artist-onboarding-end-mockup.webp";
+import designSystem from "../assets/bandscan/design-system.webp";
+
 // Redesign
-import redesign from "../assets/bandscan/bandscan-redesign.png";
-import redesign2 from "../assets/bandscan/bandscan-redesign-2.png";
+import redesign from "../assets/bandscan/bandscan-redesign.webp";
+import redesign2 from "../assets/bandscan/bandscan-redesign-2.webp";
+
 // MP4s
 import loginMp4 from "../assets/bandscan/login.mp4";
 import onboardingMp4 from "../assets/bandscan/artist-onboard.mp4";
