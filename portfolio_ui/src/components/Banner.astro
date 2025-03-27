@@ -27,7 +27,7 @@ const {
 } = Astro.props;
 ---
 
-<div class="banner m-4 bg-gray">
+<div class="banner m-4 mx-auto max-w-[1800px] bg-gray">
   <div class="relative flex items-center">
     <!-- Gradient -->
     <div
@@ -51,16 +51,19 @@ const {
   <div class="p-6 pb-0 md:px-8">
     <Image src={logo} alt={logoAlt} class="h-10 w-auto" />
   </div>
-  <!-- Overview -->
-  <div class="grid gap-4 p-6 md:flex md:justify-between md:px-8">
-    <div class="flex flex-col gap-2 md:max-w-[250px]">
+  <!-- Banner Info -->
+  <div
+    class="grid-row grid gap-6 p-6 md:grid-cols-[2fr_2fr_1fr_1fr] md:gap-8 md:px-8"
+  >
+    <!-- Overview -->
+    <div class="flex flex-col gap-2">
       <h4>Overview</h4>
       <p>
         {overview}
       </p>
     </div>
     <!-- Roles -->
-    <div class="flex flex-col gap-2 md:max-w-[300px]">
+    <div class="flex flex-col gap-2">
       <h4>Role</h4>
       <ul class="ml-4 list-outside list-disc">
         {
