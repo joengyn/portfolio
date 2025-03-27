@@ -1,21 +1,21 @@
 ---
 // Button.astro
-import arrowIcon from "../../public/arrow.png";
+import arrowIcon from '../../public/arrow.png';
 
 interface Props {
-  type: "button";
-  icon?: "arrow";
+  type: 'button';
+  icon?: 'arrow';
   text: string;
   className?: string;
   iconClassName?: string;
 }
 
 const {
-  type = "button",
+  type = 'button',
   text,
   icon,
-  className = "",
-  iconClassName = "",
+  className = '',
+  iconClassName = '',
 } = Astro.props;
 
 // Map the icon types to their corresponding image sources using the `src` property

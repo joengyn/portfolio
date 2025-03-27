@@ -1,96 +1,96 @@
 ---
 // Imports
-import { Image } from "astro:assets";
+import { Image } from 'astro:assets';
 
 // Components
-import Banner from "../components/Banner.astro";
-import Button from "../components/Button.astro";
-import Layout from "../layouts/Layout.astro";
+import Banner from '../components/Banner.astro';
+import Button from '../components/Button.astro';
+import Layout from '../layouts/Layout.astro';
 
 // Banner Assets
-import bandscanLogo from "../assets/bandscan/bandscan-logo-orange.webp";
-import foxTheaterCard from "../assets/bandscan/fox-theater.webp";
+import bandscanLogo from '../assets/bandscan/bandscan-logo-orange.webp';
+import foxTheaterCard from '../assets/bandscan/fox-theater.webp';
 
 // Images
-import bandscanCard from "../assets/bandscan/bandscan-card.webp";
-import whiteboard from "../assets/bandscan/whiteboard.webp";
-import solidJS from "../assets/bandscan/solidjs.webp";
+import bandscanCard from '../assets/bandscan/bandscan-card.webp';
+import whiteboard from '../assets/bandscan/whiteboard.webp';
+import solidJS from '../assets/bandscan/solidjs.webp';
 
 // Sketches
-import sketch1 from "../assets/bandscan/sketch-1.webp";
-import sketch2 from "../assets/bandscan/sketch-2.webp";
-import sketch3 from "../assets/bandscan/sketch-3.webp";
-import sketch4 from "../assets/bandscan/sketch-4.webp";
+import sketch1 from '../assets/bandscan/sketch-1.webp';
+import sketch2 from '../assets/bandscan/sketch-2.webp';
+import sketch3 from '../assets/bandscan/sketch-3.webp';
+import sketch4 from '../assets/bandscan/sketch-4.webp';
 
 // Wireframes
-import exploreWireframe from "../assets/bandscan/wireframe-explore.webp";
-import likesWireframe from "../assets/bandscan/wireframe-likes.webp";
-import loginWireframe from "../assets/bandscan/wireframe-login.webp";
-import onboardingWireframe from "../assets/bandscan/wireframe-onboarding.webp";
+import exploreWireframe from '../assets/bandscan/wireframe-explore.webp';
+import likesWireframe from '../assets/bandscan/wireframe-likes.webp';
+import loginWireframe from '../assets/bandscan/wireframe-login.webp';
+import onboardingWireframe from '../assets/bandscan/wireframe-onboarding.webp';
 
 // V1 Designs
-import loginV1 from "../assets/bandscan/login-v1.webp";
-import onboardV1 from "../assets/bandscan/onboard-v1.webp";
-import exploreV1 from "../assets/bandscan/explore-v1.webp";
-import exploreBioV1 from "../assets/bandscan/explore-bio-v1.webp";
-import exploreEventsV1 from "../assets/bandscan/explore-events-v1.webp";
-import likesV1 from "../assets/bandscan/likes-v1.webp";
-import eventsV1 from "../assets/bandscan/events-v1.webp";
-import accountV1 from "../assets/bandscan/account-v1.webp";
+import loginV1 from '../assets/bandscan/login-v1.webp';
+import onboardV1 from '../assets/bandscan/onboard-v1.webp';
+import exploreV1 from '../assets/bandscan/explore-v1.webp';
+import exploreBioV1 from '../assets/bandscan/explore-bio-v1.webp';
+import exploreEventsV1 from '../assets/bandscan/explore-events-v1.webp';
+import likesV1 from '../assets/bandscan/likes-v1.webp';
+import eventsV1 from '../assets/bandscan/events-v1.webp';
+import accountV1 from '../assets/bandscan/account-v1.webp';
 
 // Mockups
-import loginMockup from "../assets/bandscan/login-mockup.webp";
-import likesMockup from "../assets/bandscan/likes-mockup.webp";
-import eventsMockup from "../assets/bandscan/events-mockup.webp";
-import accountMockup from "../assets/bandscan/account-mockup.webp";
-import exploreMockup from "../assets/bandscan/explore-mockup.webp";
-import exploreBioMockup from "../assets/bandscan/explore-bio-mockup.webp";
-import exploreEventsMockup from "../assets/bandscan/explore-events-mockup.webp";
-import exploreSocialsMockup from "../assets/bandscan/explore-socials-mockup.webp";
-import artistOnboardMockup from "../assets/bandscan/artist-onboarding-mockup.webp";
-import artistNameMockup from "../assets/bandscan/artist-name-mockup.webp";
-import artistBioMockup from "../assets/bandscan/artist-bio-mockup.webp";
-import artistLocationMockup from "../assets/bandscan/artist-location-mockup.webp";
-import artistImgMockup from "../assets/bandscan/artist-image-mockup.webp";
-import artistSongMockup from "../assets/bandscan/artist-song-mockup.webp";
-import artistGenreMockup from "../assets/bandscan/artist-genre-mockup.webp";
-import artistStreamsMockup from "../assets/bandscan/artist-streams-mockup.webp";
-import artistSocialsMockup from "../assets/bandscan/artist-socials-mockup.webp";
-import artistEventsMockup from "../assets/bandscan/artist-events-mockup.webp";
-import artistEventDetailsMockup from "../assets/bandscan/artist-event-details-mockup.webp";
-import artistOnboardEndMockup from "../assets/bandscan/artist-onboarding-end-mockup.webp";
-import designSystem from "../assets/bandscan/design-system.webp";
+import loginMockup from '../assets/bandscan/login-mockup.webp';
+import likesMockup from '../assets/bandscan/likes-mockup.webp';
+import eventsMockup from '../assets/bandscan/events-mockup.webp';
+import accountMockup from '../assets/bandscan/account-mockup.webp';
+import exploreMockup from '../assets/bandscan/explore-mockup.webp';
+import exploreBioMockup from '../assets/bandscan/explore-bio-mockup.webp';
+import exploreEventsMockup from '../assets/bandscan/explore-events-mockup.webp';
+import exploreSocialsMockup from '../assets/bandscan/explore-socials-mockup.webp';
+import artistOnboardMockup from '../assets/bandscan/artist-onboarding-mockup.webp';
+import artistNameMockup from '../assets/bandscan/artist-name-mockup.webp';
+import artistBioMockup from '../assets/bandscan/artist-bio-mockup.webp';
+import artistLocationMockup from '../assets/bandscan/artist-location-mockup.webp';
+import artistImgMockup from '../assets/bandscan/artist-image-mockup.webp';
+import artistSongMockup from '../assets/bandscan/artist-song-mockup.webp';
+import artistGenreMockup from '../assets/bandscan/artist-genre-mockup.webp';
+import artistStreamsMockup from '../assets/bandscan/artist-streams-mockup.webp';
+import artistSocialsMockup from '../assets/bandscan/artist-socials-mockup.webp';
+import artistEventsMockup from '../assets/bandscan/artist-events-mockup.webp';
+import artistEventDetailsMockup from '../assets/bandscan/artist-event-details-mockup.webp';
+import artistOnboardEndMockup from '../assets/bandscan/artist-onboarding-end-mockup.webp';
+import designSystem from '../assets/bandscan/design-system.webp';
 
 // Redesign
-import redesign from "../assets/bandscan/bandscan-redesign.webp";
-import redesign2 from "../assets/bandscan/bandscan-redesign-2.webp";
+import redesign from '../assets/bandscan/bandscan-redesign.webp';
+import redesign2 from '../assets/bandscan/bandscan-redesign-2.webp';
 
 // MP4s
-import loginMp4 from "../assets/bandscan/login.mp4";
-import onboardingMp4 from "../assets/bandscan/artist-onboard.mp4";
-import exploreMp4 from "../assets/bandscan/explore.mp4";
-import pageSwipeMp4 from "../assets/bandscan/page-swiping.mp4";
+import loginMp4 from '../assets/bandscan/login.mp4';
+import onboardingMp4 from '../assets/bandscan/artist-onboard.mp4';
+import exploreMp4 from '../assets/bandscan/explore.mp4';
+import pageSwipeMp4 from '../assets/bandscan/page-swiping.mp4';
 ---
 
-<Layout title="Joe Nguyen | Bandscan Case Study">
-  <main class="mt-[100px]">
+<Layout title='Joe Nguyen | Bandscan Case Study'>
+  <main class='mt-[100px]'>
     <!-- Banner -->
     <Banner
-      title="Bandscan"
+      title='Bandscan'
       bgImg={foxTheaterCard}
-      bgImgAlt="Bandscan background image"
+      bgImgAlt='Bandscan background image'
       logo={bandscanLogo}
-      logoAlt="Bandscan logo"
-      overview="Design and development of a mobile app for discovering local artists and live music events."
-      roles={["UX/UI Designer", "Frontend Developer"]}
-      tools={["Figma", "SolidJS"]}
+      logoAlt='Bandscan logo'
+      overview='Design and development of a mobile app for discovering local artists and live music events.'
+      roles={['UX/UI Designer', 'Frontend Developer']}
+      tools={['Figma', 'SolidJS']}
       duration="4 months (Nov '24 - Feb '25)"
     />
-    <div class="wrapper">
+    <div class='wrapper'>
       <!-- Background Section -->
       <h2>Background</h2>
-      <Image src={bandscanCard} alt="Bandscan card image" class="mb-2" />
-      <figcaption class="mb-10 text-center text-sm">Bandscan card</figcaption>
+      <Image src={bandscanCard} alt='Bandscan card image' class='mb-2' />
+      <figcaption class='mb-10 text-center text-sm'>Bandscan card</figcaption>
       <p>
         It's hard to discover local music without sifting through endless social
         media posts, event listings, or unreliable word-of-mouth. Fans often
@@ -98,31 +98,31 @@ import pageSwipeMp4 from "../assets/bandscan/page-swiping.mp4";
         nearby. Existing platforms focus on big-name acts, leaving smaller,
         local shows underrepresented.
       </p>
-      <p class="mb-10">
+      <p class='mb-10'>
         Bandscan aims to change that, by providing a centralized, easy-to-use
         platform to discover local artists and live music events, so you never
         miss a beat.
       </p>
       <!-- MP4s -->
-      <div class="mb-3 grid grid-cols-2 gap-2 custom-md:grid-cols-4">
+      <div class='mb-3 grid grid-cols-2 gap-2 custom-md:grid-cols-4'>
         <video autoplay loop muted playsinline>
-          <source src={loginMp4} type="video/mp4" />
+          <source src={loginMp4} type='video/mp4' />
           Your browser does not support the video tag.
         </video>
         <video autoplay loop muted playsinline>
-          <source src={pageSwipeMp4} type="video/mp4" />
+          <source src={pageSwipeMp4} type='video/mp4' />
           Your browser does not support the video tag.
         </video>
         <video autoplay loop muted playsinline>
-          <source src={exploreMp4} type="video/mp4" />
+          <source src={exploreMp4} type='video/mp4' />
           Your browser does not support the video tag.
         </video>
         <video autoplay loop muted playsinline>
-          <source src={onboardingMp4} type="video/mp4" />
+          <source src={onboardingMp4} type='video/mp4' />
           Your browser does not support the video tag.
         </video>
       </div>
-      <figcaption class="mb-20 text-center text-sm">
+      <figcaption class='mb-20 text-center text-sm'>
         Videos showing various screens and flows
       </figcaption>
       <!-- Timeline and Responsibilities Section -->
@@ -138,7 +138,7 @@ import pageSwipeMp4 from "../assets/bandscan/page-swiping.mp4";
         sketches into a functional, user-friendly experience and creating a
         Figma prototype that guided development.
       </p>
-      <p class="mb-20">
+      <p class='mb-20'>
         As the design solidified, I transitioned into a frontend engineering
         role, helping to bring the app to life.
       </p>
@@ -146,45 +146,45 @@ import pageSwipeMp4 from "../assets/bandscan/page-swiping.mp4";
       <h2>Early Concepts and Sketches</h2>
       <Image
         src={whiteboard}
-        alt="Whiteboard sketch showing initial app concepts and user flows"
-        class="mb-2"
+        alt='Whiteboard sketch showing initial app concepts and user flows'
+        class='mb-2'
       />
-      <figcaption class="mb-10 text-center text-sm">
+      <figcaption class='mb-10 text-center text-sm'>
         Whiteboard concepts
       </figcaption>
-      <div class="mb-2 grid grid-cols-2 gap-2 custom-md:grid-cols-4">
+      <div class='mb-2 grid grid-cols-2 gap-2 custom-md:grid-cols-4'>
         <Image
           src={sketch1}
-          alt="Early UI concept designs"
-          class="border-2 border-gray"
+          alt='Early UI concept designs'
+          class='border-2 border-gray'
         />
         <Image
           src={sketch2}
-          alt="Early UI concept designs"
-          class="border-2 border-gray"
+          alt='Early UI concept designs'
+          class='border-2 border-gray'
         />
         <Image
           src={sketch3}
-          alt="Early UI concept designs"
-          class="border-2 border-gray"
+          alt='Early UI concept designs'
+          class='border-2 border-gray'
         />
         <Image
           src={sketch4}
-          alt="Early UI concept designs"
-          class="border-2 border-gray"
+          alt='Early UI concept designs'
+          class='border-2 border-gray'
         />
       </div>
-      <figcaption class="mb-10 text-center text-sm">
+      <figcaption class='mb-10 text-center text-sm'>
         Early UI concepts
       </figcaption>
-      <p class="mb-10">
+      <p class='mb-10'>
         The core feature of the app’s design was inspired by dating apps,
         incorporating a ‘swipe’ functionality that let users browse local artist
         profiles. The goal was to serve two main groups:
       </p>
-      <ul class="mb-20">
+      <ul class='mb-20'>
         <li>
-          <p class="mb-0"><b>1.)</b> Fans looking to discover new music</p>
+          <p class='mb-0'><b>1.)</b> Fans looking to discover new music</p>
         </li>
         <li>
           <p>
@@ -195,21 +195,21 @@ import pageSwipeMp4 from "../assets/bandscan/page-swiping.mp4";
       </ul>
       <!-- Wireframes Section -->
       <h2>Wireframes</h2>
-      <div class="mb-2 grid grid-cols-2 gap-2 custom-md:grid-cols-4">
+      <div class='mb-2 grid grid-cols-2 gap-2 custom-md:grid-cols-4'>
         <Image
           src={loginWireframe}
-          alt="Login page early wireframe"
-          class="border-2 border-gray"
+          alt='Login page early wireframe'
+          class='border-2 border-gray'
         />
         <Image
           src={onboardingWireframe}
-          alt="User onboarding page early wireframe"
-          class="border-2 border-gray"
+          alt='User onboarding page early wireframe'
+          class='border-2 border-gray'
         />
         <Image
           src={likesWireframe}
-          alt="User profile page early wireframe"
-          class="border-2 border-gray"
+          alt='User profile page early wireframe'
+          class='border-2 border-gray'
         />
         <!-- <Image
           src={eventsWireframe}
@@ -218,11 +218,11 @@ import pageSwipeMp4 from "../assets/bandscan/page-swiping.mp4";
         /> -->
         <Image
           src={exploreWireframe}
-          alt="Explore page early wireframe"
-          class="border-2 border-gray"
+          alt='Explore page early wireframe'
+          class='border-2 border-gray'
         />
       </div>
-      <figcaption class="mb-10 text-center text-sm">
+      <figcaption class='mb-10 text-center text-sm'>
         Early Wireframes
       </figcaption>
       <p>
@@ -235,59 +235,59 @@ import pageSwipeMp4 from "../assets/bandscan/page-swiping.mp4";
         > — along with key interactions such as swiping on the Explore page and managing
         likes and upcoming events.
       </p>
-      <div class="mb-2 grid grid-cols-2 gap-2 custom-md:grid-cols-4">
+      <div class='mb-2 grid grid-cols-2 gap-2 custom-md:grid-cols-4'>
         <Image
           src={loginV1}
-          alt="Login page wireframe"
-          class="border-2 border-gray"
+          alt='Login page wireframe'
+          class='border-2 border-gray'
         />
         <Image
           src={exploreV1}
-          alt="Explore page wireframe"
-          class="border-2 border-gray"
+          alt='Explore page wireframe'
+          class='border-2 border-gray'
         />
         <Image
           src={exploreBioV1}
-          alt="Explore page wireframe, about section"
-          class="border-2 border-gray"
+          alt='Explore page wireframe, about section'
+          class='border-2 border-gray'
         />
         <Image
           src={exploreEventsV1}
-          alt="Explore page wireframe, events section"
-          class="border-2 border-gray"
+          alt='Explore page wireframe, events section'
+          class='border-2 border-gray'
         />
         <Image
           src={onboardV1}
-          alt="User onboarding page wireframe"
-          class="border-2 border-gray"
+          alt='User onboarding page wireframe'
+          class='border-2 border-gray'
         />
         <Image
           src={likesV1}
-          alt="Liked artists page wireframe"
-          class="border-2 border-gray"
+          alt='Liked artists page wireframe'
+          class='border-2 border-gray'
         />
         <Image
           src={eventsV1}
-          alt="Events page page wireframe"
-          class="border-2 border-gray"
+          alt='Events page page wireframe'
+          class='border-2 border-gray'
         />
         <Image
           src={accountV1}
-          alt="User account settings page wireframe"
-          class="border-2 border-gray"
+          alt='User account settings page wireframe'
+          class='border-2 border-gray'
         />
       </div>
-      <figcaption class="mb-20 text-center text-sm">
+      <figcaption class='mb-20 text-center text-sm'>
         Refined Wireframes
       </figcaption>
       <!-- Visuals & Design System Section -->
       <h2>Visuals & Design System</h2>
       <Image
         src={designSystem}
-        alt="Design system file showing colors, icons and components"
-        class="mb-2"
+        alt='Design system file showing colors, icons and components'
+        class='mb-2'
       />
-      <figcaption class="mb-10 text-center text-sm">Design System</figcaption>
+      <figcaption class='mb-10 text-center text-sm'>Design System</figcaption>
       <p>
         For the app’s visual design, we aimed for subtlety. The design should
         support the artists’ content without competing for attention, allowing
@@ -298,31 +298,31 @@ import pageSwipeMp4 from "../assets/bandscan/page-swiping.mp4";
         streamline development. A more refined and fully realized design was
         planned for future iterations.
       </p>
-      <div class="mb-2 grid grid-cols-2 gap-2 custom-md:grid-cols-4">
-        <Image src={loginMockup} alt="Login page mockup" />
-        <Image src={likesMockup} alt="Likes page mockup" />
-        <Image src={eventsMockup} alt="Events page mockup" />
-        <Image src={accountMockup} alt="Acccount page mockup" />
+      <div class='mb-2 grid grid-cols-2 gap-2 custom-md:grid-cols-4'>
+        <Image src={loginMockup} alt='Login page mockup' />
+        <Image src={likesMockup} alt='Likes page mockup' />
+        <Image src={eventsMockup} alt='Events page mockup' />
+        <Image src={accountMockup} alt='Acccount page mockup' />
       </div>
-      <figcaption class="mb-20 text-center text-sm">Page Mockups</figcaption>
+      <figcaption class='mb-20 text-center text-sm'>Page Mockups</figcaption>
       <!-- Explore Artists Workflow Section -->
       <h2>Explore Artists Workflow</h2>
-      <div class="mb-2 grid grid-cols-2 gap-2 custom-md:grid-cols-4">
-        <Image src={exploreMockup} alt="Explore page mockup" />
+      <div class='mb-2 grid grid-cols-2 gap-2 custom-md:grid-cols-4'>
+        <Image src={exploreMockup} alt='Explore page mockup' />
         <Image
           src={exploreBioMockup}
-          alt="Explore page mockup, about section"
+          alt='Explore page mockup, about section'
         />
         <Image
           src={exploreEventsMockup}
-          alt="Explore page mockup, events section"
+          alt='Explore page mockup, events section'
         />
         <Image
           src={exploreSocialsMockup}
-          alt="Explore page mockup, social links section"
+          alt='Explore page mockup, social links section'
         />
       </div>
-      <figcaption class="mb-10 text-center text-sm">
+      <figcaption class='mb-10 text-center text-sm'>
         Explore Page Mockups
       </figcaption>
       <p>
@@ -332,7 +332,7 @@ import pageSwipeMp4 from "../assets/bandscan/page-swiping.mp4";
         quick listening, details about the artist, any upcoming events, and links
         to their social media.
       </p>
-      <p class="mb-20">
+      <p class='mb-20'>
         Users can like an artist by clicking the heart icon, which adds the
         artist to the <b>Likes</b> page. Once liked, any upcoming events featuring
         that artist will appear on the
@@ -341,51 +341,51 @@ import pageSwipeMp4 from "../assets/bandscan/page-swiping.mp4";
       </p>
       <!-- Artist Onboarding Workflow Section -->
       <h2>Artist Onboarding Workflow</h2>
-      <div class="mb-2 grid grid-cols-2 gap-2 custom-md:grid-cols-4">
+      <div class='mb-2 grid grid-cols-2 gap-2 custom-md:grid-cols-4'>
         <Image
           src={artistOnboardMockup}
-          alt="Artist onboarding welcome screen mockup"
+          alt='Artist onboarding welcome screen mockup'
         />
-        <Image src={artistNameMockup} alt="Artist name input screen mockup" />
+        <Image src={artistNameMockup} alt='Artist name input screen mockup' />
         <Image
           src={artistGenreMockup}
-          alt="Artist genre selection screen mockup"
+          alt='Artist genre selection screen mockup'
         />
         <Image
           src={artistLocationMockup}
-          alt="Artist location input screen mockup"
+          alt='Artist location input screen mockup'
         />
         <Image
           src={artistBioMockup}
-          alt="Artist biography input screen mockup"
+          alt='Artist biography input screen mockup'
         />
         <Image
           src={artistImgMockup}
-          alt="Artist profile image upload screen mockup"
+          alt='Artist profile image upload screen mockup'
         />
-        <Image src={artistSongMockup} alt="Artist song upload screen mockup" />
+        <Image src={artistSongMockup} alt='Artist song upload screen mockup' />
         <Image
           src={artistStreamsMockup}
-          alt="Artist streaming platforms link screen mockup"
+          alt='Artist streaming platforms link screen mockup'
         />
         <Image
           src={artistSocialsMockup}
-          alt="Artist social media links input screen mockup"
+          alt='Artist social media links input screen mockup'
         />
         <Image
           src={artistEventsMockup}
-          alt="Artist events management screen mockup"
+          alt='Artist events management screen mockup'
         />
         <Image
           src={artistEventDetailsMockup}
-          alt="Artist event details input screen mockup"
+          alt='Artist event details input screen mockup'
         />
         <Image
           src={artistOnboardEndMockup}
-          alt="Artist onboarding completion screen mockup"
+          alt='Artist onboarding completion screen mockup'
         />
       </div>
-      <figcaption class="mb-10 text-center text-sm">
+      <figcaption class='mb-10 text-center text-sm'>
         Create Artist Profile Mockups
       </figcaption>
       <p>
@@ -394,7 +394,7 @@ import pageSwipeMp4 from "../assets/bandscan/page-swiping.mp4";
         intuitive, guiding artists through the steps of setting up their
         profile, uploading music, and linking their social media.
       </p>
-      <p class="mb-20">
+      <p class='mb-20'>
         In addition to connecting with fans on the Explore page, artists could
         also use the app as a digital <b>Electronic Press Kit (EPK)</b> to share
         with venues and promoters. An EPK is a curated collection of promotional
@@ -410,9 +410,9 @@ import pageSwipeMp4 from "../assets/bandscan/page-swiping.mp4";
         By the time I began frontend development, the app was functional but
         unpolished, with raw JSON data and unstyled components.
       </p>
-      <Image src={solidJS} alt="SolidJS logo" class="mx-auto mb-2 w-40" />
-      <figcaption class="mb-10 text-center text-sm">SolidJS Logo</figcaption>
-      <p class="mb-20">
+      <Image src={solidJS} alt='SolidJS logo' class='mx-auto mb-2 w-40' />
+      <figcaption class='mb-10 text-center text-sm'>SolidJS Logo</figcaption>
+      <p class='mb-20'>
         Using <b>SolidJS</b> and <b>SCSS Modules</b>, I focused on styling the
         interface, creating reusable components, and setting up page navigation
         to improve usability and visual consistency. Other technologies used in
@@ -428,23 +428,23 @@ import pageSwipeMp4 from "../assets/bandscan/page-swiping.mp4";
         is being actively promoted at shows and other music events throughout
         Colorado. Meanwhile, a more polished and fully developed design is in
         progress. For the latest updates, visit <a
-          href="https://info.bandscan.app"
-          style="text-decoration: underline; font-weight: 600;"
+          href='https://info.bandscan.app'
+          style='text-decoration: underline; font-weight: 600;'
           ><em>info.bandscan.app.</em></a
         >
       </p>
-      <Image src={redesign} alt="New Design Mockup Preview" class="mb-2" />
-      <figcaption class="mb-10
-        text-center text-sm">
+      <Image src={redesign} alt='New Design Mockup Preview' class='mb-2' />
+      <figcaption class='mb-10
+        text-center text-sm'>
         New Design Mockup Preview
       </figcaption>
-      <Image src={redesign2} alt="New Design Language Preview" class="mb-2" />
-      <figcaption class="mb-10
-        text-center text-sm">
+      <Image src={redesign2} alt='New Design Language Preview' class='mb-2' />
+      <figcaption class='mb-10
+        text-center text-sm'>
         New Design Language Preview
       </figcaption>
       <h2>Insights & Reflection</h2>
-      <p class="mb-20">
+      <p class='mb-20'>
         Bandscan was a challenging and rewarding project that pushed me to grow
         as both a designer and developer. It was my first project as an
         independent contractor, where I took an idea from a whiteboard concept
@@ -452,16 +452,16 @@ import pageSwipeMp4 from "../assets/bandscan/page-swiping.mp4";
         team made for an intense but valuable experience.
       </p>
       <!-- Buttons -->
-      <div class="mb-10 flex justify-between">
+      <div class='mb-10 flex justify-between'>
         <Button
-          text="back to top"
-          type="button"
-          icon="arrow"
-          className="back-to-top-button"
-          iconClassName="-rotate-90"
+          text='back to top'
+          type='button'
+          icon='arrow'
+          className='back-to-top-button'
+          iconClassName='-rotate-90'
         />
-        <a href="/pinksofahour">
-          <Button text="next case study" type="button" icon="arrow" />
+        <a href='/pinksofahour'>
+          <Button text='next case study' type='button' icon='arrow' />
         </a>
       </div>
     </div>
@@ -469,14 +469,14 @@ import pageSwipeMp4 from "../assets/bandscan/page-swiping.mp4";
 
   <script>
     // Back to top button
-    const backToTopButton = document.querySelector(".back-to-top-button");
+    const backToTopButton = document.querySelector('.back-to-top-button');
 
     function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     if (backToTopButton) {
-      backToTopButton.addEventListener("click", scrollToTop);
+      backToTopButton.addEventListener('click', scrollToTop);
     }
   </script>
 

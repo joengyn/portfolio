@@ -6,150 +6,150 @@ interface Props {
 
 const { isIndex, isAbout } = Astro.props;
 
-import { Image } from "astro:assets";
-import Button from "./Button.astro";
-import logo from "../../public/circle.png";
-import resume from "../../public/resume.pdf";
+import { Image } from 'astro:assets';
+import Button from './Button.astro';
+import logo from '../../public/circle.png';
+import resume from '../../public/resume.pdf';
 ---
 
 <header
-  id="header"
-  data-page-type={isIndex || isAbout ? "no-scroll" : "scroll"}
-  class="fixed top-0 z-40 w-full bg-lightGray transition-transform duration-500 ease-in-out"
+  id='header'
+  data-page-type={isIndex || isAbout ? 'no-scroll' : 'scroll'}
+  class='fixed top-0 z-40 w-full bg-lightGray transition-transform duration-500 ease-in-out'
 >
-  <div class="flex flex-row items-center justify-between p-4 tracking-wider">
+  <div class='flex flex-row items-center justify-between p-4 tracking-wider'>
     <!-- Name -->
-    <a class="md:hidden" href="/">JOE.<br />NGYN</a>
+    <a class='md:hidden' href='/'>JOE.<br />NGYN</a>
     <a
-      class="relative -mx-1 hidden px-1 text-darkGray
+      class='relative -mx-1 hidden px-1 text-darkGray
         transition-[color,box-shadow] duration-700 ease-in-out
         before:absolute before:inset-0 before:z-[-1] before:h-full before:w-0
         before:bg-darkGray before:transition-all before:duration-300 before:ease-in-out
-        hover:text-white hover:before:w-full md:block"
-      href="/">JOE.NGYN</a
+        hover:text-white hover:before:w-full md:block'
+      href='/'>JOE.NGYN</a
     >
     <!-- Mobile Menu Button -->
-    <div class="menu-button space-y-1 md:hidden">
-      <div class="h-1 w-6 bg-black"></div>
-      <div class="h-1 w-6 bg-black"></div>
-      <div class="h-1 w-6 bg-black"></div>
+    <div class='menu-button space-y-1 md:hidden'>
+      <div class='h-1 w-6 bg-black'></div>
+      <div class='h-1 w-6 bg-black'></div>
+      <div class='h-1 w-6 bg-black'></div>
     </div>
     <!-- Menu Links -->
-    <div class="hidden items-center justify-end gap-3 md:flex">
+    <div class='hidden items-center justify-end gap-3 md:flex'>
       <a
         class="relative inline-block
         before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right
         before:scale-x-0 before:bg-darkGray before:transition-transform before:duration-300 before:content-['']
         hover:before:origin-left hover:before:scale-x-100"
-        href="/">work</a
+        href='/'>work</a
       >
       <a
         class="relative inline-block
         before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right
         before:scale-x-0 before:bg-darkGray before:transition-transform before:duration-300 before:content-['']
         hover:before:origin-left hover:before:scale-x-100"
-        href="/about">about</a
+        href='/about'>about</a
       >
       <a
         class="relative inline-block
         before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right
         before:scale-x-0 before:bg-darkGray before:transition-transform before:duration-300 before:content-['']
         hover:before:origin-left hover:before:scale-x-100"
-        target="_blank"
+        target='_blank'
         href={resume}>resume</a
       >
-      <a href="mailto:joe.ngyn7@gmail.com" class="hidden md:block">
+      <a href='mailto:joe.ngyn7@gmail.com' class='hidden md:block'>
         <Button
-          text="Contact"
-          type="button"
-          className="text-[12px] font-bold uppercase tracking-widest"
+          text='Contact'
+          type='button'
+          className='text-[12px] font-bold uppercase tracking-widest'
         />
       </a>
     </div>
     <!--  Logo -->
-    <div class="absolute inset-0 z-[-1] flex items-center justify-center">
+    <div class='absolute inset-0 z-[-1] flex items-center justify-center'>
       <Image
         src={logo}
-        alt="logo"
-        class={`h-10 w-10 ${isIndex ? "opacity-0" : "opacity-100"}`}
-        id="logoHeader"
+        alt='logo'
+        class={`h-10 w-10 ${isIndex ? 'opacity-0' : 'opacity-100'}`}
+        id='logoHeader'
       />
     </div>
   </div>
-  <div class="mx-4 border-t-2 border-black"></div>
+  <div class='mx-4 border-t-2 border-black'></div>
 </header>
 
 <style></style>
 
 <script>
   // Open Mobile Menu
-  const menuButton = document.querySelector(".menu-button");
+  const menuButton = document.querySelector('.menu-button');
 
   if (menuButton) {
-    menuButton.addEventListener("click", () => {
-      const mobileMenu = document.querySelector(".mobile-menu");
-      const menuLink = document.querySelectorAll(".menu-link");
-      const menuContact = document.querySelector(".menu-contact");
+    menuButton.addEventListener('click', () => {
+      const mobileMenu = document.querySelector('.mobile-menu');
+      const menuLink = document.querySelectorAll('.menu-link');
+      const menuContact = document.querySelector('.menu-contact');
 
       // Animations for Mobile Menu
       if (mobileMenu) {
-        mobileMenu.classList.remove("translate-x-full");
+        mobileMenu.classList.remove('translate-x-full');
         mobileMenu.classList.add(
-          "translate-x-0",
-          "transition-transform",
-          "duration-1000",
+          'translate-x-0',
+          'transition-transform',
+          'duration-1000',
         );
       }
       // Animations for Menu Links
       if (menuLink) {
         menuLink.forEach((link) => {
-          link.classList.remove("translate-x-full");
-          link.classList.add("translate-x-0");
+          link.classList.remove('translate-x-full');
+          link.classList.add('translate-x-0');
         });
       }
       // Animations for Menu Contact
       if (menuContact) {
-        menuContact.classList.remove("translate-y-5");
-        menuContact.classList.add("translate-y-0");
-        menuContact.classList.remove("opacity-0");
-        menuContact.classList.add("opacity-100");
+        menuContact.classList.remove('translate-y-5');
+        menuContact.classList.add('translate-y-0');
+        menuContact.classList.remove('opacity-0');
+        menuContact.classList.add('opacity-100');
       }
     });
   }
 
   // Header Scroll Animation for non index/about pages
-  document.addEventListener("DOMContentLoaded", () => {
-    const header = document.getElementById("header");
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('header');
     if (!header) return;
 
     const pageType = header.dataset.pageType;
 
-    if (pageType === "no-scroll") {
+    if (pageType === 'no-scroll') {
       return;
     }
 
-    console.log("Scroll function active on this page.");
+    console.log('Scroll function active on this page.');
 
     let lastScrollTop = 0;
 
-    window.addEventListener("scroll", () => {
+    window.addEventListener('scroll', () => {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
       if (scrollTop > lastScrollTop) {
         // Scroll down
-        header.style.transform = "translateY(-100%)";
+        header.style.transform = 'translateY(-100%)';
         header.classList.add(
-          "transition-transform",
-          "duration-500",
-          "ease-in-out",
+          'transition-transform',
+          'duration-500',
+          'ease-in-out',
         );
       } else {
         // Scroll up
-        header.style.transform = "translateY(0)";
+        header.style.transform = 'translateY(0)';
         header.classList.add(
-          "transition-transform",
-          "duration-500",
-          "ease-in-out",
+          'transition-transform',
+          'duration-500',
+          'ease-in-out',
         );
       }
 

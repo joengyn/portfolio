@@ -1,37 +1,37 @@
 ---
 // Imports
-import { Image } from "astro:assets";
+import { Image } from 'astro:assets';
 
 // Components
-import Banner from "../components/Banner.astro";
-import Button from "../components/Button.astro";
-import Layout from "../layouts/Layout.astro";
+import Banner from '../components/Banner.astro';
+import Button from '../components/Button.astro';
+import Layout from '../layouts/Layout.astro';
 
-import toastLogo from "../assets/toast/toast-logo.svg";
-import toastBg from "../assets/toast/restaurant.webp";
-import toastUI from "../assets/toast/toast-ui.webp";
-import toastUI2 from "../assets/toast/toast-ui-2.webp";
+import toastLogo from '../assets/toast/toast-logo.svg';
+import toastBg from '../assets/toast/restaurant.webp';
+import toastUI from '../assets/toast/toast-ui.webp';
+import toastUI2 from '../assets/toast/toast-ui-2.webp';
 ---
 
-<Layout title="Joe Nguyen | Toast Case Study">
-  <main class="mt-[100px]">
+<Layout title='Joe Nguyen | Toast Case Study'>
+  <main class='mt-[100px]'>
     <!-- Banner -->
     <Banner
-      title="Toast"
+      title='Toast'
       bgImg={toastBg}
-      bgImgAlt="Toast background image"
+      bgImgAlt='Toast background image'
       logo={toastLogo}
-      logoAlt="Toast logo"
-      overview="Design of a mobile QR-based pay-at-the-table service for restaurants"
-      roles={["UX Researcher", "UI Designer"]}
-      tools={["Figma"]}
+      logoAlt='Toast logo'
+      overview='Design of a mobile QR-based pay-at-the-table service for restaurants'
+      roles={['UX Researcher', 'UI Designer']}
+      tools={['Figma']}
       duration="3 months (Jun '21 - Aug '21)"
     />
-    <div class="wrapper">
+    <div class='wrapper'>
       <!-- Background -->
       <h2>Background</h2>
-      <Image src={toastUI2} alt="Toast UI image" class="mx-auto mb-2" />
-      <figcaption class="mb-10 text-center text-sm">Toast UI</figcaption>
+      <Image src={toastUI2} alt='Toast UI image' class='mx-auto mb-2' />
+      <figcaption class='mb-10 text-center text-sm'>Toast UI</figcaption>
       <p>
         In the summer of 2021, I joined Toast’s “Order & Pay” team during a time
         when the world was still navigating the impacts of the COVID-19
@@ -50,7 +50,7 @@ import toastUI2 from "../assets/toast/toast-ui-2.webp";
         people cherish when dining out. The tension between technology and
         tradition created a complex landscape for the app to navigate.
       </p>
-      <p class="mb-20">
+      <p class='mb-20'>
         My role on the team was multifaceted, involving design, research, and
         user experience improvements. The challenge was not only to refine the
         app but also to address the evolving needs of customers and restaurants
@@ -63,8 +63,8 @@ import toastUI2 from "../assets/toast/toast-ui-2.webp";
         divided into two main areas: improving the app's design and conducting
         extensive user research.
       </p>
-      <Image src={toastUI} alt="Toast UI image" class="mb-2" />
-      <figcaption class="mb-10 text-center text-sm">Toast UI</figcaption>
+      <Image src={toastUI} alt='Toast UI image' class='mb-2' />
+      <figcaption class='mb-10 text-center text-sm'>Toast UI</figcaption>
       <p>
         Mapping the Current State: My first major task was to map out the
         current state of the app. The app had been developed quickly, in
@@ -83,7 +83,7 @@ import toastUI2 from "../assets/toast/toast-ui-2.webp";
         environments (such as observing customers in restaurants) Analyzing and
         presenting data to inform product decisions
       </p>
-      <p class="mb-20">
+      <p class='mb-20'>
         Through these efforts, I gathered valuable insights about customer
         behaviors and preferences, helping to shape future iterations of the
         app.
@@ -104,7 +104,7 @@ import toastUI2 from "../assets/toast/toast-ui-2.webp";
         to set long-term strategies but also created an exciting, high-stakes
         environment.
       </p>
-      <p class="mb-20">
+      <p class='mb-20'>
         Design Consistency: With the product being built rapidly and evolving
         quickly, maintaining design consistency was a key challenge. Ensuring
         that small elements like text styles and button components were aligned
@@ -132,7 +132,7 @@ import toastUI2 from "../assets/toast/toast-ui-2.webp";
         personal connections with waitstaff. Finding ways to merge both was key
         to ensuring broader adoption.
       </p>
-      <p class="mb-20">
+      <p class='mb-20'>
         The Speed of the Food-Tech Industry: The restaurant self-service market
         was rapidly growing, which made it a highly competitive and fast-paced
         field. This environment taught me how to work under pressure, prioritize
@@ -152,16 +152,16 @@ import toastUI2 from "../assets/toast/toast-ui-2.webp";
         in the process.
       </p>
       <!-- Buttons -->
-      <div class="mb-10 flex justify-between">
+      <div class='mb-10 flex justify-between'>
         <Button
-          text="back to top"
-          type="button"
-          icon="arrow"
-          className="back-to-top-button"
-          iconClassName="-rotate-90"
+          text='back to top'
+          type='button'
+          icon='arrow'
+          className='back-to-top-button'
+          iconClassName='-rotate-90'
         />
-        <a href="/berkshiregrey">
-          <Button text="next case study" type="button" icon="arrow" />
+        <a href='/berkshiregrey'>
+          <Button text='next case study' type='button' icon='arrow' />
         </a>
       </div>
     </div>
@@ -169,14 +169,14 @@ import toastUI2 from "../assets/toast/toast-ui-2.webp";
 
   <script>
     // Back to top button
-    const backToTopButton = document.querySelector(".back-to-top-button");
+    const backToTopButton = document.querySelector('.back-to-top-button');
 
     function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     if (backToTopButton) {
-      backToTopButton.addEventListener("click", scrollToTop);
+      backToTopButton.addEventListener('click', scrollToTop);
     }
   </script>
 

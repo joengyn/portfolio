@@ -7,36 +7,36 @@ interface Props {
 
 const { title, isIndex, isAbout } = Astro.props;
 
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import MobileMenu from "../components/MobileMenu.astro";
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MobileMenu from '../components/MobileMenu.astro';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang='en'>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/enso-circle.svg" />
+    <meta charset='UTF-8' />
+    <meta name='description' content='Astro description' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/enso-circle.svg' />
     <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800&display=swap"
-      as="style"
+      rel='preload'
+      href='https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800&display=swap'
+      as='style'
       onload="this.onload=null;this.rel='stylesheet'"
     />
     <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css?family=Lato:300,400,500,600,700,800&display=swap"
-      as="style"
+      rel='preload'
+      href='https://fonts.googleapis.com/css?family=Lato:300,400,500,600,700,800&display=swap'
+      as='style'
       onload="this.onload=null;this.rel='stylesheet'"
     />
-    <meta name="generator" content={Astro.generator} />
+    <meta name='generator' content={Astro.generator} />
     <title>
       {title}
     </title>
   </head>
-  <body class="bg-lightGray">
+  <body class='bg-lightGray'>
     <MobileMenu />
     <Header isIndex={isIndex} isAbout={isAbout} />
     <slot />
@@ -44,7 +44,7 @@ import MobileMenu from "../components/MobileMenu.astro";
   </body>
 </html>
 
-<style is:global lang="scss">
+<style is:global lang='scss'>
   :root {
     --light: 300;
     --regular: 400;
@@ -55,7 +55,7 @@ import MobileMenu from "../components/MobileMenu.astro";
   }
 
   html {
-    font-family: "Lato", "Montserrat", system-ui, sans-serif;
+    font-family: 'Lato', 'Montserrat', system-ui, sans-serif;
     margin: 0;
     padding: 0;
   }
@@ -66,7 +66,7 @@ import MobileMenu from "../components/MobileMenu.astro";
   }
 
   p {
-    font-family: "Montserrat";
+    font-family: 'Montserrat';
     font-size: 1rem;
     font-weight: var(--regular);
     line-height: 1.75;
@@ -108,9 +108,9 @@ import MobileMenu from "../components/MobileMenu.astro";
 <script>
   // Fade in Header Logo
   function handleLogoFadeIn() {
-    document.addEventListener("DOMContentLoaded", () => {
-      const logo = document.getElementById("logoHeader");
-      const lottieContainer = document.getElementById("lottie-container");
+    document.addEventListener('DOMContentLoaded', () => {
+      const logo = document.getElementById('logoHeader');
+      const lottieContainer = document.getElementById('lottie-container');
 
       if (logo && lottieContainer) {
         const observer = new IntersectionObserver(
@@ -119,14 +119,14 @@ import MobileMenu from "../components/MobileMenu.astro";
               if (!entry.isIntersecting) {
                 // If the Lottie container is out of view, fade in the logo
                 logo.classList.add(
-                  "opacity-100",
-                  "transition-opacity",
-                  "duration-1000",
-                  "ease-in-out",
+                  'opacity-100',
+                  'transition-opacity',
+                  'duration-1000',
+                  'ease-in-out',
                 );
               } else {
                 // If the Lottie container is visible, hide the logo
-                logo.classList.remove("opacity-100");
+                logo.classList.remove('opacity-100');
               }
             });
           },

@@ -1,6 +1,6 @@
 ---
-import { Image } from "astro:assets";
-import type { ImageMetadata } from "astro";
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 
 interface Props {
   title: string;
@@ -27,45 +27,45 @@ const {
 } = Astro.props;
 ---
 
-<div class="banner m-4 mx-auto max-w-[1800px] bg-gray">
-  <div class="relative flex items-center">
+<div class='banner m-4 mx-auto max-w-[1800px] bg-gray'>
+  <div class='relative flex items-center'>
     <!-- Gradient -->
     <div
-      class="absolute h-full w-full bg-gradient-to-r from-black to-transparent"
+      class='absolute h-full w-full bg-gradient-to-r from-black to-transparent'
     >
     </div>
     <!-- Title -->
     <span
-      class="absolute left-8 max-w-[300px] text-[40px] uppercase text-white md:max-w-[400px] md:text-[60px] lg:text-[80px]"
+      class='absolute left-8 max-w-[300px] text-[40px] uppercase text-white md:max-w-[400px] md:text-[60px] lg:text-[80px]'
     >
       {title}
     </span>
     <!-- Banner Image -->
     <Image
-      class="h-[300px] w-full object-cover md:h-[500px]"
+      class='h-[300px] w-full object-cover md:h-[500px]'
       src={bgImg}
       alt={bgImgAlt}
     />
   </div>
   <!-- Logo -->
-  <div class="p-6 pb-0 md:px-8">
-    <Image src={logo} alt={logoAlt} class="h-10 w-auto" />
+  <div class='p-6 pb-0 md:px-8'>
+    <Image src={logo} alt={logoAlt} class='h-10 w-auto' />
   </div>
   <!-- Banner Info -->
   <div
-    class="grid-row grid gap-6 p-6 md:grid-cols-[2fr_2fr_1fr_1fr] md:gap-8 md:px-8"
+    class='grid-row grid gap-6 p-6 md:grid-cols-[2fr_2fr_1fr_1fr] md:gap-8 md:px-8'
   >
     <!-- Overview -->
-    <div class="flex flex-col gap-2">
+    <div class='flex flex-col gap-2'>
       <h4>Overview</h4>
       <p>
         {overview}
       </p>
     </div>
     <!-- Roles -->
-    <div class="flex flex-col gap-2">
+    <div class='flex flex-col gap-2'>
       <h4>Role</h4>
-      <ul class="ml-4 list-outside list-disc">
+      <ul class='ml-4 list-outside list-disc'>
         {
           roles.map((roles) => (
             <Fragment key={roles}>
@@ -78,9 +78,9 @@ const {
       </ul>
     </div>
     <!-- Tools & Technology -->
-    <div class="flex flex-col gap-2">
+    <div class='flex flex-col gap-2'>
       <h4>Tools</h4>
-      <ul class="ml-4 grid list-outside list-disc grid-cols-2 md:grid-cols-1">
+      <ul class='ml-4 grid list-outside list-disc grid-cols-2 md:grid-cols-1'>
         {
           tools.map((tools) => (
             <Fragment key={tools}>
@@ -93,9 +93,9 @@ const {
       </ul>
     </div>
     <!-- Duration -->
-    <div class="flex flex-col gap-2">
+    <div class='flex flex-col gap-2'>
       <h4>Duration</h4>
-      <ul class="ml-4 list-outside list-disc">
+      <ul class='ml-4 list-outside list-disc'>
         <li>
           <p>{duration}</p>
         </li>

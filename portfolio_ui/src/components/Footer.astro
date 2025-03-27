@@ -1,95 +1,95 @@
 ---
-import { Image } from "astro:assets";
-import { getImage } from "astro:assets";
+import { Image } from 'astro:assets';
+import { getImage } from 'astro:assets';
 
-import Button from "./Button.astro";
+import Button from './Button.astro';
 
-import whiteCircle from "../../public/circle-white.png";
-import githubIcon from "../../public/github.png";
-import linkedinIcon from "../../public/linkedin.png";
-import resume from "../../public/resume.pdf";
-import wave from "../../public/wave.jpeg";
+import whiteCircle from '../../public/circle-white.png';
+import githubIcon from '../../public/github.png';
+import linkedinIcon from '../../public/linkedin.png';
+import resume from '../../public/resume.pdf';
+import wave from '../../public/wave.jpeg';
 
 const optimizedBackground = await getImage({
   src: wave,
-  format: "webp",
+  format: 'webp',
 });
 ---
 
 <footer
-  class="bg-cover bg-center bg-no-repeat text-white text-opacity-90"
+  class='bg-cover bg-center bg-no-repeat text-white text-opacity-90'
   style={`background-image: url(${optimizedBackground.src});`}
 >
   <div
-    class="flex flex-col items-center gap-6 px-4 py-10 lg:flex-row lg:justify-between lg:px-20 lg:py-5"
+    class='flex flex-col items-center gap-6 px-4 py-10 lg:flex-row lg:justify-between lg:px-20 lg:py-5'
   >
     <Image
-      class="h-32 w-32 lg:order-1"
+      class='h-32 w-32 lg:order-1'
       src={whiteCircle}
-      alt="Enso Circle Logo"
+      alt='Enso Circle Logo'
     />
 
-    <div class="flex flex-col items-center gap-6">
-      <a href="mailto:joe.ngyn7@gmail.com">
+    <div class='flex flex-col items-center gap-6'>
+      <a href='mailto:joe.ngyn7@gmail.com'>
         <Button
-          text="Contact"
-          type="button"
-          className="bg-darkGray text-[12px] font-bold uppercase tracking-widest hover:bg-white hover:!text-darkGray"
+          text='Contact'
+          type='button'
+          className='bg-darkGray text-[12px] font-bold uppercase tracking-widest hover:bg-white hover:!text-darkGray'
         />
       </a>
-      <div class="flex justify-end gap-3 opacity-100">
+      <div class='flex justify-end gap-3 opacity-100'>
         <a
-          class="transition-transform hover:scale-105"
-          target="_blank"
-          href="https://www.linkedin.com/in/joengyn/"
+          class='transition-transform hover:scale-105'
+          target='_blank'
+          href='https://www.linkedin.com/in/joengyn/'
         >
           <Image
-            class="h-10 w-10 brightness-100 invert filter"
+            class='h-10 w-10 brightness-100 invert filter'
             src={linkedinIcon}
-            alt="LinkedIn Icon Logo"
+            alt='LinkedIn Icon Logo'
           />
         </a>
         <a
-          class="transition-transform hover:scale-105"
-          target="_blank"
-          href="https://github.com/joengyn/"
+          class='transition-transform hover:scale-105'
+          target='_blank'
+          href='https://github.com/joengyn/'
         >
           <Image
-            class="h-10 w-10 invert filter"
+            class='h-10 w-10 invert filter'
             src={githubIcon}
-            alt="Github Logo"
+            alt='Github Logo'
           /></a
         >
       </div>
     </div>
 
-    <div class="flex flex-col items-center gap-6">
-      <div class="flex justify-end gap-3">
+    <div class='flex flex-col items-center gap-6'>
+      <div class='flex justify-end gap-3'>
         <a
           class="relative inline-block
             before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right
             before:scale-x-0 before:bg-white before:transition-transform before:duration-300 before:content-['']
             hover:before:origin-left hover:before:scale-x-100"
-          href="/">work</a
+          href='/'>work</a
         >
         <a
           class="relative inline-block
             before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right
             before:scale-x-0 before:bg-white before:transition-transform before:duration-300 before:content-['']
             hover:before:origin-left hover:before:scale-x-100"
-          href="/about">about</a
+          href='/about'>about</a
         >
         <a
           class="relative inline-block
             before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right
             before:scale-x-0 before:bg-white before:transition-transform before:duration-300 before:content-['']
             hover:before:origin-left hover:before:scale-x-100"
-          target="_blank"
+          target='_blank'
           href={resume}>resume</a
         >
       </div>
 
-      <div class="flex flex-col items-center text-center lg:justify-end">
+      <div class='flex flex-col items-center text-center lg:justify-end'>
         <span>Designed and Developed by Joe Nguyen</span>
         <span>© 2025 | All Rights Reserved</span>
       </div>

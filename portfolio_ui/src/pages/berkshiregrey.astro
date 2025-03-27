@@ -1,60 +1,60 @@
 ---
 // Imports
-import { Image } from "astro:assets";
+import { Image } from 'astro:assets';
 
 // Components
-import Layout from "../layouts/Layout.astro";
-import Banner from "../components/Banner.astro";
-import Button from "../components/Button.astro";
-import ImageSlider from "../components/ImageSlider.astro";
+import Layout from '../layouts/Layout.astro';
+import Banner from '../components/Banner.astro';
+import Button from '../components/Button.astro';
+import ImageSlider from '../components/ImageSlider.astro';
 
 // Banner Assets
-import bgLogo from "../assets/berkshiregrey/bg-logo.svg";
-import bgBackground from "../assets/berkshiregrey/bg-background.webp";
+import bgLogo from '../assets/berkshiregrey/bg-logo.svg';
+import bgBackground from '../assets/berkshiregrey/bg-background.webp';
 
 // Images
-import ngUI1 from "../assets/berkshiregrey/bg-ng-ui-1.webp";
-import ngUI2 from "../assets/berkshiregrey/bg-ng-ui-2.webp";
-import ngUI3 from "../assets/berkshiregrey/bg-ng-ui-3.webp";
-import ngUI4 from "../assets/berkshiregrey/bg-ng-ui-4.webp";
+import ngUI1 from '../assets/berkshiregrey/bg-ng-ui-1.webp';
+import ngUI2 from '../assets/berkshiregrey/bg-ng-ui-2.webp';
+import ngUI3 from '../assets/berkshiregrey/bg-ng-ui-3.webp';
+import ngUI4 from '../assets/berkshiregrey/bg-ng-ui-4.webp';
 const images = [ngUI1, ngUI2, ngUI3, ngUI4];
-import hmiImg from "../assets/berkshiregrey/bg-hmi-book.webp";
-import userImg from "../assets/berkshiregrey/bg-user-img.webp";
-import flexbotImg from "../assets/berkshiregrey/bg-flexbot.webp";
-import pickArmImg from "../assets/berkshiregrey/bg-pick.webp";
+import hmiImg from '../assets/berkshiregrey/bg-hmi-book.webp';
+import userImg from '../assets/berkshiregrey/bg-user-img.webp';
+import flexbotImg from '../assets/berkshiregrey/bg-flexbot.webp';
+import pickArmImg from '../assets/berkshiregrey/bg-pick.webp';
 
 // Icons
-import vennDiagram from "../assets/berkshiregrey/venn-diagram.svg";
-import xdIcon from "../assets/berkshiregrey/xd.webp";
-import figmaIcon from "../assets/berkshiregrey/figma.webp";
-import reactIcon from "../assets/berkshiregrey/react.webp";
-import pythonIcon from "../assets/berkshiregrey/python.webp";
+import vennDiagram from '../assets/berkshiregrey/venn-diagram.svg';
+import xdIcon from '../assets/berkshiregrey/xd.webp';
+import figmaIcon from '../assets/berkshiregrey/figma.webp';
+import reactIcon from '../assets/berkshiregrey/react.webp';
+import pythonIcon from '../assets/berkshiregrey/python.webp';
 ---
 
-<Layout title="Joe Nguyen | Berkshire Grey Case Study">
-  <main class="mt-[100px]">
+<Layout title='Joe Nguyen | Berkshire Grey Case Study'>
+  <main class='mt-[100px]'>
     <!-- Image Slider -->
     <ImageSlider images={images} />
     <!-- Banner -->
     <Banner
-      title="Berkshire Grey"
+      title='Berkshire Grey'
       bgImg={bgBackground}
-      bgImgAlt="Image of mobile robots carrying items"
+      bgImgAlt='Image of mobile robots carrying items'
       logo={bgLogo}
-      logoAlt="../assets/berkshiregrey/bg-logo.svg"
-      overview="Design and development of Human Machine Interfaces (HMIs) for AI-enabled enterprise robotics, streamlining complex robotic systems and making them more intuitive and accessible for operators."
+      logoAlt='../assets/berkshiregrey/bg-logo.svg'
+      overview='Design and development of Human Machine Interfaces (HMIs) for AI-enabled enterprise robotics, streamlining complex robotic systems and making them more intuitive and accessible for operators.'
       roles={[
-        "Design Lead (Mobile robotics team)",
-        "Design Technologist / Full Stack Developer (Picking robotics team)",
+        'Design Lead (Mobile robotics team)',
+        'Design Technologist / Full Stack Developer (Picking robotics team)',
       ]}
-      tools={["Adobe XD", "Figma", "React", "Python"]}
+      tools={['Adobe XD', 'Figma', 'React', 'Python']}
       duration="15 months (Oct '21 - Jan '23)"
     />
-    <div class="wrapper m-5 mx-auto">
+    <div class='wrapper m-5 mx-auto'>
       <!-- Background Section -->
       <h2>Background</h2>
-      <Image src={userImg} alt="user-img" class="mb-5 w-full object-cover" />
-      <figcaption class="mb-10 text-center text-sm">
+      <Image src={userImg} alt='user-img' class='mb-5 w-full object-cover' />
+      <figcaption class='mb-10 text-center text-sm'>
         User operating the BG Flex HMI
       </figcaption>
       <p>
@@ -62,22 +62,22 @@ import pythonIcon from "../assets/berkshiregrey/python.webp";
         the pace of e-commerce continues to accelerate. Robotic automation in
         warehouses has become crucial to meet these growing demands.
       </p>
-      <p class="mb-20">
-        During my time at BG, I contributed to both the <span class="font-bold"
+      <p class='mb-20'>
+        During my time at BG, I contributed to both the <span class='font-bold'
           >Mobile</span
-        > and <span class="font-bold">Picking</span> robotic teams, each focused
+        > and <span class='font-bold'>Picking</span> robotic teams, each focused
         on developing unique platforms and solutions.
       </p>
       <!-- Mobile Robotics -->
       <h2>
-        <span class="bg-darkGray p-1 text-white">Mobile Robotics</span>
+        <span class='bg-darkGray p-1 text-white'>Mobile Robotics</span>
       </h2>
       <Image
         src={flexbotImg}
-        alt="flexbot-img"
-        class="mb-5 w-full object-cover"
+        alt='flexbot-img'
+        class='mb-5 w-full object-cover'
       />
-      <p class="mb-20 bg-gray p-4 text-[14px]">
+      <p class='mb-20 bg-gray p-4 text-[14px]'>
         Mobile Robotics leverage AI, machine learning, and sensors to manage
         fleets of autonomous robots that enhance warehouse operations, including
         order picking and inventory management.
@@ -88,71 +88,71 @@ import pythonIcon from "../assets/berkshiregrey/python.webp";
         to create an intuitive, efficient user experience for operating and
         monitoring large fleets of AI-enabled robots on Berkshire Grey’s Next
         Generation Mobile Robotic Platform, <a
-          class="font-medium underline"
-          href="https://www.berkshiregrey.com/resources/press-release/berkshire-grey-announces-its-next-generation-mobile-robotic-platform-bg-flex/"
+          class='font-medium underline'
+          href='https://www.berkshiregrey.com/resources/press-release/berkshire-grey-announces-its-next-generation-mobile-robotic-platform-bg-flex/'
           >BG Flex</a
         >
       </p>
       <!-- HMI Images -->
-      <div class="mb-2 grid">
+      <div class='mb-2 grid'>
         <Image
-          class="open-modal-button mb-2 cursor-pointer"
+          class='open-modal-button mb-2 cursor-pointer'
           src={ngUI1}
-          alt="ng-ui-1"
-          data-index="0"
+          alt='ng-ui-1'
+          data-index='0'
         />
-        <figcaption class="mb-10 text-center text-sm">HMI map page</figcaption>
+        <figcaption class='mb-10 text-center text-sm'>HMI map page</figcaption>
         <Image
-          class="open-modal-button mb-2 cursor-pointer"
+          class='open-modal-button mb-2 cursor-pointer'
           src={ngUI2}
-          alt="ng-ui-2"
-          data-index="1"
+          alt='ng-ui-2'
+          data-index='1'
         />
-        <figcaption class="mb-10 text-center text-sm">
+        <figcaption class='mb-10 text-center text-sm'>
           HMI map page (alert)
         </figcaption>
         <Image
-          class="open-modal-button mb-2 cursor-pointer"
+          class='open-modal-button mb-2 cursor-pointer'
           src={ngUI3}
-          alt="ng-ui-3"
-          data-index="2"
+          alt='ng-ui-3'
+          data-index='2'
         />
-        <figcaption class="mb-10 text-center text-sm">
+        <figcaption class='mb-10 text-center text-sm'>
           HMI map page (zoom out)
         </figcaption>
         <Image
-          class="open-modal-button mb-2 cursor-pointer"
+          class='open-modal-button mb-2 cursor-pointer'
           src={ngUI4}
-          alt="ng-ui-4"
-          data-index="3"
+          alt='ng-ui-4'
+          data-index='3'
         />
-        <figcaption class="mb-4 text-center text-sm">
+        <figcaption class='mb-4 text-center text-sm'>
           HMI maintenance page
         </figcaption>
       </div>
-      <p class="mb-20 text-[12px]">
+      <p class='mb-20 text-[12px]'>
         (Pictures from <a
-          target="_blank"
-          class="font-medium underline"
-          href="https://ux-design-awards.com/winners/berkshire-grey-flex-next-gen-hmi"
+          target='_blank'
+          class='font-medium underline'
+          href='https://ux-design-awards.com/winners/berkshire-grey-flex-next-gen-hmi'
           >UX Design Awards</a
         >)
       </p>
       <p>
         My involvement with the Next Generation HMI included everything from
-        <span class="font-bold">conducting user research</span> and <span
-          class="font-bold">drafting product requirements</span
-        > to <span class="font-bold">creating interactive mockups</span> and even
-        <span class="font-bold">pushing code</span> changes.
+        <span class='font-bold'>conducting user research</span> and <span
+          class='font-bold'>drafting product requirements</span
+        > to <span class='font-bold'>creating interactive mockups</span> and even
+        <span class='font-bold'>pushing code</span> changes.
       </p>
       <p>
-        Additionally I created and maintained the new <span class="font-bold"
+        Additionally I created and maintained the new <span class='font-bold'
           >design system</span
-        > as well as all feature <span class="font-bold"
+        > as well as all feature <span class='font-bold'
           >workflow documentation</span
         >.
       </p>
-      <p class="mb-20">
+      <p class='mb-20'>
         In addition to designing the BG Flex HMI, I developed user interfaces
         for key workflows, including a maintenance page and map editor, while
         continuously improving the existing HMI through iterative updates.
@@ -160,17 +160,17 @@ import pythonIcon from "../assets/berkshiregrey/python.webp";
       <!-- HMI Book -->
       <Image
         src={hmiImg}
-        alt="hmi-book"
-        class="mx-auto mb-2 w-full max-w-[400px] object-cover"
+        alt='hmi-book'
+        class='mx-auto mb-2 w-full max-w-[400px] object-cover'
       />
-      <figcaption class="mb-20 text-center text-sm">
+      <figcaption class='mb-20 text-center text-sm'>
         Cover of "The High Performance HMI Handbook"
       </figcaption>
       <p>
         Due to the complex nature of the system, best practices from <a
-          target="_blank"
-          class="font-medium underline"
-          href="https://www.kobo.com/us/en/ebook/the-high-performance-hmi-handbook"
+          target='_blank'
+          class='font-medium underline'
+          href='https://www.kobo.com/us/en/ebook/the-high-performance-hmi-handbook'
           >The High Performance HMI Handbook</a
         > were followed.
       </p>
@@ -178,30 +178,30 @@ import pythonIcon from "../assets/berkshiregrey/python.webp";
         This included designing for the various levels of interaction required
         by users.
       </p>
-      <ul class="mb-20 ml-8 list-outside list-disc">
+      <ul class='mb-20 ml-8 list-outside list-disc'>
         <li>
           <p>
-            <span class="font-bold">Level 1 - Process Area Overview:</span> The main
+            <span class='font-bold'>Level 1 - Process Area Overview:</span> The main
             overview display focuses on important items while displaying alarms and
             alerts in a cogent and easily determinable manner.
           </p>
         </li>
         <li>
           <p>
-            <span class="font-bold">Level 2 - Process Unit Control:</span> Sub-processes,
+            <span class='font-bold'>Level 2 - Process Unit Control:</span> Sub-processes,
             variables, and control manipulation for reactions.
           </p>
         </li>
         <li>
           <p>
-            <span class="font-bold">Level 3 - Process Unit Detail:</span> Further
+            <span class='font-bold'>Level 3 - Process Unit Detail:</span> Further
             detailed examination. Individual machine controls, specific alarm displays,
             and information details.
           </p>
         </li>
         <li>
           <p>
-            <span class="font-bold"
+            <span class='font-bold'
               >Level 4 - Process Unit Support and Diagnostic Display:</span
             > Troubleshooting information, possibly P&ID, and anything else that
             is not important for operation but necessary for maintenance and management.
@@ -210,14 +210,14 @@ import pythonIcon from "../assets/berkshiregrey/python.webp";
       </ul>
       <!-- Picking Robotics -->
       <h2>
-        <span class="bg-darkGray p-1 text-white">Picking Robotics</span>
+        <span class='bg-darkGray p-1 text-white'>Picking Robotics</span>
       </h2>
       <Image
         src={pickArmImg}
-        alt="flexbot-img"
-        class="mb-5 w-full object-cover"
+        alt='flexbot-img'
+        class='mb-5 w-full object-cover'
       />
-      <p class="mb-20 bg-gray p-4 text-[14px]">
+      <p class='mb-20 bg-gray p-4 text-[14px]'>
         Picking Robotics include picking arms, put walls, and package sortation
         platforms. Together, these technologies automate costly processes for
         fulfilling customer orders and stocking shelves, significantly reducing
@@ -232,8 +232,8 @@ import pythonIcon from "../assets/berkshiregrey/python.webp";
       <!-- Venn Diagram -->
       <Image
         src={vennDiagram}
-        alt="venn-diagram"
-        class="mb-10 ml-auto mr-auto w-80 object-cover"
+        alt='venn-diagram'
+        class='mb-10 ml-auto mr-auto w-80 object-cover'
       />
       <p>
         I worked as a full-stack developer, using React and Python within a
@@ -241,11 +241,11 @@ import pythonIcon from "../assets/berkshiregrey/python.webp";
         functionality and deliver an optimal user experience.
       </p>
       <!-- Tools & Technology Icons-->
-      <div class="mx-auto mb-10 grid w-1/2 grid-cols-2 gap-4 md:w-1/4">
-        <Image src={xdIcon} alt="xd-icon" />
-        <Image src={reactIcon} alt="react-icon" />
-        <Image src={figmaIcon} alt="figma-icon" />
-        <Image src={pythonIcon} alt="python-icon" />
+      <div class='mx-auto mb-10 grid w-1/2 grid-cols-2 gap-4 md:w-1/4'>
+        <Image src={xdIcon} alt='xd-icon' />
+        <Image src={reactIcon} alt='react-icon' />
+        <Image src={figmaIcon} alt='figma-icon' />
+        <Image src={pythonIcon} alt='python-icon' />
       </div>
       <p>
         My responsibilities included designing new screens to support
@@ -261,7 +261,7 @@ import pythonIcon from "../assets/berkshiregrey/python.webp";
         range of tasks giving me valuable hands-on experience with each step of
         the design process.
       </p>
-      <p class="mb-20">
+      <p class='mb-20'>
         When I transitioned to the Picking Robotics team, I had the chance to
         further broaden my skillset by diving deeper into development, expanding
         my role beyond design into coding and technical implementation. This
@@ -269,16 +269,16 @@ import pythonIcon from "../assets/berkshiregrey/python.webp";
         development workflows.
       </p>
       <!-- Buttons -->
-      <div class="mb-10 flex justify-between">
+      <div class='mb-10 flex justify-between'>
         <Button
-          text="back to top"
-          type="button"
-          icon="arrow"
-          className="back-to-top-button"
-          iconClassName="-rotate-90"
+          text='back to top'
+          type='button'
+          icon='arrow'
+          className='back-to-top-button'
+          iconClassName='-rotate-90'
         />
-        <a href="/bandscan">
-          <Button text="next case study" type="button" icon="arrow" />
+        <a href='/bandscan'>
+          <Button text='next case study' type='button' icon='arrow' />
         </a>
       </div>
     </div>
@@ -286,14 +286,14 @@ import pythonIcon from "../assets/berkshiregrey/python.webp";
 
   <script>
     // Back to top button
-    const backToTopButton = document.querySelector(".back-to-top-button");
+    const backToTopButton = document.querySelector('.back-to-top-button');
 
     function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     if (backToTopButton) {
-      backToTopButton.addEventListener("click", scrollToTop);
+      backToTopButton.addEventListener('click', scrollToTop);
     }
   </script>
 
