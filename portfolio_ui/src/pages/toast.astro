@@ -9,8 +9,12 @@ import Layout from '../layouts/Layout.astro';
 
 import toastLogo from '../assets/toast/toast-logo.svg';
 import toastBg from '../assets/toast/restaurant.webp';
+
+import toastIntro from '../assets/toast/toast-intro.webp';
 import toastUI from '../assets/toast/toast-ui.webp';
 import toastUI2 from '../assets/toast/toast-ui-2.webp';
+import toastMp4 from '../assets/toast/toast-ui.mp4';
+import toastImg from '../assets/toast/toast-img.webp';
 ---
 
 <Layout title='Joe Nguyen | Toast Case Study'>
@@ -23,26 +27,26 @@ import toastUI2 from '../assets/toast/toast-ui-2.webp';
       logo={toastLogo}
       logoAlt='Toast logo'
       overview='Design of a mobile QR code based pay-at-the-table service, giving customers an easier way to pay and increasing sales for restaurants.'
-      roles={['UX Researcher', 'UI Designer']}
+      roles={['UX Design Intern']}
       tools={['Figma']}
       duration='3 months'
     />
     <div class='wrapper'>
       <!-- Background -->
       <h2>Background</h2>
-      <Image src={toastUI2} alt='Toast UI image' class='mx-auto mb-2' />
-      <figcaption class='mb-10 text-center text-sm'>Toast UI</figcaption>
+      <Image src={toastImg} alt='Introduction image' class='mb-2' />
+      <figcaption class='mb-10 text-center text-sm'>
+        Toast Restaurant service
+      </figcaption>
       <p>
-        In the summer of 2021, I joined Toast’s “Order & Pay” team during a time
-        when the world was still navigating the impacts of the COVID-19
-        pandemic. Quarantine restrictions were starting to lift, but
-        human-to-human interactions—such as waitstaff serving customers—were
-        still seen as risky. In response to this challenge, Toast's "Order &
-        Pay" app provided a solution that allowed diners to place and pay for
-        their orders via a QR code, minimizing face-to-face contact while still
-        providing a restaurant experience.
+        In the summer of 2021, as the world was starting to recover from the
+        COVID-19 pandemic, I joined the <b>Toast Mobile Order & Pay</b> team. While
+        quarantine restrictions were easing, many diners remained cautious about
+        in-person interactions, particularly with waitstaff. To address these concerns,
+        Toast sought to streamline the dining experience by enabling guests to order
+        and pay directly from their phones using a QR code.
       </p>
-      <p>
+      <!-- <p>
         The product faced mixed reactions from users. Some embraced the
         convenience and felt that it represented the future of dining
         technology, especially in the context of a pandemic. Others, however,
@@ -55,38 +59,76 @@ import toastUI2 from '../assets/toast/toast-ui-2.webp';
         user experience improvements. The challenge was not only to refine the
         app but also to address the evolving needs of customers and restaurants
         as the product adapted to a rapidly changing world.
-      </p>
+      </p> -->
       <!-- My Role -->
-      <h2>My Role</h2>
+      <Image src={toastIntro} alt='Introduction image' class='mb-2' />
+      <video autoplay loop muted playsinline class='mb-2'>
+        <source src={toastMp4} type='video/mp4' />
+        Your browser does not support the video tag.
+      </video>
+      <figcaption class='mb-10 text-center text-sm'>
+        Toast Mobile Order & Pay UI
+      </figcaption>
+      <h2>Role & Responsibilities</h2>
       <p>
-        As a designer on the “Order & Pay” team, my responsibilities were
-        divided into two main areas: improving the app's design and conducting
-        extensive user research.
+        I joined the team as a <b>UX Design Intern</b>, focusing on improving
+        the app’s design and conducting user research.
+      </p>
+      <p>
+        My first major task was to <b>map out the current state of the app</b>.
+        Since the product had been developed rapidly in response to an urgent
+        need, there was no single “source of truth” for its design or
+        functionality. This led to inconsistencies across the product, such as
+        mismatched text and components. I cataloged the app’s features,
+        identified these inconsistencies, and worked to refine the design for a
+        more cohesive user experience.
       </p>
       <Image src={toastUI} alt='Toast UI image' class='mb-2' />
-      <figcaption class='mb-10 text-center text-sm'>Toast UI</figcaption>
+      <figcaption class='mb-10 text-center text-sm'>
+        Toast Mobile Order & Pay UI
+      </figcaption>
       <p>
-        Mapping the Current State: My first major task was to map out the
-        current state of the app. The app had been developed quickly, in
-        response to an urgent need, and there was no unified “source of truth”
-        for its design or functionality. This led to inconsistencies across the
-        product. I worked to catalog the app’s features and design, uncovering
-        several small issues with consistency—such as mismatched text and
-        components—and addressing them to improve the app’s overall coherence.
+        Beyond design improvements, I also <b>conducted user research</b> to understand
+        this evolving market. Since the product was still adapting, there were many
+        unknowns, and gathering real-world insights was critical.
       </p>
-      <p>
-        Research & User Studies: I also focused heavily on conducting user
-        research to understand the nuances of this new market. The product was
-        still evolving, so there were many unknowns. My tasks included: Setting
-        up user research studies Recruiting participants Conducting interviews
-        both online and in-person Performing ad-hoc research in real-world
-        environments (such as observing customers in restaurants) Analyzing and
-        presenting data to inform product decisions
-      </p>
+      <p>My tasks included:</p>
+      <ul class='ml-8 list-outside list-disc'>
+        <li>
+          <p>
+            <span class='font-bold'>Setting up user research studies</span> and drafting
+            questionnaires
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class='font-bold'>Recruiting participants</span> for interviews
+            and usability tests
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class='font-bold'>Conducting interviews</span>, online,
+            in-person and via phone
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class='font-bold'>Performing observational research</span> in real-world
+            settings, such as restaurants
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class='font-bold'>Analyzing and presenting findings</span> to guide
+            product decisions
+          </p>
+        </li>
+      </ul>
       <p class='mb-20'>
-        Through these efforts, I gathered valuable insights about customer
-        behaviors and preferences, helping to shape future iterations of the
-        app.
+        These efforts provided valuable insights into customer behaviors and
+        preferences, shaping future iterations of the app and helping balance
+        technology with the dining experience users expected.
       </p>
       <!-- Key Challenges -->
       <h2>Key Challenges</h2>
