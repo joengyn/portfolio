@@ -7,6 +7,7 @@ import Banner from '../components/Banner.astro';
 import Button from '../components/Button.astro';
 import Layout from '../layouts/Layout.astro';
 
+// Banner Assets
 import toastLogo from '../assets/toast/toast-logo.svg';
 import toastBg from '../assets/toast/restaurant.webp';
 
@@ -15,6 +16,8 @@ import toastUI from '../assets/toast/toast-ui.webp';
 import toastUI2 from '../assets/toast/toast-ui-2.webp';
 import toastMp4 from '../assets/toast/toast-ui.mp4';
 import toastImg from '../assets/toast/toast-img.webp';
+import toastImg2 from '../assets/toast/toast-img-2.png';
+import toastImg3 from '../assets/toast/toast-img-3.png';
 ---
 
 <Layout title='Joe Nguyen | Toast Case Study'>
@@ -34,10 +37,7 @@ import toastImg from '../assets/toast/toast-img.webp';
     <div class='wrapper'>
       <!-- Background -->
       <h2>Background</h2>
-      <Image src={toastImg} alt='Introduction image' class='mb-2' />
-      <figcaption class='mb-10 text-center text-sm'>
-        Toast Restaurant service
-      </figcaption>
+      <Image src={toastImg3} alt='Introduction image' />
       <p>
         In the summer of 2021, as the world was starting to recover from the
         COVID-19 pandemic, I joined the <b>Toast Mobile Order & Pay</b> team. While
@@ -46,22 +46,8 @@ import toastImg from '../assets/toast/toast-img.webp';
         Toast sought to streamline the dining experience by enabling guests to order
         and pay directly from their phones using a QR code.
       </p>
-      <!-- <p>
-        The product faced mixed reactions from users. Some embraced the
-        convenience and felt that it represented the future of dining
-        technology, especially in the context of a pandemic. Others, however,
-        felt that this stripped away the personal, human element that many
-        people cherish when dining out. The tension between technology and
-        tradition created a complex landscape for the app to navigate.
-      </p>
-      <p class='mb-20'>
-        My role on the team was multifaceted, involving design, research, and
-        user experience improvements. The challenge was not only to refine the
-        app but also to address the evolving needs of customers and restaurants
-        as the product adapted to a rapidly changing world.
-      </p> -->
       <!-- My Role -->
-      <Image src={toastIntro} alt='Introduction image' class='mb-2' />
+      <Image src={toastIntro} alt='Introduction image' />
       <video autoplay loop muted playsinline class='mb-2'>
         <source src={toastMp4} type='video/mp4' />
         Your browser does not support the video tag.
@@ -89,8 +75,10 @@ import toastImg from '../assets/toast/toast-img.webp';
       </figcaption>
       <p>
         Beyond design improvements, I also <b>conducted user research</b> to understand
-        this evolving market. Since the product was still adapting, there were many
-        unknowns, and gathering real-world insights was critical.
+        this evolving market, where digital ordering and contactless payments were
+        becoming more common but not yet fully embraced. Since the product was still
+        evolving, there were many unknowns, and gathering real-world insights was
+        critical.
       </p>
       <p>My tasks included:</p>
       <ul class='ml-8 list-outside list-disc'>
@@ -132,56 +120,35 @@ import toastImg from '../assets/toast/toast-img.webp';
       </p>
       <!-- Key Challenges -->
       <h2>Key Challenges</h2>
-      <p>
-        Balancing Technology and Human Interaction: Many users were resistant to
-        the idea of using technology to replace personal interactions at
-        restaurants. The challenge was not just making the app functional but
-        ensuring that it supported the dining experience without alienating
-        customers who valued personal service.
-      </p>
-      <p>
-        Adapting to Rapid Change: The product was in a fast-moving and
-        competitive space, requiring constant iteration and adaptation to
-        changing customer expectations and market trends. This made it difficult
-        to set long-term strategies but also created an exciting, high-stakes
-        environment.
-      </p>
-      <p class='mb-20'>
-        Design Consistency: With the product being built rapidly and evolving
-        quickly, maintaining design consistency was a key challenge. Ensuring
-        that small elements like text styles and button components were aligned
-        was crucial for creating a polished, user-friendly experience.
-      </p>
-      <!-- Learnings -->
-      <h2>Learnings</h2>
-      <p>
-        Working on Toast’s “Order & Pay” app during such a critical and dynamic
-        time provided several valuable lessons:
-      </p>
-      <p>
-        Impact of Real-World Observations: Conducting in-person research and
-        observing how people interacted with the app and other restaurant
-        technology gave me a deeper understanding of human behavior. Seeing
-        firsthand how customers responded to technology in the restaurant
-        environment reinforced how embedded food service is within cultural
-        norms.
-      </p>
-      <p>
-        Navigating the Tension Between Tradition and Innovation: The biggest
-        takeaway was learning how to balance technological advancement with the
-        preservation of essential human experiences. While some customers
-        embraced the convenience of mobile ordering, others wanted to maintain
-        personal connections with waitstaff. Finding ways to merge both was key
-        to ensuring broader adoption.
-      </p>
-      <p class='mb-20'>
-        The Speed of the Food-Tech Industry: The restaurant self-service market
-        was rapidly growing, which made it a highly competitive and fast-paced
-        field. This environment taught me how to work under pressure, prioritize
-        quickly, and adapt to frequent changes in customer needs.
-      </p>
-      <!-- Conclusion -->
-      <h2>Conclusion</h2>
+      <ul class='mb-20 ml-8 list-outside list-disc'>
+        <li>
+          <p>
+            <span class='font-bold'>Balancing Technology and Tradition:</span> The
+            product received mixed reactions—some embraced its convenience as the
+            future of dining, while others felt it diminished the personal touch
+            of eating out.
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class='font-bold'>Designing for a B2B2C Model:</span> The app had
+            to serve both restaurant owners (B2B) and diners (B2C), balancing ease
+            of setup and integration for businesses with a seamless ordering experience
+            for customers.
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class='font-bold'>Competitive Market:</span> With the world eager
+            to return to socializing, the restaurant contactless payment market became
+            highly competitive. The challenge was to innovate quickly or risk being
+            left behind by competitors. Simply having a “right to win” didn’t guarantee
+            success.
+          </p>
+        </li>
+      </ul>
+      <!-- Learnings & Conclusion -->
+      <h2>Learnings & Conclusion</h2>
       <p>
         My time at Toast was a unique opportunity to work on a product that had
         a tangible impact on people's everyday lives. The “Order & Pay” app was
