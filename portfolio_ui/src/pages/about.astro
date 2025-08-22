@@ -1,39 +1,54 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
 import { Image } from 'astro:assets';
 
-import Layout from '../layouts/Layout.astro';
-
-import profileImg from '../../public/profile-img.jpeg';
+import profileImg from '../../public/profile.png';
+import fpvClip from '../../public/fpv-clip.mp4';
 ---
 
 <Layout title='about page' isAbout={true}>
   <main class='mt-[80px]'>
     <div class='wrapper'>
-      <Image src={profileImg} alt='profile photo' class='mb-10' />
+      <Image
+        src={profileImg}
+        alt='profile photo'
+        class='mx-auto my-10 max-w-xs rounded-full object-cover md:max-w-sm lg:max-w-md'
+      />
       <h2 class='mb-10 text-center'>Hi, I'm Joe.</h2>
       <p>
         A designer and engineer passionate about crafting intuitive and
-        impactful digital experiences, currently based in Boulder, CO. ⛰️⛰️⛰️
+        impactful product experiences, currently based in Boulder, CO. ⛰️⛰️⛰️
       </p>
       <p>
         With a background in <b>UX/UI design</b>, <b>human-centered research</b
         >, and <b>product engineering</b>, I specialize in bridging the gap
-        between people and technology. My work spans industries from medical
-        devices and robotics to consumer applications, where I create seamless,
-        user-focused solutions.
+        between people and technology. My experience ranges from medical devices
+        and robotics to consumer applications, where I focus on creating
+        seamless, user-centered solutions.
       </p>
-      <p>
-        Beyond digital design, I love bringing ideas to life physically through
-        3D modeling and printing—whether for functional prototypes or artistic
-        creations.
+      <p class=''>
+        Outside of work, you'll usually find me in the mountains hiking, playing
+        kendama in the park, or thinkering away on projects in my bedroom.
       </p>
-      <p>
-        As a lifelong learner and maker, I’m always exploring new techniques and
-        pushing my skills further. I thrive on solving problems and turning
-        ideas into reality. Let’s build something great together.
-      </p>
+      <div class='mb-20 flex flex-col items-center'>
+        <a href='mailto:joe.ngyn7@gmail.com'>
+          <Button
+            text='Contact'
+            type='button'
+            className='text-[12px] font-bold uppercase tracking-widest'
+          />
+        </a>
+      </div>
+      <video autoplay loop muted playsinline>
+        <source src={fpvClip} type='video/mp4' />
+        Your browser does not support the video tag.
+      </video>
+      <figcaption class='mt-2 text-center text-sm'>
+        FPV drone flight in Boulder, CO
+      </figcaption>
     </div>
   </main>
-</Layout>
 
-<style></style>
+  <style></style>
+</Layout>
