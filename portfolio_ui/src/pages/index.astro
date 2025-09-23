@@ -6,6 +6,8 @@ import EnsoLottie from '../components/EnsoLottie.tsx';
 // Case study card images
 import berkshireBg from '../assets/berkshiregrey/bg-background.webp';
 import berkshireUI from '../assets/berkshiregrey/bg-ng-ui-1.webp';
+import grammarokeBg from '../assets/grammaroke/music-venue.webp';
+
 import bandscanBg from '../assets/bandscan/fox-theater.webp';
 import bandscanUI from '../assets/bandscan/bandscan-ui.webp';
 import pshBg from '../assets/pinksofahour/studio.webp';
@@ -23,7 +25,7 @@ import toastUI from '../assets/toast/toast-ui.webp';
         <!-- <div class="mb-0 text-3xl font-bold">Joe</div> -->
         <div class='mb-5 text-lg font-bold'>Designer & Engineer</div>
         <p class='mb-0 text-lg'>
-          Passionate about the space where people and technology meet
+          Passionate about the space where people and technology meet.
         </p>
       </div>
       <!-- Lottie -->
@@ -43,6 +45,14 @@ import toastUI from '../assets/toast/toast-ui.webp';
         bgImg={berkshireBg}
         uiImg={berkshireUI}
         className='delay-0'
+      />
+      <ProjectCard
+        href='/grammaroke'
+        title='Grammaroke'
+        body='Design and development of a music focused language learning web application'
+        bgImg={grammarokeBg}
+        uiImg={bandscanUI}
+        className='sm:delay-0 md:delay-500'
       />
       <ProjectCard
         href='/bandscan'

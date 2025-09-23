@@ -1,0 +1,409 @@
+---
+// Imports
+import { Image } from 'astro:assets';
+
+// Components
+import Banner from '../components/Banner.astro';
+import Button from '../components/Button.astro';
+import Layout from '../layouts/Layout.astro';
+
+// Banner Assets
+import grammarokeLogo from '../assets/grammaroke/favicon.svg';
+import musicVenue from '../assets/grammaroke/music-venue.webp';
+
+// Images
+import googleDocs from '../assets/grammaroke/google-docs.webp';
+import lesson from '../assets/grammaroke/grammar-lesson.webp';
+import musicLyrics from '../assets/grammaroke/music-lyrics.webp';
+import notesApp from '../assets/grammaroke/notes-app.webp';
+
+import oldSongsPage from '../assets/grammaroke/old-songs-page.webp';
+
+// MP4s
+import annotationsVideo from '../assets/grammaroke/annotations-video.mp4';
+import scrollingVideo from '../assets/grammaroke/scrolling-video.mp4';
+---
+
+<Layout title='Joe Nguyen | Grammaroke Case Study'>
+  <main class='mt-[100px]'>
+    <!-- Banner -->
+    <Banner
+      title='Grammaroke'
+      bgImg={musicVenue}
+      bgImgAlt='Grammaroke background image'
+      logo={grammarokeLogo}
+      logoAlt='Grammaroke logo'
+      overview='Design and development of a music based language learning web application.'
+      roles={['UX/UI Designer', 'Full Stack Developer']}
+      tools={['Figma', 'SvelteKit', 'Vercel', 'Supabase']}
+      duration='6 months'
+    />
+    <div class='wrapper'>
+      <!-- Background Section -->
+      <h2>Background</h2>
+      <img
+        src='https://placehold.co/1200x600'
+        alt='Placeholder image'
+        class='mx-auto'
+      />
+      <figcaption class='mb-10 text-center text-sm'>Grammaroke card</figcaption>
+      <p>
+        Music is an immersive way to experience and learn a language. Songs
+        carry rhythm, emotion, and cultural nuance, making them a powerful tool
+        for memorization and engagement. Singing along and working through
+        translations builds a deeper connection to the material, turning study
+        time into something enjoyable and personal.
+      </p>
+      <p class='mb-10'>
+        <b>Grammaroke</b> is a language learning web application that combines grammar
+        and karaoke, allowing you to study and sing along with your favorite songs.
+      </p>
+
+      <!-- Early Approach Section -->
+      <h2>Early Approach</h2>
+      <p>
+        Early on I relied on Google Docs as my primary tool for capturing
+        translations. It allowed me to store songs online, add new ones with
+        ease, and capture my study notes using the comments feature. While this
+        setup worked in the beginning, the tool wasn’t designed for this kind of
+        workflow—and over time, several challenges emerged.
+      </p>
+      <Image src={googleDocs} alt='Google Docs screenshot' class='mb-2' />
+      <figcaption class='mb-10 text-center text-sm'>
+        Google Docs screenshot
+      </figcaption>
+      <h2>Challenges</h2>
+      <ul class='mb-10 ml-4 list-outside list-disc'>
+        <li>
+          <p class='mb-2'>
+            A large number of comments caused the document to lag and stutter.
+          </p>
+        </li>
+        <li>
+          <p class='mb-2'>
+            Notes were detached from the lyrics, making it difficult to connect
+            comments with the corresponding text.
+          </p>
+        </li>
+        <li>
+          <p class='mb-2'>
+            The uniform text style made it hard to stay focused on the current
+            line, and some characters became difficult to distinguish at smaller
+            sizes.
+          </p>
+        </li>
+        <li>
+          <p class='mb-2'>
+            Scrolling had to be adjusted manually to keep up with the song.
+          </p>
+        </li>
+        <li>
+          <p class='mb-2'>
+            Songs added later in the document were slow to access through the
+            Table of Contents.
+          </p>
+        </li>
+      </ul>
+      <!-- Inspo Section -->
+      <h2>Inspiration</h2>
+      <p>
+        The design of Grammaroke was influenced by several sources, including
+        note-taking and annotation tools, online language lessons, and lyrical
+        music videos.
+      </p>
+      <Image src={lesson} alt='Language lesson ' class='mb-2 w-full' />
+      <figcaption class='mb-10 text-center text-sm'>
+        Language lessons by Misa from
+        <a
+          href='https://www.youtube.com/channel/UCBSyd8tXJoEJKIXfrwkPdbA'
+          target='_blank'
+          rel='noopener noreferrer'
+          class='underline'>Japanese Ammo</a
+        >
+      </figcaption>
+      <Image src={musicLyrics} alt='Music video lyrics' class='mb-2 w-full' />
+      <figcaption class='mb-10 text-center text-sm'>
+        Music video lyrics
+      </figcaption>
+      <Image
+        src={notesApp}
+        alt='Note taking app, iA Writer'
+        class='mb-2 w-full'
+      />
+      <figcaption class='mb-10 text-center text-sm'>
+        Note taking app, <a
+          href='https://ia.net/writer'
+          target='_blank'
+          rel='noopener noreferrer'
+          class='underline'>iA Writer</a
+        >
+      </figcaption>
+      <ul class='mb-10 ml-4 list-outside list-disc'>
+        <li>
+          <p class='mb-2'>
+            Google Docs demonstrated how easy it is to work with large bodies of
+            text while adding annotations quickly through highlighting and
+            commenting.
+          </p>
+        </li>
+        <li>
+          <p class='mb-2'>
+            iA Writer inspired the minimalistic UI and focused reading
+            experience, using techniques like blurring adjacent text to help
+            users stay centered on the current line—similar to how lyrics are
+            presented in music videos.
+          </p>
+        </li>
+        <li>
+          <p class='mb-2'>
+            Misa from
+            <a
+              href='https://www.youtube.com/channel/UCBSyd8tXJoEJKIXfrwkPdbA'
+              target='_blank'
+              rel='noopener noreferrer'
+              class='underline'>Japanese Ammo</a
+            > illustrated effective use of color to connect words with their definitions
+            and relevant grammar points, showing how visual cues can enhance comprehension.
+          </p>
+        </li>
+      </ul>
+
+      <h2>Early Designs</h2>
+
+      <!-- Colors -->
+      <div class='flex flex-col items-center justify-center'>
+        <div class='mb-4 flex flex-col items-center'>
+          <h3>Highlight Colors</h3>
+          <div class='mt-2 flex flex-row gap-2.5'>
+            <div class='h-[30px] w-[30px] bg-[#7cea9c]'></div>
+            <div class='h-[30px] w-[30px] bg-[#fb6376]'></div>
+            <div class='h-[30px] w-[30px] bg-[#b4a0e5]'></div>
+            <div class='h-[30px] w-[30px] bg-[#60b2e5]'></div>
+            <div class='h-[30px] w-[30px] bg-[#fed748]'></div>
+            <div class='h-[30px] w-[30px] bg-[#4a4a4a]'></div>
+          </div>
+        </div>
+        <div class='mb-10 flex flex-col items-center'>
+          <h3>Neutral Colors</h3>
+          <div class='mt-2 flex flex-row gap-2.5'>
+            <div class='h-[30px] w-[30px] border border-[#4a4a4a] bg-[#faf9f6]'>
+            </div>
+            <div class='h-[30px] w-[30px] bg-[#333333]'></div>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        The goal was to create a casual, notebook-inspired theme, combining a
+        soft background with bright highlights to draw attention to key
+        elements. This approach was intended to make the interface feel
+        approachable and focused, while maintaining a clean and organized layout
+        for studying and interacting with content.
+      </p>
+
+      <!-- Old Songs Page Image -->
+      <Image src={oldSongsPage} alt='Old songs page' class='mb-2 w-full' />
+      <figcaption class='mb-10 text-center text-sm'>Songs page</figcaption>
+
+      <!-- Old Annotations Video -->
+      <video autoplay loop muted playsinline class='mb-2 border border-black'>
+        <source src={annotationsVideo} type='video/mp4' />
+        Your browser does not support the video tag.
+      </video>
+      <figcaption class='mb-10 text-center text-sm'>
+        Annotation feature video
+      </figcaption>
+
+      <!-- Old Scrolling Video -->
+      <video autoplay loop muted playsinline class='mb-2 border border-black'>
+        <source src={scrollingVideo} type='video/mp4' />
+        Your browser does not support the video tag.
+      </video>
+      <figcaption class='mb-10 text-center text-sm'>
+        Lyrics scrolling video
+      </figcaption>
+
+      <h2>Redesigns due to Development</h2>
+      <p>
+        As development progressed, a number of changes were made to simplify the
+        experience and focus on the minimum viable product (MVP). The project
+        was first built with Next.js, but later migrated to SvelteKit, which
+        provided an opportunity to learn a new framework. Along the way, several
+        features were redesigned or removed due to technical constraints or
+        complexity.
+      </p>
+
+      <h2>Songs Page</h2>
+      <p>
+        The original design of the songs page emphasized visuals, including
+        options to upload album art and switch between grid and list views.
+        These features were ultimately removed for the following reasons:
+      </p>
+      <ul class='mb-10 ml-4 list-outside list-disc'>
+        <li>
+          <p class='mb-2'>
+            Uploading or pasting album art was a clunky workflow for users.
+          </p>
+        </li>
+        <li>
+          <p class='mb-2'>
+            Images consumed unnecessary storage space, adding complexity without
+            much value.
+          </p>
+        </li>
+        <li>
+          <p class='mb-2'>
+            Album-based organization was a nice-to-have, but not critical for
+            the MVP.
+          </p>
+        </li>
+      </ul>
+
+      <h2>Annotations Page</h2>
+      <p>
+        The annotations page underwent significant revisions to improve
+        usability, especially on mobile devices:
+      </p>
+      <ul class='mb-10 ml-4 list-outside list-disc'>
+        <li>
+          <p class='mb-2'>
+            The original scrolling-only input was replaced with buttons for
+            navigation, making the interface easier to use—especially on mobile.
+          </p>
+        </li>
+        <li>
+          <p class='mb-2'>
+            The “previous lyrics” section at the top was removed to keep focus
+            on the current line and to provide more room for annotations.
+          </p>
+        </li>
+        <li>
+          <p class='mb-2'>
+            Remaining lyrics were moved to the bottom with tighter spacing,
+            while annotations gained more room to display clearly.
+          </p>
+        </li>
+        <li>
+          <p class='mb-2'>
+            A new controls section at the bottom introduced common actions such
+            as “Back to Top” and “Clear Annotations.”
+          </p>
+        </li>
+        <li>
+          <p class='mb-2'>
+            The toolbar, text editing, style guides, and undo/redo features were
+            cut as non-MVP functionality.
+          </p>
+        </li>
+      </ul>
+
+      <h2>Annotations Display</h2>
+      <p>The way annotations appeared was also simplified:</p>
+      <ul class='mb-10 ml-4 list-outside list-disc'>
+        <li>
+          <p class='mb-2'>
+            Early designs included hover states, pinned states, extension lines
+            connecting words to notes, and color-coded prefixes to indicate word
+            type (verb, noun, adjective, etc.).
+          </p>
+        </li>
+        <li>
+          <p class='mb-2'>
+            These features were removed due to technical complexity and limited
+            value for the MVP.
+          </p>
+        </li>
+        <li>
+          <p class='mb-2'>
+            Annotations now display inline beneath the lyrics, creating a
+            simpler and more reliable experience.
+          </p>
+        </li>
+      </ul>
+
+      <h2>Tech Stack</h2>
+      <p class='mb-4'>
+        The project began in <span class='font-medium'>Next.js</span> but was later
+        refactored to
+        <span class='font-medium'>SvelteKit</span>, giving me the opportunity to
+        explore a new framework.
+      </p>
+
+      <ul class='mb-6 ml-4 list-outside list-disc'>
+        <li>
+          <p class='mb-2'>
+            <span class='font-medium'>Styling:</span> Built with <span
+              class='font-medium'>Tailwind CSS</span
+            >, applying atomic design principles to create reusable components.
+          </p>
+        </li>
+        <li>
+          <p class='mb-2'>
+            <span class='font-medium'>Hosting & Database:</span> Hosted on <span
+              class='font-medium'>Vercel</span
+            > with <span class='font-medium'>Supabase</span> powering the backend
+            database.
+          </p>
+        </li>
+        <li>
+          <p class='mb-2'>
+            <span class='font-medium'>Full-Stack Development:</span> Implemented
+            user authentication, designed relational database tables, and built API
+            requests to save songs and annotations.
+          </p>
+        </li>
+        <li>
+          <p class='mb-2'>
+            <span class='font-medium'>AI-Assisted Development:</span> Leveraged tools
+            such as <span class='font-medium'>GitHub Copilot</span> and <span
+              class='font-medium'>Claude</span
+            > to accelerate coding and problem-solving.
+          </p>
+        </li>
+      </ul>
+
+      <p>
+        This project was an end-to-end full-stack project, expanding beyond
+        frontend UI into backend architecture and deployment.
+      </p>
+
+      <h2>Next Steps</h2>
+      <p>
+        The app is currently live in a quiet, closed alpha. I haven’t started
+        actively promoting it yet, as I’m still focused on developing new
+        features and refining the experience. In the meantime, I’m using the app
+        extensively as my own language learning tool, which helps surface bugs,
+        usability issues, and opportunities for improvement before opening it up
+        to a wider audience.
+      </p>
+      <!-- Buttons -->
+      <div class='mb-10 flex justify-between'>
+        <Button
+          text='back to top'
+          type='button'
+          icon='arrow'
+          className='back-to-top-button'
+          iconClassName='-rotate-90'
+        />
+        <a href='/pinksofahour'>
+          <Button text='next case study' type='button' icon='arrow' />
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Back to top button
+    const backToTopButton = document.querySelector('.back-to-top-button');
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    if (backToTopButton) {
+      backToTopButton.addEventListener('click', scrollToTop);
+    }
+  </script>
+
+  <style></style>
+</Layout>
