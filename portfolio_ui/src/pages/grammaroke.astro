@@ -1,0 +1,494 @@
+---
+// Imports
+import { Image } from 'astro:assets';
+
+// Components
+import Banner from '../components/Banner.astro';
+import Button from '../components/Button.astro';
+import Layout from '../layouts/Layout.astro';
+
+// Banner Assets
+import grammarokeLogo from '../assets/grammaroke/favicon.svg';
+import musicVenue from '../assets/grammaroke/music-venue.webp';
+
+// Images
+import grammarokeUI from '../assets/grammaroke/grammaroke-ui.webp';
+
+import googleDocs from '../assets/grammaroke/google-docs.webp';
+import lesson from '../assets/grammaroke/grammar-lesson.webp';
+import musicLyrics from '../assets/grammaroke/music-lyrics.webp';
+import notesApp from '../assets/grammaroke/notes-app.webp';
+import oldSongsPage from '../assets/grammaroke/old-songs-page.webp';
+import oldAnnotations from '../assets/grammaroke/old-annotations.webp';
+import oldSongsMobile from '../assets/grammaroke/old-songs-mobile.webp';
+import oldAnnotationsMobile from '../assets/grammaroke/old-annotations-mobile.webp';
+import songsMobile from '../assets/grammaroke/songs-mobile.webp';
+import annotationsMobile from '../assets/grammaroke/annotations-mobile.webp';
+import annotations from '../assets/grammaroke/annotations.webp';
+
+// Videos
+
+// MP4s
+import annotationsVideo from '../assets/grammaroke/annotations-video.mp4';
+import scrollingVideo from '../assets/grammaroke/scrolling-video.mp4';
+---
+
+<Layout title='Joe Nguyen | Grammaroke Case Study'>
+  <main class='mt-[100px]'>
+    <!-- Banner -->
+    <Banner
+      title='Grammaroke'
+      bgImg={musicVenue}
+      bgImgAlt='Grammaroke background image'
+      logo={grammarokeLogo}
+      logoAlt='Grammaroke logo'
+      overview='Design and development of a music based language learning web application.'
+      roles={['UX/UI Designer', 'Full Stack Developer']}
+      tools={['Figma', 'SvelteKit', 'Vercel', 'Supabase']}
+      duration='6 months'
+    />
+    <div class='wrapper'>
+      <!-- UI Images -->
+      <Image src={grammarokeUI} alt=' Grammaroke UI Screenshots' class='mb-2' />
+      <figcaption class='mb-10 text-center text-sm'>
+        Grammaroke UI screenshots
+      </figcaption>
+
+      <!-- Background Section -->
+      <h2>Background</h2>
+      <p>
+        Music is an immersive way to experience and learn a language. Songs
+        carry rhythm, emotion, and cultural nuance, making them a powerful tool
+        for memorization and engagement. Singing along and working through
+        translations builds a deeper connection to songs, turning study time
+        into something enjoyable and personal.
+      </p>
+      <p class='mb-10'>
+        <b>Grammaroke</b> is a language learning web application that combines grammar
+        and karaoke, allowing you to study and sing along with your favorite songs.
+      </p>
+
+      <!-- Early Approach Section -->
+      <h2>Early Approach</h2>
+      <p>
+        Early on, I captured all my song translations in a single <b
+          >Google Doc</b
+        >. It let me keep everything in one place, add new songs quickly, and
+        use comments for notes. While this approach worked at first, the
+        platform wasn’t built for this kind of workflow, and over time several
+        challenges emerged.
+      </p>
+      <Image src={googleDocs} alt='Google Docs screenshot' class='mb-2' />
+      <figcaption class='mb-10 text-center text-sm'>
+        Google Docs screenshot
+      </figcaption>
+
+      <!-- Challenges Section -->
+      <h2>Challenges</h2>
+      <ul class='mb-10 ml-4 list-outside list-disc'>
+        <li>
+          <p class='mb-0'>
+            Large number of comments made the document slow to load and stutter
+            during use.
+          </p>
+        </li>
+        <li>
+          <p class='mb-0'>
+            Comments were displayed off to the side, making it difficult to
+            connect them with the corresponding text.
+          </p>
+        </li>
+        <li>
+          <p class='mb-0'>
+            No distinction between the "current line" and the rest of the
+            lyrics.
+          </p>
+        </li>
+        <li>
+          <p class='mb-0'>
+            Page had to be manually scrolled to keep up with the song.
+          </p>
+        </li>
+        <li>
+          <p class='mb-0'>Navigating between songs became a hassle.</p>
+        </li>
+      </ul>
+
+      <!-- Inspo Section -->
+      <h2>Inspiration</h2>
+      <p>
+        The design of Grammaroke was influenced by several sources, including
+        online language lessons, lyrical music videos, and note-taking and
+        annotation apps.
+      </p>
+      <Image src={lesson} alt='Language lesson ' class='mb-2 w-full' />
+      <figcaption class='mb-10 text-center text-sm'>
+        Language lessons by Misa from
+        <a
+          href='https://www.youtube.com/channel/UCBSyd8tXJoEJKIXfrwkPdbA'
+          target='_blank'
+          rel='noopener noreferrer'
+          class='underline'>Japanese Ammo</a
+        >
+      </figcaption>
+      <Image src={musicLyrics} alt='Music video lyrics' class='mb-2 w-full' />
+      <figcaption class='mb-10 text-center text-sm'>
+        Music video lyrics
+      </figcaption>
+      <Image
+        src={notesApp}
+        alt='Note taking app, iA Writer'
+        class='mb-2 w-full'
+      />
+      <figcaption class='mb-10 text-center text-sm'>
+        Note taking app, <a
+          href='https://ia.net/writer'
+          target='_blank'
+          rel='noopener noreferrer'
+          class='underline'>iA Writer</a
+        >
+      </figcaption>
+      <ul class='mb-10 ml-4 list-outside list-disc'>
+        <li>
+          <p class='mb-0'>
+            Misa from
+            <a
+              href='https://www.youtube.com/channel/UCBSyd8tXJoEJKIXfrwkPdbA'
+              target='_blank'
+              rel='noopener noreferrer'
+              class='font-bold underline'>Japanese Ammo</a
+            > illustrated effective use of color to connect words with their definitions
+            and relevant grammar points, showing how visual cues can enhance comprehension.
+          </p>
+        </li>
+        <li>
+          <p class='mb-0'>
+            <a
+              href='https://ia.net/writer'
+              target='_blank'
+              rel='noopener noreferrer'
+              class='font-bold underline'>iA Writer</a
+            > inspired the minimalistic UI and focused reading experience, using
+            techniques like blurring adjacent text to help users stay centered on
+            the current line, similar to how lyrics are presented in music videos.
+          </p>
+        </li>
+        <li>
+          <p class='mb-0'>
+            <b>Google Docs</b> demonstrated how easy it is to work with large bodies
+            of text while adding annotations quickly through highlighting and commenting.
+          </p>
+        </li>
+      </ul>
+
+      <!-- Early Designs Section -->
+      <h2>Early Designs</h2>
+      <!-- Colors -->
+      <div class='flex flex-col items-center justify-center'>
+        <div class='mb-4 flex flex-col items-center'>
+          <h3>Highlight Colors</h3>
+          <div class='mt-2 flex flex-row gap-2.5'>
+            <div class='h-[50px] w-[50px] bg-[#7cea9c]'></div>
+            <div class='h-[50px] w-[50px] bg-[#fb6376]'></div>
+            <div class='h-[50px] w-[50px] bg-[#b4a0e5]'></div>
+            <div class='h-[50px] w-[50px] bg-[#60b2e5]'></div>
+            <div class='h-[50px] w-[50px] bg-[#fed748]'></div>
+            <div class='h-[50px] w-[50px] bg-[#4a4a4a]'></div>
+          </div>
+        </div>
+        <div class='mb-10 flex flex-col items-center'>
+          <h3>Neutral Colors</h3>
+          <div class='mt-2 flex flex-row gap-2.5'>
+            <div class='h-[50px] w-[50px] border border-[#4a4a4a] bg-[#faf9f6]'>
+            </div>
+            <div class='h-[50px] w-[50px] bg-[#333333]'></div>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        The goal was to create a simple and casual design, combining a soft
+        background with bright highlights to draw attention to key elements.
+      </p>
+
+      <!-- Old Annotations Video -->
+      <video autoplay loop muted playsinline class='mb-2 border'>
+        <source src={annotationsVideo} type='video/mp4' />
+        Your browser does not support the video tag.
+      </video>
+      <figcaption class='mb-10 text-center text-sm'>
+        Early annotations feature mockup video
+      </figcaption>
+
+      <!-- Old Scrolling Video -->
+      <video autoplay loop muted playsinline class='mb-2 border'>
+        <source src={scrollingVideo} type='video/mp4' />
+        Your browser does not support the video tag.
+      </video>
+      <figcaption class='mb-10 text-center text-sm'>
+        Early lyrics scrolling mockup video
+      </figcaption>
+
+      <!-- Old Songs Page Image -->
+      <Image src={oldSongsPage} alt='Old songs page' class='mb-2 w-full' />
+      <figcaption class='mb-10 text-center text-sm'>
+        Early songs page mockup
+      </figcaption>
+
+      <!-- Redesign Section -->
+      <h2>Redesigns due to Development</h2>
+      <p>
+        As development began, a number of changes were made to simplify the
+        experience and focus on the minimum viable product (MVP). A big focus
+        was given on form and functionality, with visuals and branding coming
+        later on.
+      </p>
+
+      <!-- Songs Page Section -->
+      <h2>Songs Page</h2>
+      <p>
+        The original design of the songs page emphasized visuals, including
+        options to upload album art and switch between grid and list views.
+        These features were ultimately removed for the following reasons:
+      </p>
+      <ul class='mb-10 ml-4 list-outside list-disc'>
+        <li>
+          <p class='mb-0'>
+            Uploading album art was a clunky workflow for users.
+          </p>
+        </li>
+        <li>
+          <p class='mb-0'>Images consumed unnecessary storage space.</p>
+        </li>
+      </ul>
+      <div class='grid grid-cols-2 gap-4'>
+        <div>
+          <Image
+            src={oldSongsMobile}
+            alt='Original songs page mockup'
+            class='mb-2'
+          />
+          <figcaption class='mb-10 text-center text-sm'>
+            Original songs page mockup
+          </figcaption>
+        </div>
+        <div>
+          <Image src={songsMobile} alt='New songs page' class='mb-2 border' />
+          <figcaption class='mb-10 text-center text-sm'>
+            Current songs page
+          </figcaption>
+        </div>
+      </div>
+      <p>
+        The current songs page is much simplier, displaying only the artist name
+        and title. It also has flushed out features such as the ability to
+        create and sort songs by folders.
+      </p>
+
+      <!-- Annotations Page Section -->
+      <h2>Annotations Page</h2>
+      <p>
+        The annotations page underwent significant revisions to improve
+        usability, especially on mobile devices:
+      </p>
+      <ul class='mb-10 ml-4 list-outside list-disc'>
+        <li>
+          <p class='mb-2'>
+            The <b>"current line"</b> of lyrics was give much more room to display
+            boldy on the page.
+          </p>
+        </li>
+        <li>
+          <p class='mb-2'>
+            The <b>“previous lyrics”</b> section at the top was removed and the
+            <b>"remaining lyrics"</b> tighten. This again provided more room to display
+            annotations.
+          </p>
+        </li>
+        <li>
+          <p class='mb-2'>
+            The original scrolling-only input was replaced with buttons for
+            navigation, making the interface easier to use.
+          </p>
+        </li>
+        <li>
+          <p class='mb-2'>
+            A new controls section at the bottom introduced common actions such
+            as <b>“Back to Top”</b> and <b>“Clear Annotations.”</b>
+          </p>
+        </li>
+        <li>
+          <p class='mb-2'>
+            The toolbar, text editing, style guides, and undo/redo features were
+            cut as non-MVP functionality.
+          </p>
+        </li>
+      </ul>
+      <div class='grid grid-cols-2 gap-4'>
+        <div>
+          <Image
+            src={oldAnnotationsMobile}
+            alt='Original Annotations page mockup'
+            class='mb-2'
+          />
+          <figcaption class='mb-10 text-center text-sm'>
+            Original Annotations page mockup
+          </figcaption>
+        </div>
+        <div>
+          <Image
+            src={annotationsMobile}
+            alt='New Songs page'
+            class='mb-2 border'
+          />
+          <figcaption class='mb-10 text-center text-sm'>
+            Current Annotations page
+          </figcaption>
+        </div>
+      </div>
+
+      <!-- Annotations Display Section -->
+      <h2>Annotations Display</h2>
+      <p>The way annotations appeared was also simplified and improved upon:</p>
+      <ul class='mb-10 ml-4 list-outside list-disc'>
+        <li>
+          <p class='mb-2'>
+            Early designs included hover states, pinned states, extension lines
+            connecting words to notes, and color-coded prefixes to indicate word
+            type (verb, noun, adjective, etc.).
+          </p>
+        </li>
+        <li>
+          <p class='mb-2'>
+            These features were removed due to technical complexity and limited
+            value for the MVP.
+          </p>
+        </li>
+        <li>
+          <p class='mb-2'>
+            Annotations now display inline beneath the lyrics, creating a
+            simpler and more reliable experience, without the need for complex
+            positional calculations.
+          </p>
+        </li>
+      </ul>
+      <Image
+        src={oldAnnotations}
+        alt='Old annotations'
+        class='mb-2 w-full border'
+      />
+      <figcaption class='mb-10 text-center text-sm'>Old annotations</figcaption>
+      <Image src={annotations} alt='Annotations' class='mb-2 w-full border' />
+      <figcaption class='mb-10 text-center text-sm'>
+        Current Annotations
+      </figcaption>
+
+      <!-- Tech Stack Section -->
+      <h2>Tech Stack</h2>
+
+      <p>
+        The project began in <b>Next.js</b> but was later refactored to
+        <b>SvelteKit</b>, as an opportunity to learn a new framework.
+      </p>
+
+      <!-- Tech Logos -->
+      <div class='my-8 flex items-center justify-center gap-8'>
+        <img
+          src='https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg'
+          alt='Svelte Logo'
+          width='60'
+        />
+
+        <img
+          src='https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg'
+          alt='Tailwind CSS Logo'
+          width='60'
+        />
+
+        <img
+          src='https://logo.svgcdn.com/d/vercel-original.png'
+          alt='Vercel Logo'
+          width='60'
+        />
+
+        <img
+          src='https://img.icons8.com/?size=100&id=sH0rW2TvYdr9&format=png&color=000000'
+          alt='Supabase Logo'
+          width='60'
+        />
+      </div>
+
+      <ul class='mb-6 ml-4 list-outside list-disc'>
+        <li>
+          <p class='mb-2'>
+            <b>Styling & Components:</b> Built with <b>Tailwind CSS</b>,
+            applying <b>Atomic Design</b> principles to create reusable components.
+          </p>
+        </li>
+        <li>
+          <p class='mb-2'>
+            <b>Hosting & Database:</b> Hosted on <b>Vercel</b> with <b
+              >Supabase</b
+            >
+            powering the backend database.
+          </p>
+        </li>
+        <li>
+          <p class='mb-2'>
+            <b>Full-Stack Development:</b> Implemented user authentication, designed
+            relational database tables, and built API requests to save songs and
+            annotations.
+          </p>
+        </li>
+        <li>
+          <p class='mb-2'>
+            <b>AI-Assisted Development:</b> Leveraged tools such as
+            <b>GitHub Copilot</b> and <b>Claude</b> to accelerate coding and problem-solving.
+          </p>
+        </li>
+      </ul>
+
+      <p>
+        This project was an end-to-end full-stack project, expanding beyond
+        frontend UI into backend architecture and deployment.
+      </p>
+
+      <h2>Next Steps</h2>
+      <p>
+        The app is now live, but in a quiet, closed alpha. As I continue to
+        refine features and polishing the experience, I use it for my own
+        language learning. This hands-on use helps me catch bugs, uncover
+        usability challenges, and discover opportunities for improvement,
+        ensuring the app is well-tuned before reaching a wider audience.
+      </p>
+      <!-- Buttons -->
+      <div class='mb-10 flex justify-between'>
+        <Button
+          text='back to top'
+          type='button'
+          icon='arrow'
+          className='back-to-top-button'
+          iconClassName='-rotate-90'
+        />
+        <a href='/bandscan'>
+          <Button text='next case study' type='button' icon='arrow' />
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Back to top button
+    const backToTopButton = document.querySelector('.back-to-top-button');
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    if (backToTopButton) {
+      backToTopButton.addEventListener('click', scrollToTop);
+    }
+  </script>
+
+  <style></style>
+</Layout>
