@@ -117,7 +117,7 @@ import MobileMenu from '../components/MobileMenu.astro';
     scrollbar-width: none; /* Firefox */
   }
 
-  /* Global focus styles for accessibility */
+  /* Global focus styles for accessibility - default to black for light backgrounds */
   a:focus-visible,
   button:focus-visible,
   input:focus-visible,
@@ -128,11 +128,21 @@ import MobileMenu from '../components/MobileMenu.astro';
     border-radius: 2px;
   }
 
-  /* Additional focus ring for better visibility on dark backgrounds */
+  /* Additional focus ring for better visibility */
   *:focus-visible {
     outline: 2px solid #313131;
     outline-offset: 4px;
     border-radius: 2px;
+  }
+
+  /* White focus outline for elements on dark backgrounds */
+  #mobile-menu a:focus-visible,
+  #mobile-menu button:focus-visible,
+  footer a:focus-visible,
+  footer button:focus-visible,
+  #modal button:focus-visible,
+  .bg-darkGray *:focus-visible {
+    outline-color: white;
   }
 
   /* Active state for buttons */

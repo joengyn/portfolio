@@ -98,13 +98,15 @@ const { images } = Astro.props;
 
     // Conditionally style the back and next buttons
     if (modalBackButton) {
-      modalBackButton.classList.toggle('opacity-50', currentIndex === 0);
+      modalBackButton.classList.toggle('disabled-button', currentIndex === 0);
+      modalBackButton.setAttribute('aria-disabled', currentIndex === 0 ? 'true' : 'false');
     }
     if (modalNextButton) {
       modalNextButton.classList.toggle(
-        'opacity-50',
+        'disabled-button',
         currentIndex === totalImages - 1,
       );
+      modalNextButton.setAttribute('aria-disabled', currentIndex === totalImages - 1 ? 'true' : 'false');
     }
   }
 
@@ -209,3 +211,12 @@ const { images } = Astro.props;
     closeModalButton.addEventListener('click', closeModal);
   }
 </script>
+
+<style>
+  /* Disabled button styling with proper contrast */
+  button.disabled-button {
+    color: #888888;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+</style>
