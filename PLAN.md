@@ -2,50 +2,73 @@
 
 This document outlines a plan to address identified areas for improvement in the portfolio website, categorized into immediate updates and broader enhancements.
 
-## Immediate Updates (from initial code review)
+## Immediate Updates (from initial code review) ✅ COMPLETED
 
 These updates focus on direct code changes to improve maintainability, fix minor issues, and enhance data management.
 
-### 1. Refactor Header JavaScript
-*   **Goal:** Improve organization and optimize JavaScript loading for the header's interactive elements.
-*   **Tasks:**
-    *   Create `portfolio_ui/src/scripts/header.js`.
-    *   Move mobile menu and scroll animation logic from `Header.astro` into `header.js`.
-    *   Import `header.js` into `Header.astro` using an appropriate Astro client directive (e.g., `client:load`).
-    *   Ensure `transition-transform`, `duration-500`, and `ease-in-out` classes are applied only once to the header element, either directly in the HTML or via a single class toggle, rather than on every scroll event within the JavaScript.
-    *   Remove `console.log('Scroll function active on this page.');` from the scroll animation logic.
+### 1. Refactor Header JavaScript ✅
+*   **Status:** COMPLETED
+*   Moved header logic to inline script in Header.astro (optimal for Astro architecture)
+*   Applied transition classes once to the header element
+*   Removed console.log statements
 
-### 2. Centralize Project Data
-*   **Goal:** Decouple project content from presentation, making it easier to manage and update portfolio items.
-*   **Tasks:**
-    *   Create `portfolio_ui/src/data/projects.json`.
-    *   Populate `projects.json` with details for each portfolio project (e.g., `href`, `title`, `body`, `bgImg` path, `uiImg` path, `bgAlt`, `uiAlt`, `className` delays, `isVisible`).
-    *   Modify `portfolio_ui/src/pages/index.astro` to import `projects.json`.
-    *   Iterate over the `projects.json` data to dynamically render `ProjectCard` components, filtering by `isVisible` if implemented.
+### 2. Centralize Project Data ✅
+*   **Status:** COMPLETED
+*   Created `src/data/projects.json` with all project details
+*   Updated `src/pages/index.astro` to use `import.meta.glob()` for dynamic image loading
+*   Implemented `isVisible` filtering for project display
 
-### 3. Dynamic `alt` Attributes for Project Cards
-*   **Goal:** Improve accessibility and SEO for project images.
-*   **Tasks:**
-    *   Update `portfolio_ui/src/components/ProjectCard.astro` to accept new props: `bgAlt` and `uiAlt`.
-    *   Use these new props for the `alt` attributes of the `bgImg` and `uiImg` respectively.
-    *   Ensure `projects.json` includes `bgAlt` and `uiAlt` for each project.
-    *   Pass `bgAlt` and `uiAlt` from `index.astro` to `ProjectCard.astro` when dynamically rendering.
+### 3. Dynamic `alt` Attributes for Project Cards ✅
+*   **Status:** COMPLETED
+*   Updated `src/components/ProjectCard.astro` with dynamic alt text generation
+*   Alt text now uses project title for better accessibility (e.g., `${title} background`)
 
-### 4. Clean Up `index.astro`
-*   **Goal:** Remove dead code and streamline `index.astro`.
-*   **Tasks:**
-    *   Remove the commented-out `ProjectCard` for 'Pink Sofa Hour' from `portfolio_ui/src/pages/index.astro`. Its data will now reside in `projects.json`.
+### 4. Clean Up `index.astro` ✅
+*   **Status:** COMPLETED
+*   Removed all hardcoded ProjectCard instances
+*   Removed commented-out Pink Sofa Hour card
+*   Implemented dynamic rendering from projects.json
+
+### 5. Directory Structure Refactoring ✅
+*   **Status:** COMPLETED
+*   Flattened repository structure by removing `portfolio_ui/` nesting
+*   All project files now at repository root for cleaner GitHub visibility
 
 ## Broader Enhancements (from second code review)
 
 These enhancements focus on improving the overall quality, performance, and user experience of the site.
 
-### 1. Enhance Accessibility (A11y)
+### 1. Enhance Accessibility (A11y) ✅ IN PROGRESS
 *   **Goal:** Ensure the website is usable by everyone, regardless of ability.
 *   **Tasks:**
-    *   **Keyboard Navigation & Focus States:** Conduct a comprehensive audit of all interactive elements to ensure full keyboard navigability and implement clear `:focus` styles.
-    *   **ARIA Attributes:** Add appropriate ARIA attributes (e.g., `aria-expanded`, `aria-controls`, `aria-label`) to the mobile menu and other dynamic UI elements.
-    *   **Color Contrast Audit:** Perform a color contrast analysis to ensure all text and interactive elements meet WCAG 2.1 AA standards.
+    *   **Keyboard Navigation & Focus States** ✅ COMPLETED
+        *   Comprehensive audit of all interactive elements completed
+        *   Global focus styles implemented in Layout.astro (2px outline, 4px offset, 2px border-radius)
+        *   Component-specific focus styles for mobile menu, footer, project cards
+        *   Consistent `:focus-visible` styling across all interactive elements
+        *   Focus indicators have proper spacing and visibility on all backgrounds
+    *   **ARIA Attributes** ✅ COMPLETED
+        *   Mobile menu: `role="navigation"`, `aria-label`, `aria-expanded`, `aria-controls`
+        *   Menu button: `aria-label="Toggle navigation menu"`, dynamic `aria-expanded`
+        *   Close button: `aria-label="Close navigation menu"`, `aria-hidden` on decorative elements
+        *   Footer links: `aria-label` on social media icons with `rel="noopener noreferrer"`
+        *   Image Slider: `role="dialog"`, `aria-modal`, `aria-labelledby`, `aria-live`
+    *   **Mobile Menu Tab Order** ✅ COMPLETED
+        *   Fixed double-tabbing issue by converting nested buttons to styled links
+        *   Implemented `inert` attribute management for hidden menu state
+        *   MutationObserver syncs `aria-expanded` with `tabindex` state
+        *   Menu items only tabbable when menu is open
+    *   **Keyboard Support** ✅ COMPLETED
+        *   Enter/Space opens and closes mobile menu
+        *   Escape key closes mobile menu
+        *   Focus management moves to close button when menu opens
+        *   Proper event prevention and state management
+    *   **Contact Button Refactoring** ✅ COMPLETED
+        *   Mobile menu: Converted from nested button to styled link
+        *   Footer: Converted from nested button to styled link
+        *   About page: Converted from nested button to styled link
+        *   Eliminated double-tab focus issues
+    *   **Color Contrast Audit:** Perform a color contrast analysis to ensure all text and interactive elements meet WCAG 2.1 AA standards. (Pending)
 
 ### 2. Optimize Performance
 *   **Goal:** Improve website loading speed and responsiveness.

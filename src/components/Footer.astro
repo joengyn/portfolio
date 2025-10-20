@@ -30,34 +30,37 @@ const optimizedBackground = await getImage({
     />
 
     <div class='flex flex-col items-center gap-6'>
-      <a href='mailto:joe.ngyn7@gmail.com'>
-        <Button
-          text='Contact'
-          type='button'
-          className='bg-darkGray text-[12px] font-bold uppercase tracking-widest hover:bg-white hover:!text-darkGray'
-        />
+      <a
+        class='footer-contact-button flex min-w-12 items-center gap-2 rounded-sm border-2 border-black px-4 py-2 shadow-[3px_3px_0px_1px_black] transition-colors duration-300 ease-in-out hover:bg-darkGray hover:text-white bg-darkGray text-[12px] font-bold uppercase tracking-widest text-white hover:bg-white hover:!text-darkGray'
+        href='mailto:joe.ngyn7@gmail.com'
+      >
+        Contact
       </a>
       <div class='flex justify-end gap-3 opacity-100'>
         <a
           class='transition-transform hover:scale-105'
           target='_blank'
+          rel='noopener noreferrer'
           href='https://www.linkedin.com/in/joengyn/'
+          aria-label='Visit LinkedIn profile'
         >
           <Image
             class='h-10 w-10 brightness-100 invert filter'
             src={linkedinIcon}
-            alt='LinkedIn Icon Logo'
+            alt='LinkedIn Icon'
           />
         </a>
         <a
           class='transition-transform hover:scale-105'
           target='_blank'
+          rel='noopener noreferrer'
           href='https://github.com/joengyn/'
+          aria-label='Visit GitHub profile'
         >
           <Image
             class='h-10 w-10 invert filter'
             src={githubIcon}
-            alt='Github Logo'
+            alt='GitHub Icon'
           /></a
         >
       </div>
@@ -66,21 +69,21 @@ const optimizedBackground = await getImage({
     <div class='flex flex-col items-center gap-6'>
       <div class='flex justify-end gap-3'>
         <a
-          class="relative inline-block
+          class="footer-link relative inline-block
             before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right
             before:scale-x-0 before:bg-white before:transition-transform before:duration-300 before:content-['']
             hover:before:origin-left hover:before:scale-x-100"
           href='/'>work</a
         >
         <a
-          class="relative inline-block
+          class="footer-link relative inline-block
             before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right
             before:scale-x-0 before:bg-white before:transition-transform before:duration-300 before:content-['']
             hover:before:origin-left hover:before:scale-x-100"
           href='/about'>about</a
         >
         <a
-          class="relative inline-block
+          class="footer-link relative inline-block
             before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right
             before:scale-x-0 before:bg-white before:transition-transform before:duration-300 before:content-['']
             hover:before:origin-left hover:before:scale-x-100"
@@ -96,3 +99,23 @@ const optimizedBackground = await getImage({
     </div>
   </div>
 </footer>
+
+<style>
+  .footer-link:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+
+  a[aria-label='Visit LinkedIn profile']:focus-visible,
+  a[aria-label='Visit GitHub profile']:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+
+  .footer-contact-button:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 4px;
+  }
+</style>

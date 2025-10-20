@@ -12,6 +12,10 @@ const { images } = Astro.props;
 <div
   id='modal'
   class='fixed left-0 top-0 flex hidden h-full w-full bg-black bg-opacity-50 backdrop-blur-sm backdrop-filter'
+  role='dialog'
+  aria-modal='true'
+  aria-labelledby='modal-title'
+  aria-label='Image gallery viewer'
 >
   <div
     class='slider-wrapper m-auto flex w-full max-w-screen-xl flex-col p-4 sm:h-1/2 md:h-[90%]'
@@ -20,17 +24,30 @@ const { images } = Astro.props;
     <div class='flex w-full flex-row justify-between'>
       <!-- Left & Right Arrows -->
       <div class='flex flex-row items-center gap-4'>
-        <button id='modal-back-button' class='-rotate-90 text-2xl text-white'
-          >⇧</button
+        <button
+          id='modal-back-button'
+          aria-label='Previous image'
+          class='-rotate-90 text-2xl text-white'
         >
-        <div class='text-xl text-white' id='image-count'>1/4</div>
-        <button id='modal-next-button' class='rotate-90 text-2xl text-white'
-          >⇧</button
+          ⇧
+        </button>
+        <div class='text-xl text-white' id='image-count' aria-live='polite' aria-atomic='true'>1/4</div>
+        <button
+          id='modal-next-button'
+          aria-label='Next image'
+          class='rotate-90 text-2xl text-white'
         >
+          ⇧
+        </button>
       </div>
       <!-- X Close Button -->
-      <button id='close-modal-button' class='mb-2 text-4xl text-white'>×</button
+      <button
+        id='close-modal-button'
+        aria-label='Close image gallery'
+        class='mb-2 text-4xl text-white'
       >
+        ×
+      </button>
     </div>
     <!-- Slider Images -->
     <div

@@ -29,11 +29,17 @@ import resume from '../../public/resume.pdf';
       href='/'>JOE.NGYN</a
     >
     <!-- Mobile Menu Button -->
-    <div class='menu-button space-y-1 md:hidden'>
+    <button
+      type='button'
+      class='menu-button space-y-1 md:hidden'
+      aria-label='Toggle navigation menu'
+      aria-expanded='false'
+      aria-controls='mobile-menu'
+    >
       <div class='h-1 w-6 bg-black'></div>
       <div class='h-1 w-6 bg-black'></div>
       <div class='h-1 w-6 bg-black'></div>
-    </div>
+    </button>
     <!-- Menu Links -->
     <div class='hidden items-center justify-end gap-3 md:flex'>
       <a
@@ -85,36 +91,115 @@ import resume from '../../public/resume.pdf';
   // Open Mobile Menu
   const menuButton = document.querySelector('.menu-button');
 
-  if (menuButton) {
-    menuButton.addEventListener('click', () => {
-      const mobileMenu = document.querySelector('.mobile-menu');
-      const menuLink = document.querySelectorAll('.menu-link');
-      const menuContact = document.querySelector('.menu-contact');
+  function toggleMenu() {
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const menuLink = document.querySelectorAll('.menu-link');
+    const menuContact = document.querySelector('.menu-contact');
+    const closeMenu = document.getElementById('close-menu');
+    const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+    const newExpandedState = !isExpanded;
 
-      // Animations for Mobile Menu
-      if (mobileMenu) {
+    // Toggle aria-expanded
+    menuButton.setAttribute('aria-expanded', newExpandedState);
+
+    // Update tabindex for menu items based on expanded state
+    // This must happen BEFORE animation starts so items are tabbable when visible
+    const tabindexValue = newExpandedState ? '0' : '-1';
+    if (menuLink) {
+      menuLink.forEach((link) => {
+        link.setAttribute('tabindex', tabindexValue);
+      });
+    }
+    if (menuContact) {
+      menuContact.setAttribute('tabindex', tabindexValue);
+    }
+    if (closeMenu) {
+      closeMenu.setAttribute('tabindex', tabindexValue);
+      // Move focus to close button when opening, return to menu button when closing
+      if (newExpandedState) {
+        setTimeout(() => closeMenu.focus(), 100);
+      }
+    }
+
+    // Animations for Mobile Menu
+    if (mobileMenu) {
+      if (newExpandedState) {
+        // Opening menu - remove inert to make it interactive
+        mobileMenu.removeAttribute('inert');
         mobileMenu.classList.remove('translate-x-full');
         mobileMenu.classList.add(
           'translate-x-0',
           'transition-transform',
           'duration-1000',
         );
+      } else {
+        // Closing menu - add inert to make it non-interactive
+        mobileMenu.setAttribute('inert', '');
+        mobileMenu.classList.remove('translate-x-0');
+        mobileMenu.classList.add('translate-x-full');
       }
-      // Animations for Menu Links
-      if (menuLink) {
-        menuLink.forEach((link) => {
+    }
+    // Animations for Menu Links
+    if (menuLink) {
+      menuLink.forEach((link) => {
+        if (newExpandedState) {
           link.classList.remove('translate-x-full');
           link.classList.add('translate-x-0');
-        });
-      }
-      // Animations for Menu Contact
-      if (menuContact) {
+        } else {
+          link.classList.remove('translate-x-0');
+          link.classList.add('translate-x-full');
+        }
+      });
+    }
+    // Animations for Menu Contact
+    if (menuContact) {
+      if (newExpandedState) {
         menuContact.classList.remove('translate-y-5');
         menuContact.classList.add('translate-y-0');
         menuContact.classList.remove('opacity-0');
         menuContact.classList.add('opacity-100');
+      } else {
+        menuContact.classList.remove('translate-y-0');
+        menuContact.classList.add('translate-y-5');
+        menuContact.classList.remove('opacity-100');
+        menuContact.classList.add('opacity-0');
+      }
+    }
+  }
+
+  if (menuButton) {
+    menuButton.addEventListener('click', toggleMenu);
+
+    // Add keyboard support (Enter and Space)
+    menuButton.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleMenu();
       }
     });
+
+    // Monitor aria-expanded changes from MobileMenu and update tabindex
+    const observer = new MutationObserver(() => {
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      const tabindexValue = isOpen ? '0' : '-1';
+      const menuLink = document.querySelectorAll('.menu-link');
+      const menuContact = document.querySelector('.menu-contact');
+      const closeMenu = document.getElementById('close-menu');
+
+      if (menuLink) {
+        menuLink.forEach((link) => {
+          link.setAttribute('tabindex', tabindexValue);
+        });
+      }
+      if (menuContact) {
+        menuContact.setAttribute('tabindex', tabindexValue);
+      }
+      if (closeMenu) {
+        closeMenu.setAttribute('tabindex', tabindexValue);
+      }
+    });
+
+    observer.observe(menuButton, { attributes: true, attributeFilter: ['aria-expanded'] });
   }
 
   // Header Scroll Animation for non index/about pages
