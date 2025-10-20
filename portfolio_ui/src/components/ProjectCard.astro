@@ -7,10 +7,12 @@ interface Props {
   body: string;
   bgImg: ImageMetadata;
   uiImg: ImageMetadata;
+  bgAlt?: string;
+  uiAlt?: string;
   className?: string;
 }
 
-const { href, title, body, bgImg, uiImg, className } = Astro.props;
+const { href, title, body, bgImg, uiImg, bgAlt = `${title} background`, uiAlt = `${title} UI preview`, className } = Astro.props;
 ---
 
 <div
@@ -27,12 +29,12 @@ const { href, title, body, bgImg, uiImg, className } = Astro.props;
         <Image
           class='absolute bottom-1 right-1 z-10 aspect-auto h-2/5 w-auto animate-fadeIn opacity-0'
           src={uiImg}
-          alt='ng-ui-1'
+          alt={uiAlt}
         />
         <Image
           class='absolute inset-0 h-full w-full object-cover'
           src={bgImg}
-          alt='Background image'
+          alt={bgAlt}
         />
       </div>
       <div class='flex flex-col justify-between p-4'>

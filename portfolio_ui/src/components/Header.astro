@@ -128,7 +128,8 @@ import resume from '../../public/resume.pdf';
       return;
     }
 
-    console.log('Scroll function active on this page.');
+    // Apply transition classes once to the header
+    header.classList.add('transition-transform', 'duration-500', 'ease-in-out');
 
     let lastScrollTop = 0;
 
@@ -138,19 +139,9 @@ import resume from '../../public/resume.pdf';
       if (scrollTop > lastScrollTop) {
         // Scroll down
         header.style.transform = 'translateY(-100%)';
-        header.classList.add(
-          'transition-transform',
-          'duration-500',
-          'ease-in-out',
-        );
       } else {
         // Scroll up
         header.style.transform = 'translateY(0)';
-        header.classList.add(
-          'transition-transform',
-          'duration-500',
-          'ease-in-out',
-        );
       }
 
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Prevent negative scrolling
