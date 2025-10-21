@@ -5,6 +5,7 @@
     "body": "Design of Human Machine Interfaces (HMIs) for AI-enabled enterprise robotics",
     "bgImg": "../assets/berkshiregrey/bg-background.webp",
     "uiImg": "../assets/berkshiregrey/bg-ng-ui-1.webp",
+    "logo": "../assets/berkshiregrey/bg-logo.svg",
     "className": "delay-0",
     "isVisible": true
   },
@@ -14,6 +15,7 @@
     "body": "Design and development of a music focused language learning web application",
     "bgImg": "../assets/grammaroke/music-venue.webp",
     "uiImg": "../assets/grammaroke/grammaroke-ui.webp",
+    "logo": "../assets/grammaroke/favicon.svg",
     "className": "sm:delay-0 md:delay-500",
     "isVisible": true
   },
@@ -23,6 +25,7 @@
     "body": "Design and development of a mobile app for discovering local artists and live music events",
     "bgImg": "../assets/bandscan/fox-theater.webp",
     "uiImg": "../assets/bandscan/bandscan-ui.webp",
+    "logo": "../assets/bandscan/bandscan-logo.webp",
     "className": "sm:delay-0 md:delay-500",
     "isVisible": true
   },
@@ -41,6 +44,7 @@
     "body": "Design of a mobile QR code based pay-at-the-table service for restaurants",
     "bgImg": "../assets/toast/restaurant.webp",
     "uiImg": "../assets/toast/toast-ui.webp",
+    "logo": "../assets/toast/toast-logo.svg",
     "className": "sm:delay-0 md:delay-[1.5s]",
     "isVisible": true
   }

@@ -66,11 +66,7 @@ import designSystem from '../assets/bandscan/design-system.webp';
 import redesign from '../assets/bandscan/bandscan-redesign.webp';
 import redesign2 from '../assets/bandscan/bandscan-redesign-2.webp';
 
-// MP4s
-import loginMp4 from '../assets/bandscan/login.mp4';
-import onboardingMp4 from '../assets/bandscan/artist-onboard.mp4';
-import exploreMp4 from '../assets/bandscan/explore.mp4';
-import pageSwipeMp4 from '../assets/bandscan/page-swiping.mp4';
+// Videos - using public folder for better compatibility
 
 const projectSchema = {
   "@context": "https://schema.org",
@@ -121,22 +117,26 @@ const projectSchema = {
         platform to discover local artists and live music events, so you never miss
         a beat.
       </p>
-      <!-- MP4s -->
+      <!-- Videos -->
       <div class='mb-3 grid grid-cols-2 gap-2 custom-md:grid-cols-4'>
-        <video autoplay loop muted playsinline>
-          <source src={loginMp4} type='video/mp4' />
+        <video autoplay loop muted playsinline class='w-full'>
+          <source src="/login.webm" type='video/webm' />
+          <source src="/login.mp4" type='video/mp4' />
           Your browser does not support the video tag.
         </video>
-        <video autoplay loop muted playsinline>
-          <source src={pageSwipeMp4} type='video/mp4' />
+        <video autoplay loop muted playsinline class='w-full'>
+          <source src="/page-swiping.webm" type='video/webm' />
+          <source src="/page-swiping.mp4" type='video/mp4' />
           Your browser does not support the video tag.
         </video>
-        <video autoplay loop muted playsinline>
-          <source src={exploreMp4} type='video/mp4' />
+        <video autoplay loop muted playsinline class='w-full'>
+          <source src="/explore.webm" type='video/webm' />
+          <source src="/explore.mp4" type='video/mp4' />
           Your browser does not support the video tag.
         </video>
-        <video autoplay loop muted playsinline>
-          <source src={onboardingMp4} type='video/mp4' />
+        <video autoplay loop muted playsinline class='w-full'>
+          <source src="/artist-onboard.webm" type='video/webm' />
+          <source src="/artist-onboard.mp4" type='video/mp4' />
           Your browser does not support the video tag.
         </video>
       </div>
@@ -481,7 +481,7 @@ const projectSchema = {
           className='back-to-top-button'
           iconClassName='-rotate-90'
         />
-        <a href='/pinksofahour'>
+        <a href='/toast'>
           <Button text='next case study' type='button' icon='arrow' />
         </a>
       </div>

@@ -9,25 +9,62 @@ const { isIndex, isAbout } = Astro.props;
 import { Image } from 'astro:assets';
 import Button from './Button.astro';
 import logo from '../../public/circle.webp';
+import logoWhite from '../../public/circle-white.webp';
 import resume from '../../public/resume.pdf';
 ---
 
 <header
   id='header'
   data-page-type={isIndex || isAbout ? 'no-scroll' : 'scroll'}
-  class='fixed top-0 z-40 w-full bg-lightGray transition-transform duration-500 ease-in-out'
+  class='fixed top-0 z-40 w-full bg-white text-black dark:bg-black dark:text-white'
 >
   <div class='flex flex-row items-center justify-between p-4 tracking-wider'>
-    <!-- Name -->
-    <a class='md:hidden' href='/'>JOE.<br />NGYN</a>
-    <a
-      class='relative -mx-1 hidden px-1 text-darkGray
-        transition-[color,box-shadow] duration-700 ease-in-out
-        before:absolute before:inset-0 before:z-[-1] before:h-full before:w-0
-        before:bg-darkGray before:transition-all before:duration-300 before:ease-in-out
-        hover:text-white hover:before:w-full md:block'
-      href='/'>JOE.NGYN</a
-    >
+    <!-- Left side: Theme toggle (desktop only) + Name -->
+    <div class='flex items-center gap-2'>
+      <!-- Dark Mode Toggle (Desktop) -->
+      <button
+        id='theme-toggle'
+        type='button'
+        aria-label='Toggle dark mode'
+        class='hidden md:flex h-6 w-6 items-center justify-center'
+      >
+        <!-- Sun Icon (visible in light mode) -->
+        <svg
+          id='sun-icon'
+          class='h-5 w-5'
+          fill='none'
+          stroke='currentColor'
+          viewBox='0 0 24 24'
+          xmlns='http://www.w3.org/2000/svg'
+        >
+          <path
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            stroke-width='2'
+            d='M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z'
+          ></path>
+        </svg>
+        <!-- Moon Icon (visible in dark mode) -->
+        <svg
+          id='moon-icon'
+          class='hidden h-5 w-5'
+          fill='none'
+          stroke='currentColor'
+          viewBox='0 0 24 24'
+          xmlns='http://www.w3.org/2000/svg'
+        >
+          <path
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            stroke-width='2'
+            d='M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z'
+          ></path>
+        </svg>
+      </button>
+      <!-- Name -->
+      <a class='md:hidden' href='/'>JOE.<br />NGYN</a>
+      <a class='hidden md:block' href='/'>JOE.NGYN</a>
+    </div>
     <!-- Mobile Menu Button -->
     <button
       type='button'
@@ -36,55 +73,118 @@ import resume from '../../public/resume.pdf';
       aria-expanded='false'
       aria-controls='mobile-menu'
     >
-      <div class='h-1 w-6 bg-black'></div>
-      <div class='h-1 w-6 bg-black'></div>
-      <div class='h-1 w-6 bg-black'></div>
+      <div class='h-1 w-6 bg-black dark:bg-white'></div>
+      <div class='h-1 w-6 bg-black dark:bg-white'></div>
+      <div class='h-1 w-6 bg-black dark:bg-white'></div>
     </button>
     <!-- Menu Links -->
     <div class='hidden items-center justify-end gap-3 md:flex'>
+      <a href='/'>work</a>
+      <a href='/about'>about</a>
+      <a target='_blank' href={resume}>resume</a>
       <a
-        class="relative inline-block
-        before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right
-        before:scale-x-0 before:bg-darkGray before:transition-transform before:duration-300 before:content-['']
-        hover:before:origin-left hover:before:scale-x-100"
-        href='/'>work</a
+        class='flex min-w-12 items-center gap-2 rounded-sm px-4 py-2 border-2 bg-white text-black border-black dark:bg-black dark:text-white dark:border-white text-[12px] font-bold uppercase tracking-widest'
+        href='mailto:joe.ngyn7@gmail.com'
       >
-      <a
-        class="relative inline-block
-        before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right
-        before:scale-x-0 before:bg-darkGray before:transition-transform before:duration-300 before:content-['']
-        hover:before:origin-left hover:before:scale-x-100"
-        href='/about'>about</a
-      >
-      <a
-        class="relative inline-block
-        before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right
-        before:scale-x-0 before:bg-darkGray before:transition-transform before:duration-300 before:content-['']
-        hover:before:origin-left hover:before:scale-x-100"
-        target='_blank'
-        href={resume}>resume</a
-      >
-      <a
-          class='flex min-w-12 items-center gap-2 rounded-sm border-2 border-black px-4 py-2 shadow-[3px_3px_0px_1px_black] transition-colors duration-300 ease-in-out hover:bg-darkGray hover:text-white text-[12px] font-bold uppercase tracking-widest'
-          href='mailto:joe.ngyn7@gmail.com'
-        >
-          Contact
-        </a>
+        Contact
+      </a>
     </div>
     <!--  Logo -->
     <div class='absolute inset-0 z-[-1] flex items-center justify-center'>
       <Image
         src={logo}
         alt='logo'
-        class={`h-10 w-10 ${isIndex ? 'opacity-0' : 'opacity-100'}`}
+        class={`h-10 w-10 ${isIndex ? 'opacity-0' : 'opacity-100'} dark:hidden`}
         id='logoHeader'
+      />
+      <Image
+        src={logoWhite}
+        alt='logo'
+        class={`h-10 w-10 ${isIndex ? 'opacity-0' : 'opacity-100'} hidden dark:block`}
+        id='logoHeaderDark'
       />
     </div>
   </div>
-  <div class='mx-4 border-t-2 border-black'></div>
+  <div class='mx-4 border-t-2 border-slate dark:border-white'></div>
 </header>
 
-<style></style>
+<style>
+  header {
+    transition: box-shadow 300ms ease-out;
+    box-shadow: 0 1px 2px rgba(15, 14, 13, 0.05);
+  }
+
+  :global(.dark) header {
+    box-shadow: 0 1px 2px rgba(250, 248, 243, 0.05);
+  }
+
+  /* Regular navigation links (excluding mailto and contact button) */
+  header a:not([href^='mailto:']) {
+    transition: opacity 200ms ease-out;
+    position: relative;
+  }
+
+  header a:not([href^='mailto:']):hover {
+    opacity: 0.7;
+  }
+
+  header a:not([href^='mailto:'])::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 250ms ease-out;
+  }
+
+  header a:not([href^='mailto:']):hover::after {
+    width: 100%;
+  }
+
+  #theme-toggle {
+    transition: transform 200ms ease-out;
+  }
+
+  #theme-toggle:hover {
+    transform: rotate(20deg);
+  }
+
+  #theme-toggle:focus-visible {
+    outline: 2px solid #1C1A18; /* slate */
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  .dark #theme-toggle:focus-visible {
+    outline-color: #FAF8F3; /* white */
+  }
+
+  /* Contact button styling in header */
+  header a[href^='mailto:'] {
+    transition: all 250ms ease-out !important;
+  }
+
+  header a[href^='mailto:']:hover {
+    box-shadow: 0 8px 16px rgba(15, 14, 13, 0.15) !important;
+    transform: translateY(-2px) !important;
+    opacity: 1 !important;
+  }
+
+  :global(.dark) header a[href^='mailto:']:hover {
+    box-shadow: 0 8px 16px rgba(250, 248, 243, 0.1) !important;
+  }
+
+  header a[href^='mailto:']:active {
+    transform: scale(0.98) !important;
+    box-shadow: 0 2px 4px rgba(15, 14, 13, 0.08) !important;
+  }
+
+  :global(.dark) header a[href^='mailto:']:active {
+    box-shadow: 0 2px 4px rgba(250, 248, 243, 0.05) !important;
+  }
+</style>
 
 <script>
   // Open Mobile Menu
@@ -102,7 +202,6 @@ import resume from '../../public/resume.pdf';
     menuButton.setAttribute('aria-expanded', newExpandedState);
 
     // Update tabindex for menu items based on expanded state
-    // This must happen BEFORE animation starts so items are tabbable when visible
     const tabindexValue = newExpandedState ? '0' : '-1';
     if (menuLink) {
       menuLink.forEach((link) => {
@@ -114,54 +213,22 @@ import resume from '../../public/resume.pdf';
     }
     if (closeMenu) {
       closeMenu.setAttribute('tabindex', tabindexValue);
-      // Move focus to close button when opening, return to menu button when closing
+      // Move focus to close button when opening
       if (newExpandedState) {
         setTimeout(() => closeMenu.focus(), 100);
       }
     }
 
-    // Animations for Mobile Menu
+    // Toggle mobile menu visibility
     if (mobileMenu) {
       if (newExpandedState) {
         // Opening menu - remove inert to make it interactive
         mobileMenu.removeAttribute('inert');
         mobileMenu.classList.remove('translate-x-full');
-        mobileMenu.classList.add(
-          'translate-x-0',
-          'transition-transform',
-          'duration-1000',
-        );
       } else {
         // Closing menu - add inert to make it non-interactive
         mobileMenu.setAttribute('inert', '');
-        mobileMenu.classList.remove('translate-x-0');
         mobileMenu.classList.add('translate-x-full');
-      }
-    }
-    // Animations for Menu Links
-    if (menuLink) {
-      menuLink.forEach((link) => {
-        if (newExpandedState) {
-          link.classList.remove('translate-x-full');
-          link.classList.add('translate-x-0');
-        } else {
-          link.classList.remove('translate-x-0');
-          link.classList.add('translate-x-full');
-        }
-      });
-    }
-    // Animations for Menu Contact
-    if (menuContact) {
-      if (newExpandedState) {
-        menuContact.classList.remove('translate-y-5');
-        menuContact.classList.add('translate-y-0');
-        menuContact.classList.remove('opacity-0');
-        menuContact.classList.add('opacity-100');
-      } else {
-        menuContact.classList.remove('translate-y-0');
-        menuContact.classList.add('translate-y-5');
-        menuContact.classList.remove('opacity-100');
-        menuContact.classList.add('opacity-0');
       }
     }
   }
@@ -201,34 +268,37 @@ import resume from '../../public/resume.pdf';
     observer.observe(menuButton, { attributes: true, attributeFilter: ['aria-expanded'] });
   }
 
-  // Header Scroll Animation for non index/about pages
-  document.addEventListener('DOMContentLoaded', () => {
-    const header = document.getElementById('header');
-    if (!header) return;
+  // Dark Mode Toggle (Desktop)
+  // Note: Theme application and icon syncing on page load is handled in Layout.astro
+  const themeToggle = document.getElementById('theme-toggle');
 
-    const pageType = header.dataset.pageType;
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const html = document.documentElement;
+      const isDark = html.classList.contains('dark');
+      const sunIcon = document.getElementById('sun-icon');
+      const moonIcon = document.getElementById('moon-icon');
+      const sunIconMobile = document.getElementById('sun-icon-mobile');
+      const moonIconMobile = document.getElementById('moon-icon-mobile');
 
-    if (pageType === 'no-scroll') {
-      return;
-    }
-
-    // Apply transition classes once to the header
-    header.classList.add('transition-transform', 'duration-500', 'ease-in-out');
-
-    let lastScrollTop = 0;
-
-    window.addEventListener('scroll', () => {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-      if (scrollTop > lastScrollTop) {
-        // Scroll down
-        header.style.transform = 'translateY(-100%)';
+      if (isDark) {
+        // Switch to light mode
+        html.classList.remove('dark');
+        sunIcon?.classList.remove('hidden');
+        moonIcon?.classList.add('hidden');
+        sunIconMobile?.classList.remove('hidden');
+        moonIconMobile?.classList.add('hidden');
+        localStorage.setItem('theme', 'light');
       } else {
-        // Scroll up
-        header.style.transform = 'translateY(0)';
+        // Switch to dark mode
+        html.classList.add('dark');
+        sunIcon?.classList.add('hidden');
+        moonIcon?.classList.remove('hidden');
+        sunIconMobile?.classList.add('hidden');
+        moonIconMobile?.classList.remove('hidden');
+        localStorage.setItem('theme', 'dark');
       }
-
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Prevent negative scrolling
     });
-  });
+  }
+
 </script>

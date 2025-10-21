@@ -1,0 +1,227 @@
+/**
+ * Global Animation Definitions
+ * Layers & Folding Theme
+ */
+
+// ============================================
+// SCREEN CUT ANIMATION
+// ============================================
+
+.screen-cut-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  display: flex;
+  overflow: hidden;
+
+  .screen-cut-left,
+  .screen-cut-right {
+    flex: 1;
+    background-color: inherit;
+    height: 100%;
+  }
+
+  .screen-cut-left {
+    background: linear-gradient(
+      to right,
+      var(--color-primary, #000),
+      var(--color-primary, #000)
+    );
+  }
+
+  .screen-cut-right {
+    background: linear-gradient(
+      to left,
+      var(--color-primary, #000),
+      var(--color-primary, #000)
+    );
+  }
+}
+
+// ============================================
+// TRANSITION NAMES (for View Transitions API)
+// ============================================
+
+[data-transition-name] {
+  view-transition-name: var(--transition-name, auto);
+}
+
+// Project card to banner transitions
+[data-transition='project-image'] {
+  view-transition-name: project-image;
+}
+
+[data-transition='project-title'] {
+  view-transition-name: project-title;
+}
+
+[data-transition='project-description'] {
+  view-transition-name: project-description;
+}
+
+// ============================================
+// LAYER ANIMATIONS
+// ============================================
+
+@keyframes layerFoldIn {
+  from {
+    opacity: 0;
+    transform: scaleY(0.8) translateY(-40px);
+    transform-origin: top center;
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleY(1) translateY(0);
+  }
+}
+
+@keyframes layerSlideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes layerSlideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+// ============================================
+// UTILITY CLASSES
+// ============================================
+
+.animate-layer-fold-in {
+  animation: layerFoldIn 0.8s ease-out forwards;
+}
+
+.animate-layer-slide-left {
+  animation: layerSlideInLeft 0.8s ease-out forwards;
+}
+
+.animate-layer-slide-right {
+  animation: layerSlideInRight 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+// Stagger delays for sequential reveals
+.stagger-1 {
+  animation-delay: 0s;
+}
+
+.stagger-2 {
+  animation-delay: 0.1s;
+}
+
+.stagger-3 {
+  animation-delay: 0.2s;
+}
+
+.stagger-4 {
+  animation-delay: 0.3s;
+}
+
+.stagger-5 {
+  animation-delay: 0.4s;
+}
+
+// ============================================
+// VIEW TRANSITIONS CUSTOMIZATION
+// ============================================
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 0;
+}
+
+// Shared element transition animations
+@keyframes viewTransitionIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+// Smooth fade for new content
+::view-transition-new(root) {
+  animation: viewTransitionIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// Fade out old content
+::view-transition-old(root) {
+  animation: viewTransitionIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) reverse;
+}
+
+// Custom animations for shared elements (project cards → banners)
+::view-transition-group(project-image-berkshiregrey),
+::view-transition-group(project-image-grammaroke),
+::view-transition-group(project-image-bandscan),
+::view-transition-group(project-image-toast),
+::view-transition-group(project-image-pinksofahour) {
+  animation-duration: 0.8s;
+  animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+::view-transition-group(project-title-berkshiregrey),
+::view-transition-group(project-title-grammaroke),
+::view-transition-group(project-title-bandscan),
+::view-transition-group(project-title-toast),
+::view-transition-group(project-title-pinksofahour) {
+  animation-duration: 0.7s;
+  animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+// ============================================
+// REDUCED MOTION SUPPORT
+// ============================================
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

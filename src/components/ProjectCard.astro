@@ -7,27 +7,38 @@ interface Props {
   body: string;
   bgImg: ImageMetadata;
   uiImg: ImageMetadata;
+  logo?: ImageMetadata;
+  logoAlt?: string;
   bgAlt?: string;
   uiAlt?: string;
   className?: string;
 }
 
-const { href, title, body, bgImg, uiImg, bgAlt = `${title} background`, uiAlt = `${title} UI preview`, className } = Astro.props;
+const { href, title, body, bgImg, uiImg, logo, logoAlt = `${title} logo`, bgAlt = `${title} background`, uiAlt = `${title} UI preview`, className } = Astro.props;
+
+// ANIMATIONS TEMPORARILY DISABLED
+// Create unique transition names based on href (e.g., /berkshiregrey)
+// const projectSlug = href.replace(/\//g, '');
+// const imageTransitionName = `project-image-${projectSlug}`;
+// const titleTransitionName = `project-title-${projectSlug}`;
 ---
 
 <div
   data-project-card
-  class={`translate-y-10 opacity-0 transition-all duration-1000 ease-in-out ${className || ''}`}
+  class={`transition-all duration-300 hover:shadow-lift-lg ${className || ''}`}
 >
   <a href={href} class='project-card-link'>
     <div
-      class='h-full border-2 border-black shadow-[5px_5px_2px_1px_darkGray] duration-200 hover:scale-105'
+      class='h-full'
     >
       <div
-        class='relative aspect-square overflow-hidden border-b-2 border-black'
+        class='relative aspect-square overflow-hidden'
+        {/* style={{
+          viewTransitionName: imageTransitionName,
+        }} */}
       >
         <Image
-          class='absolute bottom-1 right-1 z-10 aspect-auto h-2/5 w-auto animate-fadeIn opacity-0'
+          class='absolute bottom-1 right-1 z-10 aspect-auto h-2/5 w-auto'
           src={uiImg}
           alt={uiAlt}
         />
@@ -37,8 +48,13 @@ const { href, title, body, bgImg, uiImg, bgAlt = `${title} background`, uiAlt = 
           alt={bgAlt}
         />
       </div>
-      <div class='flex flex-col justify-between p-4'>
-        <div class='mb-2 text-lg'>
+      <div class='flex flex-col bg-sand dark:bg-slate p-4'>
+        <div
+          class='mb-2 text-lg'
+          {/* style={{
+            viewTransitionName: titleTransitionName,
+          }} */}
+        >
           {title}
         </div>
         <p class='mb-2'>{body}</p>
@@ -49,9 +65,39 @@ const { href, title, body, bgImg, uiImg, bgAlt = `${title} background`, uiAlt = 
 </div>
 
 <style>
-  .project-card-link:focus-visible {
-    outline: 3px solid black;
-    outline-offset: 4px;
+  [data-project-card] {
+    transition: all 300ms ease-out;
+    border-radius: 4px;
+  }
+
+  [data-project-card]:hover {
+    transform: translateY(-8px);
+  }
+
+  .project-card-link {
     display: block;
+    transition: opacity 250ms ease-out;
+  }
+
+  .project-card-link:hover {
+    opacity: 0.95;
+  }
+
+  .project-card-link:focus-visible {
+    outline: 3px solid #1C1A18; /* slate */
+    outline-offset: 4px;
+  }
+
+  :global(.dark) .project-card-link:focus-visible {
+    outline-color: #FAF8F3; /* white */
+  }
+
+  /* Enhanced dark mode shadows for card lift */
+  :global(.dark) [data-project-card]:hover {
+    box-shadow: 0 12px 32px rgba(250, 248, 243, 0.15);
+  }
+
+  [data-project-card]:hover {
+    box-shadow: 0 12px 32px rgba(15, 14, 13, 0.2);
   }
 </style>

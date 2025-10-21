@@ -31,14 +31,13 @@ const optimizedBackground = await getImage({
 
     <div class='flex flex-col items-center gap-6'>
       <a
-        class='footer-contact-button flex min-w-12 items-center gap-2 rounded-sm border-2 border-black px-4 py-2 shadow-[3px_3px_0px_1px_black] transition-colors duration-300 ease-in-out hover:bg-darkGray hover:text-white bg-darkGray text-[12px] font-bold uppercase tracking-widest text-white hover:bg-white hover:!text-darkGray'
+        class='footer-contact-button flex min-w-12 items-center gap-2 rounded-sm px-4 py-2 border-2 bg-black text-white border-white text-[12px] font-bold uppercase tracking-widest'
         href='mailto:joe.ngyn7@gmail.com'
       >
         Contact
       </a>
       <div class='flex justify-end gap-3 opacity-100'>
         <a
-          class='transition-transform hover:scale-105'
           target='_blank'
           rel='noopener noreferrer'
           href='https://www.linkedin.com/in/joengyn/'
@@ -51,7 +50,6 @@ const optimizedBackground = await getImage({
           />
         </a>
         <a
-          class='transition-transform hover:scale-105'
           target='_blank'
           rel='noopener noreferrer'
           href='https://github.com/joengyn/'
@@ -68,28 +66,9 @@ const optimizedBackground = await getImage({
 
     <div class='flex flex-col items-center gap-6'>
       <div class='flex justify-end gap-3'>
-        <a
-          class="footer-link relative inline-block
-            before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right
-            before:scale-x-0 before:bg-white before:transition-transform before:duration-300 before:content-['']
-            hover:before:origin-left hover:before:scale-x-100"
-          href='/'>work</a
-        >
-        <a
-          class="footer-link relative inline-block
-            before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right
-            before:scale-x-0 before:bg-white before:transition-transform before:duration-300 before:content-['']
-            hover:before:origin-left hover:before:scale-x-100"
-          href='/about'>about</a
-        >
-        <a
-          class="footer-link relative inline-block
-            before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right
-            before:scale-x-0 before:bg-white before:transition-transform before:duration-300 before:content-['']
-            hover:before:origin-left hover:before:scale-x-100"
-          target='_blank'
-          href={resume}>resume</a
-        >
+        <a class="footer-link" href='/'>work</a>
+        <a class="footer-link" href='/about'>about</a>
+        <a class="footer-link" target='_blank' href={resume}>resume</a>
       </div>
 
       <div class='flex flex-col items-center text-center lg:justify-end'>
@@ -101,21 +80,78 @@ const optimizedBackground = await getImage({
 </footer>
 
 <style>
+  /* Footer links hover effect */
+  .footer-link {
+    position: relative;
+    transition: opacity 200ms ease-out;
+  }
+
+  .footer-link:hover {
+    opacity: 0.8;
+  }
+
+  .footer-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 250ms ease-out;
+  }
+
+  .footer-link:hover::after {
+    width: 100%;
+  }
+
+  /* Social icons hover effect */
+  a[aria-label='Visit LinkedIn profile'],
+  a[aria-label='Visit GitHub profile'] {
+    transition: transform 200ms ease-out, opacity 200ms ease-out;
+  }
+
+  a[aria-label='Visit LinkedIn profile']:hover,
+  a[aria-label='Visit GitHub profile']:hover {
+    transform: scale(1.1) translateY(-2px);
+    opacity: 0.9;
+  }
+
+  a[aria-label='Visit LinkedIn profile']:active,
+  a[aria-label='Visit GitHub profile']:active {
+    transform: scale(0.95);
+  }
+
+  /* Contact button hover */
+  .footer-contact-button {
+    transition: all 250ms ease-out;
+  }
+
+  .footer-contact-button:hover {
+    box-shadow: 0 4px 12px rgba(250, 248, 243, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .footer-contact-button:active {
+    transform: scale(0.98);
+  }
+
+  /* Focus states */
   .footer-link:focus-visible {
-    outline: 2px solid white;
+    outline: 2px solid #FAF8F3; /* white */
     outline-offset: 4px;
     border-radius: 2px;
   }
 
   a[aria-label='Visit LinkedIn profile']:focus-visible,
   a[aria-label='Visit GitHub profile']:focus-visible {
-    outline: 2px solid white;
+    outline: 2px solid #FAF8F3; /* white */
     outline-offset: 4px;
     border-radius: 2px;
   }
 
   .footer-contact-button:focus-visible {
-    outline: 2px solid white;
+    outline: 2px solid #FAF8F3; /* white */
     outline-offset: 4px;
   }
 </style>

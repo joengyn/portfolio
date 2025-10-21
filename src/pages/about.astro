@@ -1,11 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Button from '../components/Button.astro';
 import StructuredData from '../components/StructuredData.astro';
 import { Image } from 'astro:assets';
 
 import profileImg from '../../public/profile.webp';
-import fpvClip from '../../public/fpv-clip.mp4';
 
 const personSchema = {
   "@context": "https://schema.org",
@@ -54,14 +52,15 @@ const personSchema = {
       </p>
       <div class='mb-20 flex flex-col items-center'>
         <a
-          class='flex min-w-12 items-center gap-2 rounded-sm border-2 border-black px-4 py-2 shadow-[3px_3px_0px_1px_black] transition-colors duration-300 ease-in-out hover:bg-darkGray hover:text-white text-[12px] font-bold uppercase tracking-widest'
+          class='flex min-w-12 items-center gap-2 rounded-sm px-4 py-2 border-2 bg-white text-black border-black dark:bg-black dark:text-white dark:border-white text-[12px] font-bold uppercase tracking-widest'
           href='mailto:joe.ngyn7@gmail.com'
         >
           Contact
         </a>
       </div>
-      <video autoplay loop muted playsinline>
-        <source src={fpvClip} type='video/mp4' />
+      <video class="w-full" autoplay loop muted playsinline>
+        <source src="/fpv-clip.webm" type="video/webm" />
+        <source src="/fpv-clip.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <figcaption class='mt-2 text-center text-sm'>
@@ -70,5 +69,28 @@ const personSchema = {
     </div>
   </main>
 
-  <style></style>
+  <style>
+    /* Contact button styling to match Button component */
+    a[href^='mailto:'] {
+      transition: all 250ms ease-out;
+    }
+
+    a[href^='mailto:']:hover {
+      box-shadow: 0 8px 16px rgba(15, 14, 13, 0.15);
+      transform: translateY(-2px);
+    }
+
+    :global(.dark) a[href^='mailto:']:hover {
+      box-shadow: 0 8px 16px rgba(250, 248, 243, 0.1);
+    }
+
+    a[href^='mailto:']:active {
+      transform: scale(0.98);
+      box-shadow: 0 2px 4px rgba(15, 14, 13, 0.08);
+    }
+
+    :global(.dark) a[href^='mailto:']:active {
+      box-shadow: 0 2px 4px rgba(250, 248, 243, 0.05);
+    }
+  </style>
 </Layout>

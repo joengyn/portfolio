@@ -13,7 +13,6 @@ import toastLogo from '../assets/toast/toast-logo.svg';
 import toastBg from '../assets/toast/restaurant.webp';
 
 import toastIntro from '../assets/toast/toast-intro.webp';
-import toastMp4 from '../assets/toast/toast-ui.mp4';
 import toastUI from '../assets/toast/toast-ui.webp';
 import toastImg from '../assets/toast/toast-img.webp';
 
@@ -48,6 +47,7 @@ const projectSchema = {
       roles={['UX Design Intern']}
       tools={['Figma']}
       duration='3 months'
+      invertLogo={false}
     />
     <div class='wrapper'>
       <!-- Background -->
@@ -63,8 +63,9 @@ const projectSchema = {
       </p>
       <!-- My Role -->
       <Image src={toastIntro} alt='Introduction image' />
-      <video autoplay loop muted playsinline class='mb-2'>
-        <source src={toastMp4} type='video/mp4' />
+      <video autoplay loop muted playsinline class='mb-2 w-full'>
+        <source src="/toast-ui.webm" type='video/webm' />
+        <source src="/toast-ui.mp4" type='video/mp4' />
         Your browser does not support the video tag.
       </video>
       <figcaption class='mb-20 text-center text-sm'>
