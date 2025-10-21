@@ -1,7 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
-import EnsoLottie from '../components/EnsoLottie.tsx';
+// import EnsoLottie from '../components/EnsoLottie.tsx';
+import { Image } from 'astro:assets';
+import circle from '../../public/circle.webp';
+import circleWhite from '../../public/circle-white.webp';
 import StructuredData from '../components/StructuredData.astro';
 import projectsData from '../data/projects.json';
 
@@ -61,13 +64,14 @@ const visibleProjects = await Promise.all(
           Passionate about the space where people and technology meet.
         </p>
       </div>
-      <!-- Lottie -->
+      <!-- Lottie (temporarily replaced with static image) -->
       <div
-        class='my-auto w-1/2 max-w-[300px] sm:order-first'
+        class='my-auto w-1/2 max-w-[300px] sm:order-first flex items-center justify-center py-10'
         id='lottie-container'
-        style='min-height: 300px;'
       >
-        <EnsoLottie client:load />
+        <!-- <EnsoLottie client:load /> -->
+        <Image src={circle} alt='Enso Circle Logo' class='h-32 w-32 dark:hidden' />
+        <Image src={circleWhite} alt='Enso Circle Logo' class='h-32 w-32 hidden dark:block' />
       </div>
     </div>
     <!-- Case Studies Section -->
@@ -87,23 +91,3 @@ const visibleProjects = await Promise.all(
     </div>
   </main>
 </Layout>
-
-<script>
-  // Animation for project cards
-  document.addEventListener('DOMContentLoaded', () => {
-    const projects = document.querySelectorAll('[data-project-card]');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.remove('opacity-0', 'translate-y-10');
-          entry.target.classList.add('opacity-100', 'translate-y-0');
-        }
-      });
-    });
-
-    projects.forEach((project) => {
-      observer.observe(project);
-    });
-  });
-</script>

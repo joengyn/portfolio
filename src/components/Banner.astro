@@ -12,6 +12,7 @@ interface Props {
   roles: string[];
   tools: string[];
   duration: string;
+  slug?: string;
 }
 
 const {
@@ -24,11 +25,23 @@ const {
   roles,
   tools,
   duration,
+  slug,
 } = Astro.props;
+
+// ANIMATIONS TEMPORARILY DISABLED
+// Derive slug from current URL if not provided
+// const projectSlug = slug || new URL(Astro.request.url).pathname.replace(/\//g, '');
+// const imageTransitionName = `project-image-${projectSlug}`;
+// const titleTransitionName = `project-title-${projectSlug}`;
 ---
 
-<div class='banner m-4 mx-auto max-w-[1800px] bg-gray'>
-  <div class='relative flex items-center'>
+<div class='banner m-4 mx-auto max-w-[1800px] bg-sand dark:bg-slate'>
+  <div
+    class='relative flex items-center'
+    {/* style={{
+      viewTransitionName: imageTransitionName,
+    }} */}
+  >
     <!-- Gradient -->
     <div
       class='absolute h-full w-full bg-gradient-to-r from-black to-transparent'
@@ -37,6 +50,9 @@ const {
     <!-- Title -->
     <span
       class='absolute left-8 max-w-[300px] text-[40px] uppercase text-white md:max-w-[400px] md:text-[60px] lg:text-[80px]'
+      {/* style={{
+        viewTransitionName: titleTransitionName,
+      }} */}
     >
       {title}
     </span>

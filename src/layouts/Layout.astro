@@ -1,4 +1,8 @@
 ---
+// ANIMATIONS TEMPORARILY DISABLED
+// import { ViewTransitions } from 'astro:transitions';
+// import '../styles/animations.scss';
+
 interface Props {
   title: string;
   description?: string;
@@ -16,11 +20,13 @@ const {
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MobileMenu from '../components/MobileMenu.astro';
+// import ScreenCutOverlay from '../components/ScreenCutOverlay.tsx';
 ---
 
 <!doctype html>
 <html lang='en'>
   <head>
+    <!-- <ViewTransitions /> -->
     <meta charset='UTF-8' />
     <meta name='description' content={description} />
     <meta name='viewport' content='width=device-width' />
@@ -42,6 +48,46 @@ import MobileMenu from '../components/MobileMenu.astro';
       {title}
     </title>
     <slot name="structured-data" />
+    <!-- Dark mode script - runs before page render to prevent flash -->
+    <script is:inline>
+      function applyTheme() {
+        const theme = localStorage.getItem('theme') || 'light';
+        const isDark = theme === 'dark';
+
+        // Apply dark class to html
+        if (isDark) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+
+        // Sync icon visibility for both desktop and mobile
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        const sunIconMobile = document.getElementById('sun-icon-mobile');
+        const moonIconMobile = document.getElementById('moon-icon-mobile');
+
+        if (isDark) {
+          sunIcon?.classList.add('hidden');
+          moonIcon?.classList.remove('hidden');
+          sunIconMobile?.classList.add('hidden');
+          moonIconMobile?.classList.remove('hidden');
+        } else {
+          sunIcon?.classList.remove('hidden');
+          moonIcon?.classList.add('hidden');
+          sunIconMobile?.classList.remove('hidden');
+          moonIconMobile?.classList.add('hidden');
+        }
+      }
+
+      // Apply theme immediately
+      applyTheme();
+
+      // Also apply theme during view transitions (Astro lifecycle event)
+      document.addEventListener('astro:page-load', () => {
+        applyTheme();
+      });
+    </script>
     <!-- Google tag (gtag.js) -->
     <script
       is:inline
@@ -56,7 +102,8 @@ import MobileMenu from '../components/MobileMenu.astro';
       gtag('config', 'G-HWYNYW2MP3');
     </script>
   </head>
-  <body class='bg-lightGray'>
+  <body class='bg-lightGray text-inkBrown dark:bg-darkGray dark:text-pearl'>
+    <!-- <ScreenCutOverlay client:only="react" /> -->
     <MobileMenu />
     <Header isIndex={isIndex} isAbout={isAbout} />
     <slot />
@@ -83,6 +130,11 @@ import MobileMenu from '../components/MobileMenu.astro';
   body {
     margin: 0;
     padding: 0;
+    color: #2B2520; /* inkBrown - default text color */
+  }
+
+  .dark body {
+    color: #FAF8F3; /* pearl - dark mode text color */
   }
 
   p {
@@ -97,6 +149,21 @@ import MobileMenu from '../components/MobileMenu.astro';
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
+  }
+
+  /* Ensure headings inherit text color in dark mode */
+  .dark h1,
+  .dark h2,
+  .dark h3,
+  .dark h4,
+  .dark h5,
+  .dark h6 {
+    color: #FAF8F3; /* pearl */
+  }
+
+  /* Ensure links are visible in dark mode */
+  .dark a {
+    color: #FAF8F3; /* pearl */
   }
 
   .wrapper {
@@ -124,22 +191,32 @@ import MobileMenu from '../components/MobileMenu.astro';
     scrollbar-width: none; /* Firefox */
   }
 
-  /* Global focus styles for accessibility - default to black for light backgrounds */
+  /* Global focus styles for accessibility - warm colors for better aesthetics */
   a:focus-visible,
   button:focus-visible,
   input:focus-visible,
   textarea:focus-visible,
   select:focus-visible {
-    outline: 2px solid #313131;
+    outline: 2px solid #3D3935; /* charcoal */
     outline-offset: 4px;
     border-radius: 2px;
   }
 
   /* Additional focus ring for better visibility */
   *:focus-visible {
-    outline: 2px solid #313131;
+    outline: 2px solid #3D3935; /* charcoal */
     outline-offset: 4px;
     border-radius: 2px;
+  }
+
+  /* Dark mode focus styles - warm pearl outline on dark backgrounds */
+  .dark a:focus-visible,
+  .dark button:focus-visible,
+  .dark input:focus-visible,
+  .dark textarea:focus-visible,
+  .dark select:focus-visible,
+  .dark *:focus-visible {
+    outline-color: #FAF8F3; /* pearl */
   }
 
   /* White focus outline for elements on dark backgrounds */

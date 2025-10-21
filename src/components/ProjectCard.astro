@@ -13,21 +13,30 @@ interface Props {
 }
 
 const { href, title, body, bgImg, uiImg, bgAlt = `${title} background`, uiAlt = `${title} UI preview`, className } = Astro.props;
+
+// ANIMATIONS TEMPORARILY DISABLED
+// Create unique transition names based on href (e.g., /berkshiregrey)
+// const projectSlug = href.replace(/\//g, '');
+// const imageTransitionName = `project-image-${projectSlug}`;
+// const titleTransitionName = `project-title-${projectSlug}`;
 ---
 
 <div
   data-project-card
-  class={`translate-y-10 opacity-0 transition-all duration-1000 ease-in-out ${className || ''}`}
+  class={className || ''}
 >
   <a href={href} class='project-card-link'>
     <div
-      class='h-full border-2 border-black shadow-[5px_5px_2px_1px_darkGray] duration-200 hover:scale-105'
+      class='h-full border-2 border-charcoal dark:border-pearl'
     >
       <div
-        class='relative aspect-square overflow-hidden border-b-2 border-black'
+        class='relative aspect-square overflow-hidden border-b-2 border-charcoal dark:border-pearl'
+        {/* style={{
+          viewTransitionName: imageTransitionName,
+        }} */}
       >
         <Image
-          class='absolute bottom-1 right-1 z-10 aspect-auto h-2/5 w-auto animate-fadeIn opacity-0'
+          class='absolute bottom-1 right-1 z-10 aspect-auto h-2/5 w-auto'
           src={uiImg}
           alt={uiAlt}
         />
@@ -38,7 +47,12 @@ const { href, title, body, bgImg, uiImg, bgAlt = `${title} background`, uiAlt = 
         />
       </div>
       <div class='flex flex-col justify-between p-4'>
-        <div class='mb-2 text-lg'>
+        <div
+          class='mb-2 text-lg'
+          {/* style={{
+            viewTransitionName: titleTransitionName,
+          }} */}
+        >
           {title}
         </div>
         <p class='mb-2'>{body}</p>
@@ -50,8 +64,12 @@ const { href, title, body, bgImg, uiImg, bgAlt = `${title} background`, uiAlt = 
 
 <style>
   .project-card-link:focus-visible {
-    outline: 3px solid black;
+    outline: 3px solid #3D3935; /* charcoal */
     outline-offset: 4px;
     display: block;
+  }
+
+  .dark .project-card-link:focus-visible {
+    outline-color: #FAF8F3; /* pearl */
   }
 </style>
