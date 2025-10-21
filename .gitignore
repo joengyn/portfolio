@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # vs code files
 .vscode/
+
+# playwright mcp screenshots
+.playwright-mcp/
