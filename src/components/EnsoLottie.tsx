@@ -1,36 +1,31 @@
-import React, { useEffect, useState } from "react";
-import { Player, Controls } from "@lottiefiles/react-lottie-player";
+import React, { useEffect, useRef } from "react";
+import lottie from "lottie-web";
 import ensoCircle from "../assets/lotties/enso-circle.json";
 
 function EnsoLottie() {
-  const [showAnimation, setShowAnimation] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const animationRef = useRef<any>(null);
 
   useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      setShowAnimation(true);
-    }, 0);
+    if (containerRef.current && !animationRef.current) {
+      animationRef.current = lottie.loadAnimation({
+        container: containerRef.current,
+        renderer: "svg",
+        loop: false,
+        autoplay: true,
+        animationData: ensoCircle,
+      });
+    }
 
-    return () => clearTimeout(timeoutId);
+    return () => {
+      if (animationRef.current) {
+        animationRef.current.destroy();
+        animationRef.current = null;
+      }
+    };
   }, []);
 
-  return (
-    <div>
-      {showAnimation && (
-        <Player
-          autoplay
-          loop={false}
-          keepLastFrame={true}
-          src={ensoCircle}
-          style={{ height: "100%", width: "100%" }}
-        >
-          <Controls
-            visible={false}
-            buttons={["play", "repeat", "frame", "debug"]}
-          />
-        </Player>
-      )}
-    </div>
-  );
+  return <div ref={containerRef} style={{ height: "100%", width: "100%" }} />;
 }
 
 export default EnsoLottie;

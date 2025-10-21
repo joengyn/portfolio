@@ -46,8 +46,9 @@ const visibleProjects = await Promise.all(
       <div
         class='my-auto w-1/2 max-w-[300px] sm:order-first'
         id='lottie-container'
+        style='min-height: 300px;'
       >
-        <EnsoLottie client:only="react" />
+        <EnsoLottie client:load />
       </div>
     </div>
     <!-- Case Studies Section -->

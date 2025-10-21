@@ -1,21 +1,31 @@
-import React from "react";
-import { Player, Controls } from "@lottiefiles/react-lottie-player";
+import React, { useEffect, useRef } from "react";
+import lottie from "lottie-web";
 import wave from "../assets/wave.json";
 
 function WaveLottie() {
-  return (
-    <Player
-      autoplay
-      loop={true}
-      src={wave}
-      style={{ height: "100%", width: "100%" }}
-    >
-      <Controls
-        visible={false}
-        buttons={["play", "repeat", "frame", "debug"]}
-      />
-    </Player>
-  );
+  const containerRef = useRef<HTMLDivElement>(null);
+  const animationRef = useRef<any>(null);
+
+  useEffect(() => {
+    if (containerRef.current && !animationRef.current) {
+      animationRef.current = lottie.loadAnimation({
+        container: containerRef.current,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        animationData: wave,
+      });
+    }
+
+    return () => {
+      if (animationRef.current) {
+        animationRef.current.destroy();
+        animationRef.current = null;
+      }
+    };
+  }, []);
+
+  return <div ref={containerRef} style={{ height: "100%", width: "100%" }} />;
 }
 
 export default WaveLottie;

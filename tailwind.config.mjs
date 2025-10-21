@@ -17,9 +17,6 @@ export default {
         gray: "#d3d3d3",
         darkGray: "#313131",
       },
-      backgroundImage: {
-        wave: "url('src/assets/black-wave.jpeg')",
-      },
       screens: {
         'custom-md': '425px',
       },
