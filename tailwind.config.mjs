@@ -5,28 +5,29 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Warm palette inspired by paper, bamboo, and natural materials
-        // Light mode
-        lightGray: "#FAF8F3",  // Warm cream (like aged paper) - was #f3f3f3
-        gray: "#E6DFD0",        // Warm sand (like bamboo mat) - was #d3d3d3
-        darkGray: "#0F0E0D",    // Very dark warm charcoal (70% darker!) - was #313131
-
-        // Semantic color aliases for better readability
-        cream: "#FAF8F3",       // Same as lightGray
-        linen: "#F0EBE3",       // Secondary surfaces
-        sand: "#E6DFD0",        // Same as gray
-        inkBrown: "#2B2520",    // Warm dark text
-        charcoal: "#3D3935",    // Secondary text/borders
-
-        // Dark mode specific
-        obsidian: "#0F0E0D",    // Same as darkGray - main dark bg
-        slate: "#1C1A18",       // Dark mode secondary surfaces
-        stone: "#2B2825",       // Dark mode elevated surfaces
-        pearl: "#FAF8F3",       // Dark mode text
-        ash: "#D4CFC7",         // Dark mode secondary text
+        // Simplified warm palette - light to dark
+        white: "#FAF8F3",       // Lightest - main light bg and text
+        sand: "#E6DFD0",        // Light - secondary surfaces
+        slate: "#1C1A18",       // Dark - secondary dark surfaces and borders
+        black: "#0F0E0D",       // Darkest - main dark bg and text
       },
       screens: {
         'custom-md': '425px',
+      },
+      boxShadow: {
+        // Depth shadows - light mode (subtle warm-toned blacks)
+        'depth-xs': '0 1px 2px rgba(15, 14, 13, 0.05)',
+        'depth-sm': '0 2px 4px rgba(15, 14, 13, 0.08)',
+        'depth-md': '0 4px 12px rgba(15, 14, 13, 0.12)',
+        'depth-lg': '0 8px 24px rgba(15, 14, 13, 0.15)',
+        'depth-xl': '0 12px 48px rgba(15, 14, 13, 0.2)',
+        // Interactive shadows for hover/lift effects
+        'lift-sm': '0 4px 8px rgba(15, 14, 13, 0.1)',
+        'lift-md': '0 8px 16px rgba(15, 14, 13, 0.15)',
+        'lift-lg': '0 12px 32px rgba(15, 14, 13, 0.2)',
+      },
+      transitionDuration: {
+        '250': '250ms',
       },
     },
   },

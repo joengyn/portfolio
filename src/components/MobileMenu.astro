@@ -4,27 +4,30 @@ import resume from '../../public/resume.pdf';
 ---
 
 <div
-  class='mobile-menu fixed right-0 top-0 z-50 flex h-screen w-1/2 translate-x-full flex-col gap-10 bg-darkGray p-4 pt-10 text-right text-pearl md:hidden'
+  class='mobile-menu fixed right-0 top-0 z-50 flex h-screen w-1/2 translate-x-full flex-col bg-black text-right text-white md:hidden'
   id='mobile-menu'
   role='navigation'
   aria-label='Mobile navigation'
   inert
 >
-  <!-- Close Button -->
-  <button
-    type='button'
-    aria-label='Close navigation menu'
-    class='self-end p-1'
-    id='close-menu'
-    tabindex="-1"
-  >
-    <span aria-hidden='true' class='relative h-6 w-6 flex items-center justify-center'>
-      <!-- Diagonal Line 1 -->
-      <span class='absolute h-1 w-full rotate-45 bg-[#FAF8F3]'></span>
-      <!-- Diagonal Line 2 -->
-      <span class='absolute h-1 w-full -rotate-45 bg-[#FAF8F3]'></span>
-    </span>
-  </button>
+  <!-- Close Button Row - mirrors header structure -->
+  <div class='flex flex-row items-center justify-end p-4 h-[80px]'>
+    <button
+      type='button'
+      aria-label='Close navigation menu'
+      class='bg-transparent'
+      id='close-menu'
+      tabindex="-1"
+    >
+      <span aria-hidden='true' class='relative h-6 w-6 flex items-center justify-center bg-transparent'>
+        <!-- Diagonal Line 1 -->
+        <span class='absolute h-1 w-6 rotate-45 bg-[#FAF8F3]'></span>
+        <!-- Diagonal Line 2 -->
+        <span class='absolute h-1 w-6 -rotate-45 bg-[#FAF8F3]'></span>
+      </span>
+    </button>
+  </div>
+  <div class='flex flex-col gap-10 px-4'>
   <!-- Menu Links -->
   <a
     class='menu-link w-min ml-auto text-xl font-bold tracking-widest text-[#FAF8F3]'
@@ -46,7 +49,7 @@ import resume from '../../public/resume.pdf';
   >resume</a
   >
   <a
-    class='menu-contact w-min ml-auto flex min-w-12 items-center gap-2 rounded-sm border-2 border-[#3D3935] px-4 py-2 shadow-[3px_3px_0px_1px] shadow-[#3D3935] bg-[#FAF8F3] text-[12px] font-bold uppercase tracking-widest text-[#2B2520]'
+    class='menu-contact w-min ml-auto flex min-w-12 items-center gap-2 rounded-sm px-4 py-2 border-2 bg-black text-white border-white text-[12px] font-bold uppercase tracking-widest'
     href='mailto:joe.ngyn7@gmail.com'
     tabindex="-1"
   >
@@ -93,40 +96,41 @@ import resume from '../../public/resume.pdf';
       ></path>
     </svg>
   </button>
+  </div>
 </div>
 
 <style>
   /* Mobile menu is always dark background, so always use light text */
   .mobile-menu {
-    color: #FAF8F3 !important; /* pearl */
+    color: #FAF8F3 !important; /* white */
   }
 
   .mobile-menu .menu-link {
-    color: #FAF8F3 !important; /* pearl - override any global styles */
+    color: #FAF8F3 !important; /* white - override any global styles */
   }
 
   .mobile-menu a {
-    color: #FAF8F3 !important; /* pearl - catch all links */
+    color: #FAF8F3 !important; /* white - catch all links */
   }
 
   /* Close button X lines */
-  #close-menu span {
-    background-color: #FAF8F3; /* pearl */
+  #close-menu span.absolute {
+    background-color: #FAF8F3; /* white */
   }
 
   .menu-link:focus-visible {
-    outline: 2px solid #FAF8F3; /* pearl */
+    outline: 2px solid #FAF8F3; /* white */
     outline-offset: 4px;
     border-radius: 2px;
   }
 
   .menu-contact:focus-visible {
-    outline: 2px solid #FAF8F3; /* pearl */
+    outline: 2px solid #FAF8F3; /* white */
     outline-offset: 4px;
   }
 
   #close-menu:focus-visible {
-    outline: 2px solid #FAF8F3; /* pearl */
+    outline: 2px solid #FAF8F3; /* white */
     outline-offset: 2px;
     border-radius: 2px;
     display: flex;

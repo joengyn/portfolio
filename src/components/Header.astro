@@ -16,41 +16,17 @@ import resume from '../../public/resume.pdf';
 <header
   id='header'
   data-page-type={isIndex || isAbout ? 'no-scroll' : 'scroll'}
-  class='fixed top-0 z-40 w-full bg-lightGray text-inkBrown dark:bg-darkGray dark:text-pearl'
+  class='fixed top-0 z-40 w-full bg-white text-black dark:bg-black dark:text-white'
 >
   <div class='flex flex-row items-center justify-between p-4 tracking-wider'>
-    <!-- Name -->
-    <a class='md:hidden' href='/'>JOE.<br />NGYN</a>
-    <a class='hidden md:block' href='/'>JOE.NGYN</a>
-    <!-- Mobile Menu Button -->
-    <button
-      type='button'
-      class='menu-button space-y-1 md:hidden'
-      aria-label='Toggle navigation menu'
-      aria-expanded='false'
-      aria-controls='mobile-menu'
-    >
-      <div class='h-1 w-6 bg-[#2B2520] dark:bg-[#FAF8F3]'></div>
-      <div class='h-1 w-6 bg-[#2B2520] dark:bg-[#FAF8F3]'></div>
-      <div class='h-1 w-6 bg-[#2B2520] dark:bg-[#FAF8F3]'></div>
-    </button>
-    <!-- Menu Links -->
-    <div class='hidden items-center justify-end gap-3 md:flex'>
-      <a href='/'>work</a>
-      <a href='/about'>about</a>
-      <a target='_blank' href={resume}>resume</a>
-      <a
-        class='flex min-w-12 items-center gap-2 rounded-sm border-2 border-charcoal dark:border-pearl px-4 py-2 shadow-[3px_3px_0px_1px] shadow-charcoal dark:shadow-pearl text-[12px] font-bold uppercase tracking-widest'
-        href='mailto:joe.ngyn7@gmail.com'
-      >
-        Contact
-      </a>
-      <!-- Dark Mode Toggle -->
+    <!-- Left side: Theme toggle (desktop only) + Name -->
+    <div class='flex items-center gap-2'>
+      <!-- Dark Mode Toggle (Desktop) -->
       <button
         id='theme-toggle'
         type='button'
         aria-label='Toggle dark mode'
-        class='flex h-10 w-10 items-center justify-center'
+        class='hidden md:flex h-6 w-6 items-center justify-center'
       >
         <!-- Sun Icon (visible in light mode) -->
         <svg
@@ -85,6 +61,33 @@ import resume from '../../public/resume.pdf';
           ></path>
         </svg>
       </button>
+      <!-- Name -->
+      <a class='md:hidden' href='/'>JOE.<br />NGYN</a>
+      <a class='hidden md:block' href='/'>JOE.NGYN</a>
+    </div>
+    <!-- Mobile Menu Button -->
+    <button
+      type='button'
+      class='menu-button space-y-1 md:hidden'
+      aria-label='Toggle navigation menu'
+      aria-expanded='false'
+      aria-controls='mobile-menu'
+    >
+      <div class='h-1 w-6 bg-black dark:bg-white'></div>
+      <div class='h-1 w-6 bg-black dark:bg-white'></div>
+      <div class='h-1 w-6 bg-black dark:bg-white'></div>
+    </button>
+    <!-- Menu Links -->
+    <div class='hidden items-center justify-end gap-3 md:flex'>
+      <a href='/'>work</a>
+      <a href='/about'>about</a>
+      <a target='_blank' href={resume}>resume</a>
+      <a
+        class='flex min-w-12 items-center gap-2 rounded-sm px-4 py-2 border-2 bg-white text-black border-black dark:bg-black dark:text-white dark:border-white text-[12px] font-bold uppercase tracking-widest'
+        href='mailto:joe.ngyn7@gmail.com'
+      >
+        Contact
+      </a>
     </div>
     <!--  Logo -->
     <div class='absolute inset-0 z-[-1] flex items-center justify-center'>
@@ -102,10 +105,86 @@ import resume from '../../public/resume.pdf';
       />
     </div>
   </div>
-  <div class='mx-4 border-t-2 border-charcoal dark:border-pearl'></div>
+  <div class='mx-4 border-t-2 border-slate dark:border-white'></div>
 </header>
 
-<style></style>
+<style>
+  header {
+    transition: box-shadow 300ms ease-out;
+    box-shadow: 0 1px 2px rgba(15, 14, 13, 0.05);
+  }
+
+  :global(.dark) header {
+    box-shadow: 0 1px 2px rgba(250, 248, 243, 0.05);
+  }
+
+  /* Regular navigation links (excluding mailto and contact button) */
+  header a:not([href^='mailto:']) {
+    transition: opacity 200ms ease-out;
+    position: relative;
+  }
+
+  header a:not([href^='mailto:']):hover {
+    opacity: 0.7;
+  }
+
+  header a:not([href^='mailto:'])::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 250ms ease-out;
+  }
+
+  header a:not([href^='mailto:']):hover::after {
+    width: 100%;
+  }
+
+  #theme-toggle {
+    transition: transform 200ms ease-out;
+  }
+
+  #theme-toggle:hover {
+    transform: rotate(20deg);
+  }
+
+  #theme-toggle:focus-visible {
+    outline: 2px solid #1C1A18; /* slate */
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  .dark #theme-toggle:focus-visible {
+    outline-color: #FAF8F3; /* white */
+  }
+
+  /* Contact button styling in header */
+  header a[href^='mailto:'] {
+    transition: all 250ms ease-out !important;
+  }
+
+  header a[href^='mailto:']:hover {
+    box-shadow: 0 8px 16px rgba(15, 14, 13, 0.15) !important;
+    transform: translateY(-2px) !important;
+    opacity: 1 !important;
+  }
+
+  :global(.dark) header a[href^='mailto:']:hover {
+    box-shadow: 0 8px 16px rgba(250, 248, 243, 0.1) !important;
+  }
+
+  header a[href^='mailto:']:active {
+    transform: scale(0.98) !important;
+    box-shadow: 0 2px 4px rgba(15, 14, 13, 0.08) !important;
+  }
+
+  :global(.dark) header a[href^='mailto:']:active {
+    box-shadow: 0 2px 4px rgba(250, 248, 243, 0.05) !important;
+  }
+</style>
 
 <script>
   // Open Mobile Menu

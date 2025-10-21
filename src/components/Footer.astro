@@ -17,7 +17,7 @@ const optimizedBackground = await getImage({
 ---
 
 <footer
-  class='bg-cover bg-center bg-no-repeat text-pearl'
+  class='bg-cover bg-center bg-no-repeat text-white'
   style={`background-image: url(${optimizedBackground.src});`}
 >
   <div
@@ -31,7 +31,7 @@ const optimizedBackground = await getImage({
 
     <div class='flex flex-col items-center gap-6'>
       <a
-        class='footer-contact-button flex min-w-12 items-center gap-2 rounded-sm border-2 border-pearl px-4 py-2 shadow-[3px_3px_0px_1px] shadow-pearl bg-darkGray text-[12px] font-bold uppercase tracking-widest text-pearl'
+        class='footer-contact-button flex min-w-12 items-center gap-2 rounded-sm px-4 py-2 border-2 bg-black text-white border-white text-[12px] font-bold uppercase tracking-widest'
         href='mailto:joe.ngyn7@gmail.com'
       >
         Contact
@@ -80,21 +80,78 @@ const optimizedBackground = await getImage({
 </footer>
 
 <style>
+  /* Footer links hover effect */
+  .footer-link {
+    position: relative;
+    transition: opacity 200ms ease-out;
+  }
+
+  .footer-link:hover {
+    opacity: 0.8;
+  }
+
+  .footer-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 250ms ease-out;
+  }
+
+  .footer-link:hover::after {
+    width: 100%;
+  }
+
+  /* Social icons hover effect */
+  a[aria-label='Visit LinkedIn profile'],
+  a[aria-label='Visit GitHub profile'] {
+    transition: transform 200ms ease-out, opacity 200ms ease-out;
+  }
+
+  a[aria-label='Visit LinkedIn profile']:hover,
+  a[aria-label='Visit GitHub profile']:hover {
+    transform: scale(1.1) translateY(-2px);
+    opacity: 0.9;
+  }
+
+  a[aria-label='Visit LinkedIn profile']:active,
+  a[aria-label='Visit GitHub profile']:active {
+    transform: scale(0.95);
+  }
+
+  /* Contact button hover */
+  .footer-contact-button {
+    transition: all 250ms ease-out;
+  }
+
+  .footer-contact-button:hover {
+    box-shadow: 0 4px 12px rgba(250, 248, 243, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .footer-contact-button:active {
+    transform: scale(0.98);
+  }
+
+  /* Focus states */
   .footer-link:focus-visible {
-    outline: 2px solid #FAF8F3; /* pearl */
+    outline: 2px solid #FAF8F3; /* white */
     outline-offset: 4px;
     border-radius: 2px;
   }
 
   a[aria-label='Visit LinkedIn profile']:focus-visible,
   a[aria-label='Visit GitHub profile']:focus-visible {
-    outline: 2px solid #FAF8F3; /* pearl */
+    outline: 2px solid #FAF8F3; /* white */
     outline-offset: 4px;
     border-radius: 2px;
   }
 
   .footer-contact-button:focus-visible {
-    outline: 2px solid #FAF8F3; /* pearl */
+    outline: 2px solid #FAF8F3; /* white */
     outline-offset: 4px;
   }
 </style>

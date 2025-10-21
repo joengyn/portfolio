@@ -13,6 +13,7 @@ interface Props {
   tools: string[];
   duration: string;
   slug?: string;
+  invertLogo?: boolean;
 }
 
 const {
@@ -26,6 +27,7 @@ const {
   tools,
   duration,
   slug,
+  invertLogo = true,
 } = Astro.props;
 
 // ANIMATIONS TEMPORARILY DISABLED
@@ -35,7 +37,7 @@ const {
 // const titleTransitionName = `project-title-${projectSlug}`;
 ---
 
-<div class='banner m-4 mx-auto max-w-[1800px] bg-sand dark:bg-slate'>
+<div class='banner m-4 mx-auto max-w-[1800px] bg-sand dark:bg-slate shadow-depth-md rounded-lg overflow-hidden'>
   <div
     class='relative flex items-center'
     {/* style={{
@@ -65,7 +67,7 @@ const {
   </div>
   <!-- Logo -->
   <div class='p-6 pb-0 md:px-8'>
-    <Image src={logo} alt={logoAlt} class='h-10 w-auto' />
+    <Image src={logo} alt={logoAlt} class={`h-10 w-auto ${invertLogo ? 'dark:invert' : ''}`} />
   </div>
   <!-- Banner Info -->
   <div

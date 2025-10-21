@@ -27,11 +27,7 @@ import songsMobile from '../assets/grammaroke/songs-mobile.webp';
 import annotationsMobile from '../assets/grammaroke/annotations-mobile.webp';
 import annotations from '../assets/grammaroke/annotations.webp';
 
-// Videos
-
-// MP4s
-import annotationsVideo from '../assets/grammaroke/annotations-video.mp4';
-import scrollingVideo from '../assets/grammaroke/scrolling-video.mp4';
+// Videos - using public folder for better compatibility
 
 const projectSchema = {
   "@context": "https://schema.org",
@@ -241,8 +237,9 @@ const projectSchema = {
       </p>
 
       <!-- Old Annotations Video -->
-      <video autoplay loop muted playsinline class='mb-2 border'>
-        <source src={annotationsVideo} type='video/mp4' />
+      <video autoplay loop muted playsinline class='mb-2 w-full border'>
+        <source src="/annotations-video.webm" type='video/webm' />
+        <source src="/annotations-video.mp4" type='video/mp4' />
         Your browser does not support the video tag.
       </video>
       <figcaption class='mb-10 text-center text-sm'>
@@ -250,8 +247,9 @@ const projectSchema = {
       </figcaption>
 
       <!-- Old Scrolling Video -->
-      <video autoplay loop muted playsinline class='mb-2 border'>
-        <source src={scrollingVideo} type='video/mp4' />
+      <video autoplay loop muted playsinline class='mb-2 w-full border'>
+        <source src="/scrolling-video.webm" type='video/webm' />
+        <source src="/scrolling-video.mp4" type='video/mp4' />
         Your browser does not support the video tag.
       </video>
       <figcaption class='mb-10 text-center text-sm'>
@@ -450,6 +448,7 @@ const projectSchema = {
           src='https://logo.svgcdn.com/d/vercel-original.png'
           alt='Vercel Logo'
           width='60'
+          class='dark:invert'
         />
 
         <img

@@ -29,6 +29,7 @@ const visibleProjects = await Promise.all(
     .map(async (project) => {
       const bgPath = project.bgImg;
       const uiPath = project.uiImg;
+      const logoPath = project.logo;
 
       if (!imageModules[bgPath] || !imageModules[uiPath]) {
         console.error(`Image module not found for project: ${project.title}`);
@@ -37,11 +38,13 @@ const visibleProjects = await Promise.all(
 
       const bgImgModule = await imageModules[bgPath]();
       const uiImgModule = await imageModules[uiPath]();
+      const logoModule = logoPath && imageModules[logoPath] ? await imageModules[logoPath]() : null;
 
       return {
         ...project,
         bgImg: bgImgModule.default,
         uiImg: uiImgModule.default,
+        logo: logoModule?.default,
       };
     }),
 ).then((projects) => projects.filter(Boolean)); // Filter out nulls
@@ -83,6 +86,7 @@ const visibleProjects = await Promise.all(
           body={project.body}
           bgImg={project.bgImg}
           uiImg={project.uiImg}
+          logo={project.logo}
           bgAlt={project.bgAlt}
           uiAlt={project.uiAlt}
           className={project.className}
