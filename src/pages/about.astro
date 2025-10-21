@@ -1,13 +1,34 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
+import StructuredData from '../components/StructuredData.astro';
 import { Image } from 'astro:assets';
 
 import profileImg from '../../public/profile.webp';
 import fpvClip from '../../public/fpv-clip.mp4';
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Joe Nguyen",
+  "jobTitle": "Designer & Engineer",
+  "url": "https://joengyn.com",
+  "description": "Designer and engineer specializing in UX/UI design, human-centered research, and product engineering",
+  "alumniOf": "Tufts University",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Boulder",
+    "addressRegion": "CO"
+  }
+};
 ---
 
-<Layout title='about page' isAbout={true}>
+<Layout
+  title='About Joe Nguyen | Designer & Engineer'
+  description='About Joe Nguyen - Designer and engineer based in Boulder, CO, specializing in UX/UI design, human-centered research, and product engineering.'
+  isAbout={true}
+>
+  <StructuredData slot="structured-data" schema={personSchema} />
   <main class='mt-[80px]'>
     <div class='wrapper'>
       <Image

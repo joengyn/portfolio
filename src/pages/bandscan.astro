@@ -6,6 +6,7 @@ import { Image } from 'astro:assets';
 import Banner from '../components/Banner.astro';
 import Button from '../components/Button.astro';
 import Layout from '../layouts/Layout.astro';
+import StructuredData from '../components/StructuredData.astro';
 
 // Banner Assets
 import bandscanLogo from '../assets/bandscan/bandscan-logo.webp';
@@ -70,9 +71,26 @@ import loginMp4 from '../assets/bandscan/login.mp4';
 import onboardingMp4 from '../assets/bandscan/artist-onboard.mp4';
 import exploreMp4 from '../assets/bandscan/explore.mp4';
 import pageSwipeMp4 from '../assets/bandscan/page-swiping.mp4';
+
+const projectSchema = {
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Bandscan",
+  "description": "Design and development of a mobile app for discovering local artists and live music events",
+  "author": {
+    "@type": "Person",
+    "name": "Joe Nguyen"
+  },
+  "url": "https://joengyn.com/bandscan",
+  "keywords": ["UX Design", "UI Design", "Mobile App", "SolidJS", "Music Discovery"]
+};
 ---
 
-<Layout title='Joe Nguyen | Bandscan Case Study'>
+<Layout
+  title='Bandscan Case Study | Joe Nguyen'
+  description='Bandscan case study - Design and development of a mobile app for discovering local artists and live music events using SolidJS and modern UX patterns.'
+>
+  <StructuredData slot="structured-data" schema={projectSchema} />
   <main class='mt-[100px]'>
     <!-- Banner -->
     <Banner

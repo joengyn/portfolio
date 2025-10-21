@@ -2,7 +2,21 @@
 import Layout from '../layouts/Layout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import EnsoLottie from '../components/EnsoLottie.tsx';
+import StructuredData from '../components/StructuredData.astro';
 import projectsData from '../data/projects.json';
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Joe Nguyen Portfolio",
+  "url": "https://joengyn.com",
+  "author": {
+    "@type": "Person",
+    "name": "Joe Nguyen",
+    "jobTitle": "Designer & Engineer"
+  },
+  "description": "Portfolio showcasing UX/UI design and frontend development work"
+};
 
 const imageModules = import.meta.glob('../assets/**/*.{webp,png,jpg,svg}');
 
@@ -30,7 +44,12 @@ const visibleProjects = await Promise.all(
 ).then((projects) => projects.filter(Boolean)); // Filter out nulls
 ---
 
-<Layout title='Joe Nguyen | Designer & Engineer' isIndex={true}>
+<Layout
+  title='Joe Nguyen | Designer & Engineer'
+  description='Portfolio of Joe Nguyen - UX/UI Designer and Frontend Developer showcasing design and engineering projects in robotics, music tech, and mobile applications.'
+  isIndex={true}
+>
+  <StructuredData slot="structured-data" schema={websiteSchema} />
   <main class='mx-4 mb-10 mt-[80px] grid gap-5'>
     <!-- Intro Section -->
     <div class='flex pt-3 sm:flex-col sm:items-center sm:text-center'>

@@ -6,6 +6,7 @@ import { Image } from 'astro:assets';
 import Banner from '../components/Banner.astro';
 import Button from '../components/Button.astro';
 import Layout from '../layouts/Layout.astro';
+import StructuredData from '../components/StructuredData.astro';
 
 // Banner Assets
 import grammarokeLogo from '../assets/grammaroke/favicon.svg';
@@ -31,9 +32,26 @@ import annotations from '../assets/grammaroke/annotations.webp';
 // MP4s
 import annotationsVideo from '../assets/grammaroke/annotations-video.mp4';
 import scrollingVideo from '../assets/grammaroke/scrolling-video.mp4';
+
+const projectSchema = {
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Grammaroke",
+  "description": "Design and development of a music-focused language learning web application",
+  "author": {
+    "@type": "Person",
+    "name": "Joe Nguyen"
+  },
+  "url": "https://joengyn.com/grammaroke",
+  "keywords": ["Web Development", "UX Design", "Education Technology", "Language Learning"]
+};
 ---
 
-<Layout title='Joe Nguyen | Grammaroke Case Study'>
+<Layout
+  title='Grammaroke Case Study | Joe Nguyen'
+  description='Grammaroke case study - Design and development of a music-focused language learning web application combining karaoke-style lyrics with interactive annotations.'
+>
+  <StructuredData slot="structured-data" schema={projectSchema} />
   <main class='mt-[100px]'>
     <!-- Banner -->
     <Banner

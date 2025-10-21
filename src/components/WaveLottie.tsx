@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import lottie from "lottie-web";
 import wave from "../assets/wave.json";
+import ErrorBoundary from "./ErrorBoundary";
 
-function WaveLottie() {
+function WaveLottieContent() {
   const containerRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<any>(null);
 
@@ -26,6 +27,14 @@ function WaveLottie() {
   }, []);
 
   return <div ref={containerRef} style={{ height: "100%", width: "100%" }} />;
+}
+
+function WaveLottie() {
+  return (
+    <ErrorBoundary fallback={<div style={{ height: "100%", width: "100%" }} />}>
+      <WaveLottieContent />
+    </ErrorBoundary>
+  );
 }
 
 export default WaveLottie;

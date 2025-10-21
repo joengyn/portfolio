@@ -7,6 +7,7 @@ import Layout from '../layouts/Layout.astro';
 import Banner from '../components/Banner.astro';
 import Button from '../components/Button.astro';
 import ImageSlider from '../components/ImageSlider.astro';
+import StructuredData from '../components/StructuredData.astro';
 
 // Banner Assets
 import bgLogo from '../assets/berkshiregrey/bg-logo.svg';
@@ -29,9 +30,26 @@ import xdIcon from '../assets/berkshiregrey/xd.webp';
 import figmaIcon from '../assets/berkshiregrey/figma.webp';
 import reactIcon from '../assets/berkshiregrey/react.webp';
 import pythonIcon from '../assets/berkshiregrey/python.webp';
+
+const projectSchema = {
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Berkshire Grey",
+  "description": "Design of Human Machine Interfaces (HMIs) for AI-enabled enterprise robotics systems",
+  "author": {
+    "@type": "Person",
+    "name": "Joe Nguyen"
+  },
+  "url": "https://joengyn.com/berkshiregrey",
+  "keywords": ["HMI Design", "UX Design", "Robotics", "Enterprise Software"]
+};
 ---
 
-<Layout title='Joe Nguyen | Berkshire Grey Case Study'>
+<Layout
+  title='Berkshire Grey Case Study | Joe Nguyen'
+  description='Berkshire Grey case study - Design of Human Machine Interfaces (HMIs) for AI-enabled enterprise robotics systems, focusing on usability and operator efficiency.'
+>
+  <StructuredData slot="structured-data" schema={projectSchema} />
   <main class='mt-[100px]'>
     <!-- Image Slider -->
     <ImageSlider images={images} />

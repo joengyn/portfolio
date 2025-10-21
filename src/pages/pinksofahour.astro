@@ -7,6 +7,7 @@ import Banner from '../components/Banner.astro';
 import Button from '../components/Button.astro';
 import ImageSlider from '../components/ImageSlider.astro';
 import Layout from '../layouts/Layout.astro';
+import StructuredData from '../components/StructuredData.astro';
 
 // Banner Assets
 import pshLogo from '../assets/pinksofahour/psh-logo.webp';
@@ -48,9 +49,26 @@ const images = [
   pshTraffic,
   couchedPage,
 ];
+
+const projectSchema = {
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Pink Sofa Hour",
+  "description": "Web design for a Colorado-based music interview show focused on cultivating community by connecting artists and audiences through thoughtful branding and digital presence",
+  "author": {
+    "@type": "Person",
+    "name": "Joe Nguyen"
+  },
+  "url": "https://joengyn.com/pinksofahour",
+  "keywords": ["Web Design", "Branding", "Music Community", "Wix Studio", "Creative Direction"]
+};
 ---
 
-<Layout title='Joe Nguyen | Pink Sofa Hour Case Study'>
+<Layout
+  title='Pink Sofa Hour Case Study | Joe Nguyen'
+  description='Pink Sofa Hour case study - Web design for a local music show, cultivating community by connecting artists and audiences through thoughtful branding and digital presence.'
+>
+  <StructuredData slot="structured-data" schema={projectSchema} />
   <main class='mt-[100px]'>
     <!-- Image Slider -->
     <ImageSlider images={images} />
