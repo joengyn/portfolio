@@ -213,6 +213,70 @@
 }
 
 // ============================================
+// BANNER CONTENT FADE-IN (after image transition)
+// ============================================
+
+@keyframes bannerContentFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.banner-content-fade {
+  animation: bannerContentFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) 1.65s forwards;
+  opacity: 0;
+}
+
+// Main page content fade-in (after banner content completes)
+.page-content-fade {
+  animation: bannerContentFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) 2.35s forwards;
+  opacity: 0;
+}
+
+// ============================================
+// MODAL ANIMATIONS
+// ============================================
+
+// Modal backdrop fade-in
+@keyframes modalBackdropFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Modal content slide up and fade
+@keyframes modalContentSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Modal backdrop blur effect (smooth entrance)
+.modal-backdrop {
+  animation: modalBackdropFadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.modal-backdrop-blur {
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  animation: modalContentSlideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.1s forwards;
+  opacity: 0;
+}
+
+// ============================================
 // REDUCED MOTION SUPPORT
 // ============================================
 

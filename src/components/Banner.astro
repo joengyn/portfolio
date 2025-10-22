@@ -30,19 +30,17 @@ const {
   invertLogo = true,
 } = Astro.props;
 
-// ANIMATIONS TEMPORARILY DISABLED
 // Derive slug from current URL if not provided
-// const projectSlug = slug || new URL(Astro.request.url).pathname.replace(/\//g, '');
-// const imageTransitionName = `project-image-${projectSlug}`;
-// const titleTransitionName = `project-title-${projectSlug}`;
+const projectSlug = slug || new URL(Astro.request.url).pathname.replace(/\//g, '');
+const imageTransitionName = `project-image-${projectSlug}`;
 ---
 
-<div class='banner m-4 mx-auto max-w-[1800px] bg-sand dark:bg-slate shadow-depth-md rounded-lg overflow-hidden'>
+<div class='banner m-4 mx-auto max-w-[1800px] bg-sand dark:bg-slate shadow-depth-md overflow-hidden'>
   <div
     class='relative flex items-center'
-    {/* style={{
+    style={{
       viewTransitionName: imageTransitionName,
-    }} */}
+    }}
   >
     <!-- Gradient -->
     <div
@@ -52,9 +50,6 @@ const {
     <!-- Title -->
     <span
       class='absolute left-8 max-w-[300px] text-[40px] uppercase text-white md:max-w-[400px] md:text-[60px] lg:text-[80px]'
-      {/* style={{
-        viewTransitionName: titleTransitionName,
-      }} */}
     >
       {title}
     </span>
@@ -66,12 +61,12 @@ const {
     />
   </div>
   <!-- Logo -->
-  <div class='p-6 pb-0 md:px-8'>
+  <div class='banner-content-fade p-6 pb-0 md:px-8'>
     <Image src={logo} alt={logoAlt} class={`h-10 w-auto ${invertLogo ? 'dark:invert' : ''}`} />
   </div>
   <!-- Banner Info -->
   <div
-    class='grid-row grid gap-6 p-6 pb-10 md:grid-cols-[2fr_2fr_1fr_1fr] md:gap-8 md:px-8'
+    class='banner-content-fade grid-row grid gap-6 p-6 pb-10 md:grid-cols-[2fr_2fr_1fr_1fr] md:gap-8 md:px-8'
   >
     <!-- Overview -->
     <div class='flex flex-col gap-2'>
@@ -123,6 +118,10 @@ const {
 </div>
 
 <style>
+  .banner {
+    margin: 1rem;
+  }
+
   .banner p {
     font-size: 16px;
     margin-bottom: 0;
@@ -131,6 +130,5 @@ const {
   .banner h4 {
     font-size: 16px;
     font-weight: bold;
-    /* margin-bottom: 10px; */
   }
 </style>

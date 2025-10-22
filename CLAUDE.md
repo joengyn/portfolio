@@ -2,6 +2,17 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Important: Always Check PLAN.md
+
+**Before starting any work, always read [PLAN.md](./PLAN.md)** for:
+- ✅ Current implementation status and what's already built
+- 🚧 Features in progress and known issues
+- 📋 Planned features and development roadmap
+- 💡 Ideas, notes, and architectural decisions
+- 📚 Usage guides for the modal system and animations
+
+PLAN.md is the single source of truth for project status and development direction.
+
 ## Project Overview
 
 This is a personal portfolio website built with **Astro**, featuring case studies of design and engineering projects. The site showcases Joe Nguyen's work as a designer and engineer, with interactive animations and responsive design. The portfolio is deployed at [joengyn.com](https://joengyn.com/).

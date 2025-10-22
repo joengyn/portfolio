@@ -16,7 +16,7 @@ import resume from '../../public/resume.pdf';
 <header
   id='header'
   data-page-type={isIndex || isAbout ? 'no-scroll' : 'scroll'}
-  class='fixed top-0 z-40 w-full bg-white text-black dark:bg-black dark:text-white'
+  class={`${isIndex ? 'relative' : 'fixed top-0'} z-50 w-full bg-white text-black dark:bg-black dark:text-white`}
 >
   <div class='flex flex-row items-center justify-between p-4 tracking-wider'>
     <!-- Left side: Theme toggle (desktop only) + Name -->
@@ -110,12 +110,21 @@ import resume from '../../public/resume.pdf';
 
 <style>
   header {
-    transition: box-shadow 300ms ease-out;
+    transition: box-shadow 300ms ease-out, transform 300ms ease-out;
+  }
+
+  /* Only show shadow on fixed (non-index) pages */
+  header.fixed {
     box-shadow: 0 1px 2px rgba(15, 14, 13, 0.05);
   }
 
-  :global(.dark) header {
+  :global(.dark) header.fixed {
     box-shadow: 0 1px 2px rgba(250, 248, 243, 0.05);
+  }
+
+  /* Hide header when scrolling down on project pages */
+  header.hide-header {
+    transform: translateY(-100%);
   }
 
   /* Regular navigation links (excluding mailto and contact button) */
@@ -299,6 +308,33 @@ import resume from '../../public/resume.pdf';
         localStorage.setItem('theme', 'dark');
       }
     });
+  }
+
+  // Header auto-hide/show on scroll - only for project pages
+  const header = document.getElementById('header');
+  let lastScrollY = 0;
+  let scrollTimeout;
+
+  if (header && header.dataset.pageType === 'scroll') {
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.scrollY;
+
+      // Clear previous timeout
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+
+      // Show header when scrolling up
+      if (currentScrollY < lastScrollY) {
+        header.classList.remove('hide-header');
+      }
+      // Hide header when scrolling down (but not at the top)
+      else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        header.classList.add('hide-header');
+      }
+
+      lastScrollY = currentScrollY;
+    }, { passive: true });
   }
 
 </script>

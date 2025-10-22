@@ -323,6 +323,183 @@ export function setupScrollTrigger(
 }
 
 // ============================================
+// CARD UNFOLD ANIMATION
+// ============================================
+
+/**
+ * Animates a card unfolding/expanding from center to full width
+ * Used when card moves to center and transitions into banner
+ *
+ * The card expands symmetrically from its center point to fill available width
+ * Matches the Banner component's layout: m-4 mx-auto max-w-[1800px]
+ */
+export function animateCardUnfold(
+  cardElement: Element,
+  originalWidth: number,
+  containerWidth: number = window.innerWidth,
+  duration: number = 0.75,
+) {
+  const rect = cardElement.getBoundingClientRect();
+  const cardCenter = rect.left + rect.width / 2;
+
+  // Banner layout: m-4 (1rem = 16px) mx-auto max-w-[1800px]
+  // This means: 16px margin on each side, centered, max 1800px wide
+  const bannerMargin = 16; // m-4 in pixels
+  const bannerMaxWidth = 1800;
+
+  // Calculate target width (limited by max-width or window width)
+  const targetWidth = Math.min(containerWidth - bannerMargin * 2, bannerMaxWidth);
+
+  // Calculate where the banner should be positioned (centered)
+  const totalMargin = (containerWidth - targetWidth) / 2;
+
+  const tl = gsap.timeline();
+
+  // Expand the card to match banner layout
+  tl.to(
+    cardElement,
+    {
+      left: totalMargin,
+      right: totalMargin,
+      width: 'auto',
+      duration,
+      ease: easings.smooth,
+    },
+    0,
+  );
+
+  return tl;
+}
+
+// ============================================
+// MODAL ORCHESTRATION - CASE STUDY REVEAL
+// ============================================
+
+/**
+ * Orchestrates the complete case study modal reveal sequence
+ * Combines: logo slide + card expand + content fold
+ * Total duration: ~2.0 seconds
+ *
+ * Sequence:
+ * - 0.0-0.4s: Logo slides from header down to card position
+ * - 0.2-1.0s: Project card image expands into banner
+ * - 0.8-1.4s: Banner info (logo, roles, tools) fades in
+ * - 1.2-2.0s: Main page content folds out with stagger
+ */
+export function orchestrateModalOpen(
+  options: {
+    cardElement?: Element | null;
+    logoElement?: Element | null;
+    bannerElement?: Element | null;
+    contentElements?: Element[];
+  } = {},
+) {
+  const tl = gsap.timeline();
+
+  // 1. LOGO SLIDE (0.0 - 0.4s)
+  // Logo slides from header position down to card
+  if (options.logoElement) {
+    tl.fromTo(
+      options.logoElement,
+      {
+        opacity: 0,
+        y: -100,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.4,
+        ease: easings.smooth,
+      },
+      0,
+    );
+  }
+
+  // 2. CARD EXPAND (0.2 - 1.0s)
+  // Card image expands and morphs into banner
+  if (options.cardElement) {
+    tl.to(
+      options.cardElement,
+      {
+        duration: 0.8,
+        ease: 'cubic-bezier(0.34, 1.56, 0.64, 1)', // bounce easing for dynamic feel
+      },
+      0.2, // Start at 0.2s (after logo has moved a bit)
+    );
+  }
+
+  // 3. BANNER CONTENT FADE (0.8 - 1.4s)
+  // Banner logo and info sections fade in
+  if (options.bannerElement) {
+    const bannerLogo = options.bannerElement.querySelector('.banner-content-fade');
+    const bannerInfo = options.bannerElement.querySelectorAll('.banner-content-fade');
+
+    tl.fromTo(
+      bannerInfo,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 0.6,
+        ease: easings.smooth,
+        stagger: 0.05,
+      },
+      0.8, // Start at 0.8s
+    );
+  }
+
+  // 4. CONTENT FOLD-OUT (1.2 - 2.0s)
+  // Main page content folds in with staggered timing
+  if (options.contentElements && options.contentElements.length > 0) {
+    tl.fromTo(
+      options.contentElements,
+      {
+        opacity: 0,
+        y: 30,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: easings.smooth,
+        stagger: 0.1,
+      },
+      1.2, // Start at 1.2s
+    );
+  }
+
+  // Respect user motion preferences
+  respectMotionPreferences(tl);
+
+  return tl;
+}
+
+/**
+ * Quick close animation for modal
+ * Reverse of the open sequence
+ */
+export function orchestrateModalClose(
+  options: {
+    modalElement?: Element | null;
+  } = {},
+) {
+  const tl = gsap.timeline();
+
+  if (options.modalElement) {
+    tl.to(options.modalElement, {
+      opacity: 0,
+      duration: 0.3,
+      ease: easings.smoothOut,
+    });
+  }
+
+  respectMotionPreferences(tl);
+
+  return tl;
+}
+
+// ============================================
 // UTILITY FUNCTIONS
 // ============================================
 

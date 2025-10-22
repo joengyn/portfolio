@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
+import ProjectCardModalManager from '../components/ProjectCardModalManager.tsx';
 // import EnsoLottie from '../components/EnsoLottie.tsx';
 import { Image } from 'astro:assets';
 import circle from '../../public/circle.webp';
@@ -56,7 +57,11 @@ const visibleProjects = await Promise.all(
   isIndex={true}
 >
   <StructuredData slot="structured-data" schema={websiteSchema} />
-  <main class='mx-4 mb-10 mt-[80px] grid gap-5'>
+
+  <!-- Modal Manager for Interactive Case Study Experience -->
+  <ProjectCardModalManager client:only='react' />
+
+  <main class='mx-4 mb-10 grid gap-5'>
     <!-- Intro Section -->
     <div class='flex pt-3 sm:flex-col sm:items-center sm:text-center'>
       <!-- Text -->

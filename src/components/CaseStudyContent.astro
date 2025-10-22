@@ -1,0 +1,67 @@
+---
+import Banner from './Banner.astro';
+import Button from './Button.astro';
+import type { ProjectData } from '../data/projectData';
+import { getNextProject } from '../data/projectData';
+
+interface Props {
+  project: ProjectData;
+  hideNavigation?: boolean;
+}
+
+const { project, hideNavigation = false } = Astro.props;
+const nextProject = getNextProject(project.slug);
+---
+
+<>
+  <!-- Banner -->
+  <Banner
+    title={project.title}
+    bgImg={project.bgImg}
+    bgImgAlt={project.bgImgAlt}
+    logo={project.logo}
+    logoAlt={project.logoAlt}
+    overview={project.overview}
+    roles={project.roles}
+    tools={project.tools}
+    duration={project.duration}
+    invertLogo={project.invertLogo}
+  />
+
+  <!-- Content Wrapper -->
+  <div class='wrapper m-5 mx-auto page-content-fade'>
+    <!-- Slot for unique content -->
+    <slot />
+
+    <!-- Navigation -->
+    {!hideNavigation && (
+      <div class='mb-10 flex justify-between'>
+        <Button
+          text='back to top'
+          type='button'
+          icon='arrow'
+          className='back-to-top-button'
+          iconClassName='-rotate-90'
+        />
+        {nextProject && (
+          <a href={nextProject.href}>
+            <Button text='next case study' type='button' icon='arrow' />
+          </a>
+        )}
+      </div>
+    )}
+  </div>
+
+  <script>
+    // Back to top button
+    const backToTopButton = document.querySelector('.back-to-top-button');
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    if (backToTopButton) {
+      backToTopButton.addEventListener('click', scrollToTop);
+    }
+  </script>
+</>

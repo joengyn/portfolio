@@ -6,7 +6,6 @@ import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Banner from '../components/Banner.astro';
 import Button from '../components/Button.astro';
-import ImageSlider from '../components/ImageSlider.astro';
 import StructuredData from '../components/StructuredData.astro';
 
 // Banner Assets
@@ -18,7 +17,6 @@ import ngUI1 from '../assets/berkshiregrey/bg-ng-ui-1.webp';
 import ngUI2 from '../assets/berkshiregrey/bg-ng-ui-2.webp';
 import ngUI3 from '../assets/berkshiregrey/bg-ng-ui-3.webp';
 import ngUI4 from '../assets/berkshiregrey/bg-ng-ui-4.webp';
-const images = [ngUI1, ngUI2, ngUI3, ngUI4];
 import hmiImg from '../assets/berkshiregrey/bg-hmi-book.webp';
 import userImg from '../assets/berkshiregrey/bg-user-img.webp';
 import flexbotImg from '../assets/berkshiregrey/bg-flexbot.webp';
@@ -51,8 +49,6 @@ const projectSchema = {
 >
   <StructuredData slot="structured-data" schema={projectSchema} />
   <main class='mt-[100px]'>
-    <!-- Image Slider -->
-    <ImageSlider images={images} />
     <!-- Banner -->
     <Banner
       title='Berkshire Grey'
@@ -68,7 +64,7 @@ const projectSchema = {
       tools={['Adobe XD', 'Figma', 'React', 'Python']}
       duration='15 months'
     />
-    <div class='wrapper m-5 mx-auto'>
+    <div class='wrapper m-5 mx-auto page-content-fade'>
       <!-- Background Section -->
       <h2>Background</h2>
       <Image src={userImg} alt='user-img' class='mb-2 w-full object-cover' />
