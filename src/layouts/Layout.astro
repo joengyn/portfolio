@@ -1,6 +1,5 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
-// import '../styles/animations.scss';
 
 interface Props {
   title: string;
@@ -19,7 +18,6 @@ const {
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MobileMenu from '../components/MobileMenu.astro';
-// import ScreenCutOverlay from '../components/ScreenCutOverlay.tsx';
 ---
 
 <!doctype html>
@@ -187,6 +185,25 @@ import MobileMenu from '../components/MobileMenu.astro';
     padding: 1rem;
     margin: 40px auto;
     max-width: 768px;
+  }
+
+  /* Case Study Page Styling */
+  .case-study-image {
+    margin-bottom: 2.5rem;
+  }
+
+  .case-study-image + figcaption {
+    margin-bottom: 2.5rem;
+  }
+
+  .case-study-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .case-study-list {
+    margin-left: 2rem;
+    list-style-position: outside;
+    list-style-type: disc;
   }
 
   @media (min-width: 768px) {
