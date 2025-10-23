@@ -201,6 +201,7 @@ import resume from '../../public/resume.pdf';
       const menuLink = document.querySelectorAll('.menu-link');
       const menuContact = document.querySelector('.menu-contact');
       const closeMenu = document.getElementById('close-menu');
+      const menuOverlay = document.getElementById('menu-overlay');
       const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
       const newExpandedState = !isExpanded;
 
@@ -231,10 +232,20 @@ import resume from '../../public/resume.pdf';
           // Opening menu - remove inert to make it interactive
           mobileMenu.removeAttribute('inert');
           mobileMenu.classList.remove('translate-x-full');
+          if (menuOverlay) {
+            menuOverlay.classList.add('menu-open');
+          }
+          // Disable scroll
+          document.body.style.overflow = 'hidden';
         } else {
           // Closing menu - add inert to make it non-interactive
           mobileMenu.setAttribute('inert', '');
           mobileMenu.classList.add('translate-x-full');
+          if (menuOverlay) {
+            menuOverlay.classList.remove('menu-open');
+          }
+          // Re-enable scroll
+          document.body.style.overflow = '';
         }
       }
     }

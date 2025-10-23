@@ -196,6 +196,12 @@ import MobileMenu from '../components/MobileMenu.astro';
     margin-bottom: 2.5rem;
   }
 
+  /* Reduce margin-bottom for case-study-images with figcaptions */
+  figcaption + p .case-study-image,
+  .case-study-image:has(+ figcaption) {
+    margin-bottom: 0.5rem;
+  }
+
   .case-study-section {
     margin-bottom: 2.5rem;
   }

@@ -29,20 +29,11 @@ const {
   slug,
   invertLogo = true,
 } = Astro.props;
-
-// ANIMATIONS TEMPORARILY DISABLED
-// Derive slug from current URL if not provided
-// const projectSlug = slug || new URL(Astro.request.url).pathname.replace(/\//g, '');
-// const imageTransitionName = `project-image-${projectSlug}`;
-// const titleTransitionName = `project-title-${projectSlug}`;
 ---
 
 <div class='banner m-4 mx-auto max-w-[1800px] bg-sand dark:bg-slate shadow-depth-md overflow-hidden'>
   <div
     class='relative flex items-center'
-    {/* style={{
-      viewTransitionName: imageTransitionName,
-    }} */}
   >
     <!-- Gradient -->
     <div

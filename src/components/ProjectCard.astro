@@ -15,12 +15,6 @@ interface Props {
 }
 
 const { href, title, body, bgImg, uiImg, logo, logoAlt = `${title} logo`, bgAlt = `${title} background`, uiAlt = `${title} UI preview`, className } = Astro.props;
-
-// ANIMATIONS TEMPORARILY DISABLED
-// Create unique transition names based on href (e.g., /berkshiregrey)
-// const projectSlug = href.replace(/\//g, '');
-// const imageTransitionName = `project-image-${projectSlug}`;
-// const titleTransitionName = `project-title-${projectSlug}`;
 ---
 
 <div
@@ -33,9 +27,6 @@ const { href, title, body, bgImg, uiImg, logo, logoAlt = `${title} logo`, bgAlt 
     >
       <div
         class='relative aspect-square overflow-hidden'
-        {/* style={{
-          viewTransitionName: imageTransitionName,
-        }} */}
       >
         <Image
           class='absolute bottom-1 right-1 z-10 aspect-auto h-2/5 w-auto'
@@ -49,12 +40,7 @@ const { href, title, body, bgImg, uiImg, logo, logoAlt = `${title} logo`, bgAlt 
         />
       </div>
       <div class='flex flex-col bg-sand dark:bg-slate p-4'>
-        <div
-          class='mb-2 text-lg'
-          {/* style={{
-            viewTransitionName: titleTransitionName,
-          }} */}
-        >
+        <div class='mb-2 text-lg'>
           {title}
         </div>
         <p class='mb-2'>{body}</p>
