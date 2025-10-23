@@ -8,8 +8,7 @@ const { isIndex, isAbout } = Astro.props;
 
 import { Image } from 'astro:assets';
 import Button from './Button.astro';
-import logo from '../../public/circle.webp';
-import logoWhite from '../../public/circle-white.webp';
+import logo from '../../public/enso-circle.webp';
 import resume from '../../public/resume.pdf';
 ---
 
@@ -93,14 +92,8 @@ import resume from '../../public/resume.pdf';
       <Image
         src={logo}
         alt='logo'
-        class='h-10 w-10 opacity-100 dark:hidden'
+        class='h-10 w-10 opacity-100 dark:invert'
         id='logoHeader'
-      />
-      <Image
-        src={logoWhite}
-        alt='logo'
-        class='h-10 w-10 opacity-100 hidden dark:block'
-        id='logoHeaderDark'
       />
     </div>
   </div>

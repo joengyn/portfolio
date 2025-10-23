@@ -14,7 +14,7 @@
     "title": "Grammaroke",
     "body": "Design and development of a music focused language learning web application",
     "bgImg": "../assets/grammaroke/music-venue.webp",
-    "uiImg": "../assets/grammaroke/grammaroke-ui.webp",
+    "uiImg": "../assets/grammaroke/songs-page.webp",
     "logo": "../assets/grammaroke/favicon.svg",
     "className": "sm:delay-0 md:delay-500",
     "isVisible": true
