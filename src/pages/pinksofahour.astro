@@ -5,7 +5,6 @@ import { Image } from 'astro:assets';
 // Components
 import Banner from '../components/Banner.astro';
 import Button from '../components/Button.astro';
-import ImageSlider from '../components/ImageSlider.astro';
 import Layout from '../layouts/Layout.astro';
 import StructuredData from '../components/StructuredData.astro';
 
@@ -70,8 +69,6 @@ const projectSchema = {
 >
   <StructuredData slot="structured-data" schema={projectSchema} />
   <main class='mt-[100px]'>
-    <!-- Image Slider -->
-    <ImageSlider images={images} />
     <!-- Banner -->
     <Banner
       title='Pink Sofa Hour'
@@ -123,41 +120,36 @@ const projectSchema = {
       </p>
       <!-- Images -->
       <Image
-        class='open-modal-button mb-2 w-full cursor-pointer object-cover'
+        class='mb-2 w-full object-cover'
         src={homePage}
         alt='Pink Sofa Hour home page'
-        data-index='0'
       />
       <figcaption class='mb-10 text-center text-sm'>Home page</figcaption>
       <div class='mb-2 grid'>
         <Image
-          class='open-modal-button mb-2 cursor-pointer'
+          class='mb-2'
           src={aboutPage}
           alt='Pink Sofa Hour about page'
-          data-index='1'
         />
         <figcaption class='mb-10 text-center text-sm'>About page</figcaption>
         <Image
-          class='open-modal-button mb-2 cursor-pointer'
+          class='mb-2'
           src={missionPage}
           alt='Pink Sofa Hour mission page'
-          data-index='2'
         />
         <figcaption class='mb-10 text-center text-sm'>Mission page</figcaption>
         <Image
-          class='open-modal-button mb-2 cursor-pointer'
+          class='mb-2'
           src={storyPage}
           alt='Pink Sofa Hour story page'
-          data-index='3'
         />
         <figcaption class='mb-20 text-center text-sm'>Story page</figcaption>
       </div>
       <h2>Previous Web Design</h2>
       <Image
-        class='open-modal-button mb-2 cursor-pointer'
+        class='mb-2'
         src={oldDesign}
         alt='Previous Pink Sofa Hour home'
-        data-index='4'
       />
       <figcaption class='mb-10 text-center text-sm'>
         Previous website home page
@@ -177,28 +169,24 @@ const projectSchema = {
       <h2>New Brand Guidelines</h2>
       <div class='mb-2 grid grid-cols-2'>
         <Image
-          class='open-modal-button mb-2 cursor-pointer'
+          class='mb-2'
           src={pshColor}
           alt='Brand Guidelines: Color'
-          data-index='5'
         />
         <Image
-          class='open-modal-button mb-2 cursor-pointer'
+          class='mb-2'
           src={pshTypo}
           alt='Brand Guidelines: Typography'
-          data-index='6'
         />
         <Image
-          class='open-modal-button mb-2 cursor-pointer'
+          class='mb-2'
           src={pshCopy}
           alt='Brand Guidelines: Color'
-          data-index='7'
         />
         <Image
-          class='open-modal-button mb-2 cursor-pointer'
+          class='mb-2'
           src={pshExample}
           alt='Brand Guidelines: Typography'
-          data-index='8'
         />
       </div>
       <figcaption class='mb-20 text-center text-sm'>
@@ -213,35 +201,31 @@ const projectSchema = {
       </p>
       <div class='mb-2 grid'>
         <Image
-          class='open-modal-button mb-2 cursor-pointer'
+          class='mb-2'
           src={wixPage}
           alt='Wix Studio interface of Pink Sofa Hour'
-          data-index='9'
         />
         <figcaption class='mb-10 text-center text-sm'>
           Wix Studio interface
         </figcaption>
         <Image
-          class='open-modal-button mb-2 cursor-pointer'
+          class='mb-2'
           src={blogPage}
           alt='Pink Sofa Hour blog page'
-          data-index='10'
         />
         <figcaption class='mb-10 text-center text-sm'>Blog page</figcaption>
         <Image
-          class='open-modal-button mb-2 cursor-pointer'
+          class='mb-2'
           src={shopItem}
           alt='Pink Sofa Hour shop item page'
-          data-index='11'
         />
         <figcaption class='mb-10 text-center text-sm'>
           Shop item page
         </figcaption>
         <Image
-          class='open-modal-button mb-2 cursor-pointer'
+          class='mb-2'
           src={sponsorshipPage}
           alt='Pink Sofa Hour sponsorship page'
-          data-index='12'
         />
         <figcaption class='mb-20 text-center text-sm'>
           Sponsorship page
@@ -250,16 +234,15 @@ const projectSchema = {
       <!-- Results & Impact -->
       <h2>Results & Impact</h2>
       <Image
-        class='open-modal-button mb-2 cursor-pointer'
+        class='mb-2'
         src={pshTraffic}
         alt='Pink Sofa Hour traffic'
-        data-index='13'
       />
       <figcaption class='mb-10 text-center text-sm'>
         Site Traffic (September 2024 - December 2024)
       </figcaption>
       <p>
-        The redesigned website has significantly enhanced the brand’s online
+        The redesigned website has significantly enhanced the brand's online
         presence, effectively engaging both artists and audiences. In the
         initial months post-launch, the site has experienced a notable increase
         in traffic, leading to a substantial collection of email subscriptions.
@@ -275,10 +258,9 @@ const projectSchema = {
         broader creative community.
       </p>
       <Image
-        class='open-modal-button mb-2 cursor-pointer'
+        class='mb-2'
         src={couchedPage}
         alt='Couched Media homepage'
-        data-index='14'
       />
       <figcaption class='mb-10 text-center text-sm'>
         Preview of the Couched Media website

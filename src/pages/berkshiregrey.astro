@@ -6,7 +6,6 @@ import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Banner from '../components/Banner.astro';
 import Button from '../components/Button.astro';
-import ImageSlider from '../components/ImageSlider.astro';
 import StructuredData from '../components/StructuredData.astro';
 
 // Banner Assets
@@ -51,8 +50,6 @@ const projectSchema = {
 >
   <StructuredData slot="structured-data" schema={projectSchema} />
   <main class='mt-[100px]'>
-    <!-- Image Slider -->
-    <ImageSlider images={images} />
     <!-- Banner -->
     <Banner
       title='Berkshire Grey'
@@ -117,40 +114,36 @@ const projectSchema = {
       <!-- HMI Images -->
       <div class='mb-2 grid'>
         <Image
-          class='open-modal-button mb-2 cursor-pointer'
+          class='mb-2'
           src={ngUI1}
           alt='ng-ui-1'
-          data-index='0'
         />
         <figcaption class='mb-10 text-center text-sm'>
           A centralized map interface gives operators a clear, real-time view of
           the field, complete with key performance statistics
         </figcaption>
         <Image
-          class='open-modal-button mb-2 cursor-pointer'
+          class='mb-2'
           src={ngUI2}
           alt='ng-ui-2'
-          data-index='1'
         />
         <figcaption class='mb-10 text-center text-sm'>
           Bold color highlights draw attention to critical areas requiring
           operator focus
         </figcaption>
         <Image
-          class='open-modal-button mb-2 cursor-pointer'
+          class='mb-2'
           src={ngUI3}
           alt='ng-ui-3'
-          data-index='2'
         />
         <figcaption class='mb-10 text-center text-sm'>
           Multiple zoom levels let operators zero in on specific areas or
           operations, such as lockout/tagout procedures
         </figcaption>
         <Image
-          class='open-modal-button mb-2 cursor-pointer'
+          class='mb-2'
           src={ngUI4}
           alt='ng-ui-4'
-          data-index='3'
         />
         <figcaption class='mb-10 text-center text-sm'>
           The maintenance page support cross-shift operator communication and

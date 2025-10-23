@@ -27,8 +27,6 @@ import songsMobile from '../assets/grammaroke/songs-mobile.webp';
 import annotationsMobile from '../assets/grammaroke/annotations-mobile.webp';
 import annotations from '../assets/grammaroke/annotations.webp';
 
-// Videos - using public folder for better compatibility
-
 const projectSchema = {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
@@ -237,7 +235,7 @@ const projectSchema = {
       </p>
 
       <!-- Old Annotations Video -->
-      <video autoplay loop muted playsinline class='mb-2 w-full border'>
+      <video autoplay loop muted playsinline preload='auto' class='mb-2 w-full'>
         <source src="/annotations-video.webm" type='video/webm' />
         <source src="/annotations-video.mp4" type='video/mp4' />
         Your browser does not support the video tag.
@@ -247,7 +245,7 @@ const projectSchema = {
       </figcaption>
 
       <!-- Old Scrolling Video -->
-      <video autoplay loop muted playsinline class='mb-2 w-full border'>
+      <video autoplay loop muted playsinline preload='auto' class='mb-2 w-full'>
         <source src="/scrolling-video.webm" type='video/webm' />
         <source src="/scrolling-video.mp4" type='video/mp4' />
         Your browser does not support the video tag.
@@ -307,7 +305,7 @@ const projectSchema = {
           <Image
             src={songsMobile}
             alt='The current mobile design of the Grammaroke songs page, showing a simple list of songs and folders.'
-            class='mb-2 border'
+            class='mb-2'
           />
           <figcaption class='mb-10 text-center text-sm'>
             Current songs page
@@ -374,7 +372,7 @@ const projectSchema = {
           <Image
             src={annotationsMobile}
             alt='The current mobile design of the annotations page, featuring a clean layout with lyrics, inline annotations, and navigation controls.'
-            class='mb-2 border'
+            class='mb-2'
           />
           <figcaption class='mb-10 text-center text-sm'>
             Current annotations page
@@ -410,13 +408,13 @@ const projectSchema = {
       <Image
         src={oldAnnotations}
         alt='An early design mockup showing complex annotations.'
-        class='mb-2 w-full border'
+        class='mb-2 w-full'
       />
       <figcaption class='mb-10 text-center text-sm'>Old annotations</figcaption>
       <Image
         src={annotations}
         alt='The current design showing simplified annotations.'
-        class='mb-2 w-full border'
+        class='mb-2 w-full'
       />
       <figcaption class='mb-10 text-center text-sm'>
         Current annotations

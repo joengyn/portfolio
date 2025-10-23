@@ -140,92 +140,100 @@ import resume from '../../public/resume.pdf';
 </style>
 
 <script>
-  const closeMenu = document.getElementById('close-menu');
-  const menu = document.querySelector('.mobile-menu');
-  const menuButton = document.querySelector('.menu-button');
+  function initializeMobileMenu() {
+    const closeMenu = document.getElementById('close-menu');
+    const menu = document.querySelector('.mobile-menu');
+    const menuButton = document.querySelector('.menu-button');
 
-  function closeMobileMenu() {
+    function closeMobileMenu() {
+      if (menu) {
+        menu.setAttribute('inert', '');
+        menu.classList.add('translate-x-full');
+      }
+      if (menuButton) {
+        menuButton.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    // Close on X Click
+    if (closeMenu) {
+      closeMenu.addEventListener('click', closeMobileMenu);
+    }
+
+    // Close on Link Click
+    const menuLinks = document.querySelectorAll('.menu-link');
+    if (menuLinks) {
+      menuLinks.forEach((link) => {
+        link.addEventListener('click', closeMobileMenu);
+      });
+    }
+
+    // Close on Outside Click
     if (menu) {
-      menu.setAttribute('inert', '');
-      menu.classList.add('translate-x-full');
+      document.addEventListener('click', (event) => {
+        const target = event.target;
+        if (!menuButton) {
+          console.warn('Menu button not found');
+          return;
+        }
+
+        if (
+          target instanceof Element &&
+          !menu.contains(target) &&
+          !menuButton.contains(target)
+        ) {
+          closeMobileMenu();
+        }
+      });
     }
-    if (menuButton) {
-      menuButton.setAttribute('aria-expanded', 'false');
-    }
-  }
 
-  // Close on X Click
-  if (closeMenu) {
-    closeMenu.addEventListener('click', closeMobileMenu);
-  }
-
-  // Close on Link Click
-  const menuLinks = document.querySelectorAll('.menu-link');
-  if (menuLinks) {
-    menuLinks.forEach((link) => {
-      link.addEventListener('click', closeMobileMenu);
-    });
-  }
-
-  // Close on Outside Click
-  if (menu) {
-    document.addEventListener('click', (event) => {
-      const target = event.target;
-      if (!menuButton) {
-        console.warn('Menu button not found');
-        return;
-      }
-
-      if (
-        target instanceof Element &&
-        !menu.contains(target) &&
-        !menuButton.contains(target)
-      ) {
-        closeMobileMenu();
+    // Close on Escape key
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && menu) {
+        const isOpen = !menu.classList.contains('translate-x-full');
+        if (isOpen) {
+          closeMobileMenu();
+        }
       }
     });
-  }
 
-  // Close on Escape key
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && menu) {
-      const isOpen = !menu.classList.contains('translate-x-full');
-      if (isOpen) {
-        closeMobileMenu();
-      }
+    // Dark Mode Toggle (Mobile)
+    // Note: Theme application and icon syncing on page load is handled in Layout.astro
+    const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+
+    if (themeToggleMobile) {
+      themeToggleMobile.addEventListener('click', () => {
+        const html = document.documentElement;
+        const isDark = html.classList.contains('dark');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        const sunIconMobile = document.getElementById('sun-icon-mobile');
+        const moonIconMobile = document.getElementById('moon-icon-mobile');
+
+        if (isDark) {
+          // Switch to light mode
+          html.classList.remove('dark');
+          sunIcon?.classList.remove('hidden');
+          moonIcon?.classList.add('hidden');
+          sunIconMobile?.classList.remove('hidden');
+          moonIconMobile?.classList.add('hidden');
+          localStorage.setItem('theme', 'light');
+        } else {
+          // Switch to dark mode
+          html.classList.add('dark');
+          sunIcon?.classList.add('hidden');
+          moonIcon?.classList.remove('hidden');
+          sunIconMobile?.classList.add('hidden');
+          moonIconMobile?.classList.remove('hidden');
+          localStorage.setItem('theme', 'dark');
+        }
+      });
     }
-  });
-
-  // Dark Mode Toggle (Mobile)
-  // Note: Theme application and icon syncing on page load is handled in Layout.astro
-  const themeToggleMobile = document.getElementById('theme-toggle-mobile');
-
-  if (themeToggleMobile) {
-    themeToggleMobile.addEventListener('click', () => {
-      const html = document.documentElement;
-      const isDark = html.classList.contains('dark');
-      const sunIcon = document.getElementById('sun-icon');
-      const moonIcon = document.getElementById('moon-icon');
-      const sunIconMobile = document.getElementById('sun-icon-mobile');
-      const moonIconMobile = document.getElementById('moon-icon-mobile');
-
-      if (isDark) {
-        // Switch to light mode
-        html.classList.remove('dark');
-        sunIcon?.classList.remove('hidden');
-        moonIcon?.classList.add('hidden');
-        sunIconMobile?.classList.remove('hidden');
-        moonIconMobile?.classList.add('hidden');
-        localStorage.setItem('theme', 'light');
-      } else {
-        // Switch to dark mode
-        html.classList.add('dark');
-        sunIcon?.classList.add('hidden');
-        moonIcon?.classList.remove('hidden');
-        sunIconMobile?.classList.add('hidden');
-        moonIconMobile?.classList.remove('hidden');
-        localStorage.setItem('theme', 'dark');
-      }
-    });
   }
+
+  // Initialize on page load
+  initializeMobileMenu();
+
+  // Re-initialize after view transitions
+  document.addEventListener('astro:after-swap', initializeMobileMenu);
 </script>

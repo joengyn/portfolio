@@ -66,8 +66,6 @@ import designSystem from '../assets/bandscan/design-system.webp';
 import redesign from '../assets/bandscan/bandscan-redesign.webp';
 import redesign2 from '../assets/bandscan/bandscan-redesign-2.webp';
 
-// Videos - using public folder for better compatibility
-
 const projectSchema = {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
@@ -119,22 +117,22 @@ const projectSchema = {
       </p>
       <!-- Videos -->
       <div class='mb-3 grid grid-cols-2 gap-2 custom-md:grid-cols-4'>
-        <video autoplay loop muted playsinline class='w-full'>
+        <video autoplay loop muted playsinline preload='auto' class='w-full'>
           <source src="/login.webm" type='video/webm' />
           <source src="/login.mp4" type='video/mp4' />
           Your browser does not support the video tag.
         </video>
-        <video autoplay loop muted playsinline class='w-full'>
+        <video autoplay loop muted playsinline preload='auto' class='w-full'>
           <source src="/page-swiping.webm" type='video/webm' />
           <source src="/page-swiping.mp4" type='video/mp4' />
           Your browser does not support the video tag.
         </video>
-        <video autoplay loop muted playsinline class='w-full'>
+        <video autoplay loop muted playsinline preload='auto' class='w-full'>
           <source src="/explore.webm" type='video/webm' />
           <source src="/explore.mp4" type='video/mp4' />
           Your browser does not support the video tag.
         </video>
-        <video autoplay loop muted playsinline class='w-full'>
+        <video autoplay loop muted playsinline preload='auto' class='w-full'>
           <source src="/artist-onboard.webm" type='video/webm' />
           <source src="/artist-onboard.mp4" type='video/mp4' />
           Your browser does not support the video tag.
@@ -174,22 +172,18 @@ const projectSchema = {
         <Image
           src={sketch1}
           alt='Early UI concept designs'
-          class='border-2 border-gray'
         />
         <Image
           src={sketch2}
           alt='Early UI concept designs'
-          class='border-2 border-gray'
         />
         <Image
           src={sketch3}
           alt='Early UI concept designs'
-          class='border-2 border-gray'
         />
         <Image
           src={sketch4}
           alt='Early UI concept designs'
-          class='border-2 border-gray'
         />
       </div>
       <figcaption class='mb-10 text-center text-sm'>
@@ -220,27 +214,22 @@ const projectSchema = {
         <Image
           src={loginWireframe}
           alt='Login page early wireframe'
-          class='border-2 border-gray'
         />
         <Image
           src={onboardingWireframe}
           alt='User onboarding page early wireframe'
-          class='border-2 border-gray'
         />
         <Image
           src={likesWireframe}
           alt='User profile page early wireframe'
-          class='border-2 border-gray'
         />
         <!-- <Image
           src={eventsWireframe}
           alt="User events page early wireframe"
-          class="border-2 border-gray"
         /> -->
         <Image
           src={exploreWireframe}
           alt='Explore page early wireframe'
-          class='border-2 border-gray'
         />
       </div>
       <figcaption class='mb-10 text-center text-sm'>
@@ -260,42 +249,34 @@ const projectSchema = {
         <Image
           src={loginV1}
           alt='Login page wireframe'
-          class='border-2 border-gray'
         />
         <Image
           src={exploreV1}
           alt='Explore page wireframe'
-          class='border-2 border-gray'
         />
         <Image
           src={exploreBioV1}
           alt='Explore page wireframe, about section'
-          class='border-2 border-gray'
         />
         <Image
           src={exploreEventsV1}
           alt='Explore page wireframe, events section'
-          class='border-2 border-gray'
         />
         <Image
           src={onboardV1}
           alt='User onboarding page wireframe'
-          class='border-2 border-gray'
         />
         <Image
           src={likesV1}
           alt='Liked artists page wireframe'
-          class='border-2 border-gray'
         />
         <Image
           src={eventsV1}
           alt='Events page page wireframe'
-          class='border-2 border-gray'
         />
         <Image
           src={accountV1}
           alt='User account settings page wireframe'
-          class='border-2 border-gray'
         />
       </div>
       <figcaption class='mb-20 text-center text-sm'>

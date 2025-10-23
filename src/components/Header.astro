@@ -15,7 +15,6 @@ import resume from '../../public/resume.pdf';
 
 <header
   id='header'
-  data-page-type={isIndex || isAbout ? 'no-scroll' : 'scroll'}
   class='fixed top-0 z-40 w-full bg-white text-black dark:bg-black dark:text-white'
 >
   <div class='flex flex-row items-center justify-between p-4 tracking-wider'>
@@ -94,13 +93,13 @@ import resume from '../../public/resume.pdf';
       <Image
         src={logo}
         alt='logo'
-        class={`h-10 w-10 ${isIndex ? 'opacity-0' : 'opacity-100'} dark:hidden`}
+        class='h-10 w-10 opacity-100 dark:hidden'
         id='logoHeader'
       />
       <Image
         src={logoWhite}
         alt='logo'
-        class={`h-10 w-10 ${isIndex ? 'opacity-0' : 'opacity-100'} hidden dark:block`}
+        class='h-10 w-10 opacity-100 hidden dark:block'
         id='logoHeaderDark'
       />
     </div>
@@ -110,12 +109,17 @@ import resume from '../../public/resume.pdf';
 
 <style>
   header {
-    transition: box-shadow 300ms ease-out;
+    transition: box-shadow 300ms ease-out, transform 300ms ease-out;
     box-shadow: 0 1px 2px rgba(15, 14, 13, 0.05);
   }
 
   :global(.dark) header {
     box-shadow: 0 1px 2px rgba(250, 248, 243, 0.05);
+  }
+
+  /* Hide header when scrolling down on project pages */
+  header.hide-header {
+    transform: translateY(-100%);
   }
 
   /* Regular navigation links (excluding mailto and contact button) */
@@ -187,71 +191,24 @@ import resume from '../../public/resume.pdf';
 </style>
 
 <script>
-  // Open Mobile Menu
-  const menuButton = document.querySelector('.menu-button');
+  function initializeHeader() {
+    // Open Mobile Menu
+    const menuButton = document.querySelector('.menu-button');
+    const header = document.getElementById('header');
 
-  function toggleMenu() {
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const menuLink = document.querySelectorAll('.menu-link');
-    const menuContact = document.querySelector('.menu-contact');
-    const closeMenu = document.getElementById('close-menu');
-    const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
-    const newExpandedState = !isExpanded;
-
-    // Toggle aria-expanded
-    menuButton.setAttribute('aria-expanded', newExpandedState);
-
-    // Update tabindex for menu items based on expanded state
-    const tabindexValue = newExpandedState ? '0' : '-1';
-    if (menuLink) {
-      menuLink.forEach((link) => {
-        link.setAttribute('tabindex', tabindexValue);
-      });
-    }
-    if (menuContact) {
-      menuContact.setAttribute('tabindex', tabindexValue);
-    }
-    if (closeMenu) {
-      closeMenu.setAttribute('tabindex', tabindexValue);
-      // Move focus to close button when opening
-      if (newExpandedState) {
-        setTimeout(() => closeMenu.focus(), 100);
-      }
-    }
-
-    // Toggle mobile menu visibility
-    if (mobileMenu) {
-      if (newExpandedState) {
-        // Opening menu - remove inert to make it interactive
-        mobileMenu.removeAttribute('inert');
-        mobileMenu.classList.remove('translate-x-full');
-      } else {
-        // Closing menu - add inert to make it non-interactive
-        mobileMenu.setAttribute('inert', '');
-        mobileMenu.classList.add('translate-x-full');
-      }
-    }
-  }
-
-  if (menuButton) {
-    menuButton.addEventListener('click', toggleMenu);
-
-    // Add keyboard support (Enter and Space)
-    menuButton.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggleMenu();
-      }
-    });
-
-    // Monitor aria-expanded changes from MobileMenu and update tabindex
-    const observer = new MutationObserver(() => {
-      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
-      const tabindexValue = isOpen ? '0' : '-1';
+    function toggleMenu() {
+      const mobileMenu = document.querySelector('.mobile-menu');
       const menuLink = document.querySelectorAll('.menu-link');
       const menuContact = document.querySelector('.menu-contact');
       const closeMenu = document.getElementById('close-menu');
+      const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+      const newExpandedState = !isExpanded;
 
+      // Toggle aria-expanded
+      menuButton.setAttribute('aria-expanded', newExpandedState);
+
+      // Update tabindex for menu items based on expanded state
+      const tabindexValue = newExpandedState ? '0' : '-1';
       if (menuLink) {
         menuLink.forEach((link) => {
           link.setAttribute('tabindex', tabindexValue);
@@ -262,43 +219,140 @@ import resume from '../../public/resume.pdf';
       }
       if (closeMenu) {
         closeMenu.setAttribute('tabindex', tabindexValue);
+        // Move focus to close button when opening
+        if (newExpandedState) {
+          setTimeout(() => closeMenu.focus(), 100);
+        }
       }
-    });
 
-    observer.observe(menuButton, { attributes: true, attributeFilter: ['aria-expanded'] });
+      // Toggle mobile menu visibility
+      if (mobileMenu) {
+        if (newExpandedState) {
+          // Opening menu - remove inert to make it interactive
+          mobileMenu.removeAttribute('inert');
+          mobileMenu.classList.remove('translate-x-full');
+        } else {
+          // Closing menu - add inert to make it non-interactive
+          mobileMenu.setAttribute('inert', '');
+          mobileMenu.classList.add('translate-x-full');
+        }
+      }
+    }
+
+    if (menuButton) {
+      menuButton.addEventListener('click', () => {
+        // Show header when menu button is clicked
+        if (header) {
+          header.classList.remove('hide-header');
+        }
+        toggleMenu();
+      });
+
+      // Add keyboard support (Enter and Space)
+      menuButton.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          // Show header when menu button is activated via keyboard
+          if (header) {
+            header.classList.remove('hide-header');
+          }
+          toggleMenu();
+        }
+      });
+
+      // Monitor aria-expanded changes from MobileMenu and update tabindex
+      const observer = new MutationObserver(() => {
+        const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+        const tabindexValue = isOpen ? '0' : '-1';
+        const menuLink = document.querySelectorAll('.menu-link');
+        const menuContact = document.querySelector('.menu-contact');
+        const closeMenu = document.getElementById('close-menu');
+
+        if (menuLink) {
+          menuLink.forEach((link) => {
+            link.setAttribute('tabindex', tabindexValue);
+          });
+        }
+        if (menuContact) {
+          menuContact.setAttribute('tabindex', tabindexValue);
+        }
+        if (closeMenu) {
+          closeMenu.setAttribute('tabindex', tabindexValue);
+        }
+      });
+
+      observer.observe(menuButton, { attributes: true, attributeFilter: ['aria-expanded'] });
+    }
+
+    // Dark Mode Toggle (Desktop)
+    // Note: Theme application and icon syncing on page load is handled in Layout.astro
+    const themeToggle = document.getElementById('theme-toggle');
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const html = document.documentElement;
+        const isDark = html.classList.contains('dark');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        const sunIconMobile = document.getElementById('sun-icon-mobile');
+        const moonIconMobile = document.getElementById('moon-icon-mobile');
+
+        if (isDark) {
+          // Switch to light mode
+          html.classList.remove('dark');
+          sunIcon?.classList.remove('hidden');
+          moonIcon?.classList.add('hidden');
+          sunIconMobile?.classList.remove('hidden');
+          moonIconMobile?.classList.add('hidden');
+          localStorage.setItem('theme', 'light');
+        } else {
+          // Switch to dark mode
+          html.classList.add('dark');
+          sunIcon?.classList.add('hidden');
+          moonIcon?.classList.remove('hidden');
+          sunIconMobile?.classList.add('hidden');
+          moonIconMobile?.classList.remove('hidden');
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+    }
+
+    // Header auto-hide/show on scroll - all pages
+    let lastScrollY = 0;
+    let scrollTimeout;
+
+    if (header) {
+      window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
+        const isMenuOpen = menuButton?.getAttribute('aria-expanded') === 'true';
+
+        // Clear previous timeout
+        if (scrollTimeout) {
+          clearTimeout(scrollTimeout);
+        }
+
+        // Don't hide header if menu is open
+        if (isMenuOpen) {
+          return;
+        }
+
+        // Show header when scrolling up
+        if (currentScrollY < lastScrollY) {
+          header.classList.remove('hide-header');
+        }
+        // Hide header when scrolling down (but not at the top)
+        else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+          header.classList.add('hide-header');
+        }
+
+        lastScrollY = currentScrollY;
+      }, { passive: true });
+    }
   }
 
-  // Dark Mode Toggle (Desktop)
-  // Note: Theme application and icon syncing on page load is handled in Layout.astro
-  const themeToggle = document.getElementById('theme-toggle');
+  // Initialize on page load
+  initializeHeader();
 
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const html = document.documentElement;
-      const isDark = html.classList.contains('dark');
-      const sunIcon = document.getElementById('sun-icon');
-      const moonIcon = document.getElementById('moon-icon');
-      const sunIconMobile = document.getElementById('sun-icon-mobile');
-      const moonIconMobile = document.getElementById('moon-icon-mobile');
-
-      if (isDark) {
-        // Switch to light mode
-        html.classList.remove('dark');
-        sunIcon?.classList.remove('hidden');
-        moonIcon?.classList.add('hidden');
-        sunIconMobile?.classList.remove('hidden');
-        moonIconMobile?.classList.add('hidden');
-        localStorage.setItem('theme', 'light');
-      } else {
-        // Switch to dark mode
-        html.classList.add('dark');
-        sunIcon?.classList.add('hidden');
-        moonIcon?.classList.remove('hidden');
-        sunIconMobile?.classList.add('hidden');
-        moonIconMobile?.classList.remove('hidden');
-        localStorage.setItem('theme', 'dark');
-      }
-    });
-  }
-
+  // Re-initialize after view transitions
+  document.addEventListener('astro:after-swap', initializeHeader);
 </script>

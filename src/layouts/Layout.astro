@@ -1,6 +1,5 @@
 ---
-// ANIMATIONS TEMPORARILY DISABLED
-// import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from 'astro:transitions';
 // import '../styles/animations.scss';
 
 interface Props {
@@ -26,7 +25,7 @@ import MobileMenu from '../components/MobileMenu.astro';
 <!doctype html>
 <html lang='en'>
   <head>
-    <!-- <ViewTransitions /> -->
+    <ViewTransitions />
     <meta charset='UTF-8' />
     <meta name='description' content={description} />
     <meta name='viewport' content='width=device-width' />
@@ -87,6 +86,24 @@ import MobileMenu from '../components/MobileMenu.astro';
       document.addEventListener('astro:page-load', () => {
         applyTheme();
       });
+
+      // Reinitialize videos after view transitions
+      function resetVideos() {
+        const videos = document.querySelectorAll('video');
+        videos.forEach((video) => {
+          // Reset video to beginning and attempt playback
+          video.currentTime = 0;
+          if (video.autoplay) {
+            video.play().catch(() => {
+              // If autoplay fails, that's okay
+            });
+          }
+        });
+      }
+
+      // Reset videos on page load and after transitions
+      resetVideos();
+      document.addEventListener('astro:after-swap', resetVideos);
     </script>
     <!-- Google tag (gtag.js) -->
     <script
@@ -279,41 +296,3 @@ import MobileMenu from '../components/MobileMenu.astro';
   }
 </style>
 
-<script>
-  // Fade in Header Logo
-  function handleLogoFadeIn() {
-    document.addEventListener('DOMContentLoaded', () => {
-      const logo = document.getElementById('logoHeader');
-      const lottieContainer = document.getElementById('lottie-container');
-
-      if (logo && lottieContainer) {
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (!entry.isIntersecting) {
-                // If the Lottie container is out of view, fade in the logo
-                logo.classList.add(
-                  'opacity-100',
-                  'transition-opacity',
-                  'duration-1000',
-                  'ease-in-out',
-                );
-              } else {
-                // If the Lottie container is visible, hide the logo
-                logo.classList.remove('opacity-100');
-              }
-            });
-          },
-          {
-            root: null, // Observing relative to the viewport
-            threshold: 0, // Trigger when any part of the Lottie container leaves the viewport
-          },
-        );
-
-        observer.observe(lottieContainer);
-      }
-    });
-  }
-
-  handleLogoFadeIn();
-</script>
