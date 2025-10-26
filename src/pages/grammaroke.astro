@@ -28,16 +28,22 @@ import oldAnnotationsMobile from '../assets/grammaroke/old-annotations-mobile.we
 import annotations from '../assets/grammaroke/annotations.webp';
 
 const projectSchema = {
-  "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "Grammaroke",
-  "description": "Design and development of a music-focused language learning web application",
-  "author": {
-    "@type": "Person",
-    "name": "Joe Nguyen"
+  '@context': 'https://schema.org',
+  '@type': 'CreativeWork',
+  name: 'Grammaroke',
+  description:
+    'Design and development of a music-focused language learning web application',
+  author: {
+    '@type': 'Person',
+    name: 'Joe Nguyen',
   },
-  "url": "https://joengyn.com/grammaroke",
-  "keywords": ["Web Development", "UX Design", "Education Technology", "Language Learning"]
+  url: 'https://joengyn.com/grammaroke',
+  keywords: [
+    'Web Development',
+    'UX Design',
+    'Education Technology',
+    'Language Learning',
+  ],
 };
 ---
 
@@ -45,7 +51,7 @@ const projectSchema = {
   title='Grammaroke Case Study | Joe Nguyen'
   description='Grammaroke case study - Design and development of a music-focused language learning web application combining karaoke-style lyrics with interactive annotations.'
 >
-  <StructuredData slot="structured-data" schema={projectSchema} />
+  <StructuredData slot='structured-data' schema={projectSchema} />
   <main class='mt-[100px]'>
     <!-- Banner -->
     <Banner
@@ -61,15 +67,27 @@ const projectSchema = {
     />
     <div class='wrapper'>
       <!-- UI Images -->
-      <div class='grid grid-cols-3 gap-4 mb-2'>
+      <div class='mb-2 grid grid-cols-3 gap-4'>
         <div>
-          <Image src={loginPage} alt='Grammaroke login page' class='w-full border border-black' />
+          <Image
+            src={loginPage}
+            alt='Grammaroke login page'
+            class='w-full border border-black'
+          />
         </div>
         <div>
-          <Image src={songsPageUI} alt='Grammaroke songs page' class='w-full border border-black' />
+          <Image
+            src={songsPageUI}
+            alt='Grammaroke songs page'
+            class='w-full border border-black'
+          />
         </div>
         <div>
-          <Image src={annotationsPageUI} alt='Grammaroke annotations page' class='w-full border border-black' />
+          <Image
+            src={annotationsPageUI}
+            alt='Grammaroke annotations page'
+            class='w-full border border-black'
+          />
         </div>
       </div>
       <figcaption class='mb-10 text-center text-sm'>
@@ -245,9 +263,16 @@ const projectSchema = {
       </p>
 
       <!-- Old Annotations Video -->
-      <video autoplay loop muted playsinline preload='auto' class='case-study-image w-full'>
-        <source src="/annotations-video.webm" type='video/webm' />
-        <source src="/annotations-video.mp4" type='video/mp4' />
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        preload='auto'
+        class='case-study-image w-full'
+      >
+        <source src='/annotations-video.webm' type='video/webm' />
+        <source src='/annotations-video.mp4' type='video/mp4' />
         Your browser does not support the video tag.
       </video>
       <figcaption class='mb-10 text-center text-sm'>
@@ -255,8 +280,15 @@ const projectSchema = {
       </figcaption>
 
       <!-- Old Scrolling Video -->
-      <video autoplay loop muted playsinline preload='auto' class='case-study-image w-full'>
-        <source src="/scrolling-video.webm" type='video/webm' />
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        preload='auto'
+        class='case-study-image w-full'
+      >
+        <source src='/scrolling-video.webm' type='video/webm' />
         Your browser does not support the video tag.
       </video>
       <figcaption class='mb-10 text-center text-sm'>
@@ -417,7 +449,7 @@ const projectSchema = {
       <Image
         src={oldAnnotations}
         alt='An early design mockup showing complex annotations.'
-        class='case-study-image w-1/2 mx-auto'
+        class='case-study-image w-full'
       />
       <figcaption class='mb-10 text-center text-sm'>Old annotations</figcaption>
       <Image
