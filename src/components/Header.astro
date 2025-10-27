@@ -1,13 +1,5 @@
 ---
-interface Props {
-  isIndex?: boolean;
-  isAbout?: boolean;
-}
-
-const { isIndex, isAbout } = Astro.props;
-
 import { Image } from 'astro:assets';
-import Button from './Button.astro';
 import logo from '../../public/enso-circle.webp';
 import resume from '../../public/resume.pdf';
 ---
@@ -190,6 +182,7 @@ import resume from '../../public/resume.pdf';
     const header = document.getElementById('header');
 
     function toggleMenu() {
+      if (!menuButton) return;
       const mobileMenu = document.querySelector('.mobile-menu');
       const menuLink = document.querySelectorAll('.menu-link');
       const menuContact = document.querySelector('.menu-contact');
@@ -199,7 +192,7 @@ import resume from '../../public/resume.pdf';
       const newExpandedState = !isExpanded;
 
       // Toggle aria-expanded
-      menuButton.setAttribute('aria-expanded', newExpandedState);
+      menuButton.setAttribute('aria-expanded', String(newExpandedState));
 
       // Update tabindex for menu items based on expanded state
       const tabindexValue = newExpandedState ? '0' : '-1';
@@ -254,7 +247,7 @@ import resume from '../../public/resume.pdf';
 
       // Add keyboard support (Enter and Space)
       menuButton.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
+        if ((e as KeyboardEvent).key === 'Enter' || (e as KeyboardEvent).key === ' ') {
           e.preventDefault();
           // Show header when menu button is activated via keyboard
           if (header) {

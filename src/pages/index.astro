@@ -21,44 +21,38 @@ const websiteSchema = {
 
 const imageModules = import.meta.glob('../assets/**/*.{webp,png,jpg,svg}');
 
-const visibleProjects = await Promise.all(
-  projectsData
-    .filter((project) => project.isVisible)
-    .map(async (project) => {
-      const bgPath = project.bgImg;
-      const uiPaths = project.uiImgs;
-      const logoPath = project.logo;
+const visibleProjects = (
+  await Promise.all(
+    projectsData
+      .filter((project) => project.isVisible)
+      .map(async (project) => {
+        const bgPath = project.bgImg;
+        const uiPath = project.uiImg;
+        const logoPath = project.logo;
 
-      if (!imageModules[bgPath] || !uiPaths || uiPaths.length === 0) {
-        console.error(`Image modules not found for project: ${project.title}`);
-        return null;
-      }
+        if (!imageModules[bgPath] || !imageModules[uiPath]) {
+          console.error(`Image module not found for project: ${project.title}`);
+          return null;
+        }
 
-      // Check all UI image paths exist
-      const allUiPathsExist = uiPaths.every((path) => imageModules[path]);
-      if (!allUiPathsExist) {
-        console.error(`One or more UI image paths missing for project: ${project.title}`);
-        return null;
-      }
+        const bgImgModule = (await imageModules[bgPath]()) as any;
+        const uiImgModule = (await imageModules[uiPath]()) as any;
+        const logoModule = logoPath ? ((await imageModules[logoPath]()) as any) : null;
 
-      const bgImgModule = await imageModules[bgPath]();
-      const uiImgModules = await Promise.all(uiPaths.map((path) => imageModules[path]()));
-      const logoModule = logoPath && imageModules[logoPath] ? await imageModules[logoPath]() : null;
-
-      return {
-        ...project,
-        bgImg: bgImgModule.default,
-        uiImgs: uiImgModules.map((mod) => mod.default),
-        logo: logoModule?.default,
-      };
-    }),
-).then((projects) => projects.filter(Boolean)); // Filter out nulls
+        return {
+          ...project,
+          bgImg: bgImgModule.default,
+          uiImg: uiImgModule.default,
+          logo: logoModule?.default,
+        };
+      }),
+  )
+).filter(Boolean);
 ---
 
 <Layout
   title='Joe Nguyen | Designer & Engineer'
   description='Portfolio of Joe Nguyen - UX/UI Designer and Frontend Developer showcasing design and engineering projects in robotics, music tech, and mobile applications.'
-  isIndex={true}
 >
   <StructuredData slot="structured-data" schema={websiteSchema} />
   <main class='mx-4 mb-10 mt-[80px] grid gap-5'>
@@ -80,18 +74,17 @@ const visibleProjects = await Promise.all(
     </div>
     <!-- Case Studies Section -->
     <div class='mx-auto mb-10 grid max-w-screen-md gap-10 sm:grid-cols-2'>
-      {visibleProjects.map((project) => (
-        <ProjectCard
-          href={project.href}
-          title={project.title}
-          body={project.body}
-          bgImg={project.bgImg}
-          uiImgs={project.uiImgs}
-          logo={project.logo}
-          bgAlt={project.bgAlt}
-          className={project.className}
-        />
-      ))}
-    </div>
+      {visibleProjects.map((project) =>
+        project ? (
+          <ProjectCard
+            href={project.href}
+            title={project.title}
+            body={project.body}
+            bgImg={project.bgImg}
+            uiImg={project.uiImg}
+            className={project.className}
+          />
+        ) : null,
+      )}
   </main>
 </Layout>

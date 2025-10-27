@@ -1,5 +1,5 @@
 ---
-import Button from './Button.astro';
+
 import resume from '../../public/resume.pdf';
 ---
 
@@ -231,18 +231,6 @@ import resume from '../../public/resume.pdf';
       }
       // Re-enable scroll
       document.body.style.overflow = '';
-    }
-
-    function openMobileMenu() {
-      if (menu) {
-        menu.removeAttribute('inert');
-        menu.classList.remove('translate-x-full');
-      }
-      if (menuOverlay) {
-        menuOverlay.classList.add('menu-open');
-      }
-      // Disable scroll
-      document.body.style.overflow = 'hidden';
     }
 
     // Close on X Click
