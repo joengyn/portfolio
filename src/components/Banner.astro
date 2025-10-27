@@ -12,7 +12,6 @@ interface Props {
   roles: string[];
   tools: string[];
   duration: string;
-  slug?: string;
   invertLogo?: boolean;
 }
 
@@ -26,7 +25,6 @@ const {
   roles,
   tools,
   duration,
-  slug,
   invertLogo = true,
 } = Astro.props;
 ---
@@ -43,9 +41,6 @@ const {
     <!-- Title -->
     <span
       class='absolute left-8 max-w-[300px] text-[40px] uppercase text-white md:max-w-[400px] md:text-[60px] lg:text-[80px]'
-      {/* style={{
-        viewTransitionName: titleTransitionName,
-      }} */}
     >
       {title}
     </span>
@@ -76,12 +71,10 @@ const {
       <h4>Role</h4>
       <ul class='ml-4 list-outside list-disc'>
         {
-          roles.map((roles) => (
-            <Fragment key={roles}>
-              <li>
-                <p>{roles}</p>
-              </li>
-            </Fragment>
+          roles.map((role) => (
+            <li>
+              <p>{role}</p>
+            </li>
           ))
         }
       </ul>
@@ -91,12 +84,10 @@ const {
       <h4>Tools</h4>
       <ul class='ml-4 grid list-outside list-disc grid-cols-2 md:grid-cols-1'>
         {
-          tools.map((tools) => (
-            <Fragment key={tools}>
-              <li>
-                <p>{tools}</p>
-              </li>
-            </Fragment>
+          tools.map((tool) => (
+            <li>
+              <p>{tool}</p>
+            </li>
           ))
         }
       </ul>

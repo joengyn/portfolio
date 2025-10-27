@@ -7,14 +7,12 @@ interface Props {
   body: string;
   bgImg: ImageMetadata;
   uiImg: ImageMetadata;
-  logo?: ImageMetadata;
-  logoAlt?: string;
   bgAlt?: string;
   uiAlt?: string;
   className?: string;
 }
 
-const { href, title, body, bgImg, uiImg, logo, logoAlt = `${title} logo`, bgAlt = `${title} background`, uiAlt = `${title} UI preview`, className } = Astro.props;
+const { href, title, body, bgImg, uiImg, bgAlt = `${title} background`, uiAlt = `${title} UI preview`, className } = Astro.props;
 ---
 
 <div
