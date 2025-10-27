@@ -12,23 +12,21 @@ This is a personal portfolio website built with **Astro**, featuring case studie
   - `src/pages/` - Individual portfolio pages (Astro file-based routing)
     - `index.astro` - Homepage with project cards
     - `*.astro` - Individual case study pages (berkshiregrey, grammaroke, bandscan, toast, pinksofahour, about)
-  - `src/components/` - Reusable Astro and React components
-    - `*.astro` - Structural components (Header, Footer, Banner, ProjectCard, etc.)
-    - `*.tsx` - React components (EnsoLottie, WaveLottie for Lottie animations)
-  - `src/layouts/Layout.astro` - Main layout template with header, footer, global styles
-  - `src/assets/` - Images, animations (Lottie JSON files), and other static assets
+  - `src/components/` - Reusable Astro components (Header, Footer, Banner, ProjectCard, Button, MobileMenu, StructuredData)
+  - `src/layouts/Layout.astro` - Main layout template with header, footer, global styles, and animations
+  - `src/assets/` - Images, videos, and other static assets
   - `astro.config.mjs` - Astro configuration with Tailwind and React integrations
   - `tailwind.config.mjs` - Tailwind CSS configuration with custom animations and colors
 
 ## Technology Stack
 
-- **Framework**: Astro 3.x with file-based routing
+- **Framework**: Astro 5.x with file-based routing
 - **Styling**: Tailwind CSS with SCSS support
-- **React**: Integrated for interactive components (Lottie animations)
-- **Animations**: Lottie (via @lottiefiles/react-lottie-player)
-- **Fonts**: Google Fonts (Montserrat, Lato)
+- **Animations**: CSS animations, Intersection Observer API, HTML5 videos
+- **Fonts**: Google Fonts (Montserrat, Lato) with async loading
 - **Analytics**: Google Analytics (gtag)
 - **Code Formatting**: Prettier with Astro and Tailwind plugins
+- **Type Safety**: TypeScript with strict type checking via `astro check`
 
 ## Common Commands
 
@@ -54,28 +52,29 @@ npm run astro       # Run Astro CLI directly
   - Global SCSS styles for typography, spacing, and utilities
   - Google Analytics integration
   - Mobile menu, header, and footer components
-  - Logo fade-in animation triggered by Intersection Observer when Lottie container leaves viewport
+  - Dark mode theme switching with localStorage persistence
+  - Async font preloading for performance
   - Responsive font sizing for tablet+ screens
 
 ### Page Structure
-- **Homepage** (`index.astro`): Displays intro with Lottie animation and project cards
-- **Case Study Pages**: Each project (berkshiregrey, grammaroke, etc.) has a dedicated page with:
+- **Homepage** (`index.astro`): Displays intro text with project cards and structured data (SEO)
+- **Case Study Pages**: Each project (berkshiregrey, grammaroke, bandscan, toast, pinksofahour) has a dedicated page with:
   - Banner component with project overview, roles, tools, duration
-  - ImageSlider component for showcasing multiple UI screens
-  - Structured sections with rich content (images, videos, lists)
-  - Navigation buttons (back to top, next case study)
+  - Rich content sections with images, videos, and text
+  - Structured data markup for SEO
+- **About Page** (`about.astro`): Profile information with video content
 
 ### Component Patterns
-- **Astro Components**: Static structural components (Banner, ProjectCard, Button, etc.)
-- **React Components**: Imported with `client:only` directive for interactive features (Lottie animations)
+- **Astro Components**: Static structural components (Banner, ProjectCard, Button, Header, Footer, MobileMenu, StructuredData)
 - **Props**: Components accept TypeScript-like prop interfaces at the top in Astro frontmatter
+- **Type Safety**: All components properly typed with strict TypeScript checking
 
 ### Animation & Interactions
-- Lottie animations (enso-circle, wave) are wrapped in React components with client-side state management
-- Intersection Observer API used for:
-  - Logo fade-in/fade-out based on Lottie visibility
-  - Project card animations (fade-in and translate-in on scroll)
-- Tailwind custom animations and delays for staggered card effects
+- **CSS Animations**: Staggered fade-in effects for project cards using Tailwind utilities
+- **Intersection Observer API**: Used for scroll-triggered project card animations
+- **HTML5 Videos**: WebM and MP4 formats used for case study demos (with autoplay and controls)
+- **Interactive Elements**: Mobile menu toggle with keyboard support (Enter/Space), theme switcher
+- **Transitions**: Smooth hover effects and focus states with accessible outlines
 
 ### Styling Approach
 - **Tailwind utility classes** for layout and responsive design
@@ -99,9 +98,9 @@ npm run astro       # Run Astro CLI directly
    - For global styles, edit `Layout.astro`'s `<style is:global>`
 
 3. **Adding interactive features**:
-   - Create React components in `src/components/` with `.tsx` extension
-   - Import and use with `client:only` directive in Astro files
-   - Lottie animations should follow the pattern in `EnsoLottie.tsx` (state management, controlled rendering)
+   - Use Astro components with inline `<script>` tags for client-side interactivity
+   - Follow existing patterns in Header.astro and MobileMenu.astro for event handling
+   - Use proper type assertions (e.g., `as KeyboardEvent`) for DOM events
 
 ## Code Quality
 
@@ -114,10 +113,11 @@ npm run astro       # Run Astro CLI directly
 
 ## Performance Considerations
 
-- **Lottie animations**: Wrapped in `setTimeout` to prevent hydration mismatches (see `EnsoLottie.tsx`)
-- **Font preloading**: Fonts preloaded in Layout with `rel="preload"` and `onload` callback for async loading
+- **Font preloading**: Fonts preloaded in Layout with async loading via JavaScript to prevent render-blocking
 - **Responsive images**: Use Astro's `<Image>` component with `.webp` format for optimized delivery
-- **Scrollbar hiding**: Utilities in Layout to hide scrollbars on image sliders (`.scrollbar` class)
+- **Video optimization**: WebM format (smaller) as primary with MP4 fallback for compatibility
+- **Type checking**: Run `npx astro check` to catch type errors during development
+- **Build validation**: All errors, warnings, and hints should be zero before deployment
 
 ## Deployment
 

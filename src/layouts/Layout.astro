@@ -1,18 +1,12 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
-
 interface Props {
   title: string;
   description?: string;
-  isIndex?: boolean;
-  isAbout?: boolean;
 }
 
 const {
   title,
   description = "Joe Nguyen - Designer & Engineer passionate about creating intuitive product experiences at the intersection of people and technology.",
-  isIndex,
-  isAbout
 } = Astro.props;
 
 import Header from '../components/Header.astro';
@@ -23,7 +17,6 @@ import MobileMenu from '../components/MobileMenu.astro';
 <!doctype html>
 <html lang='en'>
   <head>
-    <ViewTransitions />
     <meta charset='UTF-8' />
     <meta name='description' content={description} />
     <meta name='viewport' content='width=device-width' />
@@ -32,14 +25,32 @@ import MobileMenu from '../components/MobileMenu.astro';
       rel='preload'
       href='https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800&display=swap'
       as='style'
-      onload="this.onload=null;this.rel='stylesheet'"
+      id='font-montserrat'
     />
     <link
       rel='preload'
       href='https://fonts.googleapis.com/css?family=Lato:300,400,500,600,700,800&display=swap'
       as='style'
-      onload="this.onload=null;this.rel='stylesheet'"
+      id='font-lato'
     />
+    <!-- Async font loading script -->
+    <script is:inline>
+      function loadFontsAsync() {
+        const fontIds = ['font-montserrat', 'font-lato'];
+
+        fontIds.forEach((id) => {
+          const link = document.getElementById(id);
+          if (link) {
+            link.addEventListener('load', () => {
+              link.rel = 'stylesheet';
+            });
+            link.rel = 'stylesheet';
+          }
+        });
+      }
+
+      loadFontsAsync();
+    </script>
     <meta name='generator' content={Astro.generator} />
     <title>
       {title}
@@ -119,7 +130,7 @@ import MobileMenu from '../components/MobileMenu.astro';
   </head>
   <body class='bg-white text-black dark:bg-black dark:text-white'>
     <MobileMenu />
-    <Header isIndex={isIndex} isAbout={isAbout} />
+    <Header />
     <slot />
     <Footer />
   </body>
