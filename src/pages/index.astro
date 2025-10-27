@@ -19,7 +19,7 @@ const websiteSchema = {
   "description": "Portfolio showcasing UX/UI design and frontend development work"
 };
 
-const imageModules = import.meta.glob('../assets/**/*.{webp,png,jpg,svg}');
+const imageModules = import.meta.glob('/src/assets/**/*.{webp,png,jpg,svg}');
 
 const visibleProjects = (
   await Promise.all(
