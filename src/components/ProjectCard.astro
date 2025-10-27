@@ -6,15 +6,26 @@ interface Props {
   title: string;
   body: string;
   bgImg: ImageMetadata;
-  uiImg: ImageMetadata;
+  uiImgs: ImageMetadata[];
   logo?: ImageMetadata;
   logoAlt?: string;
   bgAlt?: string;
-  uiAlt?: string;
+  uiAlts?: string[];
   className?: string;
 }
 
-const { href, title, body, bgImg, uiImg, logo, logoAlt = `${title} logo`, bgAlt = `${title} background`, uiAlt = `${title} UI preview`, className } = Astro.props;
+const {
+  href,
+  title,
+  body,
+  bgImg,
+  uiImgs,
+  logo,
+  logoAlt = `${title} logo`,
+  bgAlt = `${title} background`,
+  uiAlts,
+  className,
+} = Astro.props;
 ---
 
 <div
@@ -22,17 +33,19 @@ const { href, title, body, bgImg, uiImg, logo, logoAlt = `${title} logo`, bgAlt 
   class={`transition-all duration-300 shadow-sm hover:shadow-lift-lg ${className || ''}`}
 >
   <a href={href} class='project-card-link'>
-    <div
-      class='h-full'
-    >
-      <div
-        class='relative aspect-square overflow-hidden'
-      >
-        <Image
-          class='absolute bottom-1 right-1 z-10 aspect-auto h-2/5 w-auto'
-          src={uiImg}
-          alt={uiAlt}
-        />
+    <div class='h-full'>
+      <div class='relative aspect-square overflow-hidden'>
+        <div class='absolute bottom-1 right-1 z-10 flex h-2/5 gap-2'>
+          {
+            uiImgs.map((img, idx) => (
+              <Image
+                class='ml-auto w-auto'
+                src={img}
+                alt={uiAlts?.[idx] || `${title} UI preview ${idx + 1}`}
+              />
+            ))
+          }
+        </div>
         <Image
           class='absolute inset-0 h-full w-full object-cover'
           src={bgImg}

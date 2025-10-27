@@ -67,16 +67,23 @@ import redesign from '../assets/bandscan/bandscan-redesign.webp';
 import redesign2 from '../assets/bandscan/bandscan-redesign-2.webp';
 
 const projectSchema = {
-  "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "Bandscan",
-  "description": "Design and development of a mobile app for discovering local artists and live music events",
-  "author": {
-    "@type": "Person",
-    "name": "Joe Nguyen"
+  '@context': 'https://schema.org',
+  '@type': 'CreativeWork',
+  name: 'Bandscan',
+  description:
+    'Design and development of a mobile app for discovering local artists and live music events',
+  author: {
+    '@type': 'Person',
+    name: 'Joe Nguyen',
   },
-  "url": "https://joengyn.com/bandscan",
-  "keywords": ["UX Design", "UI Design", "Mobile App", "SolidJS", "Music Discovery"]
+  url: 'https://joengyn.com/bandscan',
+  keywords: [
+    'UX Design',
+    'UI Design',
+    'Mobile App',
+    'SolidJS',
+    'Music Discovery',
+  ],
 };
 ---
 
@@ -84,7 +91,7 @@ const projectSchema = {
   title='Bandscan Case Study | Joe Nguyen'
   description='Bandscan case study - Design and development of a mobile app for discovering local artists and live music events using SolidJS and modern UX patterns.'
 >
-  <StructuredData slot="structured-data" schema={projectSchema} />
+  <StructuredData slot='structured-data' schema={projectSchema} />
   <main class='mt-[100px]'>
     <!-- Banner -->
     <Banner
@@ -101,8 +108,7 @@ const projectSchema = {
     <div class='wrapper'>
       <!-- Background Section -->
       <h2>Background</h2>
-      <Image src={bandscanCard} alt='Bandscan card image' class='mb-2' />
-      <figcaption class='mb-10 text-center text-sm'>Bandscan card</figcaption>
+      <Image src={bandscanCard} alt='Bandscan card image' class='mb-10' />
       <p>
         It's hard to discover local music without sifting through endless social
         media posts, event listings, or unreliable word-of-mouth. Fans often
@@ -118,23 +124,23 @@ const projectSchema = {
       <!-- Videos -->
       <div class='mb-3 grid grid-cols-2 gap-2 custom-md:grid-cols-4'>
         <video autoplay loop muted playsinline preload='auto' class='w-full'>
-          <source src="/login.webm" type='video/webm' />
-          <source src="/login.mp4" type='video/mp4' />
+          <source src='/login.webm' type='video/webm' />
+          <source src='/login.mp4' type='video/mp4' />
           Your browser does not support the video tag.
         </video>
         <video autoplay loop muted playsinline preload='auto' class='w-full'>
-          <source src="/page-swiping.webm" type='video/webm' />
-          <source src="/page-swiping.mp4" type='video/mp4' />
+          <source src='/page-swiping.webm' type='video/webm' />
+          <source src='/page-swiping.mp4' type='video/mp4' />
           Your browser does not support the video tag.
         </video>
         <video autoplay loop muted playsinline preload='auto' class='w-full'>
-          <source src="/explore.webm" type='video/webm' />
-          <source src="/explore.mp4" type='video/mp4' />
+          <source src='/explore.webm' type='video/webm' />
+          <source src='/explore.mp4' type='video/mp4' />
           Your browser does not support the video tag.
         </video>
         <video autoplay loop muted playsinline preload='auto' class='w-full'>
-          <source src="/artist-onboard.webm" type='video/webm' />
-          <source src="/artist-onboard.mp4" type='video/mp4' />
+          <source src='/artist-onboard.webm' type='video/webm' />
+          <source src='/artist-onboard.mp4' type='video/mp4' />
           Your browser does not support the video tag.
         </video>
       </div>
@@ -169,22 +175,10 @@ const projectSchema = {
         Whiteboard concepts
       </figcaption>
       <div class='mb-2 grid grid-cols-2 gap-2 custom-md:grid-cols-4'>
-        <Image
-          src={sketch1}
-          alt='Early UI concept designs'
-        />
-        <Image
-          src={sketch2}
-          alt='Early UI concept designs'
-        />
-        <Image
-          src={sketch3}
-          alt='Early UI concept designs'
-        />
-        <Image
-          src={sketch4}
-          alt='Early UI concept designs'
-        />
+        <Image src={sketch1} alt='Early UI concept designs' />
+        <Image src={sketch2} alt='Early UI concept designs' />
+        <Image src={sketch3} alt='Early UI concept designs' />
+        <Image src={sketch4} alt='Early UI concept designs' />
       </div>
       <figcaption class='mb-10 text-center text-sm'>
         Early UI concepts
@@ -211,26 +205,17 @@ const projectSchema = {
       <!-- Wireframes Section -->
       <h2>Wireframes</h2>
       <div class='mb-2 grid grid-cols-2 gap-2 custom-md:grid-cols-4'>
-        <Image
-          src={loginWireframe}
-          alt='Login page early wireframe'
-        />
+        <Image src={loginWireframe} alt='Login page early wireframe' />
         <Image
           src={onboardingWireframe}
           alt='User onboarding page early wireframe'
         />
-        <Image
-          src={likesWireframe}
-          alt='User profile page early wireframe'
-        />
+        <Image src={likesWireframe} alt='User profile page early wireframe' />
         <!-- <Image
           src={eventsWireframe}
           alt="User events page early wireframe"
         /> -->
-        <Image
-          src={exploreWireframe}
-          alt='Explore page early wireframe'
-        />
+        <Image src={exploreWireframe} alt='Explore page early wireframe' />
       </div>
       <figcaption class='mb-10 text-center text-sm'>
         Early Wireframes
@@ -246,38 +231,17 @@ const projectSchema = {
         likes and upcoming events.
       </p>
       <div class='mb-2 grid grid-cols-2 gap-2 custom-md:grid-cols-4'>
-        <Image
-          src={loginV1}
-          alt='Login page wireframe'
-        />
-        <Image
-          src={exploreV1}
-          alt='Explore page wireframe'
-        />
-        <Image
-          src={exploreBioV1}
-          alt='Explore page wireframe, about section'
-        />
+        <Image src={loginV1} alt='Login page wireframe' />
+        <Image src={exploreV1} alt='Explore page wireframe' />
+        <Image src={exploreBioV1} alt='Explore page wireframe, about section' />
         <Image
           src={exploreEventsV1}
           alt='Explore page wireframe, events section'
         />
-        <Image
-          src={onboardV1}
-          alt='User onboarding page wireframe'
-        />
-        <Image
-          src={likesV1}
-          alt='Liked artists page wireframe'
-        />
-        <Image
-          src={eventsV1}
-          alt='Events page page wireframe'
-        />
-        <Image
-          src={accountV1}
-          alt='User account settings page wireframe'
-        />
+        <Image src={onboardV1} alt='User onboarding page wireframe' />
+        <Image src={likesV1} alt='Liked artists page wireframe' />
+        <Image src={eventsV1} alt='Events page page wireframe' />
+        <Image src={accountV1} alt='User account settings page wireframe' />
       </div>
       <figcaption class='mb-20 text-center text-sm'>
         Refined Wireframes
@@ -412,8 +376,7 @@ const projectSchema = {
         By the time I began frontend development, the app was functional but
         unpolished, with raw JSON data and unstyled components.
       </p>
-      <Image src={solidJS} alt='SolidJS logo' class='mx-auto mb-2 w-40' />
-      <figcaption class='mb-10 text-center text-sm'>SolidJS Logo</figcaption>
+      <Image src={solidJS} alt='SolidJS logo' class='mx-auto mb-10 w-40' />
       <p class='mb-20'>
         Using <b>SolidJS</b> and <b>SCSS Modules</b>, I focused on styling the
         interface, creating reusable components, and setting up page navigation

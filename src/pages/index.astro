@@ -26,22 +26,29 @@ const visibleProjects = await Promise.all(
     .filter((project) => project.isVisible)
     .map(async (project) => {
       const bgPath = project.bgImg;
-      const uiPath = project.uiImg;
+      const uiPaths = project.uiImgs;
       const logoPath = project.logo;
 
-      if (!imageModules[bgPath] || !imageModules[uiPath]) {
-        console.error(`Image module not found for project: ${project.title}`);
+      if (!imageModules[bgPath] || !uiPaths || uiPaths.length === 0) {
+        console.error(`Image modules not found for project: ${project.title}`);
+        return null;
+      }
+
+      // Check all UI image paths exist
+      const allUiPathsExist = uiPaths.every((path) => imageModules[path]);
+      if (!allUiPathsExist) {
+        console.error(`One or more UI image paths missing for project: ${project.title}`);
         return null;
       }
 
       const bgImgModule = await imageModules[bgPath]();
-      const uiImgModule = await imageModules[uiPath]();
+      const uiImgModules = await Promise.all(uiPaths.map((path) => imageModules[path]()));
       const logoModule = logoPath && imageModules[logoPath] ? await imageModules[logoPath]() : null;
 
       return {
         ...project,
         bgImg: bgImgModule.default,
-        uiImg: uiImgModule.default,
+        uiImgs: uiImgModules.map((mod) => mod.default),
         logo: logoModule?.default,
       };
     }),
@@ -79,10 +86,9 @@ const visibleProjects = await Promise.all(
           title={project.title}
           body={project.body}
           bgImg={project.bgImg}
-          uiImg={project.uiImg}
+          uiImgs={project.uiImgs}
           logo={project.logo}
           bgAlt={project.bgAlt}
-          uiAlt={project.uiAlt}
           className={project.className}
         />
       ))}
