@@ -17,16 +17,24 @@ import toastUI from '../assets/toast/toast-ui.webp';
 import toastImg from '../assets/toast/toast-img.webp';
 
 const projectSchema = {
-  "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "Toast Mobile Order & Pay",
-  "description": "Design of a mobile QR code-based pay-at-the-table service for restaurants, improving customer experience and operational efficiency during the COVID-19 pandemic",
-  "author": {
-    "@type": "Person",
-    "name": "Joe Nguyen"
+  '@context': 'https://schema.org',
+  '@type': 'CreativeWork',
+  name: 'Toast Mobile Order & Pay',
+  description:
+    'Design of a mobile QR code-based pay-at-the-table service for restaurants, improving customer experience and operational efficiency during the COVID-19 pandemic',
+  author: {
+    '@type': 'Person',
+    name: 'Joe Nguyen',
   },
-  "url": "https://joengyn.com/toast",
-  "keywords": ["UX Design", "UI Design", "User Research", "Mobile App", "Restaurant Technology", "QR Code Payment"]
+  url: 'https://joengyn.com/toast',
+  keywords: [
+    'UX Design',
+    'UI Design',
+    'User Research',
+    'Mobile App',
+    'Restaurant Technology',
+    'QR Code Payment',
+  ],
 };
 ---
 
@@ -34,7 +42,7 @@ const projectSchema = {
   title='Toast Case Study | Joe Nguyen'
   description='Toast case study - Design of a mobile QR code-based pay-at-the-table service for restaurants, improving customer experience and operational efficiency.'
 >
-  <StructuredData slot="structured-data" schema={projectSchema} />
+  <StructuredData slot='structured-data' schema={projectSchema} />
   <main class='mt-[100px]'>
     <!-- Banner -->
     <Banner
@@ -62,10 +70,21 @@ const projectSchema = {
         and pay directly from their phones using a QR code.
       </p>
       <!-- My Role -->
-      <Image src={toastIntro} alt='Introduction image' class='case-study-image' />
-      <video autoplay loop muted playsinline preload='auto' class='case-study-image w-full'>
-        <source src="/toast-ui.webm" type='video/webm' />
-        <source src="/toast-ui.mp4" type='video/mp4' />
+      <Image
+        src={toastIntro}
+        alt='Introduction image'
+        class='case-study-image'
+      />
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        preload='auto'
+        class='case-study-image w-full'
+      >
+        <source src='/toast-ui.webm' type='video/webm' />
+        <source src='/toast-ui.mp4' type='video/mp4' />
         Your browser does not support the video tag.
       </video>
       <figcaption class='text-center text-sm'>
