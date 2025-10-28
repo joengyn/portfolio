@@ -3,9 +3,8 @@
     "href": "/berkshiregrey",
     "title": "Berkshire Grey",
     "body": "Design of Human Machine Interfaces (HMIs) for AI-enabled enterprise robotics",
-    "bgImg": "/src/assets/berkshiregrey/bg-background.webp",
-    "uiImgs": ["/src/assets/berkshiregrey/bg-ng-ui-1.webp"],
-    "logo": "/src/assets/berkshiregrey/bg-logo.svg",
+    "bgImg": "../assets/berkshiregrey/bg-background.webp",
+    "uiImgs": ["../assets/berkshiregrey/bg-ng-ui-1.webp"],
     "className": "delay-0",
     "isVisible": true
   },
@@ -13,12 +12,11 @@
     "href": "/grammaroke",
     "title": "Grammaroke",
     "body": "Design and development of a music focused language learning web application",
-    "bgImg": "/src/assets/grammaroke/music-venue.webp",
+    "bgImg": "../assets/grammaroke/music-venue.webp",
     "uiImgs": [
-      "/src/assets/grammaroke/songs-page.webp",
-      "/src/assets/grammaroke/annotations-page.webp"
+      "../assets/grammaroke/songs-page.webp",
+      "../assets/grammaroke/annotations-page.webp"
     ],
-    "logo": "/src/assets/grammaroke/favicon.svg",
     "className": "sm:delay-0 md:delay-500",
     "isVisible": true
   },
@@ -26,13 +24,12 @@
     "href": "/bandscan",
     "title": "Bandscan",
     "body": "Design and development of a mobile app for discovering local artists and live music events",
-    "bgImg": "/src/assets/bandscan/fox-theater.webp",
+    "bgImg": "../assets/bandscan/fox-theater.webp",
     "uiImgs": [
-      "/src/assets/bandscan/explore-mockup.webp",
-      "/src/assets/bandscan/explore-bio-mockup.webp",
-      "/src/assets/bandscan/likes-mockup.webp"
+      "../assets/bandscan/explore-mockup.webp",
+      "../assets/bandscan/explore-bio-mockup.webp",
+      "../assets/bandscan/likes-mockup.webp"
     ],
-    "logo": "/src/assets/bandscan/bandscan-logo.webp",
     "className": "sm:delay-0 md:delay-500",
     "isVisible": true
   },
@@ -40,8 +37,8 @@
     "href": "/pinksofahour",
     "title": "Pink Sofa Hour",
     "body": "Web design for a local music show, cultivating community by connecting artists and audiences",
-    "bgImg": "/src/assets/pinksofahour/studio.webp",
-    "uiImgs": ["/src/assets/pinksofahour/psh-about.webp"],
+    "bgImg": "../assets/pinksofahour/studio.webp",
+    "uiImgs": ["../assets/pinksofahour/psh-about.webp"],
     "className": "sm:delay-0 md:delay-1000",
     "isVisible": false
   },
@@ -49,12 +46,11 @@
     "href": "/toast",
     "title": "Toast",
     "body": "Design of a mobile QR code based pay-at-the-table service for restaurants",
-    "bgImg": "/src/assets/toast/restaurant.webp",
+    "bgImg": "../assets/toast/restaurant.webp",
     "uiImgs": [
-      "/src/assets/toast/toast-ui-1.webp",
-      "/src/assets/toast/toast-ui-2.webp"
+      "../assets/toast/toast-ui-1.webp",
+      "../assets/toast/toast-ui-2.webp"
     ],
-    "logo": "/src/assets/toast/toast-logo.svg",
     "className": "sm:delay-0 md:delay-[1.5s]",
     "isVisible": true
   }
