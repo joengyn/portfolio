@@ -6,13 +6,13 @@ interface Props {
   title: string;
   body: string;
   bgImg: ImageMetadata;
-  uiImg: ImageMetadata;
+  uiImgs: ImageMetadata[];
   bgAlt?: string;
   uiAlts?: string[];
   className?: string;
 }
 
-const { href, title, body, bgImg, uiImg, bgAlt = `${title} background`, uiAlt = `${title} UI preview`, className } = Astro.props;
+const { href, title, body, bgImg, uiImgs, bgAlt = `${title} background`, uiAlts, className } = Astro.props;
 ---
 
 <div
