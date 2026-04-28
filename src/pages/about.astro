@@ -6,37 +6,38 @@ import { Image } from 'astro:assets';
 import profileImg from '../../public/profile.webp';
 
 const personSchema = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Joe Nguyen",
-  "jobTitle": "Designer & Engineer",
-  "url": "https://joengyn.com",
-  "description": "Designer and engineer specializing in UX/UI design, human-centered research, and product engineering",
-  "alumniOf": "Tufts University",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Boulder",
-    "addressRegion": "CO"
-  }
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Joe Nguyen',
+  jobTitle: 'Designer & Engineer',
+  url: 'https://joengyn.com',
+  description:
+    'Designer and engineer specializing in UX/UI design, human-centered research, and product engineering',
+  alumniOf: 'Tufts University',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Boulder',
+    addressRegion: 'CO',
+  },
 };
 ---
 
 <Layout
-  title='About Joe Nguyen | Designer & Engineer'
-  description='About Joe Nguyen - Designer and engineer based in Boulder, CO, specializing in UX/UI design, human-centered research, and product engineering.'
+  title="About Joe Nguyen | Designer & Engineer"
+  description="About Joe Nguyen - Designer and engineer based in Boulder, CO, specializing in UX/UI design, human-centered research, and product engineering."
 >
   <StructuredData slot="structured-data" schema={personSchema} />
-  <main class='mt-[80px]'>
-    <div class='wrapper'>
+  <main class="mt-[80px]">
+    <div class="wrapper">
       <Image
         src={profileImg}
-        alt='profile photo'
-        class='mx-auto my-10 max-w-xs rounded-full object-cover md:max-w-sm lg:max-w-md'
+        alt="profile photo"
+        class="mx-auto my-10 max-w-xs rounded-full object-cover md:max-w-sm lg:max-w-md"
       />
-      <h2 class='mb-10 text-center'>Hi, I'm Joe.</h2>
+      <h2 class="mb-10 text-center">Hi, I'm Joe.</h2>
       <p>
         A designer and engineer passionate about crafting intuitive and
-        impactful product experiences, currently based in Boulder, CO. ⛰️⛰️⛰️
+        impactful product experiences.
       </p>
       <p>
         With a background in <b>UX/UI design</b>, <b>human-centered research</b
@@ -45,24 +46,24 @@ const personSchema = {
         and robotics to consumer applications, where I focus on creating
         seamless, user-centered solutions.
       </p>
-      <p class=''>
+      <p class="">
         Outside of work, you'll usually find me in the mountains hiking, playing
         kendama in the park, or tinkering away on projects in my bedroom.
       </p>
-      <div class='mb-20 flex flex-col items-center'>
+      <div class="mb-20 flex flex-col items-center">
         <a
-          class='flex min-w-12 items-center gap-2 rounded-sm px-4 py-2 border-2 bg-white text-black border-black dark:bg-black dark:text-white dark:border-white text-[12px] font-bold uppercase tracking-widest'
-          href='mailto:joe.ngyn7@gmail.com'
+          class="flex min-w-12 items-center gap-2 rounded-sm border-2 border-black bg-white px-4 py-2 text-[12px] font-bold uppercase tracking-widest text-black dark:border-white dark:bg-black dark:text-white"
+          href="mailto:joe.ngyn7@gmail.com"
         >
           Contact
         </a>
       </div>
-      <video class="w-full" autoplay loop muted playsinline preload='auto'>
+      <video class="w-full" autoplay loop muted playsinline preload="auto">
         <source src="/fpv-clip.webm" type="video/webm" />
         <source src="/fpv-clip.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <figcaption class='mt-2 text-center text-sm'>
+      <figcaption class="mt-2 text-center text-sm">
         FPV drone flight in Boulder, CO
       </figcaption>
     </div>
